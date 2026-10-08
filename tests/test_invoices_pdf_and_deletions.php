@@ -37,7 +37,7 @@ assert($check2 === 0, "Call should be deleted");
 echo "Deleted test call #{$callId}\n";
 
 // Re-run init_sqlite_database to simulate subsequent request/connection initialization
-$sqliteFile = __DIR__ . '/../database/makeit.sqlite';
+$sqliteFile = __DIR__ . '/../database/WebsiteTailors.sqlite';
 require_once __DIR__ . '/../database/init_sqlite.php';
 $reInitPdo = init_sqlite_database($sqliteFile);
 $check3 = (int)$reInitPdo->query("SELECT COUNT(*) FROM calls WHERE id = {$callId}")->fetchColumn();
@@ -106,7 +106,7 @@ assert(str_starts_with($pdf, "%PDF-1.4"), "PDF must start with %PDF-1.4 header")
 assert(str_contains($pdf, "%%EOF"), "PDF must end with %%EOF");
 assert(str_contains($pdf, "INV-2026-TEST"), "PDF must contain invoice reference");
 assert(str_contains($pdf, "Bangalore-560010"), "PDF must contain studio address Bangalore-560010");
-assert(str_contains($pdf, "9035344513"), "PDF must contain studio phone 9035344513");
+assert(str_contains($pdf, "9380552034"), "PDF must contain studio phone 9380552034");
 assert(str_contains($pdf, "Acme Innovations"), "PDF must contain client name");
 assert(str_contains($pdf, "145,000.00"), "PDF must contain formatted amount INR 145,000.00");
 echo "✓ PDF generated successfully! Length: " . strlen($pdf) . " bytes\n";

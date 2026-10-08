@@ -1,5 +1,5 @@
 /**
- * MakeIT — Admin Panel Interactions
+ * Website Tailors — Admin Panel Interactions
  * Pure Vanilla JavaScript
  */
 

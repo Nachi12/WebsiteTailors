@@ -1,11 +1,11 @@
 <?php
 /**
- * MakeIT Admin — CRM & Performance Reports (Phase 1)
+ * Website Tailors Admin — CRM & Performance Reports (Phase 1)
  */
 
 declare(strict_types=1);
 
-if (!defined('MAKEIT_INIT')) { define('MAKEIT_INIT', true); }
+if (!defined('WebsiteTailors_INIT')) { define('WebsiteTailors_INIT', true); }
 require_once dirname(__DIR__) . '/includes/auth_guard.php';
 
 $pageTitle = 'Performance Reports';

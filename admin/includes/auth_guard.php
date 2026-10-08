@@ -1,6 +1,6 @@
 <?php
 /**
- * MakeIT - Admin Panel Access Authorization Guard
+ * WebsiteTailors - Admin Panel Access Authorization Guard
  * 
  * Must be included at the top of every protected admin page.
  * Enforces authenticated session, active status check, and session timeout.

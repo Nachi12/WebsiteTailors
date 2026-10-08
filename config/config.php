@@ -1,6 +1,6 @@
 <?php
 /**
- * MakeIT - Core Application Configuration
+ * WebsiteTailors - Core Application Configuration
  * 
  * Scalable configuration supporting local development and production shared hosting (e.g. Hostinger, cPanel).
  */
@@ -8,9 +8,9 @@
 declare(strict_types=1);
 
 // Prevent direct script execution if accessed outside the application
-if (!defined('MAKEIT_INIT') && php_sapi_name() !== 'cli') {
+if (!defined('WebsiteTailors_INIT') && php_sapi_name() !== 'cli') {
     // If loaded directly, define initialization flag if it's the main entry point
-    define('MAKEIT_INIT', true);
+    define('WebsiteTailors_INIT', true);
 }
 
 // -----------------------------------------------------------------------------
@@ -61,7 +61,7 @@ define('UPLOADS_URL', BASE_URL . '/uploads');
 // -----------------------------------------------------------------------------
 // SECURITY & SESSION CONFIGURATION
 // -----------------------------------------------------------------------------
-define('SESSION_NAME', 'makeit_sess');
+define('SESSION_NAME', 'WebsiteTailors_sess');
 define('SESSION_LIFETIME', 86400 * 7); // 7 days
 
 // Brute-force Login Protection
@@ -81,15 +81,15 @@ define('ALLOWED_UPLOAD_MIMES', [
 // -----------------------------------------------------------------------------
 // BRANDING & DEFAULTS
 // -----------------------------------------------------------------------------
-define('APP_NAME', 'MakeIT');
-define('APP_TAGLINE', 'We Make Digital Things Work.');
+define('APP_NAME', 'Website Tailors');
+define('APP_TAGLINE', 'Engineering Digital Precision.');
 define('APP_VERSION', '1.0.0');
 
 // -----------------------------------------------------------------------------
 // TELEPHONY / EXOTEL CLICK-TO-CALL CONFIGURATION
 // -----------------------------------------------------------------------------
-define('MAKEIT_AGENT_PHONE', getenv('MAKEIT_AGENT_PHONE') ?: '9035344513');
-define('EXOTEL_ACCOUNT_SID', getenv('EXOTEL_ACCOUNT_SID') ?: 'makeit1');
+define('WebsiteTailors_AGENT_PHONE', getenv('WebsiteTailors_AGENT_PHONE') ?: '9380552034');
+define('EXOTEL_ACCOUNT_SID', getenv('EXOTEL_ACCOUNT_SID') ?: 'WebsiteTailors1');
 define('EXOTEL_API_KEY', getenv('EXOTEL_API_KEY') ?: '');
 define('EXOTEL_API_TOKEN', getenv('EXOTEL_API_TOKEN') ?: '');
 define('EXOTEL_SUBDOMAIN', getenv('EXOTEL_SUBDOMAIN') ?: 'api.exotel.com');

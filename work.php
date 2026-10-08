@@ -1,18 +1,18 @@
 <?php
 /**
- * MakeIT — Work & Portfolio Showcase Page
+ * WebsiteTailors — Work & Portfolio Showcase Page
  */
 
 declare(strict_types=1);
 
-define('MAKEIT_INIT', true);
+define('WebsiteTailors_INIT', true);
 require_once __DIR__ . '/includes/init.php';
 
 $settings = get_all_settings();
 $projects = get_projects();
 
-$pageTitle = 'Work — ' . ($settings['company_name'] ?? 'MakeIT');
-$pageDescription = 'Explore selected websites, software applications, and digital platforms delivered by MakeIT.';
+$pageTitle = 'Our Work — Business Website Portfolio | Website Tailors';
+$pageDescription = 'Explore Website Tailors portfolio of business website designs, website redesigns, and WhatsApp automation concepts in Bangalore.';
 $activePage = 'work';
 
 require_once __DIR__ . '/includes/header.php';

@@ -1,6 +1,6 @@
 <?php
 /**
- * MakeIT — 500 Server Error Page
+ * Website Tailors — 500 Server Error Page
  * 
  * Branded, production-ready user-facing 500 error page.
  * Strictly avoids leaking database credentials, server filepaths, or stack traces.
@@ -8,8 +8,8 @@
 
 declare(strict_types=1);
 
-if (!defined('MAKEIT_INIT')) {
-    define('MAKEIT_INIT', true);
+if (!defined('WebsiteTailors_INIT')) {
+    define('WebsiteTailors_INIT', true);
 }
 
 // Attempt to load core configuration safely
@@ -29,7 +29,7 @@ $assetsUrl = defined('ASSETS_URL') ? ASSETS_URL : ($baseUrl . '/assets');
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>500 — Server Error | MakeIT</title>
+  <title>500 — Server Error | Website Tailors</title>
   <meta name="robots" content="noindex, nofollow" />
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />

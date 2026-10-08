@@ -1,6 +1,6 @@
 <?php
 /**
- * MakeIT — Phase 3 Leads & Call Tracking Verification Test Suite
+ * WebsiteTailors — Phase 3 Leads & Call Tracking Verification Test Suite
  *
  * Verifies:
  * 1. Database schema: All 17 leads fields & calls tracking fields.
@@ -15,7 +15,7 @@
 
 declare(strict_types=1);
 
-define('MAKEIT_INIT', true);
+define('WebsiteTailors_INIT', true);
 if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
 }
@@ -25,14 +25,14 @@ $_SESSION['admin_logged_in'] = true;
 $_SESSION['admin_data'] = [
     'id' => 1,
     'username' => 'admin',
-    'email' => 'admin@makeit.digital',
-    'full_name' => 'MakeIT Administrator',
+    'email' => 'websietailorss@gmail.com',
+    'full_name' => 'WebsiteTailors Administrator',
     'role' => 'superadmin',
     'is_active' => 1
 ];
 
 echo "====================================================\n";
-echo "MakeIT Phase 3 Leads & Call Tracking Verification\n";
+echo "WebsiteTailors Phase 3 Leads & Call Tracking Verification\n";
 echo "====================================================\n\n";
 
 $passCount = 0;

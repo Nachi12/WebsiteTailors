@@ -1,11 +1,11 @@
 <?php
 /**
- * MakeIT Admin — Users Manager (Shell)
+ * WebsiteTailors Admin — Users Manager (Shell)
  */
 
 declare(strict_types=1);
 
-if (!defined('MAKEIT_INIT')) { define('MAKEIT_INIT', true); }
+if (!defined('WebsiteTailors_INIT')) { define('WebsiteTailors_INIT', true); }
 require_once __DIR__ . '/includes/auth_guard.php';
 
 $pageTitle = 'Admin Users';

@@ -1,9 +1,9 @@
 <?php
 /**
- * MakeIT - SQLite Fallback Database Initializer
+ * Website Tailors - SQLite Fallback Database Initializer
  *
- * Populates database/makeit.sqlite with tables and initial seed data matching
- * makeit.sql so local development and testing work without a running MySQL daemon.
+ * Populates database/WebsiteTailors.sqlite with tables and initial seed data matching
+ * WebsiteTailors.sql so local development and testing work without a running MySQL daemon.
  */
 
 declare(strict_types=1);
@@ -15,7 +15,8 @@ function init_sqlite_database(string $sqliteFile): PDO
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     $pdo->exec("PRAGMA journal_mode = WAL;");
-    $pdo->exec("PRAGMA busy_timeout = 5000;");
+    $pdo->exec("PRAGMA busy_timeout = 15000;");
+    $pdo->exec("PRAGMA synchronous = NORMAL;");
 
     if ($isNew) {
         $pdo->exec("
@@ -70,6 +71,7 @@ function init_sqlite_database(string $sqliteFile): PDO
 
             CREATE TABLE IF NOT EXISTS projects (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
+                client_id INTEGER NULL,
                 title TEXT NOT NULL,
                 slug TEXT NOT NULL UNIQUE,
                 category TEXT NOT NULL,
@@ -138,6 +140,7 @@ function init_sqlite_database(string $sqliteFile): PDO
 
             CREATE INDEX IF NOT EXISTS idx_services_status_order ON services (status, display_order);
             CREATE INDEX IF NOT EXISTS idx_projects_status_featured_order ON projects (status, is_featured, display_order);
+            CREATE INDEX IF NOT EXISTS idx_projects_client_id ON projects (client_id);
             CREATE INDEX IF NOT EXISTS idx_process_status_order ON process_steps (status, display_order);
             CREATE INDEX IF NOT EXISTS idx_testimonials_status_order ON testimonials (status, display_order);
             CREATE INDEX IF NOT EXISTS idx_leads_status_created ON leads (status, created_at);
@@ -146,46 +149,46 @@ function init_sqlite_database(string $sqliteFile): PDO
         // Seed default superadmins (password: Admin@12345)
         $now = date('Y-m-d H:i:s');
         $stmt = $pdo->prepare("INSERT INTO admins (username, email, password_hash, full_name, role, is_active, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->execute(['admin', 'admin@makeit.digital', '$2y$12$ht.4P0FXjJ7ev7MsltCeSeQpBGGj/is8I.XzZ/WMTbz2NTau8dX4y', 'MakeIT Administrator', 'superadmin', 1, $now, $now]);
+        $stmt->execute(['admin', 'websietailorss@gmail.com', '$2y$12$ht.4P0FXjJ7ev7MsltCeSeQpBGGj/is8I.XzZ/WMTbz2NTau8dX4y', 'Website Tailors Administrator', 'superadmin', 1, $now, $now]);
         $stmt->execute(['superadmin', 'superadmin@rithamaya.com', '$2y$12$ht.4P0FXjJ7ev7MsltCeSeQpBGGj/is8I.XzZ/WMTbz2NTau8dX4y', 'Rithamaya Administrator', 'superadmin', 1, $now, $now]);
 
         // Seed Hero
         $stmt = $pdo->prepare("INSERT INTO hero_content (id, badge_text, headline, subheadline, description, primary_button_text, primary_button_link, secondary_button_text, secondary_button_link, stats_json, updated_at) VALUES (1, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
         $stmt->execute([
-            'Digital studio / 2026',
-            "WE MAKE\nDIGITAL\nTHINGS WORK.",
-            'We turn ideas into websites, software and digital experiences that actually work.',
-            'From the first sketch to the final launch, MakeIT designs and builds digital products around the way your business actually works.',
-            'Start a Project',
+            'Website Design & Redesign Studio / Bangalore',
+            "AFFORDABLE WEBSITES\nFOR BUSINESSES IN\nBANGALORE.",
+            'Running a business without a website? Or stuck with one that looks outdated? We build new websites and redesign old ones, fast, clean and at prices small businesses can afford.',
+            'Running a business without a website? Or stuck with one that looks outdated? We build new websites and redesign old ones, fast, clean and at prices small businesses can afford.',
+            'Get a Free Quote',
             '#contact',
-            'Explore Services',
-            '#services',
+            'See Our Work',
+            '#work',
             json_encode([
-                ['label' => 'Client Satisfaction', 'value' => '99.4%'],
-                ['label' => 'Projects Shipped', 'value' => '150+'],
-                ['label' => 'Avg Performance', 'value' => '98/100'],
-                ['label' => 'System Reliability', 'value' => '99.9%']
+                ['label' => 'Starting Price', 'value' => '₹[STARTING PRICE]'],
+                ['label' => 'Delivery', 'value' => '[X] days'],
+                ['label' => 'Consultation', 'value' => 'Free']
             ]),
             $now
         ]);
 
         // Seed Services
         $services = [
-            ['Website Development', 'website-development', 'High-performing business websites and landing pages designed to look professional, load fast and turn visitors into customers.', 'High-performing business websites and landing pages designed to look professional, load fast and turn visitors into customers.', 'code', "Bespoke Design & Development\nResponsive Across Devices\nFast Load Speeds\nBuilt for Business Conversion", 1, 'published'],
-            ['Website Refinement', 'website-refinement', 'Already have a website? We refine its design, UX, responsiveness and performance to make it cleaner, faster and easier to use.', 'Already have a website? We refine its design, UX, responsiveness and performance to make it cleaner, faster and easier to use.', 'layout', "UI/UX & Visual Refinement\nPerformance & Speed Optimization\nMobile Responsiveness Fixes\nNavigation & Content Structure", 2, 'published'],
-            ['WhatsApp Automation', 'whatsapp-automation', 'Automate enquiries, follow-ups, notifications and repetitive customer workflows through WhatsApp.', 'Automate enquiries, follow-ups, notifications and repetitive customer workflows through WhatsApp.', 'message-square', "Instant Enquiry Responses\nAutomated Follow-up Sequences\nOrder & Status Notifications\nCustom Workflow Integration", 3, 'published']
+            ['Website Design for New Businesses', 'website-design-new-businesses', 'A complete business website for shops, clinics, studios, restaurants, coaches and service providers. Mobile-friendly, fast, with SEO basics built in.', 'A complete business website for shops, clinics, studios, restaurants, coaches and service providers. Mobile-friendly, fast, with SEO basics built in.', 'code', "Mobile-Friendly Design\nFast Loading Speed\nBasic SEO Setup\nContact & Enquiry Form", 1, 'published'],
+            ['Website Redesign', 'website-redesign', 'Better design, faster loading and a layout that makes it easier for visitors to contact your business, without starting from scratch.', 'Better design, faster loading and a layout that makes it easier for visitors to contact your business, without starting from scratch.', 'layout', "Modern Visual Design\nMobile Usability Fixes\nSpeed Optimization\nImproved Contact Flow", 2, 'published'],
+            ['WhatsApp Automation', 'whatsapp-automation', 'Auto-replies, enquiry capture, booking reminders and follow-ups on WhatsApp.', 'Auto-replies, enquiry capture, booking reminders and follow-ups on WhatsApp.', 'message-square', "Instant Enquiry Responses\nAutomated Follow-ups\nBooking Reminders\nDirect Lead Delivery", 3, 'published'],
+            ['Website + WhatsApp Package', 'website-whatsapp-package', 'A website and WhatsApp automation set up together for businesses that want to turn more website visitors into enquiries.', 'A website and WhatsApp automation set up together for businesses that want to turn more website visitors into enquiries.', 'layers', "Complete Business Site\nWhatsApp Click-to-Chat\nAutomated Lead Alerts\nUnified Setup", 4, 'published']
         ];
         $svcStmt = $pdo->prepare("INSERT INTO services (title, slug, short_description, long_description, icon, features, display_order, status, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
         foreach ($services as $s) {
             $svcStmt->execute([$s[0], $s[1], $s[2], $s[3], $s[4], $s[5], $s[6], $s[7], $now, $now]);
         }
 
-        // Seed Projects
+        // Seed Projects (Concept & Demo projects clearly labelled)
         $projects = [
-            ['Apex Logistics Portal', 'apex-logistics-portal', 'Website', 'Apex Global Freight', 'A real-time dispatch and fleet management dashboard handling thousands of daily freight consignments with sub-second response times.', '/assets/images/projects/apex-portal.webp', 'https://example.com/apex', 'PHP 8, MySQL, Custom Dashboard, Vanilla JS', 1, 1, 'published'],
-            ['Kroma Design Studio', 'kroma-design-studio', 'Software', 'Kroma Creative', 'An immersive, award-winning agency portfolio showcasing typography excellence, dynamic dark-mode interactions, and smooth transitions.', '/assets/images/projects/kroma-studio.webp', 'https://example.com/kroma', 'Vanilla CSS, Animation, Semantic HTML5', 2, 1, 'published'],
-            ['Veloce E-Commerce Engine', 'veloce-ecommerce-engine', 'AI + Automation', 'Veloce Luxury Wear', 'Custom lightweight e-commerce storefront with instantaneous product filtering, zero framework bloat, and frictionless checkout.', '/assets/images/projects/veloce-engine.webp', 'https://example.com/veloce', 'Custom Cart, Payment APIs, SEO Optimized', 3, 1, 'published'],
-            ['OmniFlow Workflow Automation', 'omniflow-workflow-automation', 'Digital System', 'OmniFlow Tech', 'Internal operational engine synchronizing CRM data, automated invoicing, and multi-tier employee approval pipelines.', '/assets/images/projects/omniflow.webp', 'https://example.com/omniflow', 'REST APIs, Background Workers, Role Security', 4, 0, 'published']
+            ['Apex Logistics', 'apex-logistics', 'Website Concept', 'Apex Freight Concept', 'A real-time dispatch and logistics management interface concept built for high performance and clean operations.', '/assets/images/projects/apex-logistics.jpg', '#contact', 'PHP 8, SQLite, Custom Dashboard, Vanilla JS', 1, 1, 'published'],
+            ['Kroma Studio', 'kroma-studio', 'Redesign Concept', 'Kroma Design Concept', 'An agency portfolio showcase built with dynamic dark-mode interactions, typography emphasis, and responsive layouts.', '/assets/images/projects/kroma-studio.jpg', '#contact', 'Vanilla CSS, Animation, Semantic HTML5', 2, 1, 'published'],
+            ['Veloce E-Commerce', 'veloce-ecommerce', 'Demo Project', 'Veloce Storefront Demo', 'A lightweight storefront concept with instant product filtering, clean visual structure, and mobile-first checkout.', '/assets/images/projects/veloce-ecommerce.jpg', '#contact', 'Custom Cart, Responsive UI, SEO Optimized', 3, 1, 'published'],
+            ['OmniFlow Automation', 'omniflow-automation', 'Digital System Concept', 'OmniFlow Prototype', 'An operational workflow interface prototype for client CRM management, automated invoicing, and task approvals.', '/assets/images/projects/omniflow-automation.jpg', '#contact', 'REST APIs, Background Workers, Role Security', 4, 0, 'published']
         ];
         $prjStmt = $pdo->prepare("INSERT INTO projects (title, slug, category, client_name, description, image, project_url, tags, display_order, is_featured, status, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
         foreach ($projects as $p) {
@@ -194,45 +197,37 @@ function init_sqlite_database(string $sqliteFile): PDO
 
         // Seed Process Steps
         $steps = [
-            ['01', 'Tell us.', 'Tell us what you\'re trying to build, fix or improve.', 1, 'published'],
-            ['02', 'We plan.', 'We define the experience, technology and scope.', 2, 'published'],
-            ['03', 'We build.', 'Design, development and testing happen together.', 3, 'published'],
-            ['04', 'You launch.', 'Your product goes live and starts doing its job.', 4, 'published']
+            ['01', 'Tell us', 'Tell us about your business and what you need.', 1, 'published'],
+            ['02', 'We plan', 'We plan the pages, design and price, and you approve it.', 2, 'published'],
+            ['03', 'We build', 'We build it and you review it.', 3, 'published'],
+            ['04', 'You launch', 'Your website goes live, and we stay available for support.', 4, 'published']
         ];
         $stepStmt = $pdo->prepare("INSERT INTO process_steps (step_number, title, description, display_order, status, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?)");
         foreach ($steps as $st) {
             $stepStmt->execute([$st[0], $st[1], $st[2], $st[3], $st[4], $now, $now]);
         }
 
-        // Seed Testimonials
-        $testimonials = [
-            ['Rajesh Menon', 'Apex Logistics India', 'Chief Technology Officer', 'MakeIT transformed our dispatch platform from a sluggish legacy headache into a blisteringly fast powerhouse. The speed and clarity of their engineering is unparalleled.', 5, '/assets/images/testimonials/rajesh.webp', 1, 'published'],
-            ['Ananya Sen', 'Kroma Design Studio', 'Founder & Creative Director', 'Working with MakeIT was seamless. They understood both the delicate aesthetic nuances of our brand and the strict architectural requirements under the hood.', 5, '/assets/images/testimonials/ananya.webp', 2, 'published'],
-            ['Rohan Singhania', 'Veloce E-Commerce', 'Managing Director', 'Our online store conversion jumped by 34% within the first month after MakeIT rebuilt our checkout flow. Zero framework bloat, lightning speed, and total reliability.', 5, '/assets/images/testimonials/rohan.webp', 3, 'published']
-        ];
-        $tstStmt = $pdo->prepare("INSERT INTO testimonials (client_name, company, position, content, rating, image, display_order, status, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        foreach ($testimonials as $t) {
-            $tstStmt->execute([$t[0], $t[1], $t[2], $t[3], $t[4], $t[5], $t[6], $t[7], $now, $now]);
-        }
+        // Testimonials: No fake testimonials; empty table by default
+        // Real client testimonials will be added when genuine permission is received.
 
         // Seed Settings
         $settings = [
-            ['company_name', 'MakeIT', 'general'],
-            ['tagline', 'We Make Digital Things Work.', 'general'],
-            ['email', 'hello@makeit.digital', 'contact'],
-            ['phone', '9035344513', 'contact'],
-            ['address', 'Bangalore-560010, karnataka. India', 'contact'],
-            ['linkedin', 'https://linkedin.com/company/makeit', 'social'],
-            ['instagram', 'https://instagram.com/makeit.digital', 'social'],
-            ['facebook', 'https://facebook.com/makeitdigital', 'social'],
-            ['github', 'https://github.com/makeit', 'social'],
-            ['twitter', 'https://x.com/makeitdigital', 'social'],
+            ['company_name', 'Website Tailors', 'general'],
+            ['tagline', 'Affordable Business Websites & WhatsApp Automation in Bangalore', 'general'],
+            ['email', 'websietailorss@gmail.com', 'contact'],
+            ['phone', '+91 9380552034', 'contact'],
+            ['address', 'Bangalore, Karnataka, India', 'contact'],
+            ['linkedin', 'https://linkedin.com/company/websitetailors', 'social'],
+            ['instagram', 'https://instagram.com/websitetailors', 'social'],
+            ['facebook', 'https://facebook.com/websitetailors', 'social'],
+            ['github', 'https://github.com/websitetailors', 'social'],
+            ['twitter', 'https://x.com/websitetailors', 'social'],
             ['logo', '/assets/images/logo.svg', 'branding'],
             ['favicon', '/assets/images/favicon.svg', 'branding'],
-            ['meta_title', 'MakeIT — We Make Digital Things Work', 'seo'],
-            ['meta_description', 'MakeIT designs and builds websites, software, AI automation and digital experiences that actually work.', 'seo'],
+            ['meta_title', 'Affordable Website Design in Bangalore | Website Tailors', 'seo'],
+            ['meta_description', 'Don\'t have a website yet? Or is your current one outdated? Website Tailors builds and redesigns fast, affordable business websites in Bangalore. Get a free quote.', 'seo'],
             ['primary_color', '#b8ff3d', 'branding'],
-            ['announcement_text', 'Now booking client projects for Q3/Q4', 'general']
+            ['announcement_text', 'Now booking website projects in Bangalore', 'general']
         ];
         $setStmt = $pdo->prepare("INSERT INTO site_settings (setting_key, setting_value, setting_group, created_at, updated_at) VALUES (?, ?, ?, ?, ?)");
         foreach ($settings as $set) {
@@ -293,13 +288,27 @@ function init_sqlite_database(string $sqliteFile): PDO
         CREATE TABLE IF NOT EXISTS invoices (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             invoice_number TEXT NOT NULL UNIQUE,
+            invoice_type TEXT NOT NULL DEFAULT 'advance',
             client_id INTEGER NULL,
             client_name TEXT NOT NULL,
+            project_id INTEGER NULL,
+            project_name TEXT NULL,
+            project_phase TEXT NULL,
             service TEXT NULL,
             amount REAL NOT NULL DEFAULT 0.00,
+            project_total REAL NOT NULL DEFAULT 0.00,
+            advance_amount REAL NOT NULL DEFAULT 0.00,
+            amount_received REAL NOT NULL DEFAULT 0.00,
+            balance_amount REAL NOT NULL DEFAULT 0.00,
             status TEXT NOT NULL DEFAULT 'paid',
             due_date TEXT NOT NULL,
             paid_at TEXT NULL,
+            payment_mode TEXT NULL,
+            transaction_reference TEXT NULL,
+            bank_name TEXT NULL,
+            payment_method_desc TEXT NULL,
+            payment_date TEXT NULL,
+            line_items TEXT NULL,
             notes TEXT NULL,
             created_at TEXT NOT NULL,
             updated_at TEXT NULL
@@ -308,12 +317,16 @@ function init_sqlite_database(string $sqliteFile): PDO
         CREATE TABLE IF NOT EXISTS revenue (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             client_id INTEGER NULL,
+            client_name TEXT NULL,
             lead_id INTEGER NULL,
             invoice_id INTEGER NULL,
+            project_id INTEGER NULL,
             amount REAL NOT NULL DEFAULT 0.00,
             payment_type TEXT NOT NULL DEFAULT 'Bank Transfer',
             payment_status TEXT NOT NULL DEFAULT 'Paid',
             payment_date TEXT NOT NULL,
+            transaction_reference TEXT NULL,
+            bank_name TEXT NULL,
             service TEXT NOT NULL,
             notes TEXT NULL,
             created_at TEXT NOT NULL,
@@ -325,11 +338,53 @@ function init_sqlite_database(string $sqliteFile): PDO
     try {
         $invCols = $pdo->query("PRAGMA table_info(invoices)")->fetchAll();
         $invColNames = array_column($invCols, 'name');
+        if (!in_array('invoice_type', $invColNames, true)) {
+            $pdo->exec("ALTER TABLE invoices ADD COLUMN invoice_type TEXT NOT NULL DEFAULT 'advance'");
+        }
         if (!in_array('client_id', $invColNames, true)) {
             $pdo->exec("ALTER TABLE invoices ADD COLUMN client_id INTEGER NULL");
         }
+        if (!in_array('project_id', $invColNames, true)) {
+            $pdo->exec("ALTER TABLE invoices ADD COLUMN project_id INTEGER NULL");
+        }
+        if (!in_array('project_name', $invColNames, true)) {
+            $pdo->exec("ALTER TABLE invoices ADD COLUMN project_name TEXT NULL");
+        }
+        if (!in_array('project_phase', $invColNames, true)) {
+            $pdo->exec("ALTER TABLE invoices ADD COLUMN project_phase TEXT NULL");
+        }
         if (!in_array('service', $invColNames, true)) {
             $pdo->exec("ALTER TABLE invoices ADD COLUMN service TEXT NULL");
+        }
+        if (!in_array('project_total', $invColNames, true)) {
+            $pdo->exec("ALTER TABLE invoices ADD COLUMN project_total REAL NOT NULL DEFAULT 0.00");
+        }
+        if (!in_array('advance_amount', $invColNames, true)) {
+            $pdo->exec("ALTER TABLE invoices ADD COLUMN advance_amount REAL NOT NULL DEFAULT 0.00");
+        }
+        if (!in_array('amount_received', $invColNames, true)) {
+            $pdo->exec("ALTER TABLE invoices ADD COLUMN amount_received REAL NOT NULL DEFAULT 0.00");
+        }
+        if (!in_array('balance_amount', $invColNames, true)) {
+            $pdo->exec("ALTER TABLE invoices ADD COLUMN balance_amount REAL NOT NULL DEFAULT 0.00");
+        }
+        if (!in_array('payment_mode', $invColNames, true)) {
+            $pdo->exec("ALTER TABLE invoices ADD COLUMN payment_mode TEXT NULL");
+        }
+        if (!in_array('transaction_reference', $invColNames, true)) {
+            $pdo->exec("ALTER TABLE invoices ADD COLUMN transaction_reference TEXT NULL");
+        }
+        if (!in_array('bank_name', $invColNames, true)) {
+            $pdo->exec("ALTER TABLE invoices ADD COLUMN bank_name TEXT NULL");
+        }
+        if (!in_array('payment_method_desc', $invColNames, true)) {
+            $pdo->exec("ALTER TABLE invoices ADD COLUMN payment_method_desc TEXT NULL");
+        }
+        if (!in_array('payment_date', $invColNames, true)) {
+            $pdo->exec("ALTER TABLE invoices ADD COLUMN payment_date TEXT NULL");
+        }
+        if (!in_array('line_items', $invColNames, true)) {
+            $pdo->exec("ALTER TABLE invoices ADD COLUMN line_items TEXT NULL");
         }
         if (!in_array('notes', $invColNames, true)) {
             $pdo->exec("ALTER TABLE invoices ADD COLUMN notes TEXT NULL");
@@ -337,16 +392,40 @@ function init_sqlite_database(string $sqliteFile): PDO
         if (!in_array('updated_at', $invColNames, true)) {
             $pdo->exec("ALTER TABLE invoices ADD COLUMN updated_at TEXT NULL");
         }
-    } catch (\Throwable) {}
+    } catch (\Throwable $e) {
+        error_log("SQLite invoices migration notice: " . $e->getMessage());
+    }
 
-    // Phase Migrations: Ensure revenue table has client_name field
+    // Phase Migrations: Ensure revenue table has required fields
     try {
         $revCols = $pdo->query("PRAGMA table_info(revenue)")->fetchAll();
         $revColNames = array_column($revCols, 'name');
         if (!in_array('client_name', $revColNames, true)) {
             $pdo->exec("ALTER TABLE revenue ADD COLUMN client_name TEXT NULL");
         }
-    } catch (\Throwable) {}
+        if (!in_array('project_id', $revColNames, true)) {
+            $pdo->exec("ALTER TABLE revenue ADD COLUMN project_id INTEGER NULL");
+        }
+        if (!in_array('transaction_reference', $revColNames, true)) {
+            $pdo->exec("ALTER TABLE revenue ADD COLUMN transaction_reference TEXT NULL");
+        }
+        if (!in_array('bank_name', $revColNames, true)) {
+            $pdo->exec("ALTER TABLE revenue ADD COLUMN bank_name TEXT NULL");
+        }
+    } catch (\Throwable $e) {
+        error_log("SQLite revenue migration notice: " . $e->getMessage());
+    }
+
+    // Phase Migrations: Ensure projects table has client_id field
+    try {
+        $projCols = $pdo->query("PRAGMA table_info(projects)")->fetchAll();
+        $projColNames = array_column($projCols, 'name');
+        if (!in_array('client_id', $projColNames, true)) {
+            $pdo->exec("ALTER TABLE projects ADD COLUMN client_id INTEGER NULL");
+        }
+    } catch (\Throwable $e) {
+        error_log("SQLite projects migration notice: " . $e->getMessage());
+    }
 
     // Phase Migrations: Ensure leads table has required fields
     try {
@@ -414,10 +493,10 @@ function init_sqlite_database(string $sqliteFile): PDO
 
         // 1. Sample Clients
         $sampleClients = [
-            ['Rajesh Menon', 'Apex Logistics India', 'rajesh@apexlogistics.in', '+91 98201 12345', '+91 98201 12399', 'Websites', 'Website Inquiry', 'Active', 'MakeIT Administrator', 'Enterprise dispatch and fleet management portal client.', date('Y-m-d H:i:s', time() - 86400 * 120), $now],
-            ['Ananya Sen', 'Kroma Design Studio', 'ananya@kromadesign.in', '+91 98302 23456', null, 'Software', 'Referral', 'Active', 'MakeIT Administrator', 'Studio portfolio maintenance and server scaling setup.', date('Y-m-d H:i:s', time() - 86400 * 90), $now],
-            ['Rohan Singhania', 'Veloce E-Commerce', 'rohan@velocefashion.in', '+91 98403 34567', '+91 98403 34599', 'AI + Automation', 'LinkedIn', 'Active', 'MakeIT Administrator', 'E-commerce headless checkout engine and automated inventory sync.', date('Y-m-d H:i:s', time() - 86400 * 60), $now],
-            ['David Kim', 'Nexus Retail Co', 'david@nexusretail.co', '+91 98504 45678', null, 'Websites', 'Cold Outreach', 'Active', 'MakeIT Administrator', 'Multi-brand e-commerce frontend redesign with Shopify Plus.', date('Y-m-d H:i:s', time() - 86400 * 45), $now]
+            ['Rajesh Menon', 'Apex Logistics India', 'rajesh@apexlogistics.in', '+91 98201 12345', '+91 98201 12399', 'Websites', 'Website Inquiry', 'Active', 'Website Tailors Administrator', 'Enterprise dispatch and fleet management portal client.', date('Y-m-d H:i:s', time() - 86400 * 120), $now],
+            ['Ananya Sen', 'Kroma Design Studio', 'ananya@kromadesign.in', '+91 98302 23456', null, 'Software', 'Referral', 'Active', 'Website Tailors Administrator', 'Studio portfolio maintenance and server scaling setup.', date('Y-m-d H:i:s', time() - 86400 * 90), $now],
+            ['Rohan Singhania', 'Veloce E-Commerce', 'rohan@velocefashion.in', '+91 98403 34567', '+91 98403 34599', 'AI + Automation', 'LinkedIn', 'Active', 'Website Tailors Administrator', 'E-commerce headless checkout engine and automated inventory sync.', date('Y-m-d H:i:s', time() - 86400 * 60), $now],
+            ['David Kim', 'Nexus Retail Co', 'david@nexusretail.co', '+91 98504 45678', null, 'Websites', 'Cold Outreach', 'Active', 'Website Tailors Administrator', 'Multi-brand e-commerce frontend redesign with Shopify Plus.', date('Y-m-d H:i:s', time() - 86400 * 45), $now]
         ];
         $clientStmt = $pdo->prepare("INSERT INTO clients (client_name, company_name, email, phone, alternate_phone, service, source, status, assigned_to, notes, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
         foreach ($sampleClients as $c) {

@@ -1,6 +1,6 @@
 <?php
 /**
- * MakeIT — Phase 5 Call Management & Analytics Verification Test Suite
+ * WebsiteTailors — Phase 5 Call Management & Analytics Verification Test Suite
  *
  * Asserts all Phase 5 requirements:
  * 1. Calls page: /admin/pages/calls.php rendering
@@ -14,7 +14,7 @@
 
 declare(strict_types=1);
 
-define('MAKEIT_INIT', true);
+define('WebsiteTailors_INIT', true);
 if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
 }
@@ -24,8 +24,8 @@ $_SESSION['admin_logged_in'] = true;
 $_SESSION['admin_data'] = [
     'id' => 1,
     'username' => 'admin',
-    'email' => 'admin@makeit.digital',
-    'full_name' => 'MakeIT Administrator',
+    'email' => 'websietailorss@gmail.com',
+    'full_name' => 'WebsiteTailors Administrator',
     'role' => 'superadmin',
     'is_active' => 1
 ];
@@ -35,7 +35,7 @@ require_once dirname(__DIR__) . '/includes/init.php';
 $pdo = Database::getInstance()->getConnection();
 
 echo "====================================================\n";
-echo "MakeIT Phase 5 Call Management Verification\n";
+echo "WebsiteTailors Phase 5 Call Management Verification\n";
 echo "====================================================\n\n";
 
 $passCount = 0;

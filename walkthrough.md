@@ -1,8 +1,8 @@
-# MakeIT Admin — Phase 7: Final CRM UX + Editing
+# WebsiteTailors Admin — Phase 7: Final CRM UX + Editing
 
 ## Overview
 
-The MakeIT Business Admin has completed **Phase 7 (Final CRM UX + Editing)**, establishing a pure **Client, Lead, Call, Follow-up, Revenue, and Analytics Management System**. Website content editing remains strictly excluded from the admin panel; the system operates as an executive business operations platform with interactive editing, custom modal confirmations, global live search, multi-dimensional filtering, deep dashboard linking, and zero hardcoded statistics.
+The WebsiteTailors Business Admin has completed **Phase 7 (Final CRM UX + Editing)**, establishing a pure **Client, Lead, Call, Follow-up, Revenue, and Analytics Management System**. Website content editing remains strictly excluded from the admin panel; the system operates as an executive business operations platform with interactive editing, custom modal confirmations, global live search, multi-dimensional filtering, deep dashboard linking, and zero hardcoded statistics.
 
 ---
 
@@ -11,15 +11,15 @@ The MakeIT Business Admin has completed **Phase 7 (Final CRM UX + Editing)**, es
 ### 1. Universal Business Record Editing
 Every business record in the system now supports editing:
 
-* **Clients ([clients.php](file:///Users/apple/Downloads/Coding%20Station/MakeIT/admin/pages/clients.php))**:
+* **Clients ([clients.php](file:///Users/apple/Downloads/Coding%20Station/WebsiteTailors/admin/pages/clients.php))**:
   * Edit modal with live validation for name, company, email, phone, alternate phone, service, source, status (`New`, `Active`, `Inactive`, `Completed`), and notes.
   * **Strict Explicit-Only Client Creation**: Clients are **never** created automatically through background actions (such as generating invoices, recording revenue, logging call outcomes, changing lead status, editing leads, or importing leads via Excel). New clients are only created when an admin explicitly adds them via `+ Add Client` or explicitly clicks the manual `Convert to Client` action button on a lead.
-* **Leads ([leads.php](file:///Users/apple/Downloads/Coding%20Station/MakeIT/admin/pages/leads.php))**:
+* **Leads ([leads.php](file:///Users/apple/Downloads/Coding%20Station/WebsiteTailors/admin/pages/leads.php))**:
   * **Add Lead Option**: Added `+ Add Lead` button in the page header opening `#addLeadModal`, enabling commercial teams to directly input inbound phone, referral, and manual inquiries into the CRM. Supports name, company, phone, email, service required, budget range, initial lead stage, call status, source, and scope notes.
   * **Edit Lead Action**: Added dedicated `action === 'edit_lead'` POST handler and `#editLeadModal` with fields for name, company, email, phone, service, budget, source, status (`New`, `Contacted`, `Qualified`, `Proposal Sent`, `Converted`, `Lost`), call status (`Not Called`, `Called`, `Call Back`, `No Answer`, `Not Interested`), and notes.
-* **Calls ([calls.php](file:///Users/apple/Downloads/Coding%20Station/MakeIT/admin/pages/calls.php))**:
+* **Calls ([calls.php](file:///Users/apple/Downloads/Coding%20Station/WebsiteTailors/admin/pages/calls.php))**:
   * Edit call modal allowing updates to date, time, outcome (`Connected`, `No Answer`, `Call Back`, `Not Interested`, `Converted`), notes, and next follow-up datetime with automatic synchronization to linked lead records.
-* **Revenue ([revenue.php](file:///Users/apple/Downloads/Coding%20Station/MakeIT/admin/pages/revenue.php))**:
+* **Revenue ([revenue.php](file:///Users/apple/Downloads/Coding%20Station/WebsiteTailors/admin/pages/revenue.php))**:
   * Edit revenue ledger entry with strict numeric validation (amount is never stored as string), payment status (`Pending`, `Partially Paid`, `Paid`, `Refunded`), payment type (`UPI`, `Bank Transfer`, `Cash`, `Card`, `Other`), date, and service category. Supports direct client attribution without forcing client record creation.
 
 ### 2. Elimination of Native Browser `alert()` and `confirm()`
@@ -29,9 +29,9 @@ Every business record in the system now supports editing:
 * Tested and confirmed: **0 native browser `alert()` or `confirm()` calls** exist in the active admin codebase.
 
 ### 3. Global CRM Search
-* **Search Endpoint ([ajax_search.php](file:///Users/apple/Downloads/Coding%20Station/MakeIT/admin/ajax_search.php))**:
+* **Search Endpoint ([ajax_search.php](file:///Users/apple/Downloads/Coding%20Station/WebsiteTailors/admin/ajax_search.php))**:
   * Real-time query endpoint searching across `clients` and `leads` by name, company, phone, and email using PDO prepared statements.
-* **Top Bar Interface ([admin_header.php](file:///Users/apple/Downloads/Coding%20Station/MakeIT/admin/includes/admin_header.php) & [admin.js](file:///Users/apple/Downloads/Coding%20Station/MakeIT/assets/js/admin.js))**:
+* **Top Bar Interface ([admin_header.php](file:///Users/apple/Downloads/Coding%20Station/WebsiteTailors/admin/includes/admin_header.php) & [admin.js](file:///Users/apple/Downloads/Coding%20Station/WebsiteTailors/assets/js/admin.js))**:
   * Omnibox with keyboard shortcut (`/` or `Cmd+K`), debounced live query preview dropdown categorized into Clients and Leads with direct jump links.
 
 ### 4. Multi-Dimensional Filters

@@ -1,6 +1,6 @@
 <?php
 /**
- * MakeIT - Excel & CSV Lead Importer Service (Phase 8)
+ * WebsiteTailors - Excel & CSV Lead Importer Service (Phase 8)
  *
  * Implements hardened, enterprise-grade lead importing:
  * - Supports .xlsx (via PhpSpreadsheet) and .csv (via native PHP)
@@ -15,8 +15,8 @@
 
 declare(strict_types=1);
 
-if (!defined('MAKEIT_INIT')) {
-    define('MAKEIT_INIT', true);
+if (!defined('WebsiteTailors_INIT')) {
+    define('WebsiteTailors_INIT', true);
 }
 
 if (!class_exists(\PhpOffice\PhpSpreadsheet\IOFactory::class) && file_exists(dirname(__DIR__) . '/vendor/autoload.php')) {

@@ -1,6 +1,6 @@
 <?php
 /**
- * MakeIT — Comprehensive Production-Ready Lead Flow & Security Test Suite
+ * WebsiteTailors — Comprehensive Production-Ready Lead Flow & Security Test Suite
  *
  * Tests:
  * 1. Client & Server-side Validation (Name, Email, Phone, Company, Service, Budget, Message)
@@ -13,11 +13,11 @@
 
 declare(strict_types=1);
 
-define('MAKEIT_INIT', true);
+define('WebsiteTailors_INIT', true);
 require_once __DIR__ . '/../includes/init.php';
 
 echo "====================================================\n";
-echo "MakeIT Contact & Lead System Production Test Suite\n";
+echo "WebsiteTailors Contact & Lead System Production Test Suite\n";
 echo "====================================================\n\n";
 
 $db = Database::getInstance();
@@ -235,7 +235,7 @@ assertCheck(empty($deletedCheck), 'Admin delete permanently removes lead inquiry
 // ---------------------------------------------------------------------------
 echo "\nTest Group 6: Public API Endpoint Integration\n";
 
-$cookieJar = tempnam(sys_get_temp_dir(), 'makeit_cookie_');
+$cookieJar = tempnam(sys_get_temp_dir(), 'WebsiteTailors_cookie_');
 
 // Step 1: Visitor visits /index.php to initialize session and acquire CSRF token
 $ch = curl_init('http://127.0.0.1:8088/index.php');
@@ -255,7 +255,7 @@ curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, [
     'csrf_token'  => $sessionCsrfToken,
     'name'        => 'API Integration Tester',
-    'email'       => 'api.tester@makeit.digital',
+    'email'       => 'api.tester@WebsiteTailors.digital',
     'phone'       => '+1 555 123 4567',
     'company'     => 'Integration Lab',
     'service'     => 'Software',
@@ -282,7 +282,7 @@ assertCheck(
 
 // Clean up test lead and temporary cookie file
 @unlink($cookieJar);
-$db->delete('leads', "email = 'api.tester@makeit.digital'");
+$db->delete('leads', "email = 'api.tester@WebsiteTailors.digital'");
 
 echo "\n====================================================\n";
 echo sprintf("Lead System Results: %d / %d Tests Passed (%.1f%%)\n", $testsPassed, $totalTests, ($testsPassed / max(1, $totalTests)) * 100);

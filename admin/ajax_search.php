@@ -1,6 +1,6 @@
 <?php
 /**
- * MakeIT Admin — Global CRM Search Endpoint
+ * WebsiteTailors Admin — Global CRM Search Endpoint
  *
  * Searches across:
  * - Clients (name, company, phone, email)
@@ -11,8 +11,8 @@
 
 declare(strict_types=1);
 
-if (!defined('MAKEIT_INIT')) {
-    define('MAKEIT_INIT', true);
+if (!defined('WebsiteTailors_INIT')) {
+    define('WebsiteTailors_INIT', true);
 }
 require_once __DIR__ . '/includes/auth_guard.php';
 

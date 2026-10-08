@@ -1,18 +1,18 @@
 <?php
 /**
- * MakeIT — Services Showcase Page
+ * WebsiteTailors — Services Showcase Page
  */
 
 declare(strict_types=1);
 
-define('MAKEIT_INIT', true);
+define('WebsiteTailors_INIT', true);
 require_once __DIR__ . '/includes/init.php';
 
 $settings = get_all_settings();
 $services = get_services();
 
-$pageTitle = 'Services — ' . ($settings['company_name'] ?? 'MakeIT');
-$pageDescription = 'Bespoke web architecture, custom software platforms, and AI automation workflows built by MakeIT.';
+$pageTitle = 'Website Design & Redesign Services in Bangalore | Website Tailors';
+$pageDescription = 'Website Tailors offers Website Design for New Businesses, Website Redesign, WhatsApp Automation, and Website + WhatsApp packages in Bangalore.';
 $activePage = 'services';
 
 require_once __DIR__ . '/includes/header.php';

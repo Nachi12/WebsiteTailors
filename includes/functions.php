@@ -1,6 +1,6 @@
 <?php
 /**
- * MakeIT - General Utility & Helper Functions
+ * WebsiteTailors - General Utility & Helper Functions
  * 
  * Provides flash messaging, redirection, JSON responses,
  * site settings helpers, slug generation, and formatting.
@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-if (!defined('MAKEIT_INIT')) {
+if (!defined('WebsiteTailors_INIT')) {
     die('Direct access not permitted.');
 }
 
@@ -134,22 +134,22 @@ function get_all_settings(bool $refresh = false): array
     }
 
     $defaults = [
-        'company_name'       => 'MakeIT',
-        'tagline'            => 'We Make Digital Things Work.',
-        'email'              => 'hello@makeit.digital',
-        'phone'              => '9035344513',
-        'address'            => 'Bangalore-560010, karnataka. India',
-        'linkedin'           => 'https://linkedin.com/company/makeit',
-        'instagram'          => 'https://instagram.com/makeit.digital',
-        'facebook'           => 'https://facebook.com/makeitdigital',
-        'github'             => 'https://github.com/makeit',
-        'twitter'            => 'https://x.com/makeitdigital',
+        'company_name'       => 'Website Tailors',
+        'tagline'            => 'Affordable Business Websites & WhatsApp Automation in Bangalore',
+        'email'              => 'websietailorss@gmail.com',
+        'phone'              => '+91 9380552034',
+        'address'            => 'Bangalore, Karnataka, India',
+        'linkedin'           => 'https://linkedin.com/company/websitetailors',
+        'instagram'          => 'https://instagram.com/websitetailors',
+        'facebook'           => 'https://facebook.com/websitetailors',
+        'github'             => 'https://github.com/websitetailors',
+        'twitter'            => 'https://x.com/websitetailors',
         'logo'               => '/assets/images/logo.svg',
         'favicon'            => '/assets/images/favicon.svg',
-        'meta_title'         => 'MakeIT — We Make Digital Things Work',
-        'meta_description'   => 'MakeIT designs and builds websites, software, AI automation and digital experiences that actually work.',
+        'meta_title'         => 'Affordable Website Design in Bangalore | Website Tailors',
+        'meta_description'   => 'Don\'t have a website yet? Or is your current one outdated? Website Tailors builds and redesigns fast, affordable business websites in Bangalore. Get a free quote.',
         'primary_color'      => '#b8ff3d',
-        'announcement_text'  => 'Now booking client projects for Q3/Q4'
+        'announcement_text'  => 'Now booking website projects in Bangalore'
     ];
 
     try {
@@ -225,15 +225,15 @@ function get_hero_content(): array
     }
 
     $defaults = [
-        'badge_text'            => 'Digital studio / 2026',
-        'headline'              => "WE BUILD\nDIGITAL\nPRODUCTS\nTHAT SCALE.",
-        'subheadline'           => 'Award-winning software engineering and architecture.',
-        'description'           => 'MakeIT transforms complex systems into high-performing platforms.',
-        'primary_button_text'   => 'Get in Touch',
+        'badge_text'            => 'Website Design & Redesign Studio / Bangalore',
+        'headline'              => "AFFORDABLE WEBSITES\nFOR BUSINESSES IN\nBANGALORE.",
+        'subheadline'           => 'Running a business without a website? Or stuck with one that looks outdated? We build new websites and redesign old ones, fast, clean and at prices small businesses can afford.',
+        'description'           => 'Running a business without a website? Or stuck with one that looks outdated? We build new websites and redesign old ones, fast, clean and at prices small businesses can afford.',
+        'primary_button_text'   => 'Get a Free Quote',
         'primary_button_link'   => '#contact',
-        'secondary_button_text' => 'View Showcase',
+        'secondary_button_text' => 'See Our Work',
         'secondary_button_link' => '#work',
-        'stats_json'            => '[{"label":"Client Satisfaction","value":"99.4%"},{"label":"Projects Shipped","value":"150+"},{"label":"Avg Performance","value":"98/100"},{"label":"System Reliability","value":"99.9%"}]'
+        'stats_json'            => '[{"label":"Starting Price","value":"₹[STARTING PRICE]"},{"label":"Delivery","value":"[X] days"},{"label":"Consultation","value":"Free"}]'
     ];
 
     try {
@@ -271,20 +271,20 @@ function get_services(): array
     $defaults = [
         [
             'id' => 1,
-            'title' => 'Website Development',
-            'slug' => 'website-development',
-            'short_description' => 'High-performing business websites and landing pages designed to look professional, load fast and turn visitors into customers.',
-            'long_description' => 'High-performing business websites and landing pages designed to look professional, load fast and turn visitors into customers.',
+            'title' => 'Website Design for New Businesses',
+            'slug' => 'website-design-new-businesses',
+            'short_description' => 'A complete business website for shops, clinics, studios, restaurants, coaches and service providers. Mobile-friendly, fast, with SEO basics built in.',
+            'long_description' => 'A complete business website for shops, clinics, studios, restaurants, coaches and service providers. Mobile-friendly, fast, with SEO basics built in.',
             'icon' => 'code',
             'display_order' => 1,
             'status' => 'published'
         ],
         [
             'id' => 2,
-            'title' => 'Website Refinement',
-            'slug' => 'website-refinement',
-            'short_description' => 'Already have a website? We refine its design, UX, responsiveness and performance to make it cleaner, faster and easier to use.',
-            'long_description' => 'Already have a website? We refine its design, UX, responsiveness and performance to make it cleaner, faster and easier to use.',
+            'title' => 'Website Redesign',
+            'slug' => 'website-redesign',
+            'short_description' => 'Better design, faster loading and a layout that makes it easier for visitors to contact your business, without starting from scratch.',
+            'long_description' => 'Better design, faster loading and a layout that makes it easier for visitors to contact your business, without starting from scratch.',
             'icon' => 'layout',
             'display_order' => 2,
             'status' => 'published'
@@ -293,10 +293,20 @@ function get_services(): array
             'id' => 3,
             'title' => 'WhatsApp Automation',
             'slug' => 'whatsapp-automation',
-            'short_description' => 'Automate enquiries, follow-ups, notifications and repetitive customer workflows through WhatsApp.',
-            'long_description' => 'Automate enquiries, follow-ups, notifications and repetitive customer workflows through WhatsApp.',
+            'short_description' => 'Auto-replies, enquiry capture, booking reminders and follow-ups on WhatsApp.',
+            'long_description' => 'Auto-replies, enquiry capture, booking reminders and follow-ups on WhatsApp.',
             'icon' => 'message-square',
             'display_order' => 3,
+            'status' => 'published'
+        ],
+        [
+            'id' => 4,
+            'title' => 'Website + WhatsApp Package',
+            'slug' => 'website-whatsapp-package',
+            'short_description' => 'A website and WhatsApp automation set up together for businesses that want to turn more website visitors into enquiries.',
+            'long_description' => 'A website and WhatsApp automation set up together for businesses that want to turn more website visitors into enquiries.',
+            'icon' => 'layers',
+            'display_order' => 4,
             'status' => 'published'
         ]
     ];
@@ -305,8 +315,10 @@ function get_services(): array
         $db = Database::getInstance();
         if ($db->isConnected()) {
             $rows = $db->fetchAll("SELECT * FROM services WHERE status = 'published' ORDER BY display_order ASC, id ASC");
-            $cachedServices = $rows;
-            return $cachedServices;
+            if (!empty($rows)) {
+                $cachedServices = $rows;
+                return $cachedServices;
+            }
         }
     } catch (\Throwable $e) {
         error_log("get_services notice: " . $e->getMessage());
@@ -334,27 +346,27 @@ function get_projects(?string $category = null, ?int $limit = null): array
     $defaults = [
         [
             'id' => 1,
-            'title' => 'Apex Logistics Portal',
-            'slug' => 'apex-logistics-portal',
-            'category' => 'Website',
-            'client_name' => 'Apex Global Freight',
-            'description' => 'A real-time dispatch and fleet management dashboard handling thousands of daily freight consignments with sub-second response times.',
-            'image' => '/assets/images/projects/apex-portal.webp',
-            'project_url' => 'https://example.com/apex',
-            'tags' => 'PHP 8, MySQL, Custom Dashboard, Vanilla JS',
+            'title' => 'Apex Logistics',
+            'slug' => 'apex-logistics',
+            'category' => 'Website Concept',
+            'client_name' => 'Apex Freight Concept',
+            'description' => 'A real-time dispatch and logistics management interface concept built for high performance and clean operations.',
+            'image' => '/assets/images/projects/apex-logistics.jpg',
+            'project_url' => '#contact',
+            'tags' => 'PHP 8, SQLite, Custom Dashboard, Vanilla JS',
             'display_order' => 1,
             'is_featured' => 1,
             'status' => 'published'
         ],
         [
             'id' => 2,
-            'title' => 'Kroma Design Studio',
-            'slug' => 'kroma-design-studio',
-            'category' => 'Software',
-            'client_name' => 'Kroma Creative',
-            'description' => 'An immersive, award-winning agency portfolio showcasing typography excellence, dynamic dark-mode interactions, and smooth transitions.',
-            'image' => '/assets/images/projects/kroma-studio.webp',
-            'project_url' => 'https://example.com/kroma',
+            'title' => 'Kroma Studio',
+            'slug' => 'kroma-studio',
+            'category' => 'Redesign Concept',
+            'client_name' => 'Kroma Design Concept',
+            'description' => 'An agency portfolio showcase built with dynamic dark-mode interactions, typography emphasis, and responsive layouts.',
+            'image' => '/assets/images/projects/kroma-studio.jpg',
+            'project_url' => '#contact',
             'tags' => 'Vanilla CSS, Animation, Semantic HTML5',
             'display_order' => 2,
             'is_featured' => 1,
@@ -362,27 +374,27 @@ function get_projects(?string $category = null, ?int $limit = null): array
         ],
         [
             'id' => 3,
-            'title' => 'Veloce E-Commerce Engine',
-            'slug' => 'veloce-ecommerce-engine',
-            'category' => 'AI + Automation',
-            'client_name' => 'Veloce Luxury Wear',
-            'description' => 'Custom lightweight e-commerce storefront with instantaneous product filtering, zero framework bloat, and frictionless checkout.',
-            'image' => '/assets/images/projects/veloce-engine.webp',
-            'project_url' => 'https://example.com/veloce',
-            'tags' => 'Custom Cart, Payment APIs, SEO Optimized',
+            'title' => 'Veloce E-Commerce',
+            'slug' => 'veloce-ecommerce',
+            'category' => 'Demo Project',
+            'client_name' => 'Veloce Storefront Demo',
+            'description' => 'A lightweight storefront concept with instant product filtering, clean visual structure, and mobile-first checkout.',
+            'image' => '/assets/images/projects/veloce-ecommerce.jpg',
+            'project_url' => '#contact',
+            'tags' => 'Custom Cart, Responsive UI, SEO Optimized',
             'display_order' => 3,
             'is_featured' => 1,
             'status' => 'published'
         ],
         [
             'id' => 4,
-            'title' => 'OmniFlow Workflow Automation',
-            'slug' => 'omniflow-workflow-automation',
-            'category' => 'Digital System',
-            'client_name' => 'OmniFlow Tech',
-            'description' => 'Internal operational engine synchronizing CRM data, automated invoicing, and multi-tier employee approval pipelines.',
-            'image' => '/assets/images/projects/omniflow.webp',
-            'project_url' => 'https://example.com/omniflow',
+            'title' => 'OmniFlow Automation',
+            'slug' => 'omniflow-automation',
+            'category' => 'Digital System Concept',
+            'client_name' => 'OmniFlow Prototype',
+            'description' => 'An operational workflow interface prototype for client CRM management, automated invoicing, and task approvals.',
+            'image' => '/assets/images/projects/omniflow-automation.jpg',
+            'project_url' => '#contact',
             'tags' => 'REST APIs, Background Workers, Role Security',
             'display_order' => 4,
             'is_featured' => 0,
@@ -492,41 +504,7 @@ function get_testimonials(?int $limit = null): array
         return $cachedTestimonials[$cacheKey];
     }
 
-    $defaults = [
-        [
-            'id' => 1,
-            'client_name' => 'Rajesh Menon',
-            'company' => 'Apex Logistics India',
-            'position' => 'Chief Technology Officer',
-            'content' => 'MakeIT transformed our dispatch platform from a sluggish legacy headache into a blisteringly fast powerhouse. The speed and clarity of their engineering is unparalleled.',
-            'rating' => 5,
-            'image' => '/assets/images/testimonials/rajesh.webp',
-            'display_order' => 1,
-            'status' => 'published'
-        ],
-        [
-            'id' => 2,
-            'client_name' => 'Ananya Sen',
-            'company' => 'Kroma Design Studio',
-            'position' => 'Founder & Creative Director',
-            'content' => 'Working with MakeIT was seamless. They understood both the delicate aesthetic nuances of our brand and the strict architectural requirements under the hood.',
-            'rating' => 5,
-            'image' => '/assets/images/testimonials/ananya.webp',
-            'display_order' => 2,
-            'status' => 'published'
-        ],
-        [
-            'id' => 3,
-            'client_name' => 'Rohan Singhania',
-            'company' => 'Veloce E-Commerce',
-            'position' => 'Managing Director',
-            'content' => 'Our online store conversion jumped by 34% within the first month after MakeIT rebuilt our checkout flow. Zero framework bloat, lightning speed, and total reliability.',
-            'rating' => 5,
-            'image' => '/assets/images/testimonials/rohan.webp',
-            'display_order' => 3,
-            'status' => 'published'
-        ]
-    ];
+    $defaults = [];
 
     try {
         $db = Database::getInstance();
@@ -599,7 +577,7 @@ function get_image_url(?string $path, string $type = 'project'): string
 }
 
 /**
- * Get core company principles
+ * Get core problem & positioning principles (Phase 5)
  *
  * @return array<int, array{number: string, title: string, description: string}>
  */
@@ -607,24 +585,97 @@ function get_principles(): array
 {
     return [
         [
-            'number'      => '01 / COMMUNICATION',
-            'title'       => 'Clear communication.',
-            'description' => "No disappearing acts. You always know what's happening, what's next and why."
+            'number'      => '01 / NEW ONLINE',
+            'title'       => 'No website yet?',
+            'description' => 'Your customers are already searching on Google. We put your business online with a professional site, WhatsApp button and Google-friendly setup.'
         ],
         [
-            'number'      => '02 / DESIGN',
-            'title'       => 'Design first.',
-            'description' => 'We solve the experience before jumping into the code.'
+            'number'      => '02 / REDESIGN',
+            'title'       => 'Website looks outdated?',
+            'description' => 'We redesign it so it looks modern, loads fast, works on phones and is structured for better search visibility.'
         ],
         [
-            'number'      => '03 / TECHNOLOGY',
-            'title'       => 'Built to scale.',
-            'description' => 'Clean architecture and practical technology that can grow with your business.'
+            'number'      => '03 / AUTOMATION',
+            'title'       => 'Want to save time on enquiries?',
+            'description' => 'We connect your site to WhatsApp so enquiries and follow-ups can be handled more efficiently.'
+        ]
+    ];
+}
+
+/**
+ * Fetch Pricing Packages (Phase 7)
+ *
+ * @return array<int, array{name: string, best_for: string, price: string, features: array<int, string>}>
+ */
+function get_pricing_packages(): array
+{
+    return [
+        [
+            'name'     => 'Starter Website',
+            'best_for' => 'Businesses going online for the first time',
+            'price'    => 'Starting at ₹[STARTING PRICE]',
+            'features' => [
+                'Complete business website',
+                'Mobile-friendly & fast loading',
+                'Google-friendly SEO basics',
+                'WhatsApp click-to-chat button',
+                'Enquiry form setup'
+            ]
         ],
         [
-            'number'      => '04 / AI',
-            'title'       => 'AI where it helps.',
-            'description' => "We use AI when it creates real value — not just because it's trending."
+            'name'     => 'Redesign',
+            'best_for' => 'Businesses with an old website',
+            'price'    => 'Starting at ₹[STARTING PRICE]',
+            'features' => [
+                'Modern visual redesign',
+                'Faster page loading speed',
+                'Mobile usability optimization',
+                'Re-structured contact flow',
+                'SEO metadata preservation'
+            ]
+        ],
+        [
+            'name'     => 'Website + WhatsApp',
+            'best_for' => 'Businesses wanting more enquiries',
+            'price'    => 'Starting at ₹[STARTING PRICE]',
+            'features' => [
+                'Complete business website',
+                'WhatsApp auto-replies & workflows',
+                'Automated enquiry capture',
+                'Instant lead alerts',
+                'Full setup & launch support'
+            ]
+        ]
+    ];
+}
+
+/**
+ * Fetch Frequently Asked Questions (Phase 9)
+ *
+ * @return array<int, array{question: string, answer: string}>
+ */
+function get_faqs(): array
+{
+    return [
+        [
+            'question' => 'How much does a website cost in Bangalore?',
+            'answer'   => 'Pricing depends on your specific requirements such as page count and features. We offer clear upfront quotes with no hidden charges starting at ₹[STARTING PRICE].'
+        ],
+        [
+            'question' => 'I already run a business. Do I really need a website?',
+            'answer'   => 'Yes. Most customers look for local businesses on Google before calling or visiting. A website gives your business credibility and makes it easy for customers to contact you.'
+        ],
+        [
+            'question' => 'Can you redesign my existing website?',
+            'answer'   => 'Yes, we specialize in redesigning outdated websites to improve loading speed, mobile usability, visual design and search visibility.'
+        ],
+        [
+            'question' => 'How long does it take?',
+            'answer'   => 'Most business websites are planned, designed and launched within [X] days depending on scope and feedback cycles.'
+        ],
+        [
+            'question' => 'Will my website show up on Google?',
+            'answer'   => 'Yes, every website we build includes clean HTML structure, essential meta tags, sitemap submission and basic local SEO setup so search engines can index your pages.'
         ]
     ];
 }
@@ -681,23 +732,12 @@ function process_lead_inquiry(array $input): array
     }
     $source   = sanitize_text($input['source'] ?? $input['lead_source'] ?? 'Website Questionnaire');
 
-    // Strict validation for Website Questionnaire submissions
-    if ($source === 'Website Questionnaire' || !empty($input['qn_questionnaire'])) {
-        if (empty($service)) {
-            return ['success' => false, 'error' => 'Please select a service before continuing.', 'message' => ''];
-        }
-        if (empty($company)) {
-            return ['success' => false, 'error' => 'Please enter your business or brand name.', 'message' => ''];
-        }
-        if (empty($goal)) {
-            return ['success' => false, 'error' => 'Please select a project goal.', 'message' => ''];
-        }
-        if (empty($budget)) {
-            return ['success' => false, 'error' => 'Please select an estimated budget range.', 'message' => ''];
-        }
-        if (empty($phone)) {
-            return ['success' => false, 'error' => 'Please provide a valid phone or WhatsApp number.', 'message' => ''];
-        }
+    // Validation for Website Questionnaire and Contact submissions
+    if (empty($name)) {
+        return ['success' => false, 'error' => 'Please enter your name.', 'message' => ''];
+    }
+    if (empty($phone) && empty($email)) {
+        return ['success' => false, 'error' => 'Please provide a valid phone number or email address.', 'message' => ''];
     }
 
     $message  = '';
@@ -708,7 +748,7 @@ function process_lead_inquiry(array $input): array
         $message .= (!empty($message) ? " | " : "") . "Details: " . $details;
     }
     if (empty($message)) {
-        $message = "Submitted via MakeIT Interactive Project Questionnaire.";
+        $message = "Submitted via Website Tailors Interactive Project Questionnaire.";
     }
 
     // 5. Duplicate Protection & Rapid Flood Prevention:
@@ -785,7 +825,7 @@ function process_lead_inquiry(array $input): array
 
     // Message: required, min 5 characters, max 5000 characters
     if (empty($message) || mb_strlen($message) < 5) {
-        $message = "Submitted via MakeIT Interactive Project Questionnaire.";
+        $message = "Submitted via Website Tailors Interactive Project Questionnaire.";
     }
     if (mb_strlen($message) > 5000) {
         return ['success' => false, 'error' => 'Project details message cannot exceed 5,000 characters.', 'message' => ''];
@@ -820,7 +860,7 @@ function process_lead_inquiry(array $input): array
         } else {
             // If DB is temporarily offline, safely record to error log so inquiry is not lost
             error_log(sprintf(
-                "[MakeIT Lead (Offline DB)] Name: %s | Email: %s | Company: %s | Service: %s | Msg: %s",
+                "[Website Tailors Lead (Offline DB)] Name: %s | Email: %s | Company: %s | Service: %s | Msg: %s",
                 $name, $email, $company, $service, $message
             ));
         }
@@ -915,7 +955,7 @@ function normalize_phone_number(string $phone): string
         return $clean;
     }
 
-    // 10-digit Indian number: prepend 0 for Exotel standard (e.g. 9035344513 -> 09035344513)
+    // 10-digit Indian number: prepend 0 for Exotel standard (e.g. 9380552034 -> 09380552034)
     if (strlen($clean) === 10 && preg_match('/^[6-9]\d{9}$/', $clean)) {
         return '0' . $clean;
     }
@@ -1046,208 +1086,30 @@ function exotel_click_to_call(string $agentPhone, string $clientPhone, ?string $
  */
 function render_project_preview_html(array $project): string
 {
-    $slug = strtolower((string)($project['slug'] ?? ''));
-    $title = (string)($project['title'] ?? '');
-    $category = (string)($project['category'] ?? '');
+    $slug   = strtolower((string)($project['slug'] ?? ''));
+    $title  = (string)($project['title'] ?? '');
     $imgUrl = get_image_url($project['image'] ?? $project['image_path'] ?? null, 'project');
 
+    $urlText = 'https://' . slugify($title) . '.com';
     if (strpos($slug, 'apex') !== false || strpos(strtolower($title), 'apex') !== false) {
-        return '
-        <div class="preview-site preview-apex">
-          <div class="browser-address">
-            <span class="browser-lock">🔒</span>
-            <span class="browser-url-text">https://apex-logistics.com/portal/dispatch</span>
-          </div>
-          <div class="apex-header">
-            <div class="apex-logo"><span class="apex-icon">▲</span> APEX <strong>LOGISTICS</strong></div>
-            <div class="apex-nav">
-              <span>Fleet</span>
-              <span>Consignments</span>
-              <span>Live Tracking</span>
-              <span>Rates</span>
-            </div>
-            <div class="apex-status-pill">● System Online</div>
-          </div>
-          <div class="apex-hero" style="background-image: linear-gradient(180deg, rgba(10, 18, 30, 0.75) 0%, rgba(10, 18, 30, 0.92) 100%), url(\'' . e($imgUrl) . '\');">
-            <div>
-              <div class="apex-eyebrow">GLOBAL FREIGHT &amp; TELEMETRY</div>
-              <h4 class="apex-title">Real-Time Dispatch &amp; Fleet Control</h4>
-              <div class="apex-search-box">
-                <span class="apex-search-icon">🔍</span>
-                <span class="apex-search-input">Enter Container / Airway Bill (e.g. APX-9842-US)...</span>
-                <button class="apex-search-btn" type="button">Track Freight ↗</button>
-              </div>
-            </div>
-            <div class="apex-metrics">
-              <div class="apex-metric-card">
-                <div class="apex-metric-val">14,280</div>
-                <div class="apex-metric-lbl">Active Consignments</div>
-              </div>
-              <div class="apex-metric-card">
-                <div class="apex-metric-val">99.8%</div>
-                <div class="apex-metric-lbl">On-Time Dispatch</div>
-              </div>
-              <div class="apex-metric-card">
-                <div class="apex-metric-val">42ms</div>
-                <div class="apex-metric-lbl">Telemetry Latency</div>
-              </div>
-            </div>
-          </div>
-        </div>';
+        $urlText = 'https://apex-logistics.com/portal/dispatch';
+    } elseif (strpos($slug, 'kroma') !== false || strpos(strtolower($title), 'kroma') !== false) {
+        $urlText = 'https://kroma.design';
+    } elseif (strpos($slug, 'veloce') !== false || strpos(strtolower($title), 'veloce') !== false) {
+        $urlText = 'https://veloce-store.com/shop';
+    } elseif (strpos($slug, 'omniflow') !== false || strpos(strtolower($title), 'omniflow') !== false) {
+        $urlText = 'https://app.omniflow.io/workflows/crm-sync';
     }
 
-    if (strpos($slug, 'kroma') !== false || strpos(strtolower($title), 'kroma') !== false) {
-        return '
-        <div class="preview-site preview-kroma">
-          <div class="browser-address">
-            <span class="browser-lock">🔒</span>
-            <span class="browser-url-text">https://kroma.design</span>
-          </div>
-          <div class="kroma-header">
-            <div class="kroma-logo">KROMA™</div>
-            <div class="kroma-nav">
-              <span class="active">WORK</span>
-              <span>STUDIO</span>
-              <span>JOURNAL</span>
-              <span>CONTACT</span>
-            </div>
-            <div class="kroma-cta">LET\'S TALK ↗</div>
-          </div>
-          <div class="kroma-body">
-            <div>
-              <div class="kroma-eyebrow">DESIGN &amp; ARCHITECTURAL DIRECTION</div>
-              <h4 class="kroma-title">CRAFTING DIGITAL ELEGANCE &amp; ARCHITECTURAL DISRUPTION</h4>
-            </div>
-            <div class="kroma-grid">
-              <div class="kroma-card">
-                <div class="kroma-card-img" style="background-image: url(\'' . e($imgUrl) . '\');"></div>
-                <div class="kroma-card-meta">
-                  <span class="kroma-card-title">AURA ARCHITECTURE STUDIO</span>
-                  <span class="kroma-card-cat">INTERIOR / 2026</span>
-                </div>
-              </div>
-              <div class="kroma-card kroma-card-text">
-                <div class="kroma-quote">"Form follows function. Precision rules execution."</div>
-                <div class="kroma-tag-list">
-                  <span>MINIMALISM</span>
-                  <span>TYPOGRAPHY</span>
-                  <span>SPATIAL UX</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>';
-    }
-
-    if (strpos($slug, 'veloce') !== false || strpos(strtolower($title), 'veloce') !== false) {
-        return '
-        <div class="preview-site preview-veloce">
-          <div class="browser-address">
-            <span class="browser-lock">🔒</span>
-            <span class="browser-url-text">https://veloce-store.com/shop</span>
-          </div>
-          <div class="veloce-top-bar">SPRING COLLECTION \'26 — FREE EXPRESS SHIPPING WORLDWIDE</div>
-          <div class="veloce-header">
-            <div class="veloce-logo">VELOCE</div>
-            <div class="veloce-nav">
-              <span>New Arrivals</span>
-              <span class="active">Apparel</span>
-              <span>Footwear</span>
-              <span>Accessories</span>
-            </div>
-            <div class="veloce-cart">BAG (2)</div>
-          </div>
-          <div class="veloce-body">
-            <div class="veloce-product-layout">
-              <div class="veloce-img-box" style="background-image: url(\'' . e($imgUrl) . '\');">
-                <span class="veloce-badge">NEW ARRIVAL</span>
-              </div>
-              <div class="veloce-details">
-                <div>
-                  <div class="veloce-cat">MENSWEAR / ESSENTIALS</div>
-                  <h4 class="veloce-name">Technical Tailored Wool Trench</h4>
-                  <div class="veloce-rating">★★★★★ <span class="veloce-count">(148 reviews)</span></div>
-                  <div class="veloce-price">$340.00 <span class="veloce-stock">In Stock</span></div>
-                </div>
-                <div class="veloce-options">
-                  <div class="veloce-opt-label">COLOR: <strong>SAND BEIGE</strong></div>
-                  <div class="veloce-swatches">
-                    <span class="swatch active" style="background: #d4c5b3;"></span>
-                    <span class="swatch" style="background: #1a1a1a;"></span>
-                    <span class="swatch" style="background: #4a5043;"></span>
-                  </div>
-                </div>
-                <button class="veloce-btn" type="button">Add to Bag ↗</button>
-              </div>
-            </div>
-          </div>
-        </div>';
-    }
-
-    if (strpos($slug, 'omniflow') !== false || strpos(strtolower($title), 'omniflow') !== false) {
-        return '
-        <div class="preview-site preview-omniflow">
-          <div class="browser-address">
-            <span class="browser-lock">🔒</span>
-            <span class="browser-url-text">https://app.omniflow.io/workflows/crm-sync</span>
-          </div>
-          <div class="omni-header">
-            <div class="omni-brand">
-              <span class="omni-logo-icon">⚡</span>
-              <span class="omni-name">OMNIFLOW</span>
-            </div>
-            <div class="omni-breadcrumb">Workflows / Customer Onboarding Pipeline #04</div>
-            <div class="omni-status">● Live Engine (12ms)</div>
-          </div>
-          <div class="omni-body">
-            <div class="omni-sidebar">
-              <div class="omni-side-item active">⚡ Flows</div>
-              <div class="omni-side-item">📊 Metrics</div>
-              <div class="omni-side-item">🔗 APIs</div>
-              <div class="omni-side-item">🛡️ Security</div>
-            </div>
-            <div class="omni-canvas">
-              <div class="omni-nodes-container">
-                <div class="omni-node node-trigger">
-                  <div class="node-header"><span class="node-type">TRIGGER</span> Stripe Webhook</div>
-                  <div class="node-title">Payment Received</div>
-                  <div class="node-status">Event ID #evt_984</div>
-                </div>
-                <div class="node-connector">➜</div>
-                <div class="omni-node node-condition">
-                  <div class="node-header"><span class="node-type">FILTER</span> Tier Check</div>
-                  <div class="node-title">Amount &gt; $1,000</div>
-                  <div class="node-status">True ➔ Pass</div>
-                </div>
-                <div class="node-connector">➜</div>
-                <div class="omni-node node-action">
-                  <div class="node-header"><span class="node-type">ACTION</span> CRM Sync</div>
-                  <div class="node-title">Generate Invoice PDF</div>
-                  <div class="node-status">Success (9ms)</div>
-                </div>
-              </div>
-              <div class="omni-footer-bar">
-                <span>⚡ Throughput: <strong>4,820 / min</strong></span>
-                <span>✓ Success Rate: <strong>99.98%</strong></span>
-                <span>⏱️ Latency: <strong>12ms</strong></span>
-              </div>
-            </div>
-          </div>
-        </div>';
-    }
+    $altText = e($title) . ' website preview';
 
     return '
-    <div class="preview-site" style="background:#111; color:#fff; padding:20px; font-family: sans-serif;">
-      <div class="browser-address">
-        <span class="browser-lock">🔒</span>
-        <span class="browser-url-text">https://' . e(slugify($title)) . '.com</span>
-      </div>
-      <div style="flex:1; background-size:cover; background-position:center; background-image:url(\'' . e($imgUrl) . '\'); display:flex; align-items:flex-end; padding:20px; border-radius:8px; margin-top:10px;">
-        <div style="background:rgba(0,0,0,0.8); backdrop-filter:blur(10px); padding:16px; border-radius:8px; width:100%;">
-          <div style="font-size:10px; font-family:monospace; color:#aaa; text-transform:uppercase;">' . e($category) . '</div>
-          <h4 style="font-size:18px; font-weight:700; margin:4px 0;">' . e($title) . '</h4>
-        </div>
-      </div>
+    <div class="browser-address">
+      <span class="browser-lock">🔒</span>
+      <span class="browser-url-text">' . e($urlText) . '</span>
+    </div>
+    <div class="browser-viewport">
+      <img src="' . e($imgUrl) . '" alt="' . $altText . '" class="browser-preview-img" loading="lazy" />
     </div>';
 }
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * MakeIT - CLI Admin Account Provisioning Script
+ * WebsiteTailors - CLI Admin Account Provisioning Script
  * 
  * Usage:
  *   php bin/create_admin.php [username] [email] [password] [full_name] [role]
@@ -14,11 +14,11 @@ if (php_sapi_name() !== 'cli') {
     die("This script can only be run from the command line.\n");
 }
 
-define('MAKEIT_INIT', true);
+define('WebsiteTailors_INIT', true);
 require_once dirname(__DIR__) . '/includes/init.php';
 
 echo "========================================================\n";
-echo " MakeIT - Admin User Provisioning CLI\n";
+echo " WebsiteTailors - Admin User Provisioning CLI\n";
 echo "========================================================\n\n";
 
 $args = array_slice($argv, 1);
@@ -27,7 +27,7 @@ if (count($args) >= 3) {
     $username = $args[0];
     $email    = $args[1];
     $password = $args[2];
-    $fullName = $args[3] ?? 'MakeIT Administrator';
+    $fullName = $args[3] ?? 'WebsiteTailors Administrator';
     $role     = $args[4] ?? 'superadmin';
 } else {
     // Interactive prompt
@@ -40,7 +40,7 @@ if (count($args) >= 3) {
     echo "Enter Full Name: ";
     $fullName = trim((string)fgets(STDIN));
     if (empty($fullName)) {
-        $fullName = 'MakeIT Administrator';
+        $fullName = 'WebsiteTailors Administrator';
     }
 
     echo "Enter Role [superadmin/admin] (default: superadmin): ";

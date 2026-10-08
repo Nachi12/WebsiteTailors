@@ -1,6 +1,6 @@
 <?php
 /**
- * MakeIT — Automated CMS Audit & Verification Suite
+ * WebsiteTailors — Automated CMS Audit & Verification Suite
  *
  * Tests:
  * 1. Admin as Source of Truth (Database updates reflect instantly on public site)
@@ -12,11 +12,11 @@
 
 declare(strict_types=1);
 
-define('MAKEIT_INIT', true);
+define('WebsiteTailors_INIT', true);
 require_once __DIR__ . '/../includes/init.php';
 
 echo "==================================================\n";
-echo "MakeIT Public Website CMS Audit & Verification Suite\n";
+echo "WebsiteTailors Public Website CMS Audit & Verification Suite\n";
 echo "==================================================\n\n";
 
 $db = Database::getInstance();
@@ -66,7 +66,7 @@ function fetchUrl(string $path): string {
 echo "Test Group 1: Dynamic SEO, Meta & Footer Links\n";
 
 // Update site settings in DB
-$originalCompanyName = get_setting('company_name', 'MakeIT');
+$originalCompanyName = get_setting('company_name', 'WebsiteTailors');
 $originalTagline = get_setting('tagline', 'We Make Digital Things Work.');
 $testTagline = 'TEST TAGLINE — ' . uniqid();
 

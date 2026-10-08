@@ -1,6 +1,6 @@
 <?php
 /**
- * MakeIT Admin — Phase 3: Leads + Call Tracking
+ * Website Tailors Admin — Phase 3: Leads + Call Tracking
  *
  * Grounded 100% in real database data from `leads` and `calls`.
  * Tracks potential customers, outreach history, and follow-up schedules:
@@ -14,8 +14,8 @@
 
 declare(strict_types=1);
 
-if (!defined('MAKEIT_INIT')) {
-    define('MAKEIT_INIT', true);
+if (!defined('WebsiteTailors_INIT')) {
+    define('WebsiteTailors_INIT', true);
 }
 require_once dirname(__DIR__) . '/includes/auth_guard.php';
 
@@ -40,7 +40,7 @@ require_once dirname(__DIR__, 2) . '/includes/excel_lead_importer.php';
 // -----------------------------------------------------------------------------
 if (($_GET['action'] ?? '') === 'download_import_template') {
     header('Content-Type: text/csv; charset=utf-8');
-    header('Content-Disposition: attachment; filename="makeit_leads_sample.csv"');
+    header('Content-Disposition: attachment; filename="websitetailors_leads_sample.csv"');
     echo ExcelLeadImporter::generateSampleCsv();
     exit;
 }
@@ -2113,7 +2113,7 @@ require_once dirname(__DIR__) . '/includes/admin_header.php';
     .then(data => {
       if (data.success) {
         if (btnText) btnText.textContent = 'CALLING YOUR PHONE...';
-        showCrmCallNotification('Connecting call: Your phone (9035344513) will ring shortly!', 'success');
+        showCrmCallNotification('Connecting call: Your phone (9380552034) will ring shortly!', 'success');
 
         if (btnElement) {
           const row = btnElement.closest('tr');

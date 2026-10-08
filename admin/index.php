@@ -1,6 +1,6 @@
 <?php
 /**
- * MakeIT — Business Analytics Dashboard (Phase 6)
+ * WebsiteTailors — Business Analytics Dashboard (Phase 6)
  *
  * Grounded 100% in real database data from clients, leads, calls, and invoices.
  * Real-time executive metrics, interactive period switching, smooth SVG line & bar charts,
@@ -10,8 +10,8 @@
 
 declare(strict_types=1);
 
-if (!defined('MAKEIT_INIT')) {
-    define('MAKEIT_INIT', true);
+if (!defined('WebsiteTailors_INIT')) {
+    define('WebsiteTailors_INIT', true);
 }
 require_once __DIR__ . '/includes/auth_guard.php';
 

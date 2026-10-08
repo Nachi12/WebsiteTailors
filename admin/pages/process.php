@@ -1,6 +1,6 @@
 <?php
 /**
- * MakeIT Admin — Process Steps Management
+ * Website Tailors Admin — Process Steps Management
  *
  * Full CRUD for the 4-step workflow process:
  * Add, Edit, Delete, Reorder, Activate/Deactivate.
@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-if (!defined('MAKEIT_INIT')) { define('MAKEIT_INIT', true); }
+if (!defined('WebsiteTailors_INIT')) { define('WebsiteTailors_INIT', true); }
 require_once dirname(__DIR__) . '/includes/auth_guard.php';
 
 $pageTitle = 'Process Steps Management';

@@ -1,6 +1,6 @@
 <?php
 /**
- * MakeIT - Application Master Bootstrapper
+ * WebsiteTailors - Application Master Bootstrapper
  * 
  * Initializes core constants, environment config, database singleton,
  * session management, and all essential security and utility modules.
@@ -9,8 +9,8 @@
 declare(strict_types=1);
 
 // Set initialization guard flag
-if (!defined('MAKEIT_INIT')) {
-    define('MAKEIT_INIT', true);
+if (!defined('WebsiteTailors_INIT')) {
+    define('WebsiteTailors_INIT', true);
 }
 
 // Load Composer Autoloader if present

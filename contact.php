@@ -1,11 +1,11 @@
 <?php
 /**
- * MakeIT — Contact & Project Inquiries Page
+ * Website Tailors — Contact & Project Inquiries Page
  */
 
 declare(strict_types=1);
 
-define('MAKEIT_INIT', true);
+define('WebsiteTailors_INIT', true);
 require_once __DIR__ . '/includes/init.php';
 
 $settings = get_all_settings();
@@ -26,8 +26,8 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
     }
 }
 
-$pageTitle = 'Contact — ' . ($settings['company_name'] ?? 'MakeIT');
-$pageDescription = 'Contact MakeIT to start your next web development, software, or AI automation project.';
+$pageTitle = 'Get a Free Website Quote | Website Tailors Bangalore';
+$pageDescription = 'Get a free quote for website design, website redesign, or WhatsApp automation in Bangalore. Contact Website Tailors today.';
 $activePage = 'contact';
 
 require_once __DIR__ . '/includes/header.php';
@@ -40,7 +40,7 @@ require_once __DIR__ . '/includes/header.php';
           <div class="cta-eyebrow">GET IN TOUCH</div>
           <h1 class="cta-title">
             LET'S<br>
-            MAKE IT.
+            Website Tailors.
           </h1>
 
           <p class="cta-subtitle">
@@ -58,8 +58,8 @@ require_once __DIR__ . '/includes/header.php';
                 <span>Call:</span> <?= e($settings['phone']) ?> ↗
               </a>
             <?php else: ?>
-              <a href="tel:9035344513">
-                <span>Call:</span> 9035344513 ↗
+              <a href="tel:9380552034">
+                <span>Call:</span> 9380552034 ↗
               </a>
             <?php endif; ?>
             <span>Location: <?= e($settings['address'] ?? 'Bangalore-560010, karnataka. India') ?></span>
@@ -109,7 +109,7 @@ require_once __DIR__ . '/includes/header.php';
               <!-- Phone -->
               <div class="form-group">
                 <label for="phone" class="form-label">Phone</label>
-                <input type="tel" id="phone" name="phone" class="form-control" placeholder="9035344513" maxlength="50" value="<?= e($_POST['phone'] ?? '') ?>">
+                <input type="tel" id="phone" name="phone" class="form-control" placeholder="9380552034" maxlength="50" value="<?= e($_POST['phone'] ?? '') ?>">
               </div>
 
               <!-- Company -->

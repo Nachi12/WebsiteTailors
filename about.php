@@ -1,11 +1,11 @@
 <?php
 /**
- * MakeIT — About & Agency Philosophy Page
+ * Website Tailors — About & Agency Philosophy Page
  */
 
 declare(strict_types=1);
 
-define('MAKEIT_INIT', true);
+define('WebsiteTailors_INIT', true);
 require_once __DIR__ . '/includes/init.php';
 
 $settings     = get_all_settings();
@@ -13,8 +13,8 @@ $principles   = get_principles();
 $processSteps = get_process_steps();
 $testimonials = get_testimonials();
 
-$pageTitle = 'About — ' . ($settings['company_name'] ?? 'MakeIT');
-$pageDescription = 'MakeIT is a digital engineering and design studio dedicated to building websites, software, and AI systems that actually work.';
+$pageTitle = 'About Website Tailors | Website Design Studio in Bangalore';
+$pageDescription = 'Website Tailors designs and builds fast, practical, affordable business websites and WhatsApp automation for businesses in Bangalore.';
 $activePage = 'about';
 
 require_once __DIR__ . '/includes/header.php';
@@ -39,7 +39,7 @@ require_once __DIR__ . '/includes/header.php';
         </h1>
 
         <p class="statement-copy">
-          Most digital projects fail due to unnecessary complexity, bloated dependencies, or lack of architectural discipline. MakeIT was founded to provide a refreshing alternative: lean, blisteringly fast, beautifully designed systems that do their job flawlessly.
+          Most digital projects fail due to unnecessary complexity, bloated dependencies, or lack of architectural discipline. Website Tailors was founded to provide a refreshing alternative: lean, blisteringly fast, beautifully designed systems that do their job flawlessly.
         </p>
       </div>
     </section>
@@ -77,9 +77,9 @@ require_once __DIR__ . '/includes/header.php';
     <section class="process" style="padding: 120px 0;">
       <div class="container">
         <div class="process-header reveal">
-          <div>
+          <div class="process-header-left">
             <div class="eyebrow">How we work</div>
-            <h2 class="section-title" style="margin-top: 30px;">
+            <h2 class="section-title process-title">
               FROM IDEA<br>
               <span class="outline">TO LIVE.</span>
             </h2>
@@ -103,7 +103,7 @@ require_once __DIR__ . '/includes/header.php';
             <div class="process-progress" id="processProgress" aria-hidden="true"></div>
 
             <?php foreach ($processSteps as $step): ?>
-              <div class="process-step">
+              <div class="process-step reveal">
                 <div class="process-dot">
                   <?= e($step['step_number']) ?>
                 </div>
@@ -133,7 +133,7 @@ require_once __DIR__ . '/includes/header.php';
               </h2>
             </div>
             <p style="color: var(--muted); max-width: 440px; font-size: 15px; line-height: 1.6;">
-              Direct feedback from leaders who have partnered with MakeIT.
+              Direct feedback from leaders who have partnered with Website Tailors.
             </p>
           </div>
 

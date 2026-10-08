@@ -1,4 +1,4 @@
-# MakeIT — Technical Architecture & Deployment Manual
+# WebsiteTailors — Technical Architecture & Deployment Manual
 
 > **Tagline**: *"We Make Digital Things Work."*
 
@@ -63,7 +63,7 @@ to run this project
 │   └── installed.lock             # Self-lock marker created after initial admin setup
 │
 ├── database/                      # Schema & migrations
-│   └── makeit.sql                 # Complete MySQL schema, indexes, and MakeIT seed data
+│   └── WebsiteTailors.sql                 # Complete MySQL schema, indexes, and WebsiteTailors seed data
 │
 ├── includes/                      # Core backend services & security helpers
 │   ├── init.php                   # Master bootstrapper (loads config, session, helpers)
@@ -92,7 +92,7 @@ The CMS administration interface is accessible at:
 | Account | Email Address | Username | Password | Role |
 | :--- | :--- | :--- | :--- | :--- |
 | **Primary Administrator** | `superadmin@rithamaya.com` | `superadmin` | `Admin@12345` | `superadmin` |
-| **Default Seed Admin** | `admin@makeit.digital` | `admin` | `Admin@12345` | `superadmin` |
+| **Default Seed Admin** | `websietailorss@gmail.com` | `admin` | `Admin@12345` | `superadmin` |
 
 > [!NOTE]
 > - Passwords are case-sensitive (capital **`A`** and special character **`@`**).
@@ -101,7 +101,7 @@ The CMS administration interface is accessible at:
 
 ---
 
-## 3. Database Architecture (`database/makeit.sql`)
+## 3. Database Architecture (`database/WebsiteTailors.sql`)
 
 The database uses **InnoDB** engine with `utf8mb4` character set and `utf8mb4_unicode_ci` collation.
 
@@ -192,7 +192,7 @@ The database uses **InnoDB** engine with `utf8mb4` character set and `utf8mb4_un
 ## 5. Setup & Provisioning
 
 ### Method A: Web Setup Wizard (Shared Hosting / Hostinger)
-1. Import `database/makeit.sql` using phpMyAdmin or the Hostinger database manager.
+1. Import `database/WebsiteTailors.sql` using phpMyAdmin or the Hostinger database manager.
 2. Enter your MySQL database credentials in `config/database.php`.
 3. Open `http://your-domain.com/setup.php` in your browser.
 4. Fill out the Superadmin registration form and submit.
@@ -206,7 +206,7 @@ On local environments or servers with SSH terminal access:
 php bin/create_admin.php
 
 # Direct arguments:
-php bin/create_admin.php admin admin@makeit.digital "SuperSecurePassword123" "System Admin" superadmin
+php bin/create_admin.php admin websietailorss@gmail.com "SuperSecurePassword123" "System Admin" superadmin
 ```
 
 ---
@@ -215,7 +215,7 @@ php bin/create_admin.php admin admin@makeit.digital "SuperSecurePassword123" "Sy
 
 1. **Upload Files**: Upload the project directory to `public_html/`.
 2. **Create MySQL Database**: In Hostinger hPanel -> **Databases**, create a database and user.
-3. **Import SQL**: Open phpMyAdmin in hPanel and import `database/makeit.sql`.
+3. **Import SQL**: Open phpMyAdmin in hPanel and import `database/WebsiteTailors.sql`.
 4. **Configure Credentials**: Edit `config/database.php` and fill in `DB_NAME`, `DB_USER`, and `DB_PASS`.
 5. **Set Environment**: In `config/config.php`, change `APP_ENV` to `'production'`.
 6. **Create Admin**: Run `setup.php` in your browser once to initialize your admin account.

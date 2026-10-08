@@ -1,6 +1,6 @@
 <?php
 /**
- * MakeIT Admin — Clients Management Module (Phase 2)
+ * Website Tailors Admin — Clients Management Module (Phase 2)
  *
  * Full Business CRM Client Management:
  * - Table: Client, Company, Service, Phone, Status, Last Contact, Revenue, Actions
@@ -13,7 +13,7 @@
 
 declare(strict_types=1);
 
-if (!defined('MAKEIT_INIT')) { define('MAKEIT_INIT', true); }
+if (!defined('WebsiteTailors_INIT')) { define('WebsiteTailors_INIT', true); }
 require_once dirname(__DIR__) . '/includes/auth_guard.php';
 
 $pageTitle = 'Clients Directory';
@@ -1171,7 +1171,7 @@ require_once dirname(__DIR__) . '/includes/admin_header.php';
 
           <div class="admin-form-group">
             <label class="admin-form-label" for="add_assigned_to">Assigned Account Lead</label>
-            <input type="text" id="add_assigned_to" name="assigned_to" class="admin-form-input" placeholder="e.g. MakeIT Administrator" maxlength="100" />
+            <input type="text" id="add_assigned_to" name="assigned_to" class="admin-form-input" placeholder="e.g. Website Tailors Administrator" maxlength="100" />
           </div>
 
           <div class="admin-form-group">

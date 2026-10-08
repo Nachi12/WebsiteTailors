@@ -1,6 +1,6 @@
 <?php
 /**
- * MakeIT - One-Time Admin Setup Wizard
+ * Website Tailors - One-Time Admin Setup Wizard
  * 
  * Used to provision the initial Superadmin account securely on shared hosting
  * environments where SSH/CLI is unavailable. Self-locks once completed.
@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-define('MAKEIT_INIT', true);
+define('WebsiteTailors_INIT', true);
 require_once __DIR__ . '/includes/init.php';
 
 $lockFile = CONFIG_PATH . '/installed.lock';
@@ -34,7 +34,7 @@ if ($isLocked || $existingAdminsCount > 0) {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Setup Locked — MakeIT</title>
+        <title>Setup Locked — Website Tailors</title>
         <style>
             body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0f1013; color: #f4f3ee; display: grid; place-items: center; min-height: 100vh; margin: 0; padding: 20px; box-sizing: border-box; }
             .card { background: #18191e; border: 1px solid #2a2b32; border-radius: 16px; padding: 40px; max-width: 480px; width: 100%; box-shadow: 0 20px 40px rgba(0,0,0,0.5); text-align: center; }
@@ -50,7 +50,7 @@ if ($isLocked || $existingAdminsCount > 0) {
             <div class="badge">SECURITY NOTICE</div>
             <h1>Setup is Locked</h1>
             <p>The initial administration account has already been created. For your security, this setup wizard has been permanently disabled.</p>
-            <p>If you need to log in to the MakeIT control panel, proceed below:</p>
+            <p>If you need to log in to the Website Tailors control panel, proceed below:</p>
             <a href="<?= e(ADMIN_URL . '/login.php') ?>" class="btn">Go to Admin Login &rarr;</a>
         </div>
     </body>
@@ -97,7 +97,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MakeIT — Initial Admin Setup</title>
+    <title>Website Tailors — Initial Admin Setup</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
@@ -220,17 +220,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <div class="setup-card">
         <div class="brand">
-            <span class="brand-pill">MAKEIT</span>
-            <span class="brand-tagline">We Make Digital Things Work.</span>
+            <span class="brand-pill">WEBSITE TAILORS</span>
+            <span class="brand-tagline">Engineering Digital Precision.</span>
         </div>
 
         <h1>Initialize Superadmin Account</h1>
-        <p class="subtitle">Welcome to MakeIT. Create your primary administrative credentials to access the admin dashboard.</p>
+        <p class="subtitle">Welcome to Website Tailors. Create your primary administrative credentials to access the admin dashboard.</p>
 
         <?php if ($dbError): ?>
             <div class="alert alert-error">
                 <strong>Database Error:</strong> <?= e($dbError) ?><br>
-                Please verify database credentials in <code>config/database.php</code> and import <code>database/makeit.sql</code>.
+                Please verify database credentials in <code>config/database.php</code> and import <code>database/WebsiteTailors.sql</code>.
             </div>
         <?php elseif ($error): ?>
             <div class="alert alert-error"><?= e($error) ?></div>
@@ -248,7 +248,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <div class="form-group">
                     <label for="full_name">Full Name</label>
-                    <input type="text" id="full_name" name="full_name" required value="<?= e($_POST['full_name'] ?? 'MakeIT Administrator') ?>">
+                    <input type="text" id="full_name" name="full_name" required value="<?= e($_POST['full_name'] ?? 'Website Tailors Administrator') ?>">
                 </div>
 
                 <div class="form-group">
@@ -258,7 +258,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <div class="form-group">
                     <label for="email">Admin Email</label>
-                    <input type="email" id="email" name="email" required value="<?= e($_POST['email'] ?? 'admin@makeit.digital') ?>">
+                    <input type="email" id="email" name="email" required value="<?= e($_POST['email'] ?? 'websietailorss@gmail.com') ?>">
                 </div>
 
                 <div class="form-group">

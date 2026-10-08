@@ -1,6 +1,6 @@
 <?php
 /**
- * MakeIT - Admin Panel Login
+ * Website Tailors - Admin Panel Login
  * 
  * Features:
  * - Email and Password authentication
@@ -15,7 +15,7 @@
 
 declare(strict_types=1);
 
-if (!defined('MAKEIT_INIT')) { define('MAKEIT_INIT', true); }
+if (!defined('WebsiteTailors_INIT')) { define('WebsiteTailors_INIT', true); }
 require_once dirname(__DIR__) . '/includes/init.php';
 
 // If already authenticated, redirect to admin dashboard
@@ -59,7 +59,8 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Admin Sign In — MakeIT CRM</title>
+  <title>Admin Sign In — Website Tailors CRM</title>
+  <meta name="robots" content="noindex, nofollow" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -73,7 +74,7 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
 
   <div class="login-box">
     <div class="login-brand">
-      <span>MAKEIT</span>
+      <span>WEBSITE TAILORS</span>
       <span class="brand-dot"></span>
       <span class="brand-badge">CRM</span>
     </div>
@@ -97,7 +98,7 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
           id="email"
           name="email"
           class="admin-form-input"
-          placeholder="admin@makeit.digital"
+          placeholder="websietailorss@gmail.com"
           required
           autocomplete="email"
           value="<?= e($_POST['email'] ?? '') ?>"

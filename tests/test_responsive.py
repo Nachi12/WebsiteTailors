@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-MakeIT Responsive Overflow Test
+WebsiteTailors Responsive Overflow Test
 Tests scrollWidth <= innerWidth at all required breakpoints using headless Chrome.
 """
 import subprocess

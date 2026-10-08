@@ -1,8 +1,8 @@
 <?php
-$sqlite = new PDO('sqlite:database/makeit.sqlite');
+$sqlite = new PDO('sqlite:database/WebsiteTailors.sqlite');
 $sqlite->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$mysql = new PDO('mysql:host=127.0.0.1;port=3306;dbname=makeit;charset=utf8mb4', 'root', '');
+$mysql = new PDO('mysql:host=127.0.0.1;port=3306;dbname=WebsiteTailors;charset=utf8mb4', 'root', '');
 $mysql->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 $tables = ['invoices', 'revenue']; // Only retry failed ones if they have data. Or actually, just do all again, but truncate first? Let's do invoices and revenue.

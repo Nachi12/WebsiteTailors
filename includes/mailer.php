@@ -1,6 +1,6 @@
 <?php
 /**
- * MakeIT - Email Notification Service
+ * WebsiteTailors - Email Notification Service
  *
  * Lightweight, production-ready email dispatcher designed for shared hosting.
  * Supports:
@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-if (!defined('MAKEIT_INIT')) {
+if (!defined('WebsiteTailors_INIT')) {
     die('Direct access not permitted.');
 }
 
@@ -24,9 +24,9 @@ if (!defined('MAKEIT_INIT')) {
 function send_lead_notification(array $lead): bool
 {
     $mailEnabled = defined('MAIL_NOTIFICATIONS_ENABLED') ? MAIL_NOTIFICATIONS_ENABLED : false;
-    $adminEmail  = defined('MAIL_ADMIN_ADDRESS') ? MAIL_ADMIN_ADDRESS : get_setting('email', 'admin@makeit.digital');
-    $fromEmail   = defined('MAIL_FROM_ADDRESS') ? MAIL_FROM_ADDRESS : 'notifications@makeit.digital';
-    $fromName    = defined('MAIL_FROM_NAME') ? MAIL_FROM_NAME : 'MakeIT Notifications';
+    $adminEmail  = defined('MAIL_ADMIN_ADDRESS') ? MAIL_ADMIN_ADDRESS : get_setting('email', 'websietailorss@gmail.com');
+    $fromEmail   = defined('MAIL_FROM_ADDRESS') ? MAIL_FROM_ADDRESS : 'websietailorss@gmail.com';
+    $fromName    = defined('MAIL_FROM_NAME') ? MAIL_FROM_NAME : 'WebsiteTailors Notifications';
     $adminUrl    = defined('ADMIN_URL') ? ADMIN_URL : '/admin';
 
     $leadName    = htmlspecialchars((string)($lead['name'] ?? 'Unknown'), ENT_QUOTES, 'UTF-8');
@@ -39,10 +39,10 @@ function send_lead_notification(array $lead): bool
     $leadIp      = htmlspecialchars((string)($lead['ip_address'] ?? 'Unknown'), ENT_QUOTES, 'UTF-8');
     $dateStr     = date('Y-m-d H:i:s T');
 
-    $subject = "New Project Inquiry from {$leadName} — MakeIT";
+    $subject = "New Project Inquiry from {$leadName} — WebsiteTailors";
 
     // Plain text version
-    $textBody = "New Lead Inquiry Received on MakeIT Website\n";
+    $textBody = "New Lead Inquiry Received on WebsiteTailors Website\n";
     $textBody .= "==========================================\n\n";
     $textBody .= "Name:     {$lead['name']}\n";
     $textBody .= "Email:    {$lead['email']}\n";
@@ -82,7 +82,7 @@ function send_lead_notification(array $lead): bool
 <body>
   <div class="container">
     <div class="header">
-      <h1>MakeIT Lead Dispatch</h1>
+      <h1>WebsiteTailors Lead Dispatch</h1>
       <div class="tagline">NEW PROJECT INQUIRY RECEIVED</div>
     </div>
     <div class="content">
@@ -129,7 +129,7 @@ function send_lead_notification(array $lead): bool
       </div>
     </div>
     <div class="footer">
-      This is an automated notification from your MakeIT CMS lead management engine.
+      This is an automated notification from your WebsiteTailors CMS lead management engine.
     </div>
   </div>
 </body>
@@ -139,7 +139,7 @@ HTML;
     // If notifications are disabled (e.g. local dev without configured mail server), log safely
     if (!$mailEnabled) {
         error_log(sprintf(
-            "[MakeIT Mailer (Mock)] Lead notification prepared for %s | From: %s <%s> | Service: %s",
+            "[WebsiteTailors Mailer (Mock)] Lead notification prepared for %s | From: %s <%s> | Service: %s",
             $adminEmail, $leadName, $leadEmail, $leadService
         ));
         return true;
@@ -169,7 +169,7 @@ function send_via_native_mail(
     ?string $replyTo = null
 ): bool {
     try {
-        $boundary = "makeit_boundary_" . md5(uniqid((string)time(), true));
+        $boundary = "WebsiteTailors_boundary_" . md5(uniqid((string)time(), true));
 
         $headers = [];
         $headers[] = "MIME-Version: 1.0";
@@ -178,7 +178,7 @@ function send_via_native_mail(
             $headers[] = "Reply-To: {$replyTo}";
         }
         $headers[] = "Content-Type: multipart/alternative; boundary=\"{$boundary}\"";
-        $headers[] = "X-Mailer: MakeIT-PHP/" . PHP_VERSION;
+        $headers[] = "X-Mailer: WebsiteTailors-PHP/" . PHP_VERSION;
 
         $message = "--{$boundary}\r\n";
         $message .= "Content-Type: text/plain; charset=UTF-8\r\n";
@@ -273,7 +273,7 @@ function send_via_smtp(
     $write("DATA");
     $read();
 
-    $boundary = "makeit_smtp_" . md5(uniqid((string)time(), true));
+    $boundary = "WebsiteTailors_smtp_" . md5(uniqid((string)time(), true));
     $headers = [
         "From: =?UTF-8?B?" . base64_encode($fromName) . "?= <{$fromEmail}>",
         "To: <{$to}>",

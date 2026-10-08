@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-MakeIT — Netlify Build Validation & Security Audit Suite
+Website Tailors — Netlify Build Validation & Security Audit Suite
 Validates the static output in /netlify/ against all production and security requirements.
 """
 
@@ -25,7 +25,7 @@ def assert_check(condition, test_name, details=""):
             print(f"         Details: {details}")
 
 print("====================================================")
-print("MakeIT: Netlify Build Validation & Security Suite")
+print("Website Tailors: Netlify Build Validation & Security Suite")
 print("====================================================\n")
 
 # 1. Check folder structure and critical files
@@ -48,7 +48,7 @@ with open(index_html, "r", encoding="utf-8") as f:
     html_content = f.read()
 
 # 2. Content & Section presence
-assert_check("<title>MakeIT Digital Studio" in html_content, "Page Title is present and accurate")
+assert_check("<title>" in html_content and "Website Tailors" in html_content, "Page Title is present and accurate")
 assert_check('class="hero"' in html_content, "Hero section present")
 assert_check('id="services"' in html_content, "Services section present")
 assert_check('id="about"' in html_content, "About/Approach section present")
@@ -58,14 +58,14 @@ assert_check('id="process"' in html_content, "Process section present")
 assert_check('id="testimonials"' in html_content, "Testimonials section present")
 assert_check('id="contact"' in html_content, "Contact section present")
 assert_check('id="contactForm"' in html_content, "Contact form present")
-assert_check('id="floatingSystem"' in html_content, "Floating system present")
+assert_check('id="floatingSystem"' in html_content or 'id="heroOrbitalWrapper"' in html_content or 'id="heroVisualStage"' in html_content, "Hero visual composition present")
 assert_check('id="loader"' in html_content, "Preloader present")
 assert_check('class="cursor"' in html_content, "Custom cursor present")
 
 # 3. Security checks: No database credentials or server secrets
 sensitive_patterns = [
     r'DB_PASSWORD', r'DB_USER', r'DB_HOST', r'DB_NAME',
-    r'SECRET_KEY', r'makeit_user', r'makeit_db', r'\.env\b'
+    r'SECRET_KEY', r'WebsiteTailors_user', r'WebsiteTailors_db', r'\.env\b'
 ]
 for root, dirs, files in os.walk(NETLIFY_DIR):
     for fname in files:

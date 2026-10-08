@@ -1,6 +1,6 @@
 <?php
 /**
- * MakeIT Admin — Phase 8: Excel & CSV Lead Import End-to-End Test Suite
+ * WebsiteTailors Admin — Phase 8: Excel & CSV Lead Import End-to-End Test Suite
  *
  * Verifies:
  * 1. File Upload Validation & Security (MIME validation, extension check, 10MB limit)
@@ -18,7 +18,7 @@
 
 declare(strict_types=1);
 
-define('MAKEIT_INIT', true);
+define('WebsiteTailors_INIT', true);
 if (session_status() !== PHP_SESSION_ACTIVE) {
     @session_start();
 }
@@ -55,7 +55,7 @@ function assertTest(bool $condition, string $description): void
 }
 
 echo "\n=======================================================\n";
-echo "  MAKEIT ADMIN — PHASE 8 EXCEL LEAD IMPORT TEST SUITE  \n";
+echo "  WebsiteTailors ADMIN — PHASE 8 EXCEL LEAD IMPORT TEST SUITE  \n";
 echo "=======================================================\n\n";
 
 // -------------------------------------------------------------
@@ -144,7 +144,7 @@ $csvData = [
     ['Aarav Repeat in Batch', 'Aarav Secondary', 'aarav@testimport.com', '+91 99999 00002', 'Software', '', '', '', 'New', 'Not Called', '', '']
 ];
 
-$csvFile = tempnam(sys_get_temp_dir(), 'makeit_test_') . '.csv';
+$csvFile = tempnam(sys_get_temp_dir(), 'WebsiteTailors_test_') . '.csv';
 $fp = fopen($csvFile, 'w');
 foreach ($csvData as $line) {
     fputcsv($fp, $line, ',', '"', "\\");
@@ -315,7 +315,7 @@ foreach ($xlsxRow3 as $colIdx => $val) {
     $sheet->setCellValue([$colIdx + 1, 4], $val);
 }
 
-$xlsxFile = tempnam(sys_get_temp_dir(), 'makeit_test_') . '.xlsx';
+$xlsxFile = tempnam(sys_get_temp_dir(), 'WebsiteTailors_test_') . '.xlsx';
 $writer = new Xlsx($spreadsheet);
 $writer->save($xlsxFile);
 

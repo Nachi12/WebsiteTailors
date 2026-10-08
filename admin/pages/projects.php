@@ -1,6 +1,6 @@
 <?php
 /**
- * MakeIT Admin — Projects Portfolio Management
+ * Website Tailors Admin — Projects Portfolio Management
  *
  * Full CRUD for projects with secure image upload handling, live preview,
  * category assignment, publishing toggle, and display reordering.
@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-if (!defined('MAKEIT_INIT')) { define('MAKEIT_INIT', true); }
+if (!defined('WebsiteTailors_INIT')) { define('WebsiteTailors_INIT', true); }
 require_once dirname(__DIR__) . '/includes/auth_guard.php';
 
 $pageTitle = 'Project Management';

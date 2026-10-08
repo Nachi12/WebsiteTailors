@@ -1,6 +1,6 @@
 <?php
 /**
- * Automated CRUD Test Suite for MakeIT Admin Panel
+ * Automated CRUD Test Suite for WebsiteTailors Admin Panel
  */
 
 declare(strict_types=1);
@@ -8,8 +8,8 @@ declare(strict_types=1);
 require_once __DIR__ . '/../includes/init.php';
 $db = Database::getInstance();
 
-$baseUrl = "http://127.0.0.1:8088";
-$cookieFile = sys_get_temp_dir() . "/makeit_crud_cookies.txt";
+$baseUrl = getenv('TEST_BASE_URL') ?: 'http://127.0.0.1:8000';
+$cookieFile = sys_get_temp_dir() . "/WebsiteTailors_crud_cookies.txt";
 if (file_exists($cookieFile)) unlink($cookieFile);
 
 function http_req($url, $method = "GET", $data = null, $cookieFile = null, $follow = false, $headers = []) {
@@ -48,7 +48,7 @@ assert(!empty($csrf), "Could not extract login CSRF token");
 
 $loginData = http_build_query([
     "csrf_token" => $csrf,
-    "email"      => "admin@makeit.digital",
+    "email"      => "websietailorss@gmail.com",
     "password"   => "Admin@12345"
 ]);
 $rLogin = http_req($baseUrl . "/admin/login.php", "POST", $loginData, $cookieFile, false);
@@ -66,7 +66,7 @@ $updateHeroData = http_build_query([
     "action"                => "save",
     "headline"              => "WE BUILD DIGITAL PRODUCTS THAT SCALE.",
     "subheadline"           => "Award-winning software engineering and architecture.",
-    "description"           => "MakeIT transforms complex systems into high-performing platforms.",
+    "description"           => "WebsiteTailors transforms complex systems into high-performing platforms.",
     "primary_button_text"   => "Get in Touch",
     "primary_button_link"   => "#contact",
     "secondary_button_text" => "View Showcase",
@@ -199,7 +199,7 @@ $newTestimData = [
     "client_name" => "Samantha Reed",
     "company"     => "Horizon Ventures",
     "position"    => "Partner",
-    "content"     => "MakeIT delivered our digital portal ahead of deadline with exceptional quality.",
+    "content"     => "WebsiteTailors delivered our digital portal ahead of deadline with exceptional quality.",
     "rating"      => "5",
     "status"      => "published"
 ];
@@ -225,19 +225,19 @@ $csrfSet = get_csrf($rSet["body"]);
 
 $newSettings = [
     "csrf_token"   => $csrfSet,
-    "company_name" => "MakeIT Digital Studio",
+    "company_name" => "Website Tailors",
     "tagline"      => "Engineering Digital Precision.",
-    "email"        => "contact@makeit.digital",
-    "phone"        => "9035344513",
+    "email"        => "websietailorss@gmail.com",
+    "phone"        => "9380552034",
     "address"      => "Bangalore-560010, karnataka. India",
-    "linkedin"     => "https://linkedin.com/company/makeit",
-    "instagram"    => "https://instagram.com/makeit",
-    "facebook"     => "https://facebook.com/makeit",
-    "github"       => "https://github.com/makeit"
+    "linkedin"     => "https://linkedin.com/company/websitetailors",
+    "instagram"    => "https://instagram.com/websitetailors",
+    "facebook"     => "https://facebook.com/websitetailors",
+    "github"       => "https://github.com/websitetailors"
 ];
 $rSetPost = http_req($baseUrl . "/admin/pages/settings.php", "POST", $newSettings, $cookieFile);
 assert(strpos($rSetPost["body"], "Site settings updated successfully") !== false, "Settings save message missing");
-assert(strpos($rSetPost["body"], "MakeIT Digital Studio") !== false, "Updated company name missing");
+assert(strpos($rSetPost["body"], "Website Tailors") !== false, "Updated company name missing");
 echo "✔ Settings updated successfully\n\n";
 
 echo "=== STEP 8: Test Leads Filter, Search, and Status Transition ===\n";

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Test Suite: MakeIT Admin Phase 1 Mobile-First Responsive Foundation
+Test Suite: WebsiteTailors Admin Phase 1 Mobile-First Responsive Foundation
 Validates:
 1. All admin pages load correctly via PHP HTTP server
 2. Meta viewport tag present on every page
@@ -30,7 +30,7 @@ def log_test(title, passed, detail=""):
 
 def run_tests():
     print("====================================================")
-    print("MakeIT: Admin Phase 1 Mobile-First Validation")
+    print("WebsiteTailors: Admin Phase 1 Mobile-First Validation")
     print("====================================================")
     
     passed_count = 0
@@ -47,7 +47,7 @@ def run_tests():
         csrf_token = csrf_match.group(1) if csrf_match else ""
         
         login_data = urllib.parse.urlencode({
-            'email': 'admin@makeit.digital',
+            'email': 'websietailorss@gmail.com',
             'password': 'Admin@12345',
             'csrf_token': csrf_token
         }).encode('utf-8')

@@ -1,6 +1,6 @@
 <?php
 /**
- * MakeIT Admin — Phase 4: Revenue Management
+ * Website Tailors Admin — Phase 4: Revenue Management
  *
  * Internal revenue tracking system (Zero payment gateways / 100% manual ledger).
  * - Real database tracking from `revenue` table
@@ -13,8 +13,8 @@
 
 declare(strict_types=1);
 
-if (!defined('MAKEIT_INIT')) {
-    define('MAKEIT_INIT', true);
+if (!defined('WebsiteTailors_INIT')) {
+    define('WebsiteTailors_INIT', true);
 }
 require_once dirname(__DIR__) . '/includes/auth_guard.php';
 
@@ -154,6 +154,47 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
                         ':id'             => $revenueId
                     ]);
 
+                    // Sync linked invoice if present
+                    $linkedInvId = (int)$pdo->query("SELECT invoice_id FROM revenue WHERE id = {$revenueId}")->fetchColumn();
+                    if ($linkedInvId > 0) {
+                        $totPaid = (float)$pdo->query("SELECT COALESCE(SUM(amount), 0) FROM revenue WHERE invoice_id = {$linkedInvId} AND LOWER(payment_status) = 'paid'")->fetchColumn();
+                        $invRow = $pdo->query("SELECT amount, project_id, project_total, due_date, status FROM invoices WHERE id = {$linkedInvId}")->fetch(PDO::FETCH_ASSOC);
+                        if ($invRow) {
+                            $invAmt = (float)$invRow['amount'];
+                            $projId = !empty($invRow['project_id']) ? (int)$invRow['project_id'] : null;
+                            $projTot = (float)($invRow['project_total'] ?? 0);
+                            $dueFmt = date('Y-m-d', strtotime((string)$invRow['due_date']));
+
+                            if (!in_array(strtolower((string)$invRow['status']), ['cancelled', 'refunded'], true)) {
+                                if ($totPaid >= $invAmt) {
+                                    $newSt = 'paid';
+                                } elseif ($totPaid > 0) {
+                                    $newSt = 'partially paid';
+                                } else {
+                                    $newSt = (strtotime($dueFmt) < strtotime(date('Y-m-d'))) ? 'overdue' : 'pending';
+                                }
+                            } else {
+                                $newSt = $invRow['status'];
+                            }
+
+                            if ($projId && $projTot > 0) {
+                                $pPaid = (float)$pdo->query("SELECT COALESCE(SUM(amount), 0) FROM revenue WHERE project_id = {$projId} AND LOWER(payment_status) = 'paid'")->fetchColumn();
+                                $newBal = max(0.00, round($projTot - $pPaid, 2));
+                                $pdo->prepare("UPDATE invoices SET balance_amount = :bal WHERE project_id = :pid AND project_total > 0")->execute([':bal' => $newBal, ':pid' => $projId]);
+                            } else {
+                                $newBal = max(0.00, round($invAmt - $totPaid, 2));
+                            }
+
+                            $pdo->prepare("UPDATE invoices SET amount_received = :paid, balance_amount = :bal, status = :st, updated_at = :upd WHERE id = :id")->execute([
+                                ':paid' => $totPaid,
+                                ':bal'  => $newBal,
+                                ':st'   => $newSt,
+                                ':upd'  => date('Y-m-d H:i:s'),
+                                ':id'   => $linkedInvId
+                            ]);
+                        }
+                    }
+
                     $success = "Revenue record #{$revenueId} successfully updated. Dashboard totals synchronized.";
                 } catch (\Throwable $e) {
                     $error = 'Failed to update revenue: ' . $e->getMessage();
@@ -163,8 +204,49 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
         // 3. DELETE REVENUE
         elseif ($action === 'delete_revenue' && $revenueId > 0) {
             try {
+                $linkedInvId = (int)$pdo->query("SELECT invoice_id FROM revenue WHERE id = {$revenueId}")->fetchColumn();
                 $delStmt = $pdo->prepare("DELETE FROM revenue WHERE id = :id");
                 $delStmt->execute([':id' => $revenueId]);
+
+                if ($linkedInvId > 0) {
+                    $totPaid = (float)$pdo->query("SELECT COALESCE(SUM(amount), 0) FROM revenue WHERE invoice_id = {$linkedInvId} AND LOWER(payment_status) = 'paid'")->fetchColumn();
+                    $invRow = $pdo->query("SELECT amount, project_id, project_total, due_date, status FROM invoices WHERE id = {$linkedInvId}")->fetch(PDO::FETCH_ASSOC);
+                    if ($invRow) {
+                        $invAmt = (float)$invRow['amount'];
+                        $projId = !empty($invRow['project_id']) ? (int)$invRow['project_id'] : null;
+                        $projTot = (float)($invRow['project_total'] ?? 0);
+                        $dueFmt = date('Y-m-d', strtotime((string)$invRow['due_date']));
+
+                        if (!in_array(strtolower((string)$invRow['status']), ['cancelled', 'refunded'], true)) {
+                            if ($totPaid >= $invAmt) {
+                                $newSt = 'paid';
+                            } elseif ($totPaid > 0) {
+                                $newSt = 'partially paid';
+                            } else {
+                                $newSt = (strtotime($dueFmt) < strtotime(date('Y-m-d'))) ? 'overdue' : 'pending';
+                            }
+                        } else {
+                            $newSt = $invRow['status'];
+                        }
+
+                        if ($projId && $projTot > 0) {
+                            $pPaid = (float)$pdo->query("SELECT COALESCE(SUM(amount), 0) FROM revenue WHERE project_id = {$projId} AND LOWER(payment_status) = 'paid'")->fetchColumn();
+                            $newBal = max(0.00, round($projTot - $pPaid, 2));
+                            $pdo->prepare("UPDATE invoices SET balance_amount = :bal WHERE project_id = :pid AND project_total > 0")->execute([':bal' => $newBal, ':pid' => $projId]);
+                        } else {
+                            $newBal = max(0.00, round($invAmt - $totPaid, 2));
+                        }
+
+                        $pdo->prepare("UPDATE invoices SET amount_received = :paid, balance_amount = :bal, status = :st, updated_at = :upd WHERE id = :id")->execute([
+                            ':paid' => $totPaid,
+                            ':bal'  => $newBal,
+                            ':st'   => $newSt,
+                            ':upd'  => date('Y-m-d H:i:s'),
+                            ':id'   => $linkedInvId
+                        ]);
+                    }
+                }
+
                 $success = "Revenue record #{$revenueId} has been deleted. Dashboard totals synchronized.";
             } catch (\Throwable $e) {
                 $error = 'Failed to delete revenue: ' . $e->getMessage();

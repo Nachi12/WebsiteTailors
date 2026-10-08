@@ -1,6 +1,6 @@
 <?php
 /**
- * MakeIT - Security Helper Functions
+ * WebsiteTailors - Security Helper Functions
  * 
  * Provides CSRF protection, output escaping, input sanitization,
  * security headers, and rate-limiting routines.
@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-if (!defined('MAKEIT_INIT')) {
+if (!defined('WebsiteTailors_INIT')) {
     die('Direct access not permitted.');
 }
 

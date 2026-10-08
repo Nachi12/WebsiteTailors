@@ -1,6 +1,6 @@
 <?php
 /**
- * MakeIT — Phase 6 Business Analytics Verification Test Suite
+ * WebsiteTailors — Phase 6 Business Analytics Verification Test Suite
  *
  * Asserts all Phase 6 requirements:
  * 1. Top KPI Cards (TOTAL CLIENTS, NEW LEADS, REVENUE THIS MONTH with ₹, PENDING FOLLOW-UPS)
@@ -15,7 +15,7 @@
 
 declare(strict_types=1);
 
-define('MAKEIT_INIT', true);
+define('WebsiteTailors_INIT', true);
 if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
 }
@@ -25,14 +25,14 @@ $_SESSION['admin_logged_in'] = true;
 $_SESSION['admin_data'] = [
     'id' => 1,
     'username' => 'admin',
-    'email' => 'admin@makeit.digital',
-    'full_name' => 'MakeIT Administrator',
+    'email' => 'websietailorss@gmail.com',
+    'full_name' => 'WebsiteTailors Administrator',
     'role' => 'superadmin',
     'is_active' => 1
 ];
 
 echo "====================================================\n";
-echo "MakeIT Phase 6 Business Analytics Verification\n";
+echo "WebsiteTailors Phase 6 Business Analytics Verification\n";
 echo "====================================================\n\n";
 
 $passCount = 0;
@@ -103,7 +103,7 @@ assertCondition(strpos($html, 'badge-upcoming') !== false, "Upcoming badge rende
 
 echo "\nGroup 8: Strict Zero-Fake-Data Empty States Verification\n";
 // Create temporary empty SQLite DB to verify zero-data behavior
-$tempDb = sys_get_temp_dir() . '/makeit_empty_audit_' . uniqid() . '.sqlite';
+$tempDb = sys_get_temp_dir() . '/WebsiteTailors_empty_audit_' . uniqid() . '.sqlite';
 $tempPdo = new PDO('sqlite:' . $tempDb);
 $tempPdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $tempPdo->exec('

@@ -1,9 +1,9 @@
 <?php
 /**
- * MakeIT — Public Leads API Endpoint
+ * WebsiteTailors — Public Leads API Endpoint
  * 
  * Allows the external static frontend (e.g. Netlify deployment) to securely
- * submit enquiries to the separate MakeIT PHP backend and MySQL CRM.
+ * submit enquiries to the separate WebsiteTailors PHP backend and MySQL CRM.
  * 
  * Features:
  * - CORS support for cross-domain Netlify deployments
@@ -29,7 +29,7 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'OPTIONS') {
     exit;
 }
 
-define('MAKEIT_INIT', true);
+define('WebsiteTailors_INIT', true);
 require_once dirname(__DIR__, 2) . '/includes/init.php';
 
 if (($_SERVER['REQUEST_METHOD'] ?? 'GET') !== 'POST') {

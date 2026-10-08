@@ -1,6 +1,6 @@
 <?php
 /**
- * MakeIT — Netlify Static HTML & Asset Synchronization Generator
+ * WebsiteTailors — Netlify Static HTML & Asset Synchronization Generator
  * 
  * Renders the canonical PHP homepage (/index.php) in an output buffer,
  * post-processes static links, updates Netlify form handling, and synchronizes
@@ -48,10 +48,19 @@ foreach ($assetsToCopy as $src => $dest) {
 
 // Copy image assets
 if (is_dir($rootDir . '/assets/images')) {
-    $imgFiles = glob($rootDir . '/assets/images/*');
-    foreach ($imgFiles as $img) {
-        if (is_file($img)) {
-            copy($img, $netlifyDir . '/assets/images/' . basename($img));
+    $iterator = new RecursiveIteratorIterator(
+        new RecursiveDirectoryIterator($rootDir . '/assets/images', RecursiveDirectoryIterator::SKIP_DOTS),
+        RecursiveIteratorIterator::SELF_FIRST
+    );
+    foreach ($iterator as $item) {
+        $subPath = $iterator->getSubPathName();
+        $destPath = $netlifyDir . '/assets/images/' . $subPath;
+        if ($item->isDir()) {
+            if (!is_dir($destPath)) {
+                mkdir($destPath, 0755, true);
+            }
+        } else {
+            copy($item->getPathname(), $destPath);
         }
     }
 }

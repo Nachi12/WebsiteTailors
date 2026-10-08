@@ -1,6 +1,6 @@
 <?php
 /**
- * MakeIT Admin — Global Site Settings Management
+ * Website Tailors Admin — Global Site Settings Management
  *
  * Allows updating business identity, contact channels, social profiles,
  * and brand assets (Logo & Favicon) with secure image upload handling.
@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-if (!defined('MAKEIT_INIT')) { define('MAKEIT_INIT', true); }
+if (!defined('WebsiteTailors_INIT')) { define('WebsiteTailors_INIT', true); }
 require_once dirname(__DIR__) . '/includes/auth_guard.php';
 
 $pageTitle = 'Site Settings';
@@ -144,7 +144,7 @@ require_once dirname(__DIR__) . '/includes/admin_header.php';
                 name="company_name"
                 class="admin-form-input"
                 required
-                value="<?= e($settings['company_name'] ?? 'MakeIT') ?>"
+                value="<?= e($settings['company_name'] ?? 'Website Tailors') ?>"
               />
             </div>
 
@@ -155,7 +155,7 @@ require_once dirname(__DIR__) . '/includes/admin_header.php';
                 id="tagline"
                 name="tagline"
                 class="admin-form-input"
-                value="<?= e($settings['tagline'] ?? 'We Make Digital Things Work.') ?>"
+                value="<?= e($settings['tagline'] ?? 'Engineering Digital Precision.') ?>"
               />
             </div>
           </div>
@@ -169,7 +169,7 @@ require_once dirname(__DIR__) . '/includes/admin_header.php';
                 name="email"
                 class="admin-form-input"
                 required
-                value="<?= e($settings['email'] ?? 'hello@makeit.digital') ?>"
+                value="<?= e($settings['email'] ?? 'websietailorss@gmail.com') ?>"
               />
             </div>
 
@@ -180,7 +180,7 @@ require_once dirname(__DIR__) . '/includes/admin_header.php';
                 id="phone"
                 name="phone"
                 class="admin-form-input"
-                value="<?= e($settings['phone'] ?? '9035344513') ?>"
+                value="<?= e($settings['phone'] ?? '9380552034') ?>"
               />
             </div>
           </div>
@@ -211,7 +211,7 @@ require_once dirname(__DIR__) . '/includes/admin_header.php';
                 id="linkedin"
                 name="linkedin"
                 class="admin-form-input"
-                placeholder="https://linkedin.com/company/makeit"
+                placeholder="https://linkedin.com/company/websitetailors"
                 value="<?= e($settings['linkedin'] ?? '') ?>"
               />
             </div>
@@ -223,7 +223,7 @@ require_once dirname(__DIR__) . '/includes/admin_header.php';
                 id="instagram"
                 name="instagram"
                 class="admin-form-input"
-                placeholder="https://instagram.com/makeit.digital"
+                placeholder="https://instagram.com/websitetailors"
                 value="<?= e($settings['instagram'] ?? '') ?>"
               />
             </div>
@@ -237,7 +237,7 @@ require_once dirname(__DIR__) . '/includes/admin_header.php';
                 id="facebook"
                 name="facebook"
                 class="admin-form-input"
-                placeholder="https://facebook.com/makeitdigital"
+                placeholder="https://facebook.com/websitetailors"
                 value="<?= e($settings['facebook'] ?? '') ?>"
               />
             </div>
@@ -249,7 +249,7 @@ require_once dirname(__DIR__) . '/includes/admin_header.php';
                 id="github"
                 name="github"
                 class="admin-form-input"
-                placeholder="https://github.com/makeit"
+                placeholder="https://github.com/websitetailors"
                 value="<?= e($settings['github'] ?? '') ?>"
               />
             </div>

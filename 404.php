@@ -1,19 +1,19 @@
 <?php
 /**
- * MakeIT — 404 Not Found Page
+ * WebsiteTailors — 404 Not Found Page
  * 
  * Branded, production-ready user-facing 404 error page.
  */
 
 declare(strict_types=1);
 
-define('MAKEIT_INIT', true);
+define('WebsiteTailors_INIT', true);
 require_once __DIR__ . '/includes/init.php';
 
 http_response_code(404);
 
-$pageTitle = '404 — Page Not Found | MakeIT';
-$pageDescription = 'The digital experience or page you requested could not be found. Return to MakeIT home.';
+$pageTitle = '404 — Page Not Found | WebsiteTailors';
+$pageDescription = 'The digital experience or page you requested could not be found. Return to WebsiteTailors home.';
 $activePage = '404';
 
 require_once __DIR__ . '/includes/header.php';

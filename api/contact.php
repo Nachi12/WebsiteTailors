@@ -1,6 +1,6 @@
 <?php
 /**
- * MakeIT - Contact Form API Endpoint
+ * WebsiteTailors - Contact Form API Endpoint
  * 
  * Processes lead inquiries with server-side validation, CSRF verification,
  * anti-bot honeypot detection, sanitization, and PDO storage into `leads` table.
@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-define('MAKEIT_INIT', true);
+define('WebsiteTailors_INIT', true);
 require_once dirname(__DIR__) . '/includes/init.php';
 
 $isAjax = (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest')

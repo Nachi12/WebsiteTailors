@@ -1,13 +1,13 @@
 <?php
 /**
- * MakeIT Admin — Services Management
+ * Website Tailors Admin — Services Management
  *
  * Full CRUD for services: Create, Edit, Delete, Activate/Deactivate, and Order.
  */
 
 declare(strict_types=1);
 
-if (!defined('MAKEIT_INIT')) { define('MAKEIT_INIT', true); }
+if (!defined('WebsiteTailors_INIT')) { define('WebsiteTailors_INIT', true); }
 require_once dirname(__DIR__) . '/includes/auth_guard.php';
 
 $pageTitle = 'Services Management';

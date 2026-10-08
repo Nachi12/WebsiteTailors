@@ -1,6 +1,6 @@
 <?php
 /**
- * MakeIT — Phase 7 Final CRM UX + Editing Verification Test Suite
+ * WebsiteTailors — Phase 7 Final CRM UX + Editing Verification Test Suite
  *
  * Comprehensive end-to-end verification:
  * 1. CLIENT CRUD: Create client -> Edit client -> Delete client
@@ -24,7 +24,7 @@
 
 declare(strict_types=1);
 
-define('MAKEIT_INIT', true);
+define('WebsiteTailors_INIT', true);
 if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
 }
@@ -34,14 +34,14 @@ $_SESSION['admin_logged_in'] = true;
 $_SESSION['admin_data'] = [
     'id' => 1,
     'username' => 'admin',
-    'email' => 'admin@makeit.digital',
-    'full_name' => 'MakeIT Administrator',
+    'email' => 'websietailorss@gmail.com',
+    'full_name' => 'WebsiteTailors Administrator',
     'role' => 'superadmin',
     'is_active' => 1
 ];
 
 echo "====================================================\n";
-echo "MakeIT Phase 7 Final CRM UX & Data Consistency Test\n";
+echo "WebsiteTailors Phase 7 Final CRM UX & Data Consistency Test\n";
 echo "====================================================\n\n";
 
 $passCount = 0;

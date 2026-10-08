@@ -1,11 +1,11 @@
 <?php
 /**
- * MakeIT - Admin Panel Header & Layout Shell
+ * Website Tailors - Admin Panel Header & Layout Shell
  */
 
 declare(strict_types=1);
 
-if (!defined('MAKEIT_INIT')) {
+if (!defined('WebsiteTailors_INIT')) {
     die('Direct access not permitted.');
 }
 
@@ -37,7 +37,8 @@ $initials = strtoupper(substr($nameParts[0], 0, 1) . (isset($nameParts[1]) ? sub
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title><?= e($pageTitle) ?> — MakeIT CRM</title>
+  <title><?= e($pageTitle) ?> — Website Tailors CRM</title>
+  <meta name="robots" content="noindex, nofollow" />
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -68,7 +69,7 @@ $initials = strtoupper(substr($nameParts[0], 0, 1) . (isset($nameParts[1]) ? sub
   <aside class="sidebar" id="adminSidebar">
     <div class="sidebar-header">
       <a href="<?= e(ADMIN_URL . '/index.php') ?>" class="sidebar-brand">
-        <span>MAKEIT</span>
+        <span>WEBSITE TAILORS</span>
         <span class="brand-dot"></span>
         <span class="brand-badge">CRM</span>
       </a>
@@ -186,7 +187,7 @@ $initials = strtoupper(substr($nameParts[0], 0, 1) . (isset($nameParts[1]) ? sub
         </button>
 
         <nav class="topbar-breadcrumb" aria-label="Breadcrumb">
-          <span>MakeIT</span>
+          <span>WebsiteTailors</span>
           <span class="sep">/</span>
           <span>CRM</span>
           <span class="sep">/</span>

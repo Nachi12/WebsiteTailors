@@ -1,6 +1,6 @@
 -- ==============================================================================
--- MakeIT - Production Database Schema & Seed Data
--- Database: makeit
+-- WebsiteTailors - Production Database Schema & Seed Data
+-- Database: WebsiteTailors
 -- Compatible with MySQL 8.0+ and MariaDB 10.4+
 -- Charset: utf8mb4 / Collation: utf8mb4_unicode_ci
 -- ==============================================================================
@@ -90,6 +90,7 @@ CREATE TABLE `services` (
 DROP TABLE IF EXISTS `projects`;
 CREATE TABLE `projects` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `client_id` INT UNSIGNED NULL DEFAULT NULL,
   `title` VARCHAR(150) NOT NULL,
   `slug` VARCHAR(150) NOT NULL,
   `category` VARCHAR(100) NOT NULL,
@@ -105,6 +106,7 @@ CREATE TABLE `projects` (
   `updated_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `uk_projects_slug` (`slug`),
+  KEY `idx_projects_client_id` (`client_id`),
   KEY `idx_projects_status_featured_order` (`status`, `is_featured`, `display_order`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -198,20 +200,20 @@ CREATE TABLE `site_settings` (
 
 -- Seed Site Settings
 INSERT INTO `site_settings` (`setting_key`, `setting_value`, `setting_group`) VALUES
-('company_name', 'MakeIT', 'general'),
-('tagline', 'We Make Digital Things Work.', 'general'),
-('email', 'hello@makeit.digital', 'contact'),
-('phone', '9035344513', 'contact'),
+('company_name', 'Website Tailors', 'general'),
+('tagline', 'Engineering Digital Precision.', 'general'),
+('email', 'websietailorss@gmail.com', 'contact'),
+('phone', '9380552034', 'contact'),
 ('address', 'Bangalore-560010, karnataka. India', 'contact'),
-('linkedin', 'https://linkedin.com/company/makeit', 'social'),
-('instagram', 'https://instagram.com/makeit.digital', 'social'),
-('facebook', 'https://facebook.com/makeitdigital', 'social'),
-('github', 'https://github.com/makeit', 'social'),
-('twitter', 'https://x.com/makeitdigital', 'social'),
+('linkedin', 'https://linkedin.com/company/websitetailors', 'social'),
+('instagram', 'https://instagram.com/websitetailors', 'social'),
+('facebook', 'https://facebook.com/websitetailors', 'social'),
+('github', 'https://github.com/websitetailors', 'social'),
+('twitter', 'https://x.com/websitetailors', 'social'),
 ('logo', '/assets/images/logo.svg', 'branding'),
 ('favicon', '/assets/images/favicon.svg', 'branding'),
-('meta_title', 'MakeIT — We Make Digital Things Work', 'seo'),
-('meta_description', 'MakeIT designs and builds websites, software, AI automation and digital experiences that actually work.', 'seo'),
+('meta_title', 'Website Tailors — Engineering Digital Precision', 'seo'),
+('meta_description', 'Website Tailors designs and builds websites, software, AI automation and digital experiences that actually work.', 'seo'),
 ('primary_color', '#b8ff3d', 'branding'),
 ('announcement_text', 'Now booking client projects for Q3/Q4', 'general');
 
@@ -219,9 +221,9 @@ INSERT INTO `site_settings` (`setting_key`, `setting_value`, `setting_group`) VA
 INSERT INTO `hero_content` (`id`, `badge_text`, `headline`, `subheadline`, `description`, `primary_button_text`, `primary_button_link`, `secondary_button_text`, `secondary_button_link`, `stats_json`) VALUES
 (1,
  'Digital studio / 2026',
- 'WE MAKE\nDIGITAL\nTHINGS WORK.',
+ 'WE BUILD\nDIGITAL\nPRODUCTS\nTHAT SCALE.',
  'We turn ideas into websites, software and digital experiences that actually work.',
- 'From the first sketch to the final launch, MakeIT designs and builds digital products around the way your business actually works.',
+ 'From the first sketch to the final launch, Website Tailors designs and builds digital products around the way your business actually works.',
  'Start a Project',
  '#contact',
  'Explore Services',
@@ -232,7 +234,7 @@ INSERT INTO `hero_content` (`id`, `badge_text`, `headline`, `subheadline`, `desc
 -- Seed Services
 INSERT INTO `services` (`title`, `slug`, `short_description`, `long_description`, `icon`, `features`, `display_order`, `status`) VALUES
 ('Website Development', 'website-development', 'High-performing business websites and landing pages designed to look professional, load fast and turn visitors into customers.', 'High-performing business websites and landing pages designed to look professional, load fast and turn visitors into customers.', 'code', 'Bespoke Design & Development\nResponsive Across Devices\nFast Load Speeds\nBuilt for Business Conversion', 1, 'published'),
-('Website Refinement', 'website-refinement', 'Already have a website? We refine its design, UX, responsiveness and performance to make it cleaner, faster and easier to use.', 'Already have a website? We refine its design, UX, responsiveness and performance to make it cleaner, faster and easier to use.', 'layout', 'UI/UX & Visual Refinement\nPerformance & Speed Optimization\nMobile Responsiveness Fixes\nNavigation & Content Structure', 2, 'published'),
+('Website Refinement', 'website-refinement', 'Already have a website? We refine its design, UX, responsiveness and performance to WebsiteTailors cleaner, faster and easier to use.', 'Already have a website? We refine its design, UX, responsiveness and performance to WebsiteTailors cleaner, faster and easier to use.', 'layout', 'UI/UX & Visual Refinement\nPerformance & Speed Optimization\nMobile Responsiveness Fixes\nNavigation & Content Structure', 2, 'published'),
 ('WhatsApp Automation', 'whatsapp-automation', 'Automate enquiries, follow-ups, notifications and repetitive customer workflows through WhatsApp.', 'Automate enquiries, follow-ups, notifications and repetitive customer workflows through WhatsApp.', 'message-square', 'Instant Enquiry Responses\nAutomated Follow-up Sequences\nOrder & Status Notifications\nCustom Workflow Integration', 3, 'published');
 
 -- Seed Projects
@@ -251,13 +253,13 @@ INSERT INTO `process_steps` (`step_number`, `title`, `description`, `display_ord
 
 -- Seed Testimonials
 INSERT INTO `testimonials` (`client_name`, `company`, `position`, `content`, `rating`, `image`, `display_order`, `status`) VALUES
-('Rajesh Menon', 'Apex Logistics India', 'Chief Technology Officer', 'MakeIT transformed our dispatch platform from a sluggish legacy headache into a blisteringly fast powerhouse. The speed and clarity of their engineering is unparalleled.', 5, '/assets/images/testimonials/rajesh.webp', 1, 'published'),
-('Ananya Sen', 'Kroma Design Studio', 'Founder & Creative Director', 'Working with MakeIT was seamless. They understood both the delicate aesthetic nuances of our brand and the strict architectural requirements under the hood.', 5, '/assets/images/testimonials/ananya.webp', 2, 'published'),
-('Rohan Singhania', 'Veloce E-Commerce', 'Managing Director', 'Our online store conversion jumped by 34% within the first month after MakeIT rebuilt our checkout flow. Zero framework bloat, lightning speed, and total reliability.', 5, '/assets/images/testimonials/rohan.webp', 3, 'published');
+('Rajesh Menon', 'Apex Logistics India', 'Chief Technology Officer', 'Website Tailors transformed our dispatch platform from a sluggish legacy headache into a blisteringly fast powerhouse. The speed and clarity of their engineering is unparalleled.', 5, '/assets/images/testimonials/rajesh.webp', 1, 'published'),
+('Ananya Sen', 'Kroma Design Studio', 'Founder & Creative Director', 'Working with Website Tailors was seamless. They understood both the delicate aesthetic nuances of our brand and the strict architectural requirements under the hood.', 5, '/assets/images/testimonials/ananya.webp', 2, 'published'),
+('Rohan Singhania', 'Veloce E-Commerce', 'Managing Director', 'Our online store conversion jumped by 34% within the first month after Website Tailors rebuilt our checkout flow. Zero framework bloat, lightning speed, and total reliability.', 5, '/assets/images/testimonials/rohan.webp', 3, 'published');
 
 -- Seed Superadmin Users
 INSERT INTO `admins` (`id`, `username`, `email`, `password_hash`, `full_name`, `role`, `is_active`, `created_at`) VALUES
-(1, 'admin', 'admin@makeit.digital', '$2y$12$ht.4P0FXjJ7ev7MsltCeSeQpBGGj/is8I.XzZ/WMTbz2NTau8dX4y', 'MakeIT Administrator', 'superadmin', 1, NOW()),
+(1, 'admin', 'websietailorss@gmail.com', '$2y$12$ht.4P0FXjJ7ev7MsltCeSeQpBGGj/is8I.XzZ/WMTbz2NTau8dX4y', 'Website Tailors Administrator', 'superadmin', 1, NOW()),
 (2, 'superadmin', 'superadmin@rithamaya.com', '$2y$12$ht.4P0FXjJ7ev7MsltCeSeQpBGGj/is8I.XzZ/WMTbz2NTau8dX4y', 'Rithamaya Administrator', 'superadmin', 1, NOW());
 
 -- --------------------------------------------------------
@@ -313,17 +315,33 @@ CREATE TABLE IF NOT EXISTS `calls` (
 CREATE TABLE IF NOT EXISTS `invoices` (
   `id` INT AUTO_INCREMENT PRIMARY KEY,
   `invoice_number` VARCHAR(50) NOT NULL UNIQUE,
+  `invoice_type` VARCHAR(50) NOT NULL DEFAULT 'advance',
   `client_id` INT UNSIGNED NULL DEFAULT NULL,
   `client_name` VARCHAR(150) NOT NULL,
+  `project_id` INT UNSIGNED NULL DEFAULT NULL,
+  `project_name` VARCHAR(150) NULL DEFAULT NULL,
+  `project_phase` VARCHAR(100) NULL DEFAULT NULL,
   `service` VARCHAR(100) NULL,
   `amount` DECIMAL(10,2) NOT NULL DEFAULT 0.00,
+  `project_total` DECIMAL(12,2) NOT NULL DEFAULT 0.00,
+  `advance_amount` DECIMAL(12,2) NOT NULL DEFAULT 0.00,
+  `amount_received` DECIMAL(12,2) NOT NULL DEFAULT 0.00,
+  `balance_amount` DECIMAL(12,2) NOT NULL DEFAULT 0.00,
   `status` VARCHAR(50) NOT NULL DEFAULT 'paid',
   `due_date` DATE NOT NULL,
   `paid_at` DATETIME NULL,
+  `payment_mode` VARCHAR(50) NULL DEFAULT NULL,
+  `transaction_reference` VARCHAR(100) NULL DEFAULT NULL,
+  `bank_name` VARCHAR(100) NULL DEFAULT NULL,
+  `payment_method_desc` VARCHAR(150) NULL DEFAULT NULL,
+  `payment_date` DATETIME NULL DEFAULT NULL,
+  `line_items` TEXT NULL,
   `notes` TEXT NULL,
   `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` DATETIME NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  INDEX `idx_invoices_client` (`client_id`)
+  INDEX `idx_invoices_client` (`client_id`),
+  INDEX `idx_invoices_project` (`project_id`),
+  INDEX `idx_invoices_type` (`invoice_type`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -335,15 +353,19 @@ CREATE TABLE IF NOT EXISTS `revenue` (
   `client_name` VARCHAR(150) NULL DEFAULT NULL,
   `lead_id` BIGINT UNSIGNED NULL DEFAULT NULL,
   `invoice_id` INT NULL DEFAULT NULL,
+  `project_id` INT UNSIGNED NULL DEFAULT NULL,
   `amount` DECIMAL(12,2) NOT NULL DEFAULT 0.00,
   `payment_type` ENUM('UPI', 'Bank Transfer', 'Cash', 'Card', 'Other') NOT NULL DEFAULT 'Bank Transfer',
   `payment_status` ENUM('Pending', 'Partially Paid', 'Paid', 'Refunded') NOT NULL DEFAULT 'Paid',
   `payment_date` DATETIME NOT NULL,
+  `transaction_reference` VARCHAR(100) NULL DEFAULT NULL,
+  `bank_name` VARCHAR(100) NULL DEFAULT NULL,
   `service` VARCHAR(100) NOT NULL,
   `notes` TEXT NULL,
   `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   INDEX `idx_rev_client` (`client_id`),
+  INDEX `idx_rev_project` (`project_id`),
   INDEX `idx_rev_status` (`payment_status`),
   INDEX `idx_rev_date` (`payment_date`),
   INDEX `idx_rev_service` (`service`)

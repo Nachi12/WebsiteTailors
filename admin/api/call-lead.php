@@ -1,6 +1,6 @@
 <?php
 /**
- * MakeIT Admin — Exotel Click-to-Call API Endpoint
+ * WebsiteTailors Admin — Exotel Click-to-Call API Endpoint
  * 
  * Secure server-side handler for initiating two-leg telephony calls (Agent -> Client)
  * via Exotel. Strictly authenticated for admin session only.
@@ -8,8 +8,8 @@
 
 declare(strict_types=1);
 
-if (!defined('MAKEIT_INIT')) {
-    define('MAKEIT_INIT', true);
+if (!defined('WebsiteTailors_INIT')) {
+    define('WebsiteTailors_INIT', true);
 }
 require_once dirname(__DIR__, 2) . '/includes/init.php';
 require_once dirname(__DIR__) . '/includes/auth_guard.php';
@@ -51,8 +51,8 @@ try {
         json_response(['success' => false, 'error' => 'Invalid phone number format for telephony.'], 422);
     }
 
-    // 3. Retrieve Agent Phone Number from configuration (Default: 9035344513)
-    $agentPhone = defined('MAKEIT_AGENT_PHONE') ? MAKEIT_AGENT_PHONE : '9035344513';
+    // 3. Retrieve Agent Phone Number from configuration (Default: 9380552034)
+    $agentPhone = defined('WebsiteTailors_AGENT_PHONE') ? WebsiteTailors_AGENT_PHONE : '9380552034';
     $callbackUrl = BASE_URL . '/api/webhooks/exotel-call-status.php';
 
     // 4. Initiate Two-Leg Call via Exotel API

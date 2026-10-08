@@ -1,6 +1,6 @@
 <?php
 /**
- * MakeIT — Complete Production-Readiness Audit Test Suite
+ * WebsiteTailors — Complete Production-Readiness Audit Test Suite
  * 
  * Verifies all security criteria, database integrity, upload protections,
  * error handling, performance memoization, SEO tags, and the complete end-to-end user flow:
@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-define('MAKEIT_INIT', true);
+define('WebsiteTailors_INIT', true);
 require_once dirname(__DIR__) . '/includes/init.php';
 
 $totalTests = 0;
@@ -29,7 +29,7 @@ function assert_test(string $name, bool $condition, string $details = ''): void 
 }
 
 echo "====================================================\n";
-echo "MakeIT Comprehensive Production-Readiness Audit\n";
+echo "WebsiteTailors Comprehensive Production-Readiness Audit\n";
 echo "====================================================\n\n";
 
 // -----------------------------------------------------------------------------
@@ -146,14 +146,14 @@ assert_test(
 echo "\nTest Group 3: Authentication & Authorization Controls\n";
 
 // Verify no hardcoded credentials bypass exists
-$fakeAuth = attempt_admin_login('nonexistent_user@makeit.digital', 'WrongPassword123!');
+$fakeAuth = attempt_admin_login('nonexistent_user@WebsiteTailors.digital', 'WrongPassword123!');
 assert_test(
     "Authentication strictly rejects unknown user without hardcoded fallback",
     $fakeAuth['success'] === false && $fakeAuth['error'] === 'Invalid email or password.'
 );
 
 // Verify timing safe authentication with seed password
-$validAuth = attempt_admin_login('admin@makeit.digital', 'Admin@12345');
+$validAuth = attempt_admin_login('websietailorss@gmail.com', 'Admin@12345');
 assert_test(
     "Authentication succeeds with valid database credentials via password_verify()",
     $validAuth['success'] === true
@@ -232,7 +232,7 @@ assert_test(
 );
 
 // Step 4.5: Admin Login
-$loginRes = attempt_admin_login('admin@makeit.digital', 'Admin@12345');
+$loginRes = attempt_admin_login('websietailorss@gmail.com', 'Admin@12345');
 assert_test("Admin logs in successfully", $loginRes['success'] === true);
 
 // Step 4.6: Admin Dashboard

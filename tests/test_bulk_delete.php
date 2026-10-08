@@ -1,6 +1,6 @@
 <?php
 /**
- * MakeIT Admin — Multi-Select Batch Deletion Test Suite
+ * WebsiteTailors Admin — Multi-Select Batch Deletion Test Suite
  *
  * Verifies:
  * 1. Bulk Delete Leads (cascade deletes associated calls, deletes leads, preserves unrelated leads)
@@ -12,7 +12,7 @@
 
 declare(strict_types=1);
 
-define('MAKEIT_INIT', true);
+define('WebsiteTailors_INIT', true);
 if (session_status() !== PHP_SESSION_ACTIVE) {
     @session_start();
 }
@@ -45,7 +45,7 @@ function assertTest(bool $condition, string $description): void
 }
 
 echo "\n=======================================================\n";
-echo "  MAKEIT ADMIN — MULTI-SELECT BATCH DELETE TEST SUITE  \n";
+echo "  WebsiteTailors ADMIN — MULTI-SELECT BATCH DELETE TEST SUITE  \n";
 echo "=======================================================\n\n";
 
 // Ensure CSRF token is available in session

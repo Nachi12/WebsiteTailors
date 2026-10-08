@@ -1,6 +1,6 @@
 <?php
 /**
- * MakeIT - Authentication & Session Security Handler
+ * WebsiteTailors - Authentication & Session Security Handler
  * 
  * Provides session lifecycle management, credential validation,
  * admin authorization, brute-force mitigation, and secure logout.
@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-if (!defined('MAKEIT_INIT')) {
+if (!defined('WebsiteTailors_INIT')) {
     die('Direct access not permitted.');
 }
 

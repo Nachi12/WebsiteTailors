@@ -27,3 +27,8 @@ composer.phar
 # Error logs
 error.log
 *.log
+
+# Agent & Workspace files
+.agents/
+skills-lock.json
+*Hostinger*.pdf

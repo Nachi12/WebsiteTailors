@@ -1,6 +1,6 @@
 <?php
 /**
- * MakeIT - Secure File Upload Handler
+ * WebsiteTailors - Secure File Upload Handler
  * 
  * Provides strict validation against malicious uploads (MIME checking via finfo,
  * extension whitelist, randomized filenames, and path traversal prevention).
@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-if (!defined('MAKEIT_INIT')) {
+if (!defined('WebsiteTailors_INIT')) {
     die('Direct access not permitted.');
 }
 

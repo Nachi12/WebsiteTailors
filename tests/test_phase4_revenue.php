@@ -1,6 +1,6 @@
 <?php
 /**
- * MakeIT — Phase 4 Revenue Management Verification Test Suite
+ * WebsiteTailors — Phase 4 Revenue Management Verification Test Suite
  *
  * Asserts all Phase 4 requirements:
  * 1. Revenue database table schema with 12 fields
@@ -15,7 +15,7 @@
 
 declare(strict_types=1);
 
-define('MAKEIT_INIT', true);
+define('WebsiteTailors_INIT', true);
 if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
 }
@@ -25,8 +25,8 @@ $_SESSION['admin_logged_in'] = true;
 $_SESSION['admin_data'] = [
     'id' => 1,
     'username' => 'admin',
-    'email' => 'admin@makeit.digital',
-    'full_name' => 'MakeIT Administrator',
+    'email' => 'websietailorss@gmail.com',
+    'full_name' => 'WebsiteTailors Administrator',
     'role' => 'superadmin',
     'is_active' => 1
 ];
@@ -36,7 +36,7 @@ require_once dirname(__DIR__) . '/includes/init.php';
 $pdo = Database::getInstance()->getConnection();
 
 echo "====================================================\n";
-echo "MakeIT Phase 4 Revenue Management Verification\n";
+echo "WebsiteTailors Phase 4 Revenue Management Verification\n";
 echo "====================================================\n\n";
 
 $passCount = 0;

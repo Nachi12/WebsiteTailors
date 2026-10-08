@@ -1,6 +1,6 @@
 <?php
 /**
- * MakeIT Telephony — Exotel Call Status Webhook Endpoint
+ * WebsiteTailors Telephony — Exotel Call Status Webhook Endpoint
  * 
  * Asynchronously processes status callback events from Exotel (e.g. ringing, connected, completed, failed)
  * and updates CRM call logs and lead status.
@@ -8,8 +8,8 @@
 
 declare(strict_types=1);
 
-if (!defined('MAKEIT_INIT')) {
-    define('MAKEIT_INIT', true);
+if (!defined('WebsiteTailors_INIT')) {
+    define('WebsiteTailors_INIT', true);
 }
 require_once dirname(__DIR__, 2) . '/includes/init.php';
 

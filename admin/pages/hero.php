@@ -1,6 +1,6 @@
 <?php
 /**
- * MakeIT Admin — Hero Content Management
+ * Website Tailors Admin — Hero Content Management
  *
  * Allows administrators to update the homepage headline, subheadline,
  * description, primary & secondary CTAs, and links.
@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-if (!defined('MAKEIT_INIT')) { define('MAKEIT_INIT', true); }
+if (!defined('WebsiteTailors_INIT')) { define('WebsiteTailors_INIT', true); }
 require_once dirname(__DIR__) . '/includes/auth_guard.php';
 
 $pageTitle = 'Hero Management';
@@ -30,7 +30,7 @@ if (!$hero) {
         'badge_text'            => 'Digital studio / 2026',
         'headline'              => "WE MAKE\nDIGITAL\nTHINGS WORK.",
         'subheadline'           => 'We turn ideas into websites, software and digital experiences that actually work.',
-        'description'           => 'From the first sketch to the final launch, MakeIT designs and builds digital products around the way your business actually works.',
+        'description'           => 'From the first sketch to the final launch, Website Tailors designs and builds digital products around the way your business actually works.',
         'primary_button_text'   => 'Start a Project',
         'primary_button_link'   => '#contact',
         'secondary_button_text' => 'Explore Services',
@@ -54,7 +54,7 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
                 'badge_text'            => 'Digital studio / 2026',
                 'headline'              => "WE MAKE\nDIGITAL\nTHINGS WORK.",
                 'subheadline'           => 'We turn ideas into websites, software and digital experiences that actually work.',
-                'description'           => 'From the first sketch to the final launch, MakeIT designs and builds digital products around the way your business actually works.',
+                'description'           => 'From the first sketch to the final launch, Website Tailors designs and builds digital products around the way your business actually works.',
                 'primary_button_text'   => 'Start a Project',
                 'primary_button_link'   => '#contact',
                 'secondary_button_text' => 'Explore Services',

@@ -1,5 +1,5 @@
 # ==============================================================================
-# MakeIT - Root Apache Configuration (.htaccess)
+# WebsiteTailors - Root Apache Configuration (.htaccess)
 # Designed for production shared hosting (Hostinger, cPanel, Apache 2.4+)
 # ==============================================================================
 
@@ -50,7 +50,7 @@ ErrorDocument 500 /500.php
     </IfModule>
 </Files>
 
-<Files "makeit.sql">
+<Files "WebsiteTailors.sql">
     <IfModule mod_authz_core.c>
         Require all denied
     </IfModule>
@@ -60,7 +60,7 @@ ErrorDocument 500 /500.php
     </IfModule>
 </Files>
 
-<Files "makeit.sqlite">
+<Files "WebsiteTailors.sqlite">
     <IfModule mod_authz_core.c>
         Require all denied
     </IfModule>

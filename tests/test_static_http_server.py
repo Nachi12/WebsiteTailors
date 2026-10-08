@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-MakeIT — Static HTTP Server End-to-End Test Suite
+WebsiteTailors — Static HTTP Server End-to-End Test Suite
 Tests that http://127.0.0.1:3000 serves all pages and assets cleanly with 200 OK.
 """
 
@@ -28,7 +28,7 @@ def check(condition, test_name, details=""):
             print(f"         Details: {details}")
 
 print("====================================================")
-print("MakeIT: Static HTTP Server & Asset Verification")
+print("WebsiteTailors: Static HTTP Server & Asset Verification")
 print("====================================================\n")
 
 # 1. Test Root Homepage
@@ -38,7 +38,7 @@ try:
         html = resp.read().decode("utf-8")
         check(code == 200, "HTTP 200 OK for /")
         check("<!DOCTYPE html>" in html, "Valid HTML5 doctype served")
-        check("MakeIT Digital Studio" in html, "Title rendered correctly")
+        check("Website Tailors" in html, "Title rendered correctly")
         check('id="main-content"' in html, "Main content container present")
 except Exception as e:
     check(False, "Failed to connect to static HTTP server", str(e))
@@ -76,7 +76,7 @@ test_payload = {
     "name": "Siddharth Rao",
     "email": "siddharth.rao@example.com",
     "phone": "9876501234",
-    "company": "MakeIT Static Browser Verification",
+    "company": "WebsiteTailors Static Browser Verification",
     "service": "Websites",
     "budget": "₹1,00,000 – ₹3,00,000",
     "message": "Testing lead form submission directly from automated static suite."

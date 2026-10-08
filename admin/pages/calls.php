@@ -1,6 +1,6 @@
 <?php
 /**
- * MakeIT Admin — Phase 5: Call Management + Call Analytics
+ * Website Tailors Admin — Phase 5: Call Management + Call Analytics
  *
  * 100% database-driven call management, visual analytics, category filters,
  * and complete record management (View, Edit, Delete):
@@ -13,8 +13,8 @@
 
 declare(strict_types=1);
 
-if (!defined('MAKEIT_INIT')) {
-    define('MAKEIT_INIT', true);
+if (!defined('WebsiteTailors_INIT')) {
+    define('WebsiteTailors_INIT', true);
 }
 require_once dirname(__DIR__) . '/includes/auth_guard.php';
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * MakeIT — End-to-End Verification Test Suite
+ * WebsiteTailors — End-to-End Verification Test Suite
  * 
  * Tests the complete flow:
  * 1. Open public website (load contact page, fetch CSRF token)
@@ -24,15 +24,15 @@
 
 declare(strict_types=1);
 
-define('MAKEIT_INIT', true);
+define('WebsiteTailors_INIT', true);
 require_once dirname(__DIR__) . '/includes/init.php';
 if (session_status() === PHP_SESSION_ACTIVE) {
     session_write_close();
 }
 
 $baseUrl = 'http://localhost:8000';
-$cookieFileAdmin = sys_get_temp_dir() . '/makeit_adm_' . uniqid() . '.txt';
-$cookieFilePublic = sys_get_temp_dir() . '/makeit_pub_' . uniqid() . '.txt';
+$cookieFileAdmin = sys_get_temp_dir() . '/WebsiteTailors_adm_' . uniqid() . '.txt';
+$cookieFilePublic = sys_get_temp_dir() . '/WebsiteTailors_pub_' . uniqid() . '.txt';
 if (file_exists($cookieFileAdmin)) unlink($cookieFileAdmin);
 if (file_exists($cookieFilePublic)) unlink($cookieFilePublic);
 
@@ -90,14 +90,14 @@ function fail(string $msg): void {
 }
 
 echo "====================================================\n";
-echo "MakeIT: Website Enquiry → Admin CRM End-to-End Suite\n";
+echo "WebsiteTailors: Website Enquiry → Admin CRM End-to-End Suite\n";
 echo "====================================================\n\n";
 
 function getDb(): PDO {
     $db = Database::getInstance();
     $conn = $db->getConnection();
     if ($conn->getAttribute(PDO::ATTR_DRIVER_NAME) === 'sqlite') {
-        $sqlitePath = dirname(__DIR__) . '/database/makeit.sqlite';
+        $sqlitePath = dirname(__DIR__) . '/database/WebsiteTailors.sqlite';
         $fresh = new PDO('sqlite:' . $sqlitePath, null, null, [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
@@ -223,7 +223,7 @@ $rLoginPost = httpReq(
     'POST',
     http_build_query([
         'csrf_token' => $csrfLogin,
-        'email'      => 'admin@makeit.digital',
+        'email'      => 'websietailorss@gmail.com',
         'password'   => 'Admin@12345'
     ]),
     $cookieFileAdmin

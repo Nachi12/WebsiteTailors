@@ -1,0 +1,4440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Subhiksha Home Care Solutions | Professional Home Healthcare</title>
+
+    <meta name="description"
+        content="Subhiksha Home Care Solutions provides professional nursing, physiotherapy, doctor consultation, lab tests, medical equipment, online consultation and ambulance services in Bangalore, Hosur and Chennai." />
+
+    <meta name="keywords"
+        content="home care Bangalore, nursing care Bangalore, home nursing, physiotherapy at home, elderly care Bangalore, medical nurse Bangalore, home healthcare, Subhiksha Home Care" />
+
+    <meta name="theme-color" content="#176B5B" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        /* =========================================================
+       ROOT
+    ========================================================= */
+
+        :root {
+            --primary: #176b5b;
+            --primary-dark: #0d4038;
+            --primary-light: #65a65a;
+
+            --mint: #eaf5f0;
+            --mint-2: #f2f8f5;
+
+            --cream: #faf8f3;
+            --white: #ffffff;
+
+            --text: #18312d;
+            --text-soft: #60716d;
+            --text-light: #82918d;
+
+            --border: #dce8e3;
+
+            --danger: #c84b4b;
+            --danger-dark: #a73838;
+
+            --shadow-sm: 0 8px 25px rgba(13, 64, 56, 0.06);
+            --shadow-md: 0 20px 50px rgba(13, 64, 56, 0.10);
+            --shadow-lg: 0 30px 80px rgba(13, 64, 56, 0.15);
+
+            --radius-sm: 12px;
+            --radius-md: 18px;
+            --radius-lg: 28px;
+            --radius-xl: 36px;
+
+            --container: 1200px;
+            --transition: 0.3s ease;
+        }
+
+        /* =========================================================
+       RESET
+    ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: var(--white);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        body.modal-open {
+            overflow: hidden;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button,
+        input,
+        textarea,
+        select {
+            font: inherit;
+        }
+
+        button {
+            border: none;
+            cursor: pointer;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: min(var(--container), calc(100% - 40px));
+            margin-inline: auto;
+        }
+
+        .section {
+            padding: 110px 0;
+        }
+
+        .section-soft {
+            background: var(--cream);
+        }
+
+        .section-mint {
+            background: var(--mint-2);
+        }
+
+        /* =========================================================
+       UTILITIES
+    ========================================================= */
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: var(--mint);
+            color: var(--primary);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            background: var(--primary-light);
+            border-radius: 50%;
+        }
+
+        .section-heading {
+            max-width: 720px;
+            margin-bottom: 55px;
+        }
+
+        .section-heading.center {
+            margin-inline: auto;
+            text-align: center;
+        }
+
+        .section-heading h2 {
+            font-family: "DM Sans", sans-serif;
+            font-size: clamp(34px, 5vw, 54px);
+            line-height: 1.08;
+            letter-spacing: -0.04em;
+            margin-bottom: 18px;
+        }
+
+        .section-heading p {
+            color: var(--text-soft);
+            font-size: 17px;
+            max-width: 650px;
+        }
+
+        .section-heading.center p {
+            margin-inline: auto;
+        }
+
+        /* =========================================================
+       BUTTONS
+    ========================================================= */
+
+        .btn {
+            min-height: 52px;
+            padding: 0 22px;
+            border-radius: 14px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            font-size: 14px;
+            font-weight: 700;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            color: white;
+            background: var(--primary);
+            box-shadow: 0 10px 25px rgba(23, 107, 91, 0.2);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 14px 30px rgba(23, 107, 91, 0.28);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--primary-dark);
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-danger {
+            background: var(--danger);
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: var(--danger-dark);
+            transform: translateY(-2px);
+        }
+
+        .icon-arrow {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* =========================================================
+       NAVBAR
+    ========================================================= */
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 18px 0;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(18px);
+            box-shadow: 0 5px 30px rgba(13, 64, 56, 0.08);
+            padding: 12px 0;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            flex-shrink: 0;
+        }
+
+        .logo-symbol {
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            display: grid;
+            place-items: center;
+            background: var(--primary);
+            color: white;
+        }
+
+        .logo-symbol svg {
+            width: 25px;
+            height: 25px;
+        }
+
+        .logo-text {
+            line-height: 1;
+        }
+
+        .logo-text strong {
+            display: block;
+            font-family: "DM Sans", sans-serif;
+            font-size: 19px;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+        }
+
+        .logo-text span {
+            display: block;
+            margin-top: 4px;
+            font-size: 9px;
+            font-weight: 700;
+            color: var(--text-soft);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-links a {
+            color: var(--text-soft);
+            font-size: 13px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-call {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 10px 13px;
+            color: var(--primary);
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .nav-call svg {
+            width: 17px;
+            height: 17px;
+        }
+
+        .menu-toggle {
+            display: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            background: var(--mint);
+            color: var(--primary);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .menu-toggle svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        /* =========================================================
+       HERO
+    ========================================================= */
+
+        .hero {
+            min-height: 800px;
+            padding: 160px 0 100px;
+            background:
+                radial-gradient(circle at 10% 20%, rgba(101, 166, 90, 0.12), transparent 30%),
+                radial-gradient(circle at 90% 15%, rgba(23, 107, 91, 0.08), transparent 25%),
+                var(--cream);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            right: -300px;
+            bottom: -300px;
+            border: 1px solid rgba(23, 107, 91, 0.08);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 0.95fr 1.05fr;
+            gap: 75px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 620px;
+        }
+
+        .hero h1 {
+            font-family: "DM Sans", sans-serif;
+            font-size: clamp(48px, 6vw, 78px);
+            line-height: 0.98;
+            letter-spacing: -0.055em;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero-description {
+            color: var(--text-soft);
+            font-size: 18px;
+            line-height: 1.75;
+            max-width: 590px;
+            margin-bottom: 30px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .hero-services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+        }
+
+        .hero-services span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 11px;
+            border-radius: 999px;
+            background: white;
+            border: 1px solid var(--border);
+            color: var(--text-soft);
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .hero-services svg {
+            width: 13px;
+            height: 13px;
+            color: var(--primary);
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            border-radius: 36px;
+            overflow: hidden;
+            aspect-ratio: 0.95;
+            box-shadow: var(--shadow-lg);
+            background: var(--mint);
+        }
+
+        .hero-image-wrapper::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg,
+                    transparent 50%,
+                    rgba(13, 64, 56, 0.22));
+            pointer-events: none;
+        }
+
+        .hero-image {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .floating-card {
+            position: absolute;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            border-radius: 18px;
+            box-shadow: var(--shadow-md);
+            padding: 17px;
+        }
+
+        .care-card {
+            left: -35px;
+            bottom: 35px;
+            width: 210px;
+        }
+
+        .location-card {
+            right: -30px;
+            top: 35px;
+            width: 185px;
+        }
+
+        .floating-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 13px;
+            display: grid;
+            place-items: center;
+            background: var(--mint);
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .floating-icon svg {
+            width: 21px;
+            height: 21px;
+        }
+
+        .floating-card strong {
+            display: block;
+            font-size: 13px;
+            margin-bottom: 3px;
+        }
+
+        .floating-card p {
+            color: var(--text-soft);
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        /* =========================================================
+       TRUST STRIP
+    ========================================================= */
+
+        .trust-strip {
+            padding: 25px 0;
+            border-bottom: 1px solid var(--border);
+            background: white;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            color: var(--text-soft);
+            font-size: 12px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .trust-item svg {
+            width: 22px;
+            height: 22px;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        /* =========================================================
+       SERVICES
+    ========================================================= */
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .service-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            overflow: hidden;
+            transition: 0.35s ease;
+            box-shadow: 0 5px 20px rgba(13, 64, 56, 0.03);
+        }
+
+        .service-card:hover {
+            transform: translateY(-7px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(23, 107, 91, 0.25);
+        }
+
+        .service-image {
+            height: 190px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-image img {
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s ease;
+        }
+
+        .service-card:hover .service-image img {
+            transform: scale(1.05);
+        }
+
+        .service-icon {
+            position: absolute;
+            left: 16px;
+            bottom: 16px;
+            width: 45px;
+            height: 45px;
+            display: grid;
+            place-items: center;
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--primary);
+            border-radius: 14px;
+            box-shadow: 0 8px 25px rgba(13, 64, 56, 0.15);
+        }
+
+        .service-icon svg {
+            width: 21px;
+            height: 21px;
+        }
+
+        .service-content {
+            padding: 22px;
+        }
+
+        .service-content h3 {
+            font-family: "DM Sans", sans-serif;
+            font-size: 21px;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .service-content p {
+            color: var(--text-soft);
+            font-size: 13px;
+            line-height: 1.65;
+            margin-bottom: 16px;
+        }
+
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--primary);
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .service-link svg {
+            width: 15px;
+            height: 15px;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-link svg {
+            transform: translateX(4px);
+        }
+
+        /* =========================================================
+       ABOUT
+    ========================================================= */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.95fr 1.05fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-image-wrapper {
+            position: relative;
+        }
+
+        .about-image {
+            height: 600px;
+            object-fit: cover;
+            border-radius: 30px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .about-badge {
+            position: absolute;
+            right: -30px;
+            bottom: 35px;
+            width: 210px;
+            background: var(--primary);
+            color: white;
+            border-radius: 20px;
+            padding: 22px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .about-badge svg {
+            width: 25px;
+            height: 25px;
+            margin-bottom: 10px;
+        }
+
+        .about-badge strong {
+            display: block;
+            font-family: "DM Sans", sans-serif;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .about-badge p {
+            font-size: 11px;
+            opacity: 0.8;
+        }
+
+        .about-content h2 {
+            font-family: "DM Sans", sans-serif;
+            font-size: clamp(35px, 4vw, 54px);
+            line-height: 1.05;
+            letter-spacing: -0.045em;
+            margin-bottom: 22px;
+        }
+
+        .about-content>p {
+            color: var(--text-soft);
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .check-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-bottom: 35px;
+        }
+
+        .check-list li {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            color: var(--text);
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .check-list svg {
+            width: 19px;
+            height: 19px;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        /* =========================================================
+       HOW IT WORKS
+    ========================================================= */
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            position: relative;
+        }
+
+        .steps::before {
+            content: "";
+            position: absolute;
+            top: 37px;
+            left: 12%;
+            right: 12%;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .step {
+            text-align: center;
+            padding: 0 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-number {
+            width: 74px;
+            height: 74px;
+            margin: 0 auto 24px;
+            border-radius: 50%;
+            background: white;
+            border: 1px solid var(--border);
+            display: grid;
+            place-items: center;
+            font-family: "DM Sans", sans-serif;
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--primary);
+            box-shadow: 0 10px 25px rgba(13, 64, 56, 0.06);
+        }
+
+        .step h3 {
+            font-family: "DM Sans", sans-serif;
+            font-size: 19px;
+            margin-bottom: 9px;
+        }
+
+        .step p {
+            color: var(--text-soft);
+            font-size: 13px;
+            line-height: 1.65;
+        }
+
+        /* =========================================================
+       WHY US
+    ========================================================= */
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .why-card {
+            padding: 30px 24px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            transition: var(--transition);
+        }
+
+        .why-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .why-icon {
+            width: 52px;
+            height: 52px;
+            display: grid;
+            place-items: center;
+            background: var(--mint);
+            color: var(--primary);
+            border-radius: 16px;
+            margin-bottom: 20px;
+        }
+
+        .why-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .why-card h3 {
+            font-family: "DM Sans", sans-serif;
+            font-size: 20px;
+            margin-bottom: 9px;
+        }
+
+        .why-card p {
+            color: var(--text-soft);
+            font-size: 13px;
+            line-height: 1.65;
+        }
+
+        /* =========================================================
+       TEAM
+    ========================================================= */
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .team-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 25px;
+            height: 450px;
+            background: var(--mint);
+        }
+
+        .team-card img {
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s ease;
+        }
+
+        .team-card:hover img {
+            transform: scale(1.04);
+        }
+
+        .team-overlay {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 30px 25px;
+            color: white;
+            background: linear-gradient(transparent,
+                    rgba(13, 64, 56, 0.9));
+        }
+
+        .team-overlay span {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.75;
+        }
+
+        .team-overlay h3 {
+            font-family: "DM Sans", sans-serif;
+            font-size: 25px;
+            margin-top: 5px;
+        }
+
+        /* =========================================================
+       LOCATIONS
+    ========================================================= */
+
+        .locations-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .location-main {
+            min-height: 420px;
+            padding: 45px;
+            border-radius: 30px;
+            background:
+                linear-gradient(135deg,
+                    rgba(13, 64, 56, 0.95),
+                    rgba(23, 107, 91, 0.88)),
+                url("https://images.unsplash.com/photo-1569336415962-a4bd9f69c07b?auto=format&fit=crop&w=1400&q=85") center / cover;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .location-main h3 {
+            font-family: "DM Sans", sans-serif;
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .location-main p {
+            max-width: 470px;
+            opacity: 0.8;
+            font-size: 14px;
+        }
+
+        .locations-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .location-item {
+            min-height: 200px;
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: white;
+            transition: var(--transition);
+        }
+
+        .location-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .location-item:last-child {
+            grid-column: span 2;
+            min-height: 150px;
+        }
+
+        .location-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 14px;
+            display: grid;
+            place-items: center;
+            background: var(--mint);
+            color: var(--primary);
+        }
+
+        .location-icon svg {
+            width: 21px;
+            height: 21px;
+        }
+
+        .location-item h4 {
+            font-family: "DM Sans", sans-serif;
+            font-size: 21px;
+        }
+
+        .location-item p {
+            color: var(--text-soft);
+            font-size: 12px;
+        }
+
+        /* =========================================================
+       TESTIMONIALS
+    ========================================================= */
+
+        .testimonial-wrapper {
+            position: relative;
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .testimonial-track {
+            overflow: hidden;
+        }
+
+        .testimonial {
+            display: none;
+            padding: 55px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+        }
+
+        .testimonial.active {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .stars {
+            display: flex;
+            justify-content: center;
+            gap: 4px;
+            color: #d5a835;
+            margin-bottom: 25px;
+        }
+
+        .stars svg {
+            width: 17px;
+            height: 17px;
+            fill: currentColor;
+        }
+
+        .testimonial blockquote {
+            font-family: "DM Sans", sans-serif;
+            font-size: clamp(21px, 3vw, 29px);
+            line-height: 1.45;
+            letter-spacing: -0.025em;
+            margin-bottom: 28px;
+        }
+
+        .testimonial-author strong {
+            display: block;
+            font-size: 14px;
+        }
+
+        .testimonial-author span {
+            display: block;
+            margin-top: 4px;
+            color: var(--text-soft);
+            font-size: 12px;
+        }
+
+        .testimonial-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 22px;
+        }
+
+        .testimonial-btn {
+            width: 43px;
+            height: 43px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            background: white;
+            color: var(--primary);
+            display: grid;
+            place-items: center;
+        }
+
+        .testimonial-btn:hover {
+            background: var(--mint);
+        }
+
+        .testimonial-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* =========================================================
+       FAQ
+    ========================================================= */
+
+        .faq-wrapper {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 24px 5px;
+            background: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: left;
+            color: var(--text);
+            font-family: "DM Sans", sans-serif;
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .faq-question svg {
+            width: 19px;
+            height: 19px;
+            color: var(--primary);
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+
+        .faq-item.open .faq-question svg {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+        }
+
+        .faq-answer p {
+            padding: 0 45px 24px 5px;
+            color: var(--text-soft);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        /* =========================================================
+       CTA
+    ========================================================= */
+
+        .cta-section {
+            padding: 100px 0;
+        }
+
+        .cta-box {
+            position: relative;
+            overflow: hidden;
+            background: var(--primary-dark);
+            color: white;
+            padding: 75px;
+            border-radius: 35px;
+            text-align: center;
+        }
+
+        .cta-box::before {
+            content: "";
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 50%;
+            top: -250px;
+            left: -150px;
+        }
+
+        .cta-box::after {
+            content: "";
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 50%;
+            right: -180px;
+            bottom: -220px;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-box h2 {
+            font-family: "DM Sans", sans-serif;
+            font-size: clamp(35px, 5vw, 58px);
+            line-height: 1.05;
+            letter-spacing: -0.045em;
+            max-width: 800px;
+            margin: auto auto 18px;
+        }
+
+        .cta-box p {
+            max-width: 620px;
+            margin: 0 auto 30px;
+            color: rgba(255, 255, 255, 0.72);
+            font-size: 15px;
+        }
+
+        .cta-actions {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        /* =========================================================
+       CONTACT
+    ========================================================= */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 30px;
+        }
+
+        .contact-info {
+            padding: 40px;
+            border-radius: 28px;
+            background: var(--mint);
+        }
+
+        .contact-info h3 {
+            font-family: "DM Sans", sans-serif;
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .contact-info>p {
+            color: var(--text-soft);
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 14px;
+            margin-bottom: 23px;
+        }
+
+        .contact-icon {
+            width: 43px;
+            height: 43px;
+            border-radius: 13px;
+            background: white;
+            color: var(--primary);
+            display: grid;
+            place-items: center;
+            flex-shrink: 0;
+        }
+
+        .contact-icon svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .contact-item strong {
+            display: block;
+            font-size: 12px;
+            margin-bottom: 4px;
+        }
+
+        .contact-item a,
+        .contact-item span {
+            color: var(--text-soft);
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .contact-form {
+            background: white;
+            border: 1px solid var(--border);
+            padding: 40px;
+            border-radius: 28px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .contact-form h3 {
+            font-family: "DM Sans", sans-serif;
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .contact-form>p {
+            color: var(--text-soft);
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group.full {
+            grid-column: span 2;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 7px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 13px 14px;
+            outline: none;
+            color: var(--text);
+            background: white;
+            transition: var(--transition);
+            font-size: 13px;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(23, 107, 91, 0.08);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* =========================================================
+       FOOTER
+    ========================================================= */
+
+        footer {
+            background: #092f29;
+            color: white;
+            padding: 70px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr 1fr;
+            gap: 50px;
+            padding-bottom: 50px;
+        }
+
+        .footer-logo .logo-symbol {
+            background: white;
+            color: var(--primary);
+        }
+
+        .footer-logo .logo-text strong {
+            color: white;
+        }
+
+        .footer-logo .logo-text span {
+            color: rgba(255, 255, 255, 0.55);
+        }
+
+        .footer-description {
+            color: rgba(255, 255, 255, 0.55);
+            font-size: 13px;
+            line-height: 1.7;
+            max-width: 300px;
+            margin-top: 20px;
+        }
+
+        .footer-column h4 {
+            font-family: "DM Sans", sans-serif;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .footer-column li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column a {
+            color: rgba(255, 255, 255, 0.55);
+            font-size: 12px;
+            transition: var(--transition);
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            color: rgba(255, 255, 255, 0.45);
+            font-size: 11px;
+        }
+
+        /* =========================================================
+       MODAL
+    ========================================================= */
+
+        .modal {
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: rgba(9, 47, 41, 0.65);
+            backdrop-filter: blur(8px);
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            width: min(600px, 100%);
+            max-height: 90vh;
+            overflow-y: auto;
+            background: white;
+            border-radius: 25px;
+            padding: 35px;
+            position: relative;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+            animation: modalIn 0.3s ease;
+        }
+
+        @keyframes modalIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.98);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--mint);
+            color: var(--primary);
+            display: grid;
+            place-items: center;
+        }
+
+        .modal-close svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .modal-content h3 {
+            font-family: "DM Sans", sans-serif;
+            font-size: 30px;
+            margin-bottom: 8px;
+            padding-right: 40px;
+        }
+
+        .modal-content>p {
+            color: var(--text-soft);
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+
+        /* =========================================================
+       TOAST
+    ========================================================= */
+
+        .toast {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            z-index: 3000;
+            max-width: 360px;
+            background: var(--primary-dark);
+            color: white;
+            padding: 15px 18px;
+            border-radius: 14px;
+            box-shadow: var(--shadow-md);
+            transform: translateY(130px);
+            opacity: 0;
+            pointer-events: none;
+            transition: 0.35s ease;
+            font-size: 13px;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* =========================================================
+       BACK TO TOP
+    ========================================================= */
+
+        .back-top {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            z-index: 800;
+            display: grid;
+            place-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: var(--transition);
+            box-shadow: var(--shadow-md);
+        }
+
+        .back-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-top svg {
+            width: 19px;
+            height: 19px;
+        }
+
+        /* =========================================================
+       MOBILE BOTTOM BAR
+    ========================================================= */
+
+        .mobile-bottom-bar {
+            display: none;
+        }
+
+        /* =========================================================
+       REVEAL ANIMATION
+    ========================================================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+        @media (max-width: 1100px) {
+            .nav-links {
+                gap: 18px;
+            }
+
+            .nav-call {
+                display: none;
+            }
+
+            .hero-grid {
+                gap: 45px;
+            }
+
+            .care-card {
+                left: -20px;
+            }
+
+            .location-card {
+                right: -15px;
+            }
+
+            .about-grid {
+                gap: 45px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .section {
+                padding: 80px 0;
+            }
+
+            .nav-links,
+            .nav-actions .btn {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links.mobile-open {
+                display: flex;
+                position: absolute;
+                top: calc(100% + 10px);
+                left: 20px;
+                right: 20px;
+                background: white;
+                padding: 20px;
+                border-radius: 18px;
+                box-shadow: var(--shadow-md);
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                border: 1px solid var(--border);
+            }
+
+            .nav-links.mobile-open a {
+                padding: 13px 10px;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links.mobile-open a:last-child {
+                border-bottom: none;
+            }
+
+            .hero {
+                padding-top: 130px;
+            }
+
+            .hero-grid,
+            .about-grid,
+            .locations-wrapper,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content {
+                max-width: 800px;
+            }
+
+            .hero-visual {
+                max-width: 700px;
+                margin-inline: auto;
+                width: 100%;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .trust-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .steps {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 50px 0;
+            }
+
+            .steps::before {
+                display: none;
+            }
+
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: 2fr 1fr 1fr;
+            }
+
+            .footer-column:last-child {
+                grid-column: span 2;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .container {
+                width: min(100% - 28px, var(--container));
+            }
+
+            .section {
+                padding: 70px 0;
+            }
+
+            .section-heading {
+                margin-bottom: 35px;
+            }
+
+            .section-heading h2 {
+                font-size: 37px;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 120px 0 70px;
+            }
+
+            .hero h1 {
+                font-size: clamp(43px, 13vw, 64px);
+            }
+
+            .hero-description {
+                font-size: 15px;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .hero-actions .btn {
+                width: 100%;
+            }
+
+            .hero-services {
+                gap: 6px;
+            }
+
+            .hero-services span {
+                font-size: 10px;
+            }
+
+            .hero-image-wrapper {
+                border-radius: 25px;
+            }
+
+            .care-card {
+                left: 12px;
+                bottom: 15px;
+                width: 185px;
+            }
+
+            .location-card {
+                right: 12px;
+                top: 15px;
+                width: 155px;
+            }
+
+            .floating-card {
+                padding: 13px;
+            }
+
+            .floating-card p {
+                font-size: 10px;
+            }
+
+            .trust-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px 10px;
+            }
+
+            .trust-item {
+                font-size: 10px;
+            }
+
+            .trust-item svg {
+                width: 18px;
+                height: 18px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-image {
+                height: 210px;
+            }
+
+            .about-image {
+                height: 420px;
+            }
+
+            .about-badge {
+                right: 15px;
+                bottom: 15px;
+                width: 180px;
+            }
+
+            .check-list {
+                grid-template-columns: 1fr;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-card {
+                height: 420px;
+            }
+
+            .locations-list {
+                grid-template-columns: 1fr;
+            }
+
+            .location-item:last-child {
+                grid-column: span 1;
+            }
+
+            .location-main {
+                min-height: 340px;
+                padding: 30px;
+            }
+
+            .testimonial {
+                padding: 35px 22px;
+            }
+
+            .testimonial blockquote {
+                font-size: 20px;
+            }
+
+            .cta-box {
+                padding: 55px 22px;
+                border-radius: 25px;
+            }
+
+            .cta-actions {
+                flex-direction: column;
+            }
+
+            .cta-actions .btn {
+                width: 100%;
+            }
+
+            .contact-info,
+            .contact-form {
+                padding: 25px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full {
+                grid-column: span 1;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 35px 20px;
+            }
+
+            .footer-column:last-child {
+                grid-column: span 1;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .back-top {
+                right: 15px;
+                bottom: 75px;
+            }
+
+            .mobile-bottom-bar {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 900;
+                background: rgba(255, 255, 255, 0.96);
+                backdrop-filter: blur(15px);
+                border-top: 1px solid var(--border);
+                padding: 8px;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1.25fr;
+                gap: 7px;
+            }
+
+            .mobile-bottom-bar a,
+            .mobile-bottom-bar button {
+                min-height: 44px;
+                border-radius: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 5px;
+                font-size: 10px;
+                font-weight: 800;
+            }
+
+            .mobile-bottom-bar svg {
+                width: 16px;
+                height: 16px;
+            }
+
+            .mobile-call {
+                background: var(--mint);
+                color: var(--primary);
+            }
+
+            .mobile-whatsapp {
+                background: #eaf7ee;
+                color: #168344;
+            }
+
+            .mobile-book {
+                background: var(--primary);
+                color: white;
+            }
+
+            body {
+                padding-bottom: 62px;
+            }
+
+            footer {
+                padding-bottom: 100px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =======================================================
+       NAVIGATION
+  ======================================================== -->
+
+    <header class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+
+                <a href="#home" class="logo">
+                    <div class="logo-symbol">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 10.5 12 3l9 7.5"></path>
+                            <path d="M5 9.5V21h14V9.5"></path>
+                            <path d="M9 14h6"></path>
+                            <path d="M12 11v6"></path>
+                        </svg>
+                    </div>
+
+                    <div class="logo-text">
+                        <strong>SUBHIKSHA</strong>
+                        <span>Home Care Solutions</span>
+                    </div>
+                </a>
+
+                <nav class="nav-links" id="navLinks">
+                    <a href="#home">Home</a>
+                    <a href="#services">Services</a>
+                    <a href="#about">About Us</a>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#testimonials">Testimonials</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+
+                <div class="nav-actions">
+                    <a href="tel:+919110426772" class="nav-call">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.08 5.18 2 2 0 0 1 5.06 3h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L9 10.73a16 16 0 0 0 4.27 4.27l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 21 15.9z">
+                            </path>
+                        </svg>
+                        Call Now
+                    </a>
+
+                    <button class="btn btn-primary open-booking">
+                        Book Home Care
+                        <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14"></path>
+                            <path d="m13 6 6 6-6 6"></path>
+                        </svg>
+                    </button>
+
+                    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+                        <svg id="menuIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 6h16"></path>
+                            <path d="M4 12h16"></path>
+                            <path d="M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+
+    <!-- =======================================================
+       HERO
+  ======================================================== -->
+
+    <main>
+
+        <section class="hero" id="home">
+            <div class="container">
+
+                <div class="hero-grid">
+
+                    <div class="hero-content reveal">
+
+                        <div class="eyebrow">
+                            Home Healthcare Services
+                        </div>
+
+                        <h1>
+                            Professional Healthcare.
+                            <span>Right at Your Home.</span>
+                        </h1>
+
+                        <p class="hero-description">
+                            Compassionate nursing, physiotherapy, medical support and
+                            home healthcare services for you and your loved ones —
+                            delivered with care, dignity and professionalism.
+                        </p>
+
+                        <div class="hero-actions">
+
+                            <button class="btn btn-primary open-booking">
+                                Book Home Care
+                                <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14"></path>
+                                    <path d="m13 6 6 6-6 6"></path>
+                                </svg>
+                            </button>
+
+                            <a href="tel:+919110426772" class="btn btn-secondary">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.08 5.18 2 2 0 0 1 5.06 3h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L9 10.73a16 16 0 0 0 4.27 4.27l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 21 15.9z">
+                                    </path>
+                                </svg>
+                                91104 26772
+                            </a>
+
+                        </div>
+
+                        <div class="hero-services">
+
+                            <span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 11l3 3L22 4"></path>
+                                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                                </svg>
+                                Nursing Care
+                            </span>
+
+                            <span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="9"></circle>
+                                    <path d="M8 12h8"></path>
+                                    <path d="M12 8v8"></path>
+                                </svg>
+                                Physiotherapy
+                            </span>
+
+                            <span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"></path>
+                                    <path d="M3 21a6 6 0 0 1 12 0"></path>
+                                    <path d="M17 8h4"></path>
+                                    <path d="M19 6v4"></path>
+                                </svg>
+                                Doctor Consultation
+                            </span>
+
+                            <span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M3 3h18v18H3z"></path>
+                                    <path d="M7 12h10"></path>
+                                    <path d="M12 7v10"></path>
+                                </svg>
+                                Home Diagnostics
+                            </span>
+
+                            <span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M3 17h13V5H3z"></path>
+                                    <path d="M16 9h4l2 3v5h-6z"></path>
+                                    <circle cx="7" cy="19" r="2"></circle>
+                                    <circle cx="18" cy="19" r="2"></circle>
+                                </svg>
+                                24/7 Ambulance
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="hero-visual reveal">
+
+                        <div class="hero-image-wrapper">
+
+                            <img class="hero-image"
+                                src="https://images.unsplash.com/photo-1576765608866-5b51046452be?auto=format&fit=crop&w=1200&q=90"
+                                alt="Professional caregiver supporting an elderly patient at home" />
+
+                        </div>
+
+                        <div class="floating-card care-card">
+
+                            <div class="floating-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 12c0 5-3.5 8-8 9-4.5-1-8-4-8-9V5l8-3 8 3z"></path>
+                                    <path d="m9 12 2 2 4-4"></path>
+                                </svg>
+                            </div>
+
+                            <strong>Professional Care</strong>
+
+                            <p>
+                                Compassionate support designed around your family's needs.
+                            </p>
+
+                        </div>
+
+                        <div class="floating-card location-card">
+
+                            <div class="floating-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path>
+                                    <circle cx="12" cy="10" r="2.5"></circle>
+                                </svg>
+                            </div>
+
+                            <strong>Serving You</strong>
+
+                            <p>
+                                Bangalore · Hosur · Chennai
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+         TRUST STRIP
+    ====================================================== -->
+
+        <section class="trust-strip">
+            <div class="container">
+
+                <div class="trust-grid">
+
+                    <div class="trust-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 7h-9"></path>
+                            <path d="M14 17H4"></path>
+                            <path d="M20 12H4"></path>
+                            <path d="M7 7 4 4"></path>
+                            <path d="m4 4 3 3"></path>
+                        </svg>
+                        Professional Care
+                    </div>
+
+                    <div class="trust-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M20 11.5A8.38 8.38 0 0 1 12 20a8.38 8.38 0 0 1-8-8.5A8.38 8.38 0 0 1 12 3a8.38 8.38 0 0 1 8 8.5Z">
+                            </path>
+                            <path d="M8 12h8"></path>
+                            <path d="M12 8v8"></path>
+                        </svg>
+                        Personalized Support
+                    </div>
+
+                    <div class="trust-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M20.8 8.7c0 5.2-8.8 10.1-8.8 10.1S3.2 13.9 3.2 8.7A4.7 4.7 0 0 1 12 6.2a4.7 4.7 0 0 1 8.8 2.5Z">
+                            </path>
+                        </svg>
+                        Compassionate Care
+                    </div>
+
+                    <div class="trust-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 10h18"></path>
+                            <path d="M5 10v10"></path>
+                            <path d="M19 10v10"></path>
+                            <path d="M3 20h18"></path>
+                            <path d="M12 3v7"></path>
+                            <path d="M8 6h8"></path>
+                        </svg>
+                        Home-Based Convenience
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+         SERVICES
+    ====================================================== -->
+
+        <section class="section section-soft" id="services">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <div class="eyebrow">
+                        Our Services
+                    </div>
+
+                    <h2>
+                        Complete Home Care,
+                        <span style="color: var(--primary);">Under One Roof.</span>
+                    </h2>
+
+                    <p>
+                        From everyday assistance to professional medical support,
+                        Subhiksha brings essential healthcare services closer to home.
+                    </p>
+
+                </div>
+
+
+                <div class="services-grid">
+
+
+                    <!-- SERVICE 1 -->
+
+                    <article class="service-card reveal">
+
+                        <div class="service-image">
+
+                            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=700&q=85"
+                                alt="Nursing attendant providing home care" loading="lazy" />
+
+                            <div class="service-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"></path>
+                                    <path d="M3 21a6 6 0 0 1 12 0"></path>
+                                    <path d="M17 8h4"></path>
+                                    <path d="M19 6v4"></path>
+                                </svg>
+                            </div>
+
+                        </div>
+
+                        <div class="service-content">
+                            <h3>Nursing Attendants</h3>
+
+                            <p>
+                                Compassionate care and assistance in the comfort of your home.
+                            </p>
+
+                            <a href="#contact" class="service-link">
+                                Enquire Now
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14"></path>
+                                    <path d="m13 6 6 6-6 6"></path>
+                                </svg>
+                            </a>
+                        </div>
+
+                    </article>
+
+
+                    <!-- SERVICE 2 -->
+
+                    <article class="service-card reveal">
+
+                        <div class="service-image">
+
+                            <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=700&q=85"
+                                alt="Professional medical nurse" loading="lazy" />
+
+                            <div class="service-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"></path>
+                                    <path d="M12 8v6"></path>
+                                    <path d="M9 11h6"></path>
+                                </svg>
+                            </div>
+
+                        </div>
+
+                        <div class="service-content">
+                            <h3>Medical Nurse</h3>
+
+                            <p>
+                                Professional nursing care for your health and recovery needs.
+                            </p>
+
+                            <a href="#contact" class="service-link">
+                                Enquire Now
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14"></path>
+                                    <path d="m13 6 6 6-6 6"></path>
+                                </svg>
+                            </a>
+                        </div>
+
+                    </article>
+
+
+                    <!-- SERVICE 3 -->
+
+                    <article class="service-card reveal">
+
+                        <div class="service-image">
+
+                            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=700&q=85"
+                                alt="Physiotherapist helping patient" loading="lazy" />
+
+                            <div class="service-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="5" r="2"></circle>
+                                    <path d="m8 22 2-8 2 2 4 2"></path>
+                                    <path d="m10 14 2-5 3 2"></path>
+                                    <path d="M15 11h4"></path>
+                                </svg>
+                            </div>
+
+                        </div>
+
+                        <div class="service-content">
+                            <h3>Physiotherapist</h3>
+
+                            <p>
+                                Rehabilitation and therapy designed to support better mobility
+                                and recovery.
+                            </p>
+
+                            <a href="#contact" class="service-link">
+                                Enquire Now
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14"></path>
+                                    <path d="m13 6 6 6-6 6"></path>
+                                </svg>
+                            </a>
+                        </div>
+
+                    </article>
+
+
+                    <!-- SERVICE 4 -->
+
+                    <article class="service-card reveal">
+
+                        <div class="service-image">
+
+                            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=700&q=85"
+                                alt="Short term nursing care" loading="lazy" />
+
+                            <div class="service-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+                                    <path d="M8 3v4"></path>
+                                    <path d="M16 3v4"></path>
+                                    <path d="M3 10h18"></path>
+                                    <path d="M12 13v4"></path>
+                                    <path d="M10 15h4"></path>
+                                </svg>
+                            </div>
+
+                        </div>
+
+                        <div class="service-content">
+                            <h3>Short-Term Nursing Visits</h3>
+
+                            <p>
+                                Professional short-term care when you need additional support.
+                            </p>
+
+                            <a href="#contact" class="service-link">
+                                Enquire Now
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14"></path>
+                                    <path d="m13 6 6 6-6 6"></path>
+                                </svg>
+                            </a>
+                        </div>
+
+                    </article>
+
+
+                    <!-- SERVICE 5 -->
+
+                    <article class="service-card reveal">
+
+                        <div class="service-image">
+
+                            <img src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=700&q=85"
+                                alt="Doctor consultation" loading="lazy" />
+
+                            <div class="service-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                    <path d="M4 21a8 8 0 0 1 16 0"></path>
+                                    <path d="M19 4v4"></path>
+                                    <path d="M17 6h4"></path>
+                                </svg>
+                            </div>
+
+                        </div>
+
+                        <div class="service-content">
+                            <h3>Doctor Consultation</h3>
+
+                            <p>
+                                Expert medical advice from the comfort and convenience of home.
+                            </p>
+
+                            <a href="#contact" class="service-link">
+                                Enquire Now
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14"></path>
+                                    <path d="m13 6 6 6-6 6"></path>
+                                </svg>
+                            </a>
+                        </div>
+
+                    </article>
+
+
+                    <!-- SERVICE 6 -->
+
+                    <article class="service-card reveal">
+
+                        <div class="service-image">
+
+                            <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=700&q=85"
+                                alt="Medical equipment" loading="lazy" />
+
+                            <div class="service-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+                                    <path d="M8 9h8"></path>
+                                    <path d="M8 13h5"></path>
+                                    <path d="M8 17h3"></path>
+                                </svg>
+                            </div>
+
+                        </div>
+
+                        <div class="service-content">
+                            <h3>Medical Equipment</h3>
+
+                            <p>
+                                Quality medical equipment available for rent or purchase.
+                            </p>
+
+                            <a href="#contact" class="service-link">
+                                Enquire Now
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14"></path>
+                                    <path d="m13 6 6 6-6 6"></path>
+                                </svg>
+                            </a>
+                        </div>
+
+                    </article>
+
+
+                    <!-- SERVICE 7 -->
+
+                    <article class="service-card reveal">
+
+                        <div class="service-image">
+
+                            <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=700&q=85"
+                                alt="Lab test and diagnostics" loading="lazy" />
+
+                            <div class="service-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 3h6"></path>
+                                    <path d="M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3"></path>
+                                    <path d="M8 15h8"></path>
+                                </svg>
+                            </div>
+
+                        </div>
+
+                        <div class="service-content">
+                            <h3>Lab Test</h3>
+
+                            <p>
+                                Accurate and convenient laboratory testing at home.
+                            </p>
+
+                            <a href="#contact" class="service-link">
+                                Enquire Now
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14"></path>
+                                    <path d="m13 6 6 6-6 6"></path>
+                                </svg>
+                            </a>
+                        </div>
+
+                    </article>
+
+
+                    <!-- SERVICE 8 -->
+
+                    <article class="service-card reveal">
+
+                        <div class="service-image">
+
+                            <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=700&q=85"
+                                alt="Online medical consultation" loading="lazy" />
+
+                            <div class="service-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="14" rx="2"></rect>
+                                    <path d="M8 21h8"></path>
+                                    <path d="M12 18v3"></path>
+                                    <path d="m9 11 2 2 4-4"></path>
+                                </svg>
+                            </div>
+
+                        </div>
+
+                        <div class="service-content">
+                            <h3>Online Consultations</h3>
+
+                            <p>
+                                Connect with healthcare professionals from the comfort of home.
+                            </p>
+
+                            <a href="#contact" class="service-link">
+                                Enquire Now
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14"></path>
+                                    <path d="m13 6 6 6-6 6"></path>
+                                </svg>
+                            </a>
+                        </div>
+
+                    </article>
+
+
+                    <!-- SERVICE 9 -->
+
+                    <article class="service-card reveal">
+
+                        <div class="service-image">
+
+                            <img src="https://images.unsplash.com/photo-1587745416684-47953f16f02f?auto=format&fit=crop&w=700&q=85"
+                                alt="Emergency ambulance service" loading="lazy" />
+
+                            <div class="service-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M3 17V6a2 2 0 0 1 2-2h10v13H3Z"></path>
+                                    <path d="M15 9h4l2 3v5h-6"></path>
+                                    <circle cx="7" cy="19" r="2"></circle>
+                                    <circle cx="18" cy="19" r="2"></circle>
+                                    <path d="M8 8h4"></path>
+                                    <path d="M10 6v4"></path>
+                                </svg>
+                            </div>
+
+                        </div>
+
+                        <div class="service-content">
+                            <h3>Ambulance Service</h3>
+
+                            <p>
+                                24/7 emergency ambulance service — fast, safe and reliable.
+                            </p>
+
+                            <a href="tel:+919110426772" class="service-link">
+                                Call Ambulance
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14"></path>
+                                    <path d="m13 6 6 6-6 6"></path>
+                                </svg>
+                            </a>
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+         ABOUT
+    ====================================================== -->
+
+        <section class="section" id="about">
+
+            <div class="container">
+
+                <div class="about-grid">
+
+                    <div class="about-image-wrapper reveal">
+
+                        <img class="about-image"
+                            src="https://images.unsplash.com/photo-1576765608866-5b51046452be?auto=format&fit=crop&w=1000&q=90"
+                            alt="Caregiver supporting elderly patient" loading="lazy" />
+
+                        <div class="about-badge">
+
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M20.8 8.7c0 5.2-8.8 10.1-8.8 10.1S3.2 13.9 3.2 8.7A4.7 4.7 0 0 1 12 6.2a4.7 4.7 0 0 1 8.8 2.5Z">
+                                </path>
+                            </svg>
+
+                            <strong>Care That Feels Personal</strong>
+
+                            <p>
+                                Bringing healthcare closer to where you feel most comfortable.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="about-content reveal">
+
+                        <div class="eyebrow">
+                            About Subhiksha
+                        </div>
+
+                        <h2>
+                            Care that feels
+                            <span style="color: var(--primary);">personal.</span>
+                        </h2>
+
+                        <p>
+                            At Subhiksha Home Care Solutions, we believe quality healthcare
+                            should be accessible in the comfort and familiarity of home.
+                            Our services bring professional support closer to you while
+                            focusing on comfort, dignity and compassionate care.
+                        </p>
+
+                        <ul class="check-list">
+
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="m8 12 2.5 2.5L16 9"></path>
+                                </svg>
+                                Compassionate Care
+                            </li>
+
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="m8 12 2.5 2.5L16 9"></path>
+                                </svg>
+                                Professional Service
+                            </li>
+
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="m8 12 2.5 2.5L16 9"></path>
+                                </svg>
+                                Patient-Centred Support
+                            </li>
+
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="m8 12 2.5 2.5L16 9"></path>
+                                </svg>
+                                Home-Based Convenience
+                            </li>
+
+                        </ul>
+
+                        <button class="btn btn-primary open-booking">
+                            Talk to Our Team
+                            <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14"></path>
+                                <path d="m13 6 6 6-6 6"></path>
+                            </svg>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+         HOW IT WORKS
+    ====================================================== -->
+
+        <section class="section section-mint" id="how-it-works">
+
+            <div class="container">
+
+                <div class="section-heading center reveal">
+
+                    <div class="eyebrow">
+                        Simple Process
+                    </div>
+
+                    <h2>
+                        Getting Care Is
+                        <span style="color: var(--primary);">Simple.</span>
+                    </h2>
+
+                    <p>
+                        Tell us what you need and our team will help you take the next step.
+                    </p>
+
+                </div>
+
+
+                <div class="steps">
+
+                    <div class="step reveal">
+
+                        <div class="step-number">01</div>
+
+                        <h3>Tell Us What You Need</h3>
+
+                        <p>
+                            Call us or submit your care requirement through the website.
+                        </p>
+
+                    </div>
+
+
+                    <div class="step reveal">
+
+                        <div class="step-number">02</div>
+
+                        <h3>Understand Your Needs</h3>
+
+                        <p>
+                            Our team discusses your requirements and the support needed.
+                        </p>
+
+                    </div>
+
+
+                    <div class="step reveal">
+
+                        <div class="step-number">03</div>
+
+                        <h3>Connect With Care</h3>
+
+                        <p>
+                            We coordinate the appropriate healthcare service for you.
+                        </p>
+
+                    </div>
+
+
+                    <div class="step reveal">
+
+                        <div class="step-number">04</div>
+
+                        <h3>Care Begins at Home</h3>
+
+                        <p>
+                            Receive the required support in the comfort of your home.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+         WHY SUBHIKSHA
+    ====================================================== -->
+
+        <section class="section">
+
+            <div class="container">
+
+                <div class="section-heading center reveal">
+
+                    <div class="eyebrow">
+                        Why Home Care
+                    </div>
+
+                    <h2>
+                        Healthcare designed
+                        <span style="color: var(--primary);">around you.</span>
+                    </h2>
+
+                    <p>
+                        Support that focuses on comfort, convenience and the individual needs
+                        of every family.
+                    </p>
+
+                </div>
+
+
+                <div class="why-grid">
+
+                    <article class="why-card reveal">
+
+                        <div class="why-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M20.8 8.7c0 5.2-8.8 10.1-8.8 10.1S3.2 13.9 3.2 8.7A4.7 4.7 0 0 1 12 6.2a4.7 4.7 0 0 1 8.8 2.5Z">
+                                </path>
+                            </svg>
+                        </div>
+
+                        <h3>Compassionate</h3>
+
+                        <p>
+                            Care that respects comfort, dignity and human connection.
+                        </p>
+
+                    </article>
+
+
+                    <article class="why-card reveal">
+
+                        <div class="why-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"></path>
+                                <path d="m9 12 2 2 4-4"></path>
+                            </svg>
+                        </div>
+
+                        <h3>Professional</h3>
+
+                        <p>
+                            Healthcare support designed around professional service.
+                        </p>
+
+                    </article>
+
+
+                    <article class="why-card reveal">
+
+                        <div class="why-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 10h18"></path>
+                                <path d="M5 10v10"></path>
+                                <path d="M19 10v10"></path>
+                                <path d="M3 20h18"></path>
+                                <path d="M12 3v7"></path>
+                                <path d="M8 6h8"></path>
+                            </svg>
+                        </div>
+
+                        <h3>Convenient</h3>
+
+                        <p>
+                            Receive essential support without unnecessary travel.
+                        </p>
+
+                    </article>
+
+
+                    <article class="why-card reveal">
+
+                        <div class="why-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="9"></circle>
+                                <path d="M8 12h8"></path>
+                                <path d="M12 8v8"></path>
+                            </svg>
+                        </div>
+
+                        <h3>Comprehensive</h3>
+
+                        <p>
+                            Nursing, therapy, consultation, diagnostics and more.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+         CARE TEAM
+    ====================================================== -->
+
+        <section class="section section-soft">
+
+            <div class="container">
+
+                <div class="section-heading center reveal">
+
+                    <div class="eyebrow">
+                        Our Care Team
+                    </div>
+
+                    <h2>
+                        A care team you can
+                        <span style="color: var(--primary);">rely on.</span>
+                    </h2>
+
+                    <p>
+                        Connect with the right healthcare service based on your needs.
+                    </p>
+
+                </div>
+
+
+                <div class="team-grid">
+
+                    <article class="team-card reveal">
+
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=900&q=90"
+                            alt="Medical nurse" loading="lazy" />
+
+                        <div class="team-overlay">
+                            <span>Professional Support</span>
+                            <h3>Medical Nurse</h3>
+                        </div>
+
+                    </article>
+
+
+                    <article class="team-card reveal">
+
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=900&q=90"
+                            alt="Doctor" loading="lazy" />
+
+                        <div class="team-overlay">
+                            <span>Medical Advice</span>
+                            <h3>Doctor Consultation</h3>
+                        </div>
+
+                    </article>
+
+
+                    <article class="team-card reveal">
+
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=90"
+                            alt="Physiotherapist" loading="lazy" />
+
+                        <div class="team-overlay">
+                            <span>Recovery Support</span>
+                            <h3>Physiotherapist</h3>
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+         LOCATIONS
+    ====================================================== -->
+
+        <section class="section" id="locations">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <div class="eyebrow">
+                        Service Locations
+                    </div>
+
+                    <h2>
+                        Care across
+                        <span style="color: var(--primary);">your city.</span>
+                    </h2>
+
+                    <p>
+                        Subhiksha Home Care Solutions currently provides services across
+                        Bangalore, Hosur and Chennai.
+                    </p>
+
+                </div>
+
+
+                <div class="locations-wrapper">
+
+                    <div class="location-main reveal">
+
+                        <h3>We're closer than you think.</h3>
+
+                        <p>
+                            From everyday home care to professional healthcare support,
+                            our services are available across our listed service locations.
+                        </p>
+
+                    </div>
+
+
+                    <div class="locations-list">
+
+                        <article class="location-item reveal">
+
+                            <div class="location-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path>
+                                    <circle cx="12" cy="10" r="2.5"></circle>
+                                </svg>
+                            </div>
+
+                            <div>
+                                <h4>Bangalore</h4>
+                                <p>Primary location</p>
+                            </div>
+
+                        </article>
+
+
+                        <article class="location-item reveal">
+
+                            <div class="location-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path>
+                                    <circle cx="12" cy="10" r="2.5"></circle>
+                                </svg>
+                            </div>
+
+                            <div>
+                                <h4>Hosur</h4>
+                                <p>Service location</p>
+                            </div>
+
+                        </article>
+
+
+                        <article class="location-item reveal">
+
+                            <div class="location-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path>
+                                    <circle cx="12" cy="10" r="2.5"></circle>
+                                </svg>
+                            </div>
+
+                            <div>
+                                <h4>Chennai</h4>
+                                <p>Service location</p>
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+         TESTIMONIALS
+    ====================================================== -->
+
+        <section class="section section-mint" id="testimonials">
+
+            <div class="container">
+
+                <div class="section-heading center reveal">
+
+                    <div class="eyebrow">
+                        Testimonials
+                    </div>
+
+                    <h2>
+                        What families
+                        <span style="color: var(--primary);">say about us.</span>
+                    </h2>
+
+                    <p>
+                        This section is ready for genuine feedback from Subhiksha patients
+                        and families.
+                    </p>
+
+                </div>
+
+
+                <div class="testimonial-wrapper reveal">
+
+                    <div class="testimonial-track">
+
+                        <article class="testimonial active">
+
+                            <div class="stars">
+                                ★★★★★
+                            </div>
+
+                            <blockquote>
+                                “Real family testimonial will appear here. Add an authentic
+                                experience from a Subhiksha customer.”
+                            </blockquote>
+
+                            <div class="testimonial-author">
+                                <strong>Patient / Family Name</strong>
+                                <span>Bangalore</span>
+                            </div>
+
+                        </article>
+
+
+                        <article class="testimonial">
+
+                            <div class="stars">
+                                ★★★★★
+                            </div>
+
+                            <blockquote>
+                                “Use this space for a genuine customer story about nursing,
+                                physiotherapy or another home care service.”
+                            </blockquote>
+
+                            <div class="testimonial-author">
+                                <strong>Patient / Family Name</strong>
+                                <span>Hosur</span>
+                            </div>
+
+                        </article>
+
+
+                        <article class="testimonial">
+
+                            <div class="stars">
+                                ★★★★★
+                            </div>
+
+                            <blockquote>
+                                “Replace this placeholder with a verified testimonial from
+                                a real family who has used Subhiksha's services.”
+                            </blockquote>
+
+                            <div class="testimonial-author">
+                                <strong>Patient / Family Name</strong>
+                                <span>Chennai</span>
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+                    <div class="testimonial-controls">
+
+                        <button class="testimonial-btn" id="prevTestimonial" aria-label="Previous testimonial">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="m15 18-6-6 6-6"></path>
+                            </svg>
+                        </button>
+
+                        <button class="testimonial-btn" id="nextTestimonial" aria-label="Next testimonial">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="m9 18 6-6-6-6"></path>
+                            </svg>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+         FAQ
+    ====================================================== -->
+
+        <section class="section" id="faq">
+
+            <div class="container">
+
+                <div class="section-heading center reveal">
+
+                    <div class="eyebrow">
+                        FAQ
+                    </div>
+
+                    <h2>
+                        Frequently asked
+                        <span style="color: var(--primary);">questions.</span>
+                    </h2>
+
+                </div>
+
+
+                <div class="faq-wrapper reveal">
+
+                    <div class="faq-item">
+
+                        <button class="faq-question">
+                            What home care services do you provide?
+
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="m6 9 6 6 6-6"></path>
+                            </svg>
+
+                        </button>
+
+                        <div class="faq-answer">
+                            <p>
+                                Subhiksha provides nursing attendants, medical nursing,
+                                physiotherapy, short-term nursing visits, doctor consultation,
+                                medical equipment, lab tests, online consultations and
+                                ambulance services.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="faq-item">
+
+                        <button class="faq-question">
+                            Do you provide nursing attendants at home?
+
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="m6 9 6 6 6-6"></path>
+                            </svg>
+
+                        </button>
+
+                        <div class="faq-answer">
+                            <p>
+                                Yes. Nursing attendant services are one of the home care
+                                services listed by Subhiksha. Contact the team to discuss
+                                your specific requirements.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="faq-item">
+
+                        <button class="faq-question">
+                            Can I book short-term nursing visits?
+
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="m6 9 6 6 6-6"></path>
+                            </svg>
+
+                        </button>
+
+                        <div class="faq-answer">
+                            <p>
+                                Subhiksha offers short-term nursing visits. Contact the team
+                                to discuss availability and your care requirements.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="faq-item">
+
+                        <button class="faq-question">
+                            Do you provide physiotherapy at home?
+
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="m6 9 6 6 6-6"></path>
+                            </svg>
+
+                        </button>
+
+                        <div class="faq-answer">
+                            <p>
+                                Physiotherapy is one of the services offered by Subhiksha.
+                                Contact the team to discuss your requirements.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="faq-item">
+
+                        <button class="faq-question">
+                            Do you provide medical equipment?
+
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="m6 9 6 6 6-6"></path>
+                            </svg>
+
+                        </button>
+
+                        <div class="faq-answer">
+                            <p>
+                                Yes. The service information lists medical equipment
+                                available for rent or purchase.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="faq-item">
+
+                        <button class="faq-question">
+                            Which locations do you serve?
+
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="m6 9 6 6 6-6"></path>
+                            </svg>
+
+                        </button>
+
+                        <div class="faq-answer">
+                            <p>
+                                The listed service locations are Bangalore, Hosur and Chennai.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="faq-item">
+
+                        <button class="faq-question">
+                            How can I book a service?
+
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="m6 9 6 6 6-6"></path>
+                            </svg>
+
+                        </button>
+
+                        <div class="faq-answer">
+                            <p>
+                                You can call 91104 26772 or 95918 57250, email
+                                homecaresolutions@gmail.com, or submit the enquiry form below.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+         CTA
+    ====================================================== -->
+
+        <section class="cta-section">
+
+            <div class="container">
+
+                <div class="cta-box reveal">
+
+                    <div class="cta-content">
+
+                        <h2>
+                            Your loved ones deserve care
+                            that feels like home.
+                        </h2>
+
+                        <p>
+                            Tell us what kind of support you need. Our team is ready to
+                            help you take the next step.
+                        </p>
+
+                        <div class="cta-actions">
+
+                            <button class="btn btn-white open-booking">
+                                Book Home Care
+                                <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14"></path>
+                                    <path d="m13 6 6 6-6 6"></path>
+                                </svg>
+                            </button>
+
+                            <a href="https://wa.me/919110426772" target="_blank" rel="noopener noreferrer" class="btn"
+                                style="background:#eaf7ee;color:#168344;">
+                                WhatsApp Us
+                            </a>
+
+                            <a href="tel:+919110426772" class="btn btn-danger">
+                                Call 91104 26772
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+         CONTACT
+    ====================================================== -->
+
+        <section class="section section-soft" id="contact">
+
+            <div class="container">
+
+                <div class="section-heading center reveal">
+
+                    <div class="eyebrow">
+                        Contact Us
+                    </div>
+
+                    <h2>
+                        Let's talk about
+                        <span style="color: var(--primary);">your care.</span>
+                    </h2>
+
+                    <p>
+                        Reach out to Subhiksha Home Care Solutions and tell us what support
+                        you are looking for.
+                    </p>
+
+                </div>
+
+
+                <div class="contact-grid">
+
+                    <div class="contact-info reveal">
+
+                        <h3>Subhiksha Home Care Solutions</h3>
+
+                        <p>
+                            Professional home healthcare support for you and your loved ones.
+                        </p>
+
+
+                        <div class="contact-item">
+
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.08 5.18 2 2 0 0 1 5.06 3h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L9 10.73a16 16 0 0 0 4.27 4.27l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 21 15.9z">
+                                    </path>
+                                </svg>
+                            </div>
+
+                            <div>
+                                <strong>Phone</strong>
+
+                                <a href="tel:+919110426772">
+                                    91104 26772
+                                </a>
+
+                                <br />
+
+                                <a href="tel:+919591857250">
+                                    95918 57250
+                                </a>
+                            </div>
+
+                        </div>
+
+
+                        <div class="contact-item">
+
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                                    <path d="m3 7 9 6 9-6"></path>
+                                </svg>
+                            </div>
+
+                            <div>
+                                <strong>Email</strong>
+
+                                <a href="mailto:homecaresolutions@gmail.com">
+                                    homecaresolutions@gmail.com
+                                </a>
+                            </div>
+
+                        </div>
+
+
+                        <div class="contact-item">
+
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path>
+                                    <circle cx="12" cy="10" r="2.5"></circle>
+                                </svg>
+                            </div>
+
+                            <div>
+                                <strong>Address</strong>
+
+                                <span>
+                                    H#14, 1st Floor, Near Srirampuram Metro Station,
+                                    Devaiah Park, Srirampuram,
+                                    Bangalore – 560021
+                                </span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="contact-item">
+
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="9"></circle>
+                                    <path d="M12 7v5l3 2"></path>
+                                </svg>
+                            </div>
+
+                            <div>
+                                <strong>Service Locations</strong>
+
+                                <span>
+                                    Bangalore · Hosur · Chennai
+                                </span>
+                            </div>
+
+                        </div>
+
+
+                        <a href="https://wa.me/919110426772" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-primary" style="width:100%;">
+                            Chat on WhatsApp
+                        </a>
+
+                    </div>
+
+
+                    <div class="contact-form reveal">
+
+                        <h3>Request a Callback</h3>
+
+                        <p>
+                            Fill in your details and tell us how we can help.
+                        </p>
+
+                        <form id="contactForm">
+
+                            <div class="form-grid">
+
+                                <div class="form-group">
+
+                                    <label for="name">
+                                        Your Name
+                                    </label>
+
+                                    <input id="name" type="text" placeholder="Enter your name" required />
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="phone">
+                                        Phone Number
+                                    </label>
+
+                                    <input id="phone" type="tel" placeholder="Enter phone number" required />
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="service">
+                                        Service Required
+                                    </label>
+
+                                    <select id="service" required>
+
+                                        <option value="">
+                                            Select a service
+                                        </option>
+
+                                        <option>Nursing Attendants</option>
+                                        <option>Medical Nurse</option>
+                                        <option>Physiotherapist</option>
+                                        <option>Short-Term Nursing Visits</option>
+                                        <option>Doctor Consultation</option>
+                                        <option>Medical Equipment</option>
+                                        <option>Lab Test</option>
+                                        <option>Online Consultation</option>
+                                        <option>Ambulance Service</option>
+
+                                    </select>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="city">
+                                        Location
+                                    </label>
+
+                                    <select id="city" required>
+
+                                        <option value="">
+                                            Select location
+                                        </option>
+
+                                        <option>Bangalore</option>
+                                        <option>Hosur</option>
+                                        <option>Chennai</option>
+
+                                    </select>
+
+                                </div>
+
+
+                                <div class="form-group full">
+
+                                    <label for="message">
+                                        Tell us more
+                                    </label>
+
+                                    <textarea id="message"
+                                        placeholder="Briefly describe the care you are looking for..."></textarea>
+
+                                </div>
+
+
+                                <div class="form-group full">
+
+                                    <button type="submit" class="btn btn-primary" style="width:100%;">
+                                        Submit Enquiry
+                                        <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2">
+                                            <path d="M5 12h14"></path>
+                                            <path d="m13 6 6 6-6 6"></path>
+                                        </svg>
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =======================================================
+       FOOTER
+  ======================================================== -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div class="footer-logo">
+
+                    <a href="#home" class="logo">
+
+                        <div class="logo-symbol">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 10.5 12 3l9 7.5"></path>
+                                <path d="M5 9.5V21h14V9.5"></path>
+                                <path d="M9 14h6"></path>
+                                <path d="M12 11v6"></path>
+                            </svg>
+                        </div>
+
+                        <div class="logo-text">
+                            <strong>SUBHIKSHA</strong>
+                            <span>Home Care Solutions</span>
+                        </div>
+
+                    </a>
+
+                    <p class="footer-description">
+                        Compassionate care, professional service and better living —
+                        bringing healthcare closer to home.
+                    </p>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>Services</h4>
+
+                    <ul>
+                        <li><a href="#services">Nursing Care</a></li>
+                        <li><a href="#services">Medical Nurse</a></li>
+                        <li><a href="#services">Physiotherapy</a></li>
+                        <li><a href="#services">Doctor Consultation</a></li>
+                        <li><a href="#services">Lab Tests</a></li>
+                    </ul>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>Explore</h4>
+
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>Contact</h4>
+
+                    <ul>
+                        <li>
+                            <a href="tel:+919110426772">
+                                91104 26772
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="tel:+919591857250">
+                                95918 57250
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="mailto:homecaresolutions@gmail.com">
+                                Email Us
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://wa.me/919110426772" target="_blank">
+                                WhatsApp
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <span>
+                    © 2026 Subhiksha Home Care Solutions. All rights reserved.
+                </span>
+
+                <span>
+                    Bangalore · Hosur · Chennai
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =======================================================
+       BOOKING MODAL
+  ======================================================== -->
+
+    <div class="modal" id="bookingModal">
+
+        <div class="modal-content">
+
+            <button class="modal-close" id="modalClose" aria-label="Close">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m6 6 12 12"></path>
+                    <path d="m18 6-12 12"></path>
+                </svg>
+            </button>
+
+
+            <h3>Book Home Care</h3>
+
+            <p>
+                Tell us what kind of support you are looking for and our team can
+                get in touch with you.
+            </p>
+
+
+            <form id="bookingForm">
+
+                <div class="form-group">
+
+                    <label for="bookingName">
+                        Your Name
+                    </label>
+
+                    <input id="bookingName" type="text" placeholder="Enter your name" required />
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="bookingPhone">
+                        Phone Number
+                    </label>
+
+                    <input id="bookingPhone" type="tel" placeholder="Enter phone number" required />
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="bookingService">
+                        Service
+                    </label>
+
+                    <select id="bookingService" required>
+
+                        <option value="">
+                            Select service
+                        </option>
+
+                        <option>Nursing Attendants</option>
+                        <option>Medical Nurse</option>
+                        <option>Physiotherapist</option>
+                        <option>Short-Term Nursing Visits</option>
+                        <option>Doctor Consultation</option>
+                        <option>Medical Equipment</option>
+                        <option>Lab Test</option>
+                        <option>Online Consultation</option>
+                        <option>Ambulance Service</option>
+
+                    </select>
+
+                </div>
+
+
+                <button type="submit" class="btn btn-primary" style="width:100%;">
+                    Request Care
+                    <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14"></path>
+                        <path d="m13 6 6 6-6 6"></path>
+                    </svg>
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =======================================================
+       TOAST
+  ======================================================== -->
+
+    <div class="toast" id="toast"></div>
+
+
+    <!-- =======================================================
+       BACK TO TOP
+  ======================================================== -->
+
+    <button class="back-top" id="backTop" aria-label="Back to top">
+
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="m18 15-6-6-6 6"></path>
+        </svg>
+
+    </button>
+
+
+    <!-- =======================================================
+       MOBILE BOTTOM BAR
+  ======================================================== -->
+
+    <div class="mobile-bottom-bar">
+
+        <a href="tel:+919110426772" class="mobile-call">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.08 5.18 2 2 0 0 1 5.06 3h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L9 10.73a16 16 0 0 0 4.27 4.27l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 21 15.9z">
+                </path>
+            </svg>
+            Call
+        </a>
+
+
+        <a href="https://wa.me/919110426772" target="_blank" rel="noopener noreferrer" class="mobile-whatsapp">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 11.5a8.5 8.5 0 0 1-12.7 7.4L3 20l1.2-5.1A8.5 8.5 0 1 1 21 11.5Z"></path>
+                <path d="M8.5 9.5c.3 1.6 1.6 3 3.2 3.5"></path>
+            </svg>
+            WhatsApp
+        </a>
+
+
+        <button class="mobile-book open-booking">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14"></path>
+                <path d="M5 12h14"></path>
+            </svg>
+            Book Care
+        </button>
+
+    </div>
+
+
+    <!-- =======================================================
+       JAVASCRIPT
+  ======================================================== -->
+
+    <script>
+
+        /* =====================================================
+           NAVBAR SCROLL EFFECT
+        ====================================================== */
+
+        const navbar = document.getElementById("navbar");
+        const backTop = document.getElementById("backTop");
+
+        window.addEventListener("scroll", () => {
+
+            if (window.scrollY > 50) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+
+            if (window.scrollY > 500) {
+                backTop.classList.add("show");
+            } else {
+                backTop.classList.remove("show");
+            }
+
+        });
+
+
+        /* =====================================================
+           MOBILE MENU
+        ====================================================== */
+
+        const menuToggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
+
+        menuToggle.addEventListener("click", () => {
+
+            navLinks.classList.toggle("mobile-open");
+
+            if (navLinks.classList.contains("mobile-open")) {
+
+                menuToggle.innerHTML = `
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="m6 6 12 12"></path>
+            <path d="m18 6-12 12"></path>
+          </svg>
+        `;
+
+            } else {
+
+                menuToggle.innerHTML = `
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 6h16"></path>
+            <path d="M4 12h16"></path>
+            <path d="M4 18h16"></path>
+          </svg>
+        `;
+
+            }
+
+        });
+
+
+        /* Close mobile menu after clicking a link */
+
+        document.querySelectorAll(".nav-links a").forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                navLinks.classList.remove("mobile-open");
+
+                menuToggle.innerHTML = `
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 6h16"></path>
+            <path d="M4 12h16"></path>
+            <path d="M4 18h16"></path>
+          </svg>
+        `;
+
+            });
+
+        });
+
+
+        /* =====================================================
+           BOOKING MODAL
+        ====================================================== */
+
+        const bookingModal = document.getElementById("bookingModal");
+        const modalClose = document.getElementById("modalClose");
+
+        document.querySelectorAll(".open-booking").forEach(button => {
+
+            button.addEventListener("click", () => {
+
+                bookingModal.classList.add("active");
+                document.body.classList.add("modal-open");
+
+            });
+
+        });
+
+
+        function closeModal() {
+
+            bookingModal.classList.remove("active");
+            document.body.classList.remove("modal-open");
+
+        }
+
+
+        modalClose.addEventListener("click", closeModal);
+
+
+        bookingModal.addEventListener("click", (event) => {
+
+            if (event.target === bookingModal) {
+                closeModal();
+            }
+
+        });
+
+
+        document.addEventListener("keydown", (event) => {
+
+            if (event.key === "Escape") {
+                closeModal();
+            }
+
+        });
+
+
+        /* =====================================================
+           TOAST
+        ====================================================== */
+
+        const toast = document.getElementById("toast");
+
+        function showToast(message) {
+
+            toast.textContent = message;
+
+            toast.classList.add("show");
+
+            setTimeout(() => {
+                toast.classList.remove("show");
+            }, 3500);
+
+        }
+
+
+        /* =====================================================
+           BOOKING FORM
+        ====================================================== */
+
+        const bookingForm = document.getElementById("bookingForm");
+
+        bookingForm.addEventListener("submit", (event) => {
+
+            event.preventDefault();
+
+            const name = document.getElementById("bookingName").value;
+            const phone = document.getElementById("bookingPhone").value;
+            const service = document.getElementById("bookingService").value;
+
+            if (!name || !phone || !service) {
+                showToast("Please complete all required fields.");
+                return;
+            }
+
+            /*
+              FRONTEND DEMO ONLY.
+      
+              Connect this form to:
+              - PHP
+              - Node.js / Express
+              - Formspree
+              - EmailJS
+              - WhatsApp API
+              - CRM
+              later.
+            */
+
+            closeModal();
+
+            bookingForm.reset();
+
+            showToast(
+                "Thank you! Your care request has been received. Our team can contact you shortly."
+            );
+
+        });
+
+
+        /* =====================================================
+           CONTACT FORM
+        ====================================================== */
+
+        const contactForm = document.getElementById("contactForm");
+
+        contactForm.addEventListener("submit", (event) => {
+
+            event.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const phone = document.getElementById("phone").value;
+            const service = document.getElementById("service").value;
+            const city = document.getElementById("city").value;
+
+            if (!name || !phone || !service || !city) {
+
+                showToast("Please complete all required fields.");
+
+                return;
+            }
+
+            /*
+              FRONTEND DEMO ONLY.
+      
+              Connect this form to your backend / CRM
+              when you are ready for real enquiries.
+            */
+
+            contactForm.reset();
+
+            showToast(
+                "Thank you! Your enquiry has been submitted successfully."
+            );
+
+        });
+
+
+        /* =====================================================
+           FAQ ACCORDION
+        ====================================================== */
+
+        const faqItems = document.querySelectorAll(".faq-item");
+
+        faqItems.forEach(item => {
+
+            const question = item.querySelector(".faq-question");
+            const answer = item.querySelector(".faq-answer");
+
+            question.addEventListener("click", () => {
+
+                const isOpen = item.classList.contains("open");
+
+                faqItems.forEach(otherItem => {
+
+                    otherItem.classList.remove("open");
+
+                    const otherAnswer =
+                        otherItem.querySelector(".faq-answer");
+
+                    otherAnswer.style.maxHeight = null;
+
+                });
+
+
+                if (!isOpen) {
+
+                    item.classList.add("open");
+
+                    answer.style.maxHeight =
+                        answer.scrollHeight + "px";
+
+                }
+
+            });
+
+        });
+
+
+        /* =====================================================
+           TESTIMONIAL SLIDER
+        ====================================================== */
+
+        const testimonials =
+            document.querySelectorAll(".testimonial");
+
+        const prevTestimonial =
+            document.getElementById("prevTestimonial");
+
+        const nextTestimonial =
+            document.getElementById("nextTestimonial");
+
+        let currentTestimonial = 0;
+
+
+        function showTestimonial(index) {
+
+            testimonials.forEach(item => {
+                item.classList.remove("active");
+            });
+
+            testimonials[index].classList.add("active");
+
+        }
+
+
+        nextTestimonial.addEventListener("click", () => {
+
+            currentTestimonial++;
+
+            if (currentTestimonial >= testimonials.length) {
+                currentTestimonial = 0;
+            }
+
+            showTestimonial(currentTestimonial);
+
+        });
+
+
+        prevTestimonial.addEventListener("click", () => {
+
+            currentTestimonial--;
+
+            if (currentTestimonial < 0) {
+                currentTestimonial = testimonials.length - 1;
+            }
+
+            showTestimonial(currentTestimonial);
+
+        });
+
+
+        /* Auto rotate testimonials */
+
+        setInterval(() => {
+
+            currentTestimonial++;
+
+            if (currentTestimonial >= testimonials.length) {
+                currentTestimonial = 0;
+            }
+
+            showTestimonial(currentTestimonial);
+
+        }, 7000);
+
+
+        /* =====================================================
+           BACK TO TOP
+        ====================================================== */
+
+        backTop.addEventListener("click", () => {
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        });
+
+
+        /* =====================================================
+           SCROLL REVEAL
+        ====================================================== */
+
+        const revealElements =
+            document.querySelectorAll(".reveal");
+
+        const revealObserver =
+            new IntersectionObserver(
+                (entries, observer) => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add("visible");
+
+                            observer.unobserve(entry.target);
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+
+        revealElements.forEach(element => {
+            revealObserver.observe(element);
+        });
+
+
+        /* =====================================================
+           ACTIVE NAVIGATION
+        ====================================================== */
+
+        const sections =
+            document.querySelectorAll("section[id]");
+
+        const navAnchors =
+            document.querySelectorAll(".nav-links a");
+
+
+        window.addEventListener("scroll", () => {
+
+            let currentSection = "";
+
+            sections.forEach(section => {
+
+                const sectionTop =
+                    section.offsetTop - 180;
+
+                if (window.scrollY >= sectionTop) {
+                    currentSection = section.getAttribute("id");
+                }
+
+            });
+
+
+            navAnchors.forEach(anchor => {
+
+                anchor.classList.remove("active");
+
+                if (
+                    anchor.getAttribute("href") ===
+                    "#" + currentSection
+                ) {
+
+                    anchor.classList.add("active");
+
+                }
+
+            });
+
+        });
+
+
+        /* =====================================================
+           PHONE VALIDATION
+        ====================================================== */
+
+        document.querySelectorAll('input[type="tel"]').forEach(input => {
+
+            input.addEventListener("input", () => {
+
+                input.value = input.value.replace(/[^0-9+ ]/g, "");
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
