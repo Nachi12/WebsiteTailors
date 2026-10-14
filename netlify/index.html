@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en-IN">
 <head>
+  <script>document.documentElement.classList.add('js');</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Affordable Website Design in Bangalore | Website Tailors</title>
-  <meta name="description"
-    content="Don&apos;t have a website yet? Or is your current one outdated? Website Tailors builds and redesigns fast, affordable business websites in Bangalore. Get a free quote." />
+  <title>Website Design Company in Bangalore | Website Tailors</title>
+  <meta name="description" content="Website Tailors designs mobile-friendly, SEO-ready websites for clinics, restaurants, salons and small businesses in Bangalore. Website design, redesign and WhatsApp enquiry setup. Free consultation." />
   <meta name="robots" content="index, follow" />
   <meta name="csrf-token" content="static-build" />
 
@@ -16,32 +15,39 @@
   <!-- Dynamic SEO & Open Graph / Twitter Cards -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Website Tailors" />
-  <meta property="og:title" content="Affordable Website Design in Bangalore | Website Tailors" />
-  <meta property="og:description"
-    content="Don&apos;t have a website yet? Or is your current one outdated? Website Tailors builds and redesigns fast, affordable business websites in Bangalore. Get a free quote." />
+  <meta property="og:title" content="Website Design Company in Bangalore | Website Tailors" />
+  <meta property="og:description" content="Website Tailors designs mobile-friendly, SEO-ready websites for clinics, restaurants, salons and small businesses in Bangalore. Website design, redesign and WhatsApp enquiry setup. Free consultation." />
   <meta property="og:url" content="https://websitetailors.com/" />
   <meta property="og:image" content="https://websitetailors.com/assets/images/website-tailors-og.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Affordable Website Design in Bangalore | Website Tailors" />
-  <meta name="twitter:description"
-    content="Don&apos;t have a website yet? Or is your current one outdated? Website Tailors builds and redesigns fast, affordable business websites in Bangalore. Get a free quote." />
+  <meta name="twitter:title" content="Website Design Company in Bangalore | Website Tailors" />
+  <meta name="twitter:description" content="Website Tailors designs mobile-friendly, SEO-ready websites for clinics, restaurants, salons and small businesses in Bangalore. Website design, redesign and WhatsApp enquiry setup. Free consultation." />
   <meta name="twitter:image" content="https://websitetailors.com/assets/images/website-tailors-og.jpg" />
 
-  <!-- Favicon -->
+  <!-- Favicon & Touch Icons -->
   <link rel="icon" type="image/svg+xml" href="./assets/images/favicon.svg" />
+  <link rel="apple-touch-icon" href="./assets/images/favicon.svg" />
 
-  <!-- Google Fonts -->
+  <!-- HackerRank Local Font Preloads (0ms latency, self-hosted) -->
+  <link rel="preload" href="./assets/fonts/satoshi-bold.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="./assets/fonts/satoshi-regular.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="./assets/fonts/satoshi-medium.woff2" as="font" type="font/woff2" crossorigin />
+
+  <!-- Google Fonts & Fontshare Fallback Preload & Swap -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700,900&display=swap" rel="stylesheet" />
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
-    rel="stylesheet" />
+    href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/style.css?v=1.0.1" />
 
   <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
@@ -49,22 +55,49 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": ["Organization", "LocalBusiness"],
+        "@type": ["ProfessionalService", "LocalBusiness"],
         "@id": "https://websitetailors.com/#organization",
         "name": "Website Tailors",
         "url": "https://websitetailors.com/",
         "logo": "https://websitetailors.com/assets/images/favicon.svg",
         "image": "https://websitetailors.com/assets/images/website-tailors-og.jpg",
-        "description": "Website Tailors builds and redesigns fast, affordable business websites and WhatsApp automation for businesses in Bangalore.",
+        "description": "Website Tailors designs and builds fast, affordable business websites and WhatsApp automation for small businesses in Bangalore / Bengaluru.",
         "telephone": "+919380552034",
-        "email": "websietailorss@gmail.com",
+        "email": "websitetailorss@gmail.com",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Bangalore",
+          "streetAddress": "[OFFICE ADDRESS / LOCALITY, e.g. Rajajinagar, Bengaluru]",
+          "addressLocality": "Bengaluru",
           "addressRegion": "Karnataka",
+          "postalCode": "560010",
           "addressCountry": "IN"
         },
-        "priceRange": "$$"
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Bangalore"
+          },
+          {
+            "@type": "City",
+            "name": "Bengaluru"
+          }
+        ],
+        "priceRange": "₹₹",
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "09:00",
+          "closes": "19:00"
+        },
+        "sameAs": [
+          "https://www.instagram.com/websitetailors",
+          "https://www.linkedin.com/company/websitetailors"
+        ]
       },
       {
         "@type": "WebSite",
@@ -74,43 +107,59 @@
         "publisher": {
           "@id": "https://websitetailors.com/#organization"
         },
-        "inLanguage": "en"
+        "inLanguage": "en-IN"
       },
       {
         "@type": "Service",
         "@id": "https://websitetailors.com/#service-website-design",
-        "name": "Website Design for New Businesses",
+        "name": "Website Design for Small Businesses",
         "provider": {
           "@id": "https://websitetailors.com/#organization"
         },
         "serviceType": "Website Design",
-        "description": "A complete business website for shops, clinics, studios, restaurants, coaches and service providers."
+        "description": "Complete 5-page mobile-first business website with WhatsApp integration, on-page SEO setup, and fast 7-day delivery.",
+        "offers": {
+          "@type": "Offer",
+          "price": "9999",
+          "priceCurrency": "INR",
+          "url": "https://websitetailors.com/#services",
+          "availability": "https://schema.org/InStock"
+        }
       },
       {
         "@type": "Service",
         "@id": "https://websitetailors.com/#service-website-redesign",
-        "name": "Website Redesign",
+        "name": "Website Redesign Services",
         "provider": {
           "@id": "https://websitetailors.com/#organization"
         },
         "serviceType": "Website Redesign",
-        "description": "Better design, faster loading and a layout that makes it easier for visitors to contact your business."
+        "description": "Modern redesign, faster loading speeds, and clearer enquiry forms to turn visitors into enquiries."
       },
       {
         "@type": "Service",
         "@id": "https://websitetailors.com/#service-whatsapp-automation",
-        "name": "WhatsApp Automation",
+        "name": "WhatsApp Automation for Business",
         "provider": {
           "@id": "https://websitetailors.com/#organization"
         },
         "serviceType": "WhatsApp Automation",
-        "description": "Auto-replies, enquiry capture, booking reminders and follow-ups on WhatsApp."
+        "description": "Auto-replies, lead capture, appointment booking reminders and instant customer follow-ups on WhatsApp."
+      }
+      ,
+      {
+        "@type": "FAQPage",
+        "@id": "https://websitetailors.com/#faq",
+        "mainEntity": [
+          {"@type":"Question","name":"How much does a small business website cost in Bangalore?","acceptedAnswer":{"@type":"Answer","text":"It depends on the number of pages, the features you need and the content involved. After a free consultation, we send a fixed quote. Domain and hosting costs are shown separately so there are no hidden charges."}},
+          {"@type":"Question","name":"How long does it take from the first call to website launch?","acceptedAnswer":{"@type":"Answer","text":"Starter websites can launch within seven business days once the content and approvals are ready. Larger projects get a timeline agreed during planning."}},
+          {"@type":"Question","name":"What information or materials do I need to provide?","acceptedAnswer":{"@type":"Answer","text":"Usually your logo, business details, a list of services, photos and contact information. If you don't have everything ready, we'll tell you exactly what's needed."}},
+          {"@type":"Question","name":"Can you redesign my existing website without losing our Google ranking?","acceptedAnswer":{"@type":"Answer","text":"We take care to protect your existing search visibility by keeping important pages, setting up proper redirects and maintaining search-friendly structure during the redesign. No one can guarantee rankings, but a careful migration reduces the risk."}}        ]
       }
     ]
   }
   </script>
 </head>
-
 <body>
 
   <!-- Accessible Skip Link -->
@@ -147,19 +196,19 @@
       </a>
 
       <nav class="nav-links" aria-label="Primary Navigation">
-        <a href="#services" class="nav-link magnetic ">Services</a>
-        <a href="#work" class="nav-link magnetic ">Work</a>
+        <a href="./services" class="nav-link magnetic ">Services</a>
+
         <a href="#process" class="nav-link magnetic ">Process</a>
         <a href="#about" class="nav-link magnetic ">About</a>
       </nav>
 
       <a href="#contact" class="nav-cta magnetic">
-        Let's Talk
-        <span>↗</span>
+        <span>Let's Talk</span>
+        <svg class="icon-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
       </a>
 
       <button class="menu" id="menuButton" aria-label="Toggle navigation menu" aria-expanded="false">
-        ☰
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg>
       </button>
     </div>
   </header>
@@ -168,12 +217,26 @@
        ANIMATED FULL-SCREEN MOBILE MENU
   ======================================================== -->
   <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-    <a href="#services">Services</a>
-    <a href="#work">Work</a>
+    <a href="./services">Services</a>
     <a href="#process">Process</a>
     <a href="#about">About</a>
     <a href="#contact" class="accent">Let's Talk ↗</a>
   </div>
+
+<script>
+window.HERO_CONFIG = {
+    PRICE_FROM: "9,999",
+    DELIVERY_DAYS: "7",
+    WHATSAPP_NUMBER: "919380552034"
+};
+
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+        var mark = document.querySelector('.hero-heading .mark');
+        if (mark) mark.classList.add('is-in');
+    }, 400);
+});
+</script>
 
   <main id="main-content">
     <!-- =======================================================
@@ -184,413 +247,1241 @@
 
       <div class="container hero-content">
         <div class="hero-layout">
-          <!-- LEFT: Headline, Subheading, CTAs & Trust Row -->
-          <div class="hero-left">
+          <!-- LEFT COLUMN: Eyebrow, Headline, Subtitle, CTAs & Trust Strip -->
+          <div class="hero-copy hero-left">
             <div class="hero-eyebrow-pill">
               <span class="eyebrow-dot" aria-hidden="true"></span>
-              <span>Website design · Redesign · WhatsApp automation — Bangalore</span>
+              <span>WEBSITE DESIGN · REDESIGN · WHATSAPP AUTOMATION · BANGALORE</span>
             </div>
 
             <h1 class="hero-heading">
-              <span class="hero-h1-line">
-                <span class="hero-highlight">Affordable<svg class="lime-marker-swipe" viewBox="0 0 240 18" fill="none"
-                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path d="M4 14C60 6 180 4 236 12" stroke="#B8FF3D" stroke-width="8" stroke-linecap="round" />
-                  </svg></span> Websites
-              </span>
-              <span class="hero-h1-line">for Bangalore</span>
-              <span class="hero-h1-line">Businesses</span>
+              <span class="hero-line">Bangalore Website Design</span>
+              <span class="hero-line">That Brings</span>
+              <span class="hero-line"><span class="hero-highlight mark">More&nbsp;Enquiries</span></span>
             </h1>
 
             <p class="hero-subheading">
-              No website yet? Or one that looks outdated? We build and redesign fast, mobile-friendly websites that
-              bring you more customers.
+              Website Tailors offers website design in Bangalore for clinics, restaurants, salons, retail stores and local businesses. We build fast, mobile-friendly sites with one-tap call, WhatsApp and enquiry buttons, so visitors become customers.
             </p>
 
             <div class="hero-ctas">
-              <a href="#contact" class="button button-primary magnetic cta-pill-dark" aria-label="Get a Free Quote">
-                Get a Free Quote
-                <span class="button-arrow" aria-hidden="true">↗</span>
+              <a href="#contact" class="btn btn-primary" aria-label="Get a Free Website Consultation">
+                <span>Get a Free Website Consultation</span>
+                <svg class="btn-arrow arrow-up-right" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
               </a>
 
-              <a href="#work" class="button button-secondary magnetic cta-pill-outline" aria-label="See Our Work">
-                See Our Work
-                <span class="button-arrow" aria-hidden="true">↓</span>
+              <a href="#work" class="btn btn-secondary" aria-label="View Our Work">
+                <span>View Our Work</span>
+                <svg class="btn-arrow arrow-down" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
               </a>
             </div>
 
             <div class="hero-trust-row" aria-label="Trust Signals">
-              <span class="trust-item">Websites from ₹[STARTING PRICE]</span>
-              <span class="trust-divider" aria-hidden="true">·</span>
-              <span class="trust-item">Live in [X] days</span>
-              <span class="trust-divider" aria-hidden="true">·</span>
-              <span class="trust-item">Free consultation</span>
+              <div class="trust-item">
+                <svg class="trust-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Free consultation</span>
+              </div>
+              <div class="trust-item">
+                <svg class="trust-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Fixed, upfront quote</span>
+              </div>
+              <div class="trust-item">
+                <svg class="trust-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Fast launch for starter websites</span>
+              </div>
             </div>
           </div>
 
-          <!-- RIGHT: Interactive Hero Visual Showcase (Before/After Redesign Slider) -->
-          <div class="hero-right">
-            <div class="hero-visual-stage" id="heroVisualStage">
-              <!-- Soft slow-moving gradient glow -->
-              <div class="hero-glow-backdrop" aria-hidden="true"></div>
+          <!-- RIGHT COLUMN: Responsive Website Preview Composition -->
+          <div class="hero-visual hero-right" id="heroVisualStage">
+            <!-- Organic Green Glow Backdrop & Bursts -->
+            <div class="hero-glow-blob" aria-hidden="true"></div>
 
-              <!-- Main Redesign Before/After Browser Frame -->
-              <div class="ba-browser-frame" id="baBrowserFrame">
-                <div class="ba-browser-header">
-                  <div class="ba-browser-dots">
-                    <span class="dot dot-red"></span>
-                    <span class="dot dot-yellow"></span>
-                    <span class="dot dot-green"></span>
-                  </div>
-                  <div class="ba-browser-url">
-                    <span class="url-lock">⚿</span>
-                    <span class="url-text">bangaloreclinic.in</span>
-                  </div>
-                  <div class="ba-browser-tag">REDESIGN PREVIEW</div>
+            <div class="hero-doodle doodle-tr" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <path d="M12 6L26 2" stroke="#C8F03C" stroke-width="3" stroke-linecap="round"/>
+                <path d="M28 14L38 18" stroke="#C8F03C" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="hero-doodle doodle-bl" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                <path d="M6 26L2 14" stroke="#C8F03C" stroke-width="3" stroke-linecap="round"/>
+                <path d="M20 32L14 20" stroke="#C8F03C" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="hero-doodle doodle-phone" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <path d="M8 20L18 8" stroke="#C8F03C" stroke-width="3" stroke-linecap="round"/>
+                <path d="M22 26L28 16" stroke="#C8F03C" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+            </div>
+
+            <!-- Floating Top Badges -->
+            <!-- 1. SEO-ready Structure Badge -->
+            <div class="hero-floating-badge badge-seo" id="badgeSeo">
+              <div class="badge-icon icon-lightning">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#00EA64" stroke="#00EA64" stroke-width="1" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+              </div>
+              <div class="badge-content">
+                <strong class="badge-title">SEO-ready structure</strong>
+                <span class="badge-sub">Built on clean, search-friendly code so Google can read your pages properly.</span>
+              </div>
+            </div>
+
+            <!-- 2. Mobile-friendly Badge -->
+            <div class="hero-floating-badge badge-mobile" id="badgeMobile">
+              <div class="badge-icon icon-phone">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00EA64" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+              </div>
+              <div class="badge-content">
+                <strong class="badge-title">Mobile-friendly</strong>
+                <span class="badge-sub">Easy to use on phones, tablets and desktops.</span>
+              </div>
+            </div>
+
+            <!-- Main Desktop / Laptop Monitor Mockup -->
+            <div class="device-laptop">
+              <div class="laptop-screen">
+                <div class="laptop-bezel-top">
+                  <span class="laptop-camera" aria-hidden="true"></span>
                 </div>
 
-                <div class="ba-slider-container" id="baSliderContainer">
-                  <!-- BEFORE VIEW (Outdated Site) -->
-                  <div class="ba-view ba-view-before">
-                    <div class="ba-badge badge-before">Before</div>
-                    <div class="old-site-mockup">
-                      <div class="old-header">
-                        <div class="old-logo">BANGALORE HEALTH CLINIC</div>
-                        <div class="old-contact-line">Tel: 080-23456789 | Email: info@clinic.com</div>
+                <div class="mockup-site">
+                  <!-- Mockup Clinic Header -->
+                  <div class="site-header">
+                    <div class="site-brand">
+                      <span class="brand-plus">+</span>
+                      <span class="brand-name">Sample Clinic</span>
+                    </div>
+                    <nav class="site-nav" aria-label="Sample site preview navigation">
+                      <span>Home</span>
+                      <span>About</span>
+                      <span>Services</span>
+                      <span>Doctors</span>
+                      <span>Contact</span>
+                    </nav>
+                    <div class="site-cta-btn">Book Appointment</div>
+                  </div>
+
+                  <!-- Mockup Clinic Hero Body -->
+                  <div class="site-hero">
+                    <div class="site-hero-left">
+                      <span class="site-eyebrow">YOUR HEALTH, OUR PRIORITY</span>
+                      <h2 class="site-title">Quality Care for a Healthier Tomorrow</h2>
+                      <p class="site-desc">Trusted family healthcare with experienced doctors and modern facilities in Bangalore.</p>
+                      <div class="site-actions">
+                        <div class="site-btn-wa">
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662a11.87 11.87 0 005.705 1.454h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                          <span>Book on WhatsApp</span>
+                        </div>
+                        <div class="site-btn-secondary">View Services</div>
                       </div>
-                      <div class="old-hero">
-                        <div class="old-title">Welcome to Our Clinic Webpage</div>
-                        <div class="old-desc">We provide medical consultancy &amp; diagnostic services in Rajajinagar
-                          since 2008. Please call during OPD hours for enquiries.</div>
-                        <div class="old-button">Read More...</div>
-                      </div>
-                      <div class="old-grid">
-                        <div class="old-box">General OPD</div>
-                        <div class="old-box">Pediatrics</div>
-                        <div class="old-box">Lab Testing</div>
+                    </div>
+                    <div class="site-hero-right">
+                      <div class="site-doctor-wrap">
+                        <img src="assets/images/hero/sample-clinic-doctor.jpg" alt="Sample Clinic concept website preview" class="site-doctor-img" loading="eager" decoding="async">
                       </div>
                     </div>
                   </div>
 
-                  <!-- AFTER VIEW (Clean Modern Redesign) -->
-                  <div class="ba-view ba-view-after" id="baAfterView">
-                    <div class="ba-badge badge-after">After</div>
-                    <div class="new-site-mockup">
-                      <div class="new-header">
-                        <div class="new-logo">
-                          <span class="clinic-plus">+</span> HealthCare Bangalore
-                        </div>
-                        <div class="new-cta-btn">Book Appointment ↗</div>
+                  <!-- Mockup Clinic 4 Feature Cards -->
+                  <div class="site-cards-row">
+                    <div class="site-card-item is-featured">
+                      <div class="site-card-icon">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                       </div>
-                      <div class="new-hero">
-                        <div class="new-pill">★ Rated #1 Local Health Clinic</div>
-                        <div class="new-title">Expert Doctors &amp; Instant Appointments</div>
-                        <div class="new-desc">Fast, compassionate healthcare for your family in Bangalore. Book OPD
-                          visits online in seconds.</div>
-                        <div class="new-hero-actions">
-                          <div class="new-btn-main">Book Visit Online</div>
-                          <div class="new-btn-wa">WhatsApp Us</div>
-                        </div>
-                      </div>
-                      <div class="new-cards">
-                        <div class="new-card">
-                          <span class="card-ic">🩺</span>
-                          <strong>General OPD</strong>
-                          <span>Daily 9 AM - 8 PM</span>
-                        </div>
-                        <div class="new-card">
-                          <span class="card-ic">🧪</span>
-                          <strong>Lab Reports</strong>
-                          <span>Home Collection</span>
-                        </div>
+                      <div class="site-card-text">
+                        <strong>General Medicine</strong>
+                        <span>Complete care for all ages</span>
                       </div>
                     </div>
-                  </div>
-
-                  <!-- DRAGGABLE LIME HANDLE -->
-                  <div class="ba-handle" id="baHandle" role="slider"
-                    aria-label="Before and after redesign slider handle for Bangalore business website"
-                    aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" tabindex="0">
-                    <div class="ba-line"></div>
-                    <div class="ba-knob">
-                      <span class="knob-arrow">◄</span>
-                      <span class="knob-text">SLIDE</span>
-                      <span class="knob-arrow">►</span>
+                    <div class="site-card-item">
+                      <div class="site-card-icon">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="5"/><path d="M3 21v-2a7 7 0 0 1 14 0v2"/></svg>
+                      </div>
+                      <div class="site-card-text">
+                        <strong>Pediatrics</strong>
+                        <span>Child healthcare &amp; vaccinations</span>
+                      </div>
+                    </div>
+                    <div class="site-card-item">
+                      <div class="site-card-icon">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                      </div>
+                      <div class="site-card-text">
+                        <strong>Dental Care</strong>
+                        <span>Modern dental treatments</span>
+                      </div>
+                    </div>
+                    <div class="site-card-item">
+                      <div class="site-card-icon">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                      </div>
+                      <div class="site-card-text">
+                        <strong>Skin &amp; Hair</strong>
+                        <span>Expert dermatology care</span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <!-- PHONE PREVIEW OVERLAY -->
-              <div class="hero-phone-overlay" id="heroPhoneOverlay" aria-hidden="true">
-                <div class="phone-chrome">
-                  <div class="phone-notch"></div>
-                  <div class="phone-screen">
-                    <div class="phone-header">
-                      <span class="p-logo">+ HealthCare</span>
-                      <span class="p-wa">Chat 💬</span>
+              <!-- Laptop Bottom Hinge / Base -->
+              <div class="laptop-base" aria-hidden="true">
+                <span class="laptop-notch"></span>
+              </div>
+            </div>
+
+            <!-- Mobile Phone Mockup (Overlapping right) -->
+            <div class="device-phone" aria-hidden="true">
+              <div class="phone-frame">
+                <div class="phone-dynamic-island"></div>
+                <div class="phone-screen-inner">
+                  <div class="phone-site-header">
+                    <div class="phone-site-brand">
+                      <span class="brand-plus">+</span>
+                      <span class="brand-name">Sample Clinic</span>
                     </div>
-                    <div class="phone-body">
-                      <div class="p-title">Expert Doctors in Bangalore</div>
-                      <div class="p-btn">Book Appointment ↗</div>
+                    <div class="phone-hamburger">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                  </div>
+
+                  <div class="phone-site-hero">
+                    <span class="phone-eyebrow">YOUR HEALTH, OUR PRIORITY</span>
+                    <h3 class="phone-title">Quality Care for a Healthier Tomorrow</h3>
+                    <p class="phone-desc">Trusted family healthcare with experienced doctors in Bangalore.</p>
+                    <div class="phone-wa-btn">
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662a11.87 11.87 0 005.705 1.454h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                      <span>Book on WhatsApp</span>
+                    </div>
+
+                    <div class="phone-icons-grid">
+                      <div class="phone-grid-cell">
+                        <span class="cell-ico">🛡️</span>
+                        <span>General Medicine</span>
+                      </div>
+                      <div class="phone-grid-cell">
+                        <span class="cell-ico">👶</span>
+                        <span>Pediatrics</span>
+                      </div>
+                      <div class="phone-grid-cell">
+                        <span class="cell-ico">🦷</span>
+                        <span>Dental Care</span>
+                      </div>
+                      <div class="phone-grid-cell">
+                        <span class="cell-ico">🌿</span>
+                        <span>Skin &amp; Hair</span>
+                      </div>
+                    </div>
+
+                    <div class="phone-doctor-card">
+                      <span class="doc-icon">👨‍⚕️</span>
+                      <div class="doc-info">
+                        <strong>Experienced Doctors</strong>
+                        <span>Personalized treatment plans</span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
 
-              <!-- WHATSAPP NOTIFICATION CHIP -->
-              <div class="hero-wa-chip" id="heroWaChip" aria-label="WhatsApp lead notification feature">
-                <div class="wa-chip-icon">
-                  <svg viewBox="0 0 448 512" width="18" height="18" fill="#FFFFFF" aria-hidden="true">
-                    <path
-                      d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.6-68.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.9-186.6 184.9zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+            <!-- Compact Before-and-After Redesign Card (Bottom-left) -->
+            <div class="hero-ba-card" id="heroBaCard">
+              <div class="ba-card-inner">
+                <div class="ba-thumb-col">
+                  <div class="ba-thumb thumb-before">
+                    <div class="dummy-site dummy-before">
+                      <div class="dummy-bar"></div>
+                      <div class="dummy-box"></div>
+                      <div class="dummy-lines">
+                        <span></span><span></span>
+                      </div>
+                    </div>
+                  </div>
+                  <span class="ba-tag tag-before">Before</span>
+                </div>
+
+                <div class="ba-thumb-arrow" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                    <path d="M4 12C9 6 15 6 20 10M20 10L16 7M20 10L16 13" stroke="#00EA64" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                 </div>
-                <div class="wa-chip-body">
-                  <div class="wa-chip-title">New enquiry from your website</div>
-                  <div class="wa-chip-sub">"Interested in website redesign..."</div>
+
+                <div class="ba-thumb-col">
+                  <div class="ba-thumb thumb-after">
+                    <div class="dummy-site dummy-after">
+                      <div class="dummy-bar-green"></div>
+                      <div class="dummy-hero-flex">
+                        <div class="dummy-text-col">
+                          <span></span><span></span>
+                        </div>
+                        <div class="dummy-img-doc"></div>
+                      </div>
+                      <div class="dummy-chips-row">
+                        <span></span><span></span>
+                      </div>
+                    </div>
+                  </div>
+                  <span class="ba-tag tag-after">After</span>
                 </div>
               </div>
-
-              <!-- MEANINGFUL CHIPS -->
-              <div class="hero-chip hero-chip-mobile" id="heroChipMobile">
-                <span class="chip-icon">📱</span>
-                <span class="chip-label">Mobile-friendly</span>
-              </div>
-
-              <div class="hero-chip hero-chip-seo" id="heroChipSeo">
-                <span class="chip-icon">🔍</span>
-                <span class="chip-label">Built to rank on Google</span>
+              <div class="ba-card-caption">
+                <span class="script-text">From outdated to customer-ready</span>
+                <svg class="ba-caption-arrow" width="24" height="16" viewBox="0 0 24 16" fill="none" aria-hidden="true">
+                  <path d="M2 13C8 15 15 12 21 4M21 4L15 4M21 4L22 9" stroke="#00EA64" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- SCROLL CUE -->
-      <div class="scroll-cue" id="scrollCue" aria-hidden="true">
-        <span class="scroll-text">EXPLORE</span>
-        <span class="scroll-arrow">↓</span>
-      </div>
-    </section>
+
+      <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var heroVisual = document.getElementById('heroVisualStage');
+        var primaryBtn = document.querySelector('.hero-ctas .btn-primary');
+        var heroSection = document.getElementById('home');
+
+        if (reducedMotion) {
+          if (heroSection) heroSection.classList.add('page-ready');
+          return;
+        }
+
+        // Staggered entrance
+        setTimeout(function() {
+          if (heroSection) heroSection.classList.add('page-ready');
+        }, 50);
+
+        // Subtle desktop tilt on hover
+        if (heroVisual && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+          var tiltX = 0, tiltY = 0, currentX = 0, currentY = 0;
+          var isHovered = false;
+
+          heroVisual.addEventListener('mousemove', function(e) {
+            var rect = heroVisual.getBoundingClientRect();
+            var x = e.clientX - rect.left - rect.width / 2;
+            var y = e.clientY - rect.top - rect.height / 2;
+            tiltY = (x / (rect.width / 2)) * 2.5;
+            tiltX = -(y / (rect.height / 2)) * 2.5;
+            isHovered = true;
+          });
+
+          heroVisual.addEventListener('mouseleave', function() {
+            tiltX = 0;
+            tiltY = 0;
+            isHovered = false;
+          });
+
+          function updateTilt() {
+            currentX += (tiltX - currentX) * 0.08;
+            currentY += (tiltY - currentY) * 0.08;
+            if (isHovered || Math.abs(currentX) > 0.02 || Math.abs(currentY) > 0.02) {
+              heroVisual.style.transform = 'perspective(1200px) rotateX(' + currentX.toFixed(2) + 'deg) rotateY(' + currentY.toFixed(2) + 'deg)';
+            } else {
+              heroVisual.style.transform = 'none';
+            }
+            requestAnimationFrame(updateTilt);
+          }
+          requestAnimationFrame(updateTilt);
+        }
+
+        // Primary Button Magnetic Hover
+        if (primaryBtn && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+          primaryBtn.addEventListener('mousemove', function(e) {
+            var rect = primaryBtn.getBoundingClientRect();
+            var x = e.clientX - (rect.left + rect.width / 2);
+            var y = e.clientY - (rect.top + rect.height / 2);
+            var distanceX = Math.max(-5, Math.min(5, x * 0.15));
+            var distanceY = Math.max(-5, Math.min(5, y * 0.15));
+            primaryBtn.style.transform = 'translate(' + distanceX.toFixed(1) + 'px, ' + distanceY.toFixed(1) + 'px)';
+          });
+
+          primaryBtn.addEventListener('mouseleave', function() {
+            primaryBtn.style.transform = 'translate(0, 0)';
+          });
+        }
+      });
+      </script>
+
+      </section>
 
     <!-- =======================================================
          MARQUEE TICKER
     ======================================================== -->
-    <section class="marquee-section" aria-hidden="true">
+    <section class="marquee-section" aria-label="Services Ticker">
       <div class="marquee">
-        <div class="marquee-item">WEBSITE DESIGN <span class="marquee-dot"></span></div>
-        <div class="marquee-item">WEBSITE REDESIGN <span class="marquee-dot"></span></div>
-        <div class="marquee-item">WHATSAPP AUTOMATION <span class="marquee-dot"></span></div>
-        <div class="marquee-item">BUSINESS WEBSITES <span class="marquee-dot"></span></div>
-        <div class="marquee-item">BANGALORE <span class="marquee-dot"></span></div>
-        <div class="marquee-item">SEO READY <span class="marquee-dot"></span></div>
-        <!-- Loop duplication for seamless scroll -->
-        <div class="marquee-item">WEBSITE DESIGN <span class="marquee-dot"></span></div>
-        <div class="marquee-item">WEBSITE REDESIGN <span class="marquee-dot"></span></div>
-        <div class="marquee-item">WHATSAPP AUTOMATION <span class="marquee-dot"></span></div>
-        <div class="marquee-item">BUSINESS WEBSITES <span class="marquee-dot"></span></div>
-        <div class="marquee-item">BANGALORE <span class="marquee-dot"></span></div>
-        <div class="marquee-item">SEO READY <span class="marquee-dot"></span></div>
+        <div class="marquee-item">Website Design <span class="marquee-dot"></span></div>
+        <div class="marquee-item">Website Redesign <span class="marquee-dot"></span></div>
+        <div class="marquee-item">WhatsApp Automation <span class="marquee-dot"></span></div>
+        <div class="marquee-item">Small Business Websites <span class="marquee-dot"></span></div>
+        <div class="marquee-item">Bangalore &amp; Bengaluru <span class="marquee-dot"></span></div>
+        <div class="marquee-item">SEO-Ready Websites <span class="marquee-dot"></span></div>
+        <!-- Loop duplication for seamless scroll (aria-hidden prevents duplicate screen-reader announcements) -->
+        <div class="marquee-item" aria-hidden="true">Website Design <span class="marquee-dot"></span></div>
+        <div class="marquee-item" aria-hidden="true">Website Redesign <span class="marquee-dot"></span></div>
+        <div class="marquee-item" aria-hidden="true">WhatsApp Automation <span class="marquee-dot"></span></div>
+        <div class="marquee-item" aria-hidden="true">Small Business Websites <span class="marquee-dot"></span></div>
+        <div class="marquee-item" aria-hidden="true">Bangalore &amp; Bengaluru <span class="marquee-dot"></span></div>
+        <div class="marquee-item" aria-hidden="true">SEO-Ready Websites <span class="marquee-dot"></span></div>
       </div>
     </section>
 
     <!-- =======================================================
-         WHO WE HELP (PHASE 5)
+         WHO WE BUILD FOR (INDUSTRY STRIP)
     ======================================================== -->
-    <section class="principles" id="about">
+    <!-- =======================================================
+         WHO WE BUILD FOR (INDUSTRY SECTION)
+    ======================================================== -->
+    <section class="industries-section" id="industries">
       <div class="container">
-        <div class="principles-heading reveal">
-          <div class="eyebrow">Who We Help</div>
-          <h2 class="section-title" style="margin-top: 25px;">
-            Whether You're Starting Online or Fixing What You Have
+        <div class="industries-heading reveal">
+          <div class="eyebrow">LOCAL BENGALURU BUSINESSES</div>
+          <h2 class="industries-title">
+            Websites for Bangalore Businesses Like Yours
           </h2>
-        </div>
-
-        <div class="principles-grid">
-          <div class="principle reveal">
-            <div class="principle-number">
-              01 / NEW ONLINE </div>
-            <h3>
-              No website yet? </h3>
-            <p>
-              Your customers are already searching on Google. We put your business online with a professional site,
-              WhatsApp button and Google-friendly setup. </p>
-          </div>
-          <div class="principle reveal">
-            <div class="principle-number">
-              02 / REDESIGN </div>
-            <h3>
-              Website looks outdated? </h3>
-            <p>
-              We redesign it so it looks modern, loads fast, works on phones and is structured for better search
-              visibility. </p>
-          </div>
-          <div class="principle reveal">
-            <div class="principle-number">
-              03 / AUTOMATION </div>
-            <h3>
-              Want to save time on enquiries? </h3>
-            <p>
-              We connect your site to WhatsApp so enquiries and follow-ups can be handled more efficiently. </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =======================================================
-         SERVICES SECTION (PHASE 6)
-    ======================================================== -->
-    <section class="services" id="services">
-      <div class="container">
-        <div class="services-heading reveal">
-          <div>
-            <div class="eyebrow">Our Services</div>
-            <h2 class="section-title" style="margin-top: 25px;">
-              Website Design, Redesign and WhatsApp Automation
-            </h2>
-          </div>
-
-          <p class="services-description">
-            Practical, mobile-friendly websites and WhatsApp automation built for businesses in Bangalore.
+          <p class="industries-desc">
+            From clinics and cafés to boutiques and professional firms, we build websites that help Bangalore customers understand your services quickly and get in touch with you directly.
           </p>
         </div>
 
-        <div class="services-list">
-          <a href="#contact" class="service reveal" aria-label="Website Design for New Businesses">
-            <div class="service-number">
-              01 </div>
-
-            <div class="service-content">
-              <h3 class="service-title">
-                Website Design for New Businesses </h3>
-
-              <p class="service-text">
-                A complete business website for shops, clinics, studios, restaurants, coaches and service providers.
-                Mobile-friendly, fast, with SEO basics built in. </p>
+        <div class="industries-grid">
+          <!-- 01: Clinics & Dentists -->
+          <div class="industry-card reveal" tabindex="0">
+            <div class="industry-card-meta">
+              <span class="industry-card-num">01</span>
+              <span class="industry-card-tag">HEALTHCARE</span>
             </div>
-
-            <div class="service-arrow" aria-hidden="true">
-              ↗
+            <div class="industry-card-visual" aria-hidden="true">
+              <svg viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="industry-card-svg" aria-hidden="true">
+                <rect x="8" y="10" width="144" height="60" rx="8" class="p-glow" />
+                <rect x="14" y="14" width="82" height="52" rx="6" class="p-paper p-stroke" />
+                <line x1="26" y1="26" x2="60" y2="26" class="p-stroke" stroke-width="2" />
+                <line x1="26" y1="35" x2="78" y2="35" class="p-muted" />
+                <line x1="26" y1="43" x2="68" y2="43" class="p-muted" />
+                <rect x="26" y="50" width="18" height="10" rx="2" class="p-lime p-stroke-thin" />
+                <path d="M35 52v6M32 55h6" stroke="#14161A" stroke-width="1.4" stroke-linecap="round" />
+                <path d="M106 18v22c0 10 8 16 18 16s18-6 18-16V18" class="p-stroke" stroke-width="1.8" />
+                <circle cx="106" cy="18" r="3" class="p-lime p-stroke-thin" />
+                <circle cx="142" cy="18" r="3" class="p-lime p-stroke-thin" />
+                <path d="M124 56v8" class="p-stroke" stroke-width="1.8" />
+                <circle cx="124" cy="68" r="6" class="p-paper p-stroke" />
+                <circle cx="124" cy="68" r="2.5" class="p-lime" />
+              </svg>
             </div>
-          </a>
-          <a href="#contact" class="service reveal" aria-label="Website Redesign">
-            <div class="service-number">
-              02 </div>
-
-            <div class="service-content">
-              <h3 class="service-title">
-                Website Redesign </h3>
-
-              <p class="service-text">
-                Better design, faster loading and a layout that makes it easier for visitors to contact your business,
-                without starting from scratch. </p>
+            <div class="industry-card-body">
+              <h3 class="industry-card-title">Websites for Clinics &amp; Dentists</h3>
+              <p class="industry-card-desc">Show patients your treatments, timings, location and contact details, with appointment enquiries built in where you need them.</p>
             </div>
-
-            <div class="service-arrow" aria-hidden="true">
-              ↗
+            <div class="industry-card-arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
             </div>
-          </a>
-          <a href="#contact" class="service reveal" aria-label="WhatsApp Automation">
-            <div class="service-number">
-              03 </div>
+          </div>
 
-            <div class="service-content">
-              <h3 class="service-title">
-                WhatsApp Automation </h3>
-
-              <p class="service-text">
-                Auto-replies, enquiry capture, booking reminders and follow-ups on WhatsApp. </p>
+          <!-- 02: Restaurants & Cafes -->
+          <div class="industry-card reveal" tabindex="0">
+            <div class="industry-card-meta">
+              <span class="industry-card-num">02</span>
+              <span class="industry-card-tag">FOOD &amp; DINING</span>
             </div>
-
-            <div class="service-arrow" aria-hidden="true">
-              ↗
+            <div class="industry-card-visual" aria-hidden="true">
+              <svg viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="industry-card-svg" aria-hidden="true">
+                <rect x="8" y="10" width="144" height="60" rx="8" class="p-glow" />
+                <ellipse cx="64" cy="58" rx="42" ry="10" class="p-paper p-stroke" />
+                <path d="M34 56c0-18 14-30 30-30s30 12 30 30" class="p-paper p-stroke" />
+                <circle cx="64" cy="22" r="3.5" class="p-lime p-stroke-thin" />
+                <path d="M18 22v14c0 4 3 6 6 6v22" class="p-stroke" stroke-width="1.6" />
+                <line x1="21" y1="22" x2="21" y2="32" class="p-stroke-thin" />
+                <line x1="27" y1="22" x2="27" y2="32" class="p-stroke-thin" />
+                <path d="M138 22c-4 10-4 16-1 20v22h4V22z" class="p-paper p-stroke" stroke-width="1.5" />
+                <rect x="110" y="42" width="22" height="18" rx="4" class="p-paper p-stroke" />
+                <path d="M132 46c3 0 5 2 5 5s-2 5-5 5" class="p-stroke-thin" />
+                <path d="M115 36c1-3 0-5 2-7M121 36c1-3 0-5 2-7" class="p-lime-stroke" stroke-width="1.3" />
+              </svg>
             </div>
-          </a>
-          <a href="#contact" class="service reveal" aria-label="Website + WhatsApp Package">
-            <div class="service-number">
-              04 </div>
-
-            <div class="service-content">
-              <h3 class="service-title">
-                Website + WhatsApp Package </h3>
-
-              <p class="service-text">
-                A website and WhatsApp automation set up together for businesses that want to turn more website visitors
-                into enquiries. </p>
+            <div class="industry-card-body">
+              <h3 class="industry-card-title">Websites for Restaurants &amp; Cafés</h3>
+              <p class="industry-card-desc">Put your menu, opening hours, location and dining details in one clear, mobile-friendly place.</p>
             </div>
-
-            <div class="service-arrow" aria-hidden="true">
-              ↗
+            <div class="industry-card-arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
             </div>
-          </a>
+          </div>
+
+          <!-- 03: Salons & Spas -->
+          <div class="industry-card reveal" tabindex="0">
+            <div class="industry-card-meta">
+              <span class="industry-card-num">03</span>
+              <span class="industry-card-tag">BEAUTY &amp; WELLNESS</span>
+            </div>
+            <div class="industry-card-visual" aria-hidden="true">
+              <svg viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="industry-card-svg" aria-hidden="true">
+                <rect x="8" y="10" width="144" height="60" rx="8" class="p-glow" />
+                <circle cx="28" cy="58" r="6" class="p-paper p-stroke" />
+                <circle cx="44" cy="58" r="6" class="p-paper p-stroke" />
+                <line x1="33" y1="53" x2="52" y2="24" class="p-stroke" stroke-width="1.8" />
+                <line x1="39" y1="53" x2="20" y2="24" class="p-stroke" stroke-width="1.8" />
+                <circle cx="36" cy="42" r="2.5" class="p-lime p-stroke-thin" />
+                <path d="M96 62c0-14 12-22 12-22s12 8 12 22z" class="p-paper p-stroke" />
+                <path d="M88 62c0-10 8-16 16-18-2 8 0 14-4 18z" class="p-lime p-stroke-thin" />
+                <path d="M128 62c0-10-8-16-16-18 2 8 0 14 4 18z" class="p-lime p-stroke-thin" />
+                <rect x="62" y="32" width="20" height="30" rx="4" class="p-paper p-stroke" />
+                <rect x="67" y="24" width="10" height="8" rx="2" class="p-stroke-thin" />
+                <path d="M72 18v6" class="p-stroke" stroke-width="1.5" />
+                <circle cx="72" cy="46" r="3" class="p-lime" />
+              </svg>
+            </div>
+            <div class="industry-card-body">
+              <h3 class="industry-card-title">Websites for Salons &amp; Spas</h3>
+              <p class="industry-card-desc">Display your services, packages and work gallery, and let clients send booking enquiries easily.</p>
+            </div>
+            <div class="industry-card-arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </div>
+          </div>
+
+          <!-- 04: Retail & Boutiques -->
+          <div class="industry-card reveal" tabindex="0">
+            <div class="industry-card-meta">
+              <span class="industry-card-num">04</span>
+              <span class="industry-card-tag">RETAIL &amp; COMMERCE</span>
+            </div>
+            <div class="industry-card-visual" aria-hidden="true">
+              <svg viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="industry-card-svg" aria-hidden="true">
+                <rect x="8" y="10" width="144" height="60" rx="8" class="p-glow" />
+                <rect x="36" y="26" width="56" height="42" rx="6" class="p-paper p-stroke" />
+                <path d="M50 26V18a14 14 0 0 1 28 0v8" class="p-stroke" stroke-width="1.8" />
+                <circle cx="64" cy="44" r="8" class="p-lime p-stroke-thin" />
+                <path d="M64 40v8M60 44h8" stroke="#14161A" stroke-width="1.5" stroke-linecap="round" />
+                <path d="M108 26l24 24-14 14-24-24v-14h14z" class="p-paper p-stroke" />
+                <circle cx="103" cy="31" r="2.5" class="p-lime p-stroke-thin" />
+                <line x1="114" y1="42" x2="124" y2="52" class="p-muted" stroke-width="1.4" />
+              </svg>
+            </div>
+            <div class="industry-card-body">
+              <h3 class="industry-card-title">Websites for Retail Stores &amp; Boutiques</h3>
+              <p class="industry-card-desc">Showcase your products, store details and contact options so shoppers can check availability before they visit.</p>
+            </div>
+            <div class="industry-card-arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </div>
+          </div>
+
+          <!-- 05: Coaching & Tuition -->
+          <div class="industry-card reveal" tabindex="0">
+            <div class="industry-card-meta">
+              <span class="industry-card-num">05</span>
+              <span class="industry-card-tag">EDUCATION</span>
+            </div>
+            <div class="industry-card-visual" aria-hidden="true">
+              <svg viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="industry-card-svg" aria-hidden="true">
+                <rect x="8" y="10" width="144" height="60" rx="8" class="p-glow" />
+                <polygon points="56,20 104,32 56,44 8,32" class="p-lime p-stroke" stroke-width="1.8" />
+                <path d="M26 38v16c0 6 14 10 30 10s30-4 30-10V38" class="p-paper p-stroke" />
+                <path d="M104 32v18" class="p-stroke" stroke-width="1.6" />
+                <circle cx="104" cy="52" r="3" class="p-stroke" fill="#14161A" />
+                <path d="M96 46c8-3 18-3 26 0v20c-8-3-18-3-26 0z" class="p-paper p-stroke-thin" />
+                <path d="M122 46c8-3 18-3 26 0v20c-8-3-18-3-26 0z" class="p-paper p-stroke-thin" />
+                <line x1="102" y1="52" x2="116" y2="52" class="p-muted" />
+                <line x1="128" y1="52" x2="142" y2="52" class="p-muted" />
+              </svg>
+            </div>
+            <div class="industry-card-body">
+              <h3 class="industry-card-title">Websites for Coaching Centres &amp; Tuition</h3>
+              <p class="industry-card-desc">Explain your courses, batches, schedules and admission process clearly for students and parents.</p>
+            </div>
+            <div class="industry-card-arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </div>
+          </div>
+
+          <!-- 06: Interior & Real Estate -->
+          <div class="industry-card reveal" tabindex="0">
+            <div class="industry-card-meta">
+              <span class="industry-card-num">06</span>
+              <span class="industry-card-tag">PROPERTY &amp; DESIGN</span>
+            </div>
+            <div class="industry-card-visual" aria-hidden="true">
+              <svg viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="industry-card-svg" aria-hidden="true">
+                <rect x="8" y="10" width="144" height="60" rx="8" class="p-glow" />
+                <polygon points="20,40 54,16 88,40" class="p-paper p-stroke" stroke-width="1.8" />
+                <rect x="28" y="40" width="52" height="28" rx="2" class="p-paper p-stroke" />
+                <rect x="48" y="48" width="14" height="20" rx="2" class="p-lime p-stroke-thin" />
+                <circle cx="59" cy="58" r="1.5" fill="#14161A" />
+                <line x1="36" y1="46" x2="42" y2="46" class="p-muted" />
+                <line x1="68" y1="46" x2="74" y2="46" class="p-muted" />
+                <rect x="100" y="24" width="44" height="44" rx="6" class="p-paper p-stroke" />
+                <path d="M106 58l10-14 8 10 10-12 6 16" class="p-muted" stroke-width="1.4" />
+                <circle cx="132" cy="36" r="3.5" class="p-lime p-stroke-thin" />
+              </svg>
+            </div>
+            <div class="industry-card-body">
+              <h3 class="industry-card-title">Websites for Interior Designers &amp; Real Estate</h3>
+              <p class="industry-card-desc">Present your portfolio, listings, services and project photos in a clean, visual layout.</p>
+            </div>
+            <div class="industry-card-arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </div>
+          </div>
+
+          <!-- 07: CA & Legal Firms -->
+          <div class="industry-card reveal" tabindex="0">
+            <div class="industry-card-meta">
+              <span class="industry-card-num">07</span>
+              <span class="industry-card-tag">FINANCE &amp; LEGAL</span>
+            </div>
+            <div class="industry-card-visual" aria-hidden="true">
+              <svg viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="industry-card-svg" aria-hidden="true">
+                <rect x="8" y="10" width="144" height="60" rx="8" class="p-glow" />
+                <rect x="18" y="16" width="48" height="52" rx="4" class="p-paper p-stroke" />
+                <line x1="26" y1="26" x2="48" y2="26" class="p-stroke" stroke-width="2" />
+                <line x1="26" y1="34" x2="56" y2="34" class="p-muted" />
+                <line x1="26" y1="42" x2="52" y2="42" class="p-muted" />
+                <rect x="26" y="50" width="16" height="10" rx="2" class="p-lime p-stroke-thin" />
+                <path d="M29 55l3 3 6-5" stroke="#14161A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                <line x1="116" y1="18" x2="116" y2="64" class="p-stroke" stroke-width="2" />
+                <line x1="106" y1="64" x2="126" y2="64" class="p-stroke" stroke-width="2" />
+                <line x1="94" y1="28" x2="138" y2="28" class="p-stroke" stroke-width="1.8" />
+                <path d="M94 28l-6 16h12z" class="p-paper p-stroke-thin" />
+                <path d="M138 28l-6 16h12z" class="p-paper p-stroke-thin" />
+                <circle cx="116" cy="28" r="3" class="p-lime p-stroke-thin" />
+              </svg>
+            </div>
+            <div class="industry-card-body">
+              <h3 class="industry-card-title">Websites for CA &amp; Law Firms</h3>
+              <p class="industry-card-desc">Explain your services and practice areas, and make it simple for clients to contact you, on a professional website they can trust.</p>
+            </div>
+            <div class="industry-card-arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- =======================================================
-         PRICING SECTION (PHASE 7)
+         TRUST & IMPACT METRICS STRIP
     ======================================================== -->
-    <section class="pricing-section" id="pricing">
+    <section class="trust-metrics-strip" aria-label="Company Performance Highlights">
+      <div class="container">
+        <div class="metrics-strip-card reveal">
+          <!-- Metric 1: Total Clients -->
+          <div class="metric-item">
+            <div class="metric-icon-wrap" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <div class="metric-content">
+              <div class="metric-number-row">
+                <span class="metric-number">40<span class="metric-plus">+</span></span>
+              </div>
+              <div class="metric-label">TOTAL CLIENTS</div>
+              <p class="metric-sub">Local Bengaluru businesses &amp; founders</p>
+            </div>
+          </div>
+
+          <div class="metric-divider" aria-hidden="true"></div>
+
+          <!-- Metric 2: Total Projects Delivered -->
+          <div class="metric-item">
+            <div class="metric-icon-wrap" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+            </div>
+            <div class="metric-content">
+              <div class="metric-number-row">
+                <span class="metric-number">50<span class="metric-plus">+</span></span>
+              </div>
+              <div class="metric-label">PROJECTS DELIVERED</div>
+              <p class="metric-sub">Custom websites &amp; automations launched</p>
+            </div>
+          </div>
+
+          <div class="metric-divider" aria-hidden="true"></div>
+
+          <!-- Metric 3: 24hrs Reply -->
+          <div class="metric-item">
+            <div class="metric-icon-wrap" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <div class="metric-content">
+              <div class="metric-number-row">
+                <span class="metric-number">24<span class="metric-unit">hrs</span></span>
+              </div>
+              <div class="metric-label">REPLY GUARANTEE</div>
+              <p class="metric-sub">Direct response on WhatsApp &amp; email</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         OUR APPROACH & PRINCIPLES (SERVICES)
+    ======================================================== -->
+    <section class="principles" id="approach">
       <div class="container">
         <div class="principles-heading reveal">
-          <div class="eyebrow">Transparent Pricing</div>
+          <div class="eyebrow">A CLEAR PLAN</div>
           <h2 class="section-title" style="margin-top: 25px;">
-            Simple, Affordable Pricing
+            Website Services in Bangalore, Built Around a Clear Plan
           </h2>
+          <p style="color: var(--muted); font-size: 16px; line-height: 1.7; max-width: 680px; margin-top: 16px;">
+            Your website should help people understand your business, find what they need and contact you. Before any work starts, we agree on the scope, deliverables and goals with you.
+          </p>
         </div>
 
-        <div class="pricing-grid">
-          <div class="pricing-card reveal">
-            <div class="pricing-badge">Businesses going online for the first time</div>
-            <h3 class="pricing-title">Starter Website</h3>
-            <div class="pricing-price">Starting at ₹[STARTING PRICE]</div>
-            <ul class="pricing-features">
-              <li><span class="pricing-check">✓</span> Complete business website</li>
-              <li><span class="pricing-check">✓</span> Mobile-friendly &amp; fast loading</li>
-              <li><span class="pricing-check">✓</span> Google-friendly SEO basics</li>
-              <li><span class="pricing-check">✓</span> WhatsApp click-to-chat button</li>
-              <li><span class="pricing-check">✓</span> Enquiry form setup</li>
-            </ul>
-            <a href="#contact" class="button button-primary magnetic pricing-btn">Get Started ↗</a>
-          </div>
-          <div class="pricing-card reveal">
-            <div class="pricing-badge">Businesses with an old website</div>
-            <h3 class="pricing-title">Redesign</h3>
-            <div class="pricing-price">Starting at ₹[STARTING PRICE]</div>
-            <ul class="pricing-features">
-              <li><span class="pricing-check">✓</span> Modern visual redesign</li>
-              <li><span class="pricing-check">✓</span> Faster page loading speed</li>
-              <li><span class="pricing-check">✓</span> Mobile usability optimization</li>
-              <li><span class="pricing-check">✓</span> Re-structured contact flow</li>
-              <li><span class="pricing-check">✓</span> SEO metadata preservation</li>
-            </ul>
-            <a href="#contact" class="button button-primary magnetic pricing-btn">Get Started ↗</a>
-          </div>
-          <div class="pricing-card reveal">
-            <div class="pricing-badge">Businesses wanting more enquiries</div>
-            <h3 class="pricing-title">Website + WhatsApp</h3>
-            <div class="pricing-price">Starting at ₹[STARTING PRICE]</div>
-            <ul class="pricing-features">
-              <li><span class="pricing-check">✓</span> Complete business website</li>
-              <li><span class="pricing-check">✓</span> WhatsApp auto-replies &amp; workflows</li>
-              <li><span class="pricing-check">✓</span> Automated enquiry capture</li>
-              <li><span class="pricing-check">✓</span> Instant lead alerts</li>
-              <li><span class="pricing-check">✓</span> Full setup &amp; launch support</li>
-            </ul>
-            <a href="#contact" class="button button-primary magnetic pricing-btn">Get Started ↗</a>
-          </div>
-        </div>
+        <div class="principles-grid">
+                      <div class="principle reveal">
+              <div class="principle-body">
+                <div class="principle-content">
+                  <div class="principle-number">
+                    01 / NEW WEBSITE                  </div>
+                  <h3>
+                    Need your first website?                  </h3>
+                  <p>
+                    Get your business online with a professional, mobile-friendly website that explains your services and makes contacting you easy.                  </p>
+                </div>
+                                  <div class="principle-illustration" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" class="principle-svg principle-svg-01" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <style>
+      .p-stroke { stroke: var(--ill-stroke, #14161A); stroke-width: 1.75; }
+      .p-stroke-thin { stroke: var(--ill-stroke, #14161A); stroke-width: 1.2; }
+      .p-muted { stroke: var(--ill-muted, #5B6068); stroke-width: 1.2; }
+      .p-paper { fill: var(--ill-paper, #FFFFFF); }
+      .p-lime { fill: var(--ill-lime, #C8F03C); }
+      .p-lime-stroke { stroke: var(--ill-lime, #C8F03C); stroke-width: 1.75; }
+      .p-glow { fill: var(--ill-lime, #C8F03C); opacity: 0.18; }
+    </style>
+  </defs>
 
-        <p class="pricing-footnote reveal">
-          No hidden charges. Pay in two parts. Free consultation before you commit.
-        </p>
+  <!-- Ambient Glow Behind Browser -->
+  <rect x="52" y="16" width="176" height="142" rx="14" class="p-glow" />
+
+  <!-- Digital Browser Window -->
+  <g class="ill-browser">
+    <!-- Window Base Frame -->
+    <rect x="50" y="14" width="178" height="146" rx="12" class="p-paper p-stroke" />
+    
+    <!-- Browser Titlebar -->
+    <line x1="50" y1="36" x2="228" y2="36" class="p-stroke" />
+    
+    <!-- Traffic Light Dots -->
+    <circle cx="62" cy="25" r="2.75" class="p-stroke" />
+    <circle cx="71" cy="25" r="2.75" class="p-stroke" />
+    <circle cx="80" cy="25" r="2.75" class="p-lime p-stroke" />
+
+    <!-- Google-friendly Search / URL Pill -->
+    <rect x="94" y="19" width="102" height="12" rx="6" class="p-paper p-stroke-thin" />
+    <!-- Lock Icon -->
+    <path d="M 101 26 L 101 24 C 101 22.8 102 22 103.2 22 C 104.4 22 105.4 22.8 105.4 24 L 105.4 26" class="p-stroke-thin" />
+    <rect x="100" y="25" width="6.4" height="4.5" rx="1" class="p-stroke-thin" />
+    <!-- URL Text Line -->
+    <line x1="110" y1="25" x2="168" y2="25" class="p-muted" stroke-dasharray="2 1.5" />
+    <!-- Google 'G' / Search Lens -->
+    <circle cx="186" cy="25" r="2.5" class="p-stroke-thin" />
+    <line x1="188" y1="27" x2="191" y2="30" class="p-stroke-thin" />
+
+    <!-- Webpage Content Grid Inside Browser -->
+    <!-- Brand Header Bar -->
+    <rect x="98" y="44" width="120" height="24" rx="5" class="p-paper p-stroke-thin" />
+    <line x1="106" y1="52" x2="142" y2="52" class="p-stroke" stroke-width="2" />
+    <line x1="106" y1="60" x2="128" y2="60" class="p-muted" />
+
+    <!-- 'LIVE' Status Badge -->
+    <g class="ill-live-badge">
+      <rect x="156" y="48" width="54" height="16" rx="8" class="p-lime p-stroke" />
+      <circle cx="165" cy="56" r="2.2" fill="#14161A" />
+      <!-- 'LIVE' Letters hand-sketched -->
+      <path d="M 172 53.5 L 172 58.5 L 176 58.5" stroke="#14161A" stroke-width="1.3" />
+      <line x1="179" y1="53.5" x2="179" y2="58.5" stroke="#14161A" stroke-width="1.3" />
+      <path d="M 182.5 53.5 L 185 58.5 L 187.5 53.5" stroke="#14161A" stroke-width="1.3" />
+      <path d="M 191 58.5 L 191 53.5 L 195 53.5 M 191 56 L 194 56 M 191 58.5 L 195 58.5" stroke="#14161A" stroke-width="1.3" />
+    </g>
+
+    <!-- Mini Web Content Cards -->
+    <rect x="98" y="74" width="58" height="42" rx="5" class="p-paper p-stroke-thin" />
+    <rect x="104" y="80" width="46" height="18" rx="3" fill="#C8F03C" opacity="0.35" class="p-stroke-thin" />
+    <line x1="104" y1="104" x2="142" y2="104" class="p-stroke-thin" />
+    <line x1="104" y1="109" x2="130" y2="109" class="p-muted" />
+
+    <rect x="162" y="74" width="56" height="42" rx="5" class="p-paper p-stroke-thin" />
+    <rect x="168" y="80" width="44" height="18" rx="3" class="p-paper p-stroke-thin" />
+    <circle cx="190" cy="89" r="4" class="p-muted" />
+    <line x1="168" y1="104" x2="204" y2="104" class="p-stroke-thin" />
+    <line x1="168" y1="109" x2="194" y2="109" class="p-muted" />
+
+    <!-- Website WhatsApp Button Feature -->
+    <rect x="98" y="122" width="78" height="16" rx="8" class="p-lime p-stroke" />
+    <!-- WhatsApp Icon Mini Bubble -->
+    <circle cx="108" cy="130" r="3.5" fill="#14161A" />
+    <path d="M 106 132 L 107.5 130.5" stroke="#C8F03C" stroke-width="1.1" />
+    <line x1="117" y1="130" x2="166" y2="130" stroke="#14161A" stroke-width="1.5" />
+
+    <line x1="182" y1="130" x2="218" y2="130" class="p-muted" stroke-dasharray="3 2" />
+  </g>
+
+  <!-- Physical Storefront Stepping Into the Digital Realm -->
+  <g class="ill-storefront">
+    <!-- Storefront Building Box -->
+    <rect x="12" y="66" width="76" height="88" rx="4" class="p-paper p-stroke" />
+
+    <!-- Awning / Canopy (Charming Hand-Drawn Scallops) -->
+    <path d="M 10 66 L 90 66 L 86 52 L 14 52 Z" class="p-paper p-stroke" />
+    <!-- Awning Stripes -->
+    <path d="M 14 52 L 10 66" class="p-stroke" />
+    <path d="M 28 52 L 25 66" class="p-stroke" />
+    <path d="M 42 52 L 40 66" class="p-stroke" />
+    <path d="M 58 52 L 56 66" class="p-stroke" />
+    <path d="M 72 52 L 72 66" class="p-stroke" />
+    <path d="M 86 52 L 90 66" class="p-stroke" />
+    
+    <!-- Alternating Lime Canopy Panels -->
+    <polygon points="28,52 42,52 40,66 25,66" class="p-lime" stroke="none" />
+    <polygon points="58,52 72,52 72,66 56,66" class="p-lime" stroke="none" />
+    <!-- Re-outline canopy stripes over fill -->
+    <path d="M 28 52 L 25 66 M 42 52 L 40 66 M 58 52 L 56 66 M 72 52 L 72 66" class="p-stroke" />
+
+    <!-- Canopy Scallop Bottom Trim -->
+    <path d="M 10 66 Q 17.5 72 25 66 Q 32.5 72 40 66 Q 48 72 56 66 Q 64 72 72 66 Q 81 72 90 66" class="p-stroke" fill="none" />
+
+    <!-- Large Display Window -->
+    <rect x="18" y="78" width="34" height="42" rx="2" class="p-paper p-stroke-thin" />
+    <!-- Window Panes & Product Shelves -->
+    <line x1="35" y1="78" x2="35" y2="120" class="p-stroke-thin" />
+    <line x1="18" y1="99" x2="52" y2="99" class="p-stroke-thin" />
+    <!-- Display Items / Goods -->
+    <rect x="22" y="87" width="9" height="10" rx="1.5" class="p-lime p-stroke-thin" />
+    <circle cx="43" cy="92" r="4" class="p-stroke-thin" />
+    <rect x="22" y="106" width="10" height="9" rx="1.5" class="p-stroke-thin" />
+    <polygon points="40,115 44,106 48,115" class="p-stroke-thin" />
+
+    <!-- Store Entrance Door -->
+    <rect x="56" y="78" width="26" height="74" rx="2" class="p-paper p-stroke-thin" />
+    <!-- Door Top Window -->
+    <rect x="61" y="84" width="16" height="24" rx="1.5" class="p-stroke-thin" />
+    <!-- Hanging 'OPEN' Sign in Lime -->
+    <g class="ill-open-sign">
+      <line x1="65" y1="91" x2="69" y2="95" class="p-stroke-thin" />
+      <line x1="73" y1="91" x2="69" y2="95" class="p-stroke-thin" />
+      <rect x="62.5" y="95" width="13" height="7.5" rx="2" class="p-lime p-stroke-thin" />
+      <circle cx="69" cy="98.7" r="1.2" fill="#14161A" />
+    </g>
+    <!-- Door Handle -->
+    <line x1="60" y1="116" x2="60" y2="124" class="p-stroke" stroke-width="2" />
+    <!-- Step / Ground threshold -->
+    <line x1="8" y1="154" x2="92" y2="154" class="p-stroke" />
+
+    <!-- Cute Planter Box Beside Shop -->
+    <rect x="85" y="140" width="12" height="14" rx="2" class="p-paper p-stroke-thin" />
+    <path d="M 87 140 Q 89 133 91 131 Q 93 133 95 140" class="p-stroke-thin" fill="none" />
+    <circle cx="91" cy="130" r="2.5" class="p-lime" stroke="none" />
+  </g>
+
+  <!-- Interactive Hand-Drawn Cursor Pointer -->
+  <g class="ill-cursor">
+    <!-- Click Wave Rings -->
+    <circle cx="152" cy="56" r="9" class="p-lime-stroke" stroke-dasharray="2 2" opacity="0.75" />
+    
+    <!-- Organic Hand Pointer Arrow -->
+    <path d="M 134 76 L 149 59 L 146 54 L 157 53 L 157 64 L 152 61 L 138 79 Z" class="p-paper p-stroke" />
+  </g>
+
+  <!-- Celebratory Launch Sparkles (Website Tailors ✦ Motif) -->
+  <g class="ill-sparkles">
+    <!-- Star 1 Top Right -->
+    <path d="M 226 8 Q 226 14 232 14 Q 226 14 226 20 Q 226 14 220 14 Q 226 14 226 8 Z" class="p-lime" stroke="#14161A" stroke-width="1" />
+    <!-- Star 2 Center Bridge -->
+    <path d="M 94 4 Q 94 8 98 8 Q 94 8 94 12 Q 94 8 90 8 Q 94 8 94 4 Z" fill="#14161A" />
+    <!-- Star 3 Bottom Right -->
+    <path d="M 218 160 Q 218 164 222 164 Q 218 164 218 168 Q 218 164 214 164 Q 218 164 218 160 Z" class="p-lime" stroke="#14161A" stroke-width="0.8" />
+  </g>
+</svg>
+                  </div>
+                              </div>
+            </div>
+                      <div class="principle reveal">
+              <div class="principle-body">
+                <div class="principle-content">
+                  <div class="principle-number">
+                    02 / WEBSITE REDESIGN                  </div>
+                  <h3>
+                    Is your website outdated?                  </h3>
+                  <p>
+                    We redesign your site&apos;s layout, content and mobile experience, with a focus on loading speed and search-friendly structure.                  </p>
+                </div>
+                                  <div class="principle-illustration" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" class="principle-svg principle-svg-02" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <style>
+      .p-stroke { stroke: var(--ill-stroke, #14161A); stroke-width: 1.75; }
+      .p-stroke-thin { stroke: var(--ill-stroke, #14161A); stroke-width: 1.2; }
+      .p-muted { stroke: var(--ill-muted, #5B6068); stroke-width: 1.2; }
+      .p-paper { fill: var(--ill-paper, #FFFFFF); }
+      .p-lime { fill: var(--ill-lime, #C8F03C); }
+      .p-lime-stroke { stroke: var(--ill-lime, #C8F03C); stroke-width: 1.75; }
+      .p-glow { fill: var(--ill-lime, #C8F03C); opacity: 0.18; }
+    </style>
+  </defs>
+
+  <!-- Ambient Glow Behind Modern Redesign -->
+  <rect x="110" y="14" width="120" height="146" rx="14" class="p-glow" />
+
+  <!-- 1. OLD, OUTDATED WEBSITE (Left / Background) -->
+  <g class="ill-old-site">
+    <!-- Retro Boxy Monitor / Window Frame with drop offset shadow -->
+    <rect x="10" y="32" width="98" height="110" rx="2" class="p-paper p-stroke" />
+    
+    <!-- Clunky 90s/2000s Titlebar -->
+    <rect x="10" y="32" width="98" height="16" rx="1" fill="#E4E1D9" opacity="0.6" class="p-stroke" />
+    <!-- Retro Title text lines -->
+    <line x1="16" y1="40" x2="42" y2="40" class="p-stroke-thin" />
+    <!-- Clunky Windows-style buttons: [-] [口] [X] -->
+    <rect x="80" y="35" width="7" height="9" rx="0.5" class="p-stroke-thin" />
+    <line x1="82" y1="41" x2="85" y2="41" class="p-stroke-thin" />
+    <rect x="89" y="35" width="7" height="9" rx="0.5" class="p-stroke-thin" />
+    <line x1="91" y1="37" x2="94" y2="42" class="p-stroke-thin" />
+    <line x1="94" y1="37" x2="91" y2="42" class="p-stroke-thin" />
+
+    <!-- Outdated Chaotic Web Layout -->
+    <!-- Broken image placeholder -->
+    <rect x="18" y="55" width="34" height="26" class="p-stroke-thin" stroke-dasharray="3 2" />
+    <path d="M 23 75 L 30 65 L 37 72 L 43 67 L 48 75 Z" class="p-muted" />
+    <circle cx="26" cy="62" r="2.5" class="p-muted" />
+    <line x1="28" y1="62" x2="38" y2="72" class="p-stroke-thin" stroke="#D14343" />
+
+    <!-- Crowded tiny text lines -->
+    <line x1="58" y1="58" x2="98" y2="58" class="p-muted" />
+    <line x1="58" y1="64" x2="94" y2="64" class="p-muted" />
+    <line x1="58" y1="70" x2="98" y2="70" class="p-muted" />
+    <line x1="58" y1="76" x2="88" y2="76" class="p-muted" />
+
+    <!-- Outdated Table Grid Lines -->
+    <line x1="18" y1="88" x2="98" y2="88" class="p-stroke-thin" />
+    <line x1="18" y1="98" x2="98" y2="98" class="p-stroke-thin" />
+    <line x1="45" y1="88" x2="45" y2="108" class="p-stroke-thin" />
+    <line x1="72" y1="88" x2="72" y2="108" class="p-stroke-thin" />
+    
+    <line x1="22" y1="93" x2="40" y2="93" class="p-muted" stroke-dasharray="2 1" />
+    <line x1="49" y1="93" x2="68" y2="93" class="p-muted" stroke-dasharray="2 1" />
+    <line x1="76" y1="93" x2="94" y2="93" class="p-muted" stroke-dasharray="2 1" />
+
+    <!-- Sluggish Stalled Loading Bar -->
+    <rect x="18" y="118" width="82" height="13" rx="2" class="p-paper p-stroke-thin" />
+    <rect x="20" y="120" width="26" height="9" rx="1" fill="#5B6068" opacity="0.3" />
+    <!-- Diagonal hatch progress -->
+    <line x1="23" y1="129" x2="27" y2="120" class="p-stroke-thin" />
+    <line x1="28" y1="129" x2="32" y2="120" class="p-stroke-thin" />
+    <line x1="33" y1="129" x2="37" y2="120" class="p-stroke-thin" />
+    <line x1="38" y1="129" x2="42" y2="120" class="p-stroke-thin" />
+    <!-- Spiral hourglass / buffer dot -->
+    <circle cx="89" cy="124.5" r="3.2" class="p-muted" stroke-dasharray="2 2" />
+  </g>
+
+  <!-- 2. TRANSFORMATION BRIDGE / DYNAMIC EVOLUTION SWOOSH -->
+  <g class="ill-transform-bridge">
+    <!-- Smooth Dynamic Transformation Curve -->
+    <path d="M 86 52 C 104 32, 116 34, 126 44" class="p-lime-stroke" stroke-width="2.2" />
+    <path d="M 122 36 L 129 44 L 118 47" class="p-lime" stroke="#14161A" stroke-width="1.4" />
+
+    <!-- Energetic Sparkle Stars on Bridge -->
+    <path d="M 112 26 Q 112 32 118 32 Q 112 32 112 38 Q 112 32 106 32 Q 112 32 112 26 Z" class="p-lime" stroke="#14161A" stroke-width="1.2" />
+    <circle cx="102" cy="48" r="1.5" fill="#14161A" />
+    <circle cx="124" cy="22" r="1.5" class="p-lime" stroke="#14161A" stroke-width="0.8" />
+  </g>
+
+  <!-- 3. MODERN, FAST-LOADING REDESIGNED SITE (Right / Foreground) -->
+  <g class="ill-modern-site">
+    <!-- Modern Minimal Browser Window -->
+    <rect x="108" y="16" width="122" height="136" rx="11" class="p-paper p-stroke" />
+    
+    <!-- Modern Window Header -->
+    <line x1="108" y1="36" x2="230" y2="36" class="p-stroke" />
+    <!-- Minimal Clean Dots -->
+    <circle cx="118" cy="26" r="2.5" class="p-stroke" />
+    <circle cx="126" cy="26" r="2.5" class="p-stroke" />
+    <circle cx="134" cy="26" r="2.5" class="p-lime p-stroke" />
+
+    <!-- Lightning Speed ⚡ 100 Badge -->
+    <g class="ill-speed-badge">
+      <rect x="164" y="20" width="58" height="12" rx="6" class="p-lime p-stroke-thin" />
+      <!-- Lightning Bolt -->
+      <path d="M 172 23 L 169 27 L 172.5 27 L 170.5 30 L 175 25.5 L 172 25.5 Z" fill="#14161A" stroke="#14161A" stroke-width="0.5" />
+      <!-- '100 FAST' Line / Label -->
+      <line x1="178" y1="26" x2="214" y2="26" stroke="#14161A" stroke-width="1.6" />
+    </g>
+
+    <!-- Modern Hero Section -->
+    <rect x="116" y="44" width="76" height="28" rx="5" class="p-paper p-stroke-thin" />
+    <!-- Vibrant Lime Hero Accent Tag -->
+    <rect x="122" y="48" width="22" height="6" rx="3" class="p-lime" stroke="#14161A" stroke-width="1" />
+    <!-- Bold Typography lines with generous whitespace -->
+    <line x1="122" y1="60" x2="174" y2="60" class="p-stroke" stroke-width="2.2" />
+    <line x1="122" y1="65" x2="152" y2="65" class="p-muted" />
+
+    <!-- Clean Modern Grid Blocks -->
+    <rect x="116" y="78" width="46" height="36" rx="4" class="p-paper p-stroke-thin" />
+    <circle cx="127" cy="88" r="5" class="p-lime p-stroke-thin" />
+    <line x1="122" y1="100" x2="154" y2="100" class="p-stroke-thin" />
+    <line x1="122" y1="106" x2="144" y2="106" class="p-muted" />
+
+    <line x1="116" y1="124" x2="154" y2="124" class="p-stroke" stroke-width="2" />
+    <line x1="116" y1="130" x2="148" y2="130" class="p-muted" stroke-dasharray="3 2" />
+  </g>
+
+  <!-- 4. RESPONSIVE MOBILE DEVICE (Works Seamlessly on Phones) -->
+  <g class="ill-mobile-phone">
+    <!-- Smartphone Chassis with shadow offset -->
+    <rect x="166" y="68" width="62" height="98" rx="11" class="p-paper p-stroke" stroke-width="2" />
+    
+    <!-- Phone Screen Bezel -->
+    <rect x="170" y="76" width="54" height="82" rx="6" fill="#F6F4EF" class="p-stroke-thin" />
+    
+    <!-- Top Speaker Notch -->
+    <line x1="190" y1="72" x2="204" y2="72" class="p-stroke" stroke-width="1.8" />
+    <circle cx="208" cy="72" r="1.2" fill="#14161A" />
+
+    <!-- Mobile UI Content -->
+    <!-- Mobile Hero Header in Lime -->
+    <rect x="174" y="81" width="46" height="20" rx="3.5" class="p-lime p-stroke-thin" />
+    <line x1="179" y1="88" x2="208" y2="88" stroke="#14161A" stroke-width="1.8" />
+    <line x1="179" y1="94" x2="198" y2="94" stroke="#14161A" stroke-width="1.2" />
+
+    <!-- Mobile Content Cards -->
+    <rect x="174" y="105" width="46" height="15" rx="3" class="p-paper p-stroke-thin" />
+    <circle cx="180" cy="112.5" r="3" class="p-lime p-stroke-thin" />
+    <line x1="187" y1="112.5" x2="212" y2="112.5" class="p-stroke-thin" />
+
+    <rect x="174" y="124" width="46" height="15" rx="3" class="p-paper p-stroke-thin" />
+    <circle cx="180" cy="131.5" r="3" class="p-stroke-thin" />
+    <line x1="187" y1="131.5" x2="212" y2="131.5" class="p-stroke-thin" />
+
+    <!-- Bottom Home Indicator -->
+    <line x1="188" y1="162" x2="206" y2="162" class="p-stroke" stroke-width="2" />
+  </g>
+
+  <!-- Transformative Polish Sparkles (Website Tailors ✦ Motif) -->
+  <g class="ill-sparkles">
+    <path d="M 230 8 Q 230 14 236 14 Q 230 14 230 20 Q 230 14 224 14 Q 230 14 230 8 Z" class="p-lime" stroke="#14161A" stroke-width="1" />
+    <path d="M 154 62 Q 154 66 158 66 Q 154 66 154 70 Q 154 66 150 66 Q 154 66 154 62 Z" class="p-lime" stroke="#14161A" stroke-width="0.8" />
+  </g>
+</svg>
+                  </div>
+                              </div>
+            </div>
+                      <div class="principle reveal">
+              <div class="principle-body">
+                <div class="principle-content">
+                  <div class="principle-number">
+                    03 / WHATSAPP &amp; ENQUIRIES                  </div>
+                  <h3>
+                    Want more enquiries with less effort?                  </h3>
+                  <p>
+                    We connect your website to WhatsApp and enquiry forms so customers can reach you instantly. Further automation can be scoped to fit your business.                  </p>
+                </div>
+                                  <div class="principle-illustration" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" class="principle-svg principle-svg-03" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <style>
+      .p-stroke { stroke: var(--ill-stroke, #14161A); stroke-width: 1.75; }
+      .p-stroke-thin { stroke: var(--ill-stroke, #14161A); stroke-width: 1.2; }
+      .p-muted { stroke: var(--ill-muted, #5B6068); stroke-width: 1.2; }
+      .p-paper { fill: var(--ill-paper, #FFFFFF); }
+      .p-lime { fill: var(--ill-lime, #C8F03C); }
+      .p-lime-stroke { stroke: var(--ill-lime, #C8F03C); stroke-width: 1.75; }
+      .p-glow { fill: var(--ill-lime, #C8F03C); opacity: 0.18; }
+    </style>
+  </defs>
+
+  <!-- Ambient Glow Behind Phone & Message -->
+  <rect x="146" y="16" width="84" height="150" rx="16" class="p-glow" />
+
+  <!-- 1. WEBSITE ENQUIRY FORM / MODAL (Left Side) -->
+  <g class="ill-enquiry-card">
+    <!-- Form Card Base -->
+    <rect x="12" y="24" width="108" height="130" rx="10" class="p-paper p-stroke" />
+
+    <!-- Form Top Bar -->
+    <line x1="12" y1="44" x2="120" y2="44" class="p-stroke" />
+    <!-- Three Minimal Window Dots -->
+    <circle cx="22" cy="34" r="2.2" class="p-stroke" />
+    <circle cx="29" cy="34" r="2.2" class="p-stroke" />
+    <circle cx="36" cy="34" r="2.2" class="p-lime p-stroke" />
+    <!-- 'ENQUIRY FORM' Label Pill -->
+    <rect x="48" y="28" width="64" height="12" rx="6" class="p-paper p-stroke-thin" />
+    <line x1="56" y1="34" x2="102" y2="34" class="p-stroke-thin" />
+
+    <!-- Form Fields Inside Card -->
+    <!-- Name Field -->
+    <rect x="20" y="52" width="92" height="16" rx="4" class="p-paper p-stroke-thin" />
+    <circle cx="28" cy="60" r="3" class="p-muted" />
+    <line x1="36" y1="60" x2="84" y2="60" class="p-muted" />
+
+    <!-- Phone / WhatsApp Number Field -->
+    <rect x="20" y="73" width="92" height="16" rx="4" class="p-paper p-stroke-thin" />
+    <!-- Phone / Dial Icon -->
+    <path d="M 26 79 C 26 83, 29 85, 31 85" class="p-muted" />
+    <line x1="36" y1="81" x2="96" y2="81" class="p-muted" stroke-dasharray="2 1.5" />
+
+    <!-- Requirement / Message Box -->
+    <rect x="20" y="94" width="92" height="28" rx="4" class="p-paper p-stroke-thin" />
+    <line x1="26" y1="102" x2="102" y2="102" class="p-stroke-thin" stroke-width="1.4" />
+    <line x1="26" y1="109" x2="88" y2="109" class="p-stroke-thin" stroke-width="1.4" />
+    <line x1="26" y1="115" x2="68" y2="115" class="p-muted" />
+
+    <!-- 'SEND TO WHATSAPP' Button with Click Cursor -->
+    <g class="ill-send-button">
+      <rect x="20" y="128" width="92" height="18" rx="9" class="p-lime p-stroke" />
+      <!-- WhatsApp Logo / Chat Icon -->
+      <circle cx="32" cy="137" r="4.2" fill="#14161A" />
+      <path d="M 30 139 L 31.5 137.5" stroke="#C8F03C" stroke-width="1.2" />
+      <!-- 'SEND ENQUIRY ↗' Line -->
+      <line x1="42" y1="137" x2="98" y2="137" stroke="#14161A" stroke-width="2" />
+      <path d="M 101 134 L 105 134 L 105 138 M 105 134 L 100 139" stroke="#14161A" stroke-width="1.4" />
+    </g>
+  </g>
+
+  <!-- 2. SMOOTH ENQUIRY FLOW TRAJECTORY TO SMARTPHONE -->
+  <g class="ill-flow-bridge">
+    <!-- Fluid Curved Flow Line from Website Button to Mobile Chat -->
+    <path d="M 112 137 C 132 137, 134 88, 150 88" class="p-lime-stroke" stroke-width="2.4" stroke-dasharray="4 3" />
+    
+    <!-- Flow Motion Particles -->
+    <circle cx="122" cy="128" r="2" class="p-lime" stroke="#14161A" stroke-width="1" />
+    <circle cx="132" cy="106" r="2.5" class="p-lime" stroke="#14161A" stroke-width="1" />
+    <circle cx="142" cy="94" r="2" class="p-lime" stroke="#14161A" stroke-width="1" />
+
+    <!-- 'INSTANT' / 'TIME SAVER' Pill Badge -->
+    <g class="ill-speed-tag">
+      <rect x="116" y="60" width="36" height="15" rx="7.5" class="p-paper p-stroke-thin" />
+      <!-- Lightning bolt / clock hand -->
+      <path d="M 124 64 L 122 68 L 125 68 L 123 71 L 127 66 L 124.5 66 Z" class="p-lime" stroke="#14161A" stroke-width="0.6" />
+      <line x1="129" y1="67.5" x2="146" y2="67.5" stroke="#14161A" stroke-width="1.4" />
+    </g>
+  </g>
+
+  <!-- 3. SMARTPHONE RUNNING WHATSAPP CONVERSATION (Right Side) -->
+  <g class="ill-phone">
+    <!-- Phone Chassis -->
+    <rect x="152" y="16" width="76" height="152" rx="14" class="p-paper p-stroke" stroke-width="2" />
+    
+    <!-- Screen Bezel -->
+    <rect x="156" y="24" width="68" height="136" rx="9" fill="#F6F4EF" class="p-stroke-thin" />
+
+    <!-- Top Speaker Notch -->
+    <line x1="180" y1="20" x2="200" y2="20" class="p-stroke" stroke-width="1.8" />
+    <circle cx="204" cy="20" r="1.2" fill="#14161A" />
+
+    <!-- WhatsApp App Top Header Bar -->
+    <rect x="156" y="24" width="68" height="22" rx="0" class="p-paper" />
+    <line x1="156" y1="46" x2="224" y2="46" class="p-stroke-thin" />
+    <!-- Back arrow -->
+    <path d="M 163 35 L 160 35 M 161.5 33.5 L 160 35 L 161.5 36.5" class="p-stroke-thin" />
+    <!-- Contact Profile Avatar -->
+    <circle cx="170" cy="35" r="5.5" class="p-lime p-stroke-thin" />
+    <circle cx="170" cy="33.5" r="2" fill="#14161A" />
+    <path d="M 166.5 38.5 Q 170 36.5 173.5 38.5" class="p-stroke-thin" fill="none" />
+    <!-- Contact Name & 'Online' Dot -->
+    <line x1="178" y1="33" x2="204" y2="33" class="p-stroke-thin" stroke-width="1.6" />
+    <circle cx="179" cy="39" r="1.2" fill="#25D366" />
+    <line x1="183" y1="39" x2="208" y2="39" class="p-muted" stroke-width="1" />
+
+    <!-- Active Incoming Lead Message Bubble (WhatsApp Style with Lime Fill) -->
+    <g class="ill-chat-incoming">
+      <!-- Bubble Shape with Tail pointing left -->
+      <path d="M 164 56 C 164 53, 166 52, 169 52 L 214 52 C 217 52, 219 53, 219 56 L 219 86 C 219 89, 217 90, 214 90 L 169 90 C 166 90, 164 89, 164 86 L 164 64 L 160 60 L 164 58 Z" class="p-lime p-stroke" />
+      
+      <!-- '✦ NEW ENQUIRY' Tag inside bubble -->
+      <line x1="170" y1="60" x2="208" y2="60" stroke="#14161A" stroke-width="2" />
+      <line x1="170" y1="68" x2="212" y2="68" stroke="#14161A" stroke-width="1.3" />
+      <line x1="170" y1="74" x2="198" y2="74" stroke="#14161A" stroke-width="1.3" />
+
+      <!-- WhatsApp Double Checkmarks ✓✓ and Time -->
+      <line x1="170" y1="82" x2="190" y2="82" stroke="#14161A" stroke-width="1" opacity="0.6" />
+      <!-- Double Checkmark -->
+      <path d="M 206 82 L 208 84 L 212 79 M 209 82 L 211 84 L 215 79" stroke="#14161A" stroke-width="1.2" fill="none" />
+    </g>
+
+    <!-- Outgoing Instant Follow-Up Response Bubble -->
+    <g class="ill-chat-outgoing">
+      <rect x="170" y="98" width="50" height="26" rx="6" class="p-paper p-stroke-thin" />
+      <!-- Outgoing bubble tail -->
+      <path d="M 220 106 L 223 108 L 220 111 Z" class="p-paper p-stroke-thin" />
+      <line x1="176" y1="106" x2="212" y2="106" class="p-stroke-thin" stroke-width="1.4" />
+      <line x1="176" y1="113" x2="202" y2="113" class="p-stroke-thin" stroke-width="1.4" />
+      <!-- Blue / Double checkmarks ✓✓ -->
+      <path d="M 206 118 L 208 120 L 212 116 M 209 118 L 211 120 L 215 116" stroke="#1F5C4A" stroke-width="1.1" fill="none" />
+    </g>
+
+    <!-- Quick Action Follow-Up Chip: 'Call Client ↗' -->
+    <g class="ill-quick-chip">
+      <rect x="160" y="132" width="60" height="14" rx="7" class="p-lime p-stroke-thin" />
+      <line x1="166" y1="139" x2="208" y2="139" stroke="#14161A" stroke-width="1.6" />
+      <path d="M 211 137 L 214 137 L 214 140 M 214 137 L 210 141" stroke="#14161A" stroke-width="1" />
+    </g>
+
+    <!-- Bottom Home Indicator -->
+    <line x1="180" y1="164" x2="200" y2="164" class="p-stroke" stroke-width="2" />
+  </g>
+
+  <!-- Celebratory Efficiency Sparkles (Website Tailors ✦ Motif) -->
+  <g class="ill-sparkles">
+    <path d="M 230 6 Q 230 12 236 12 Q 230 12 230 18 Q 230 12 224 12 Q 230 12 230 6 Z" class="p-lime" stroke="#14161A" stroke-width="1" />
+    <circle cx="106" cy="18" r="1.5" fill="#14161A" />
+    <path d="M 14 12 Q 14 16 18 16 Q 14 16 14 20 Q 14 16 10 16 Q 14 16 14 12 Z" class="p-lime" stroke="#14161A" stroke-width="0.8" />
+  </g>
+</svg>
+                  </div>
+                              </div>
+            </div>
+                  </div>
       </div>
     </section>
 
+
+
+
     <!-- =======================================================
-         WORK / PORTFOLIO (PHASE 13)
+         WORK / PORTFOLIO (PHASE 13) - TEMPORARILY COMMENTED OUT
     ======================================================== -->
+    <!--
     <section class="work" id="work">
       <div class="container">
         <div class="work-header reveal">
@@ -606,165 +1497,152 @@
           </p>
         </div>
 
-        <div class="projects">
-          <article class="project" style="z-index: 5;">
-            <div class="project-top">
-              <div class="project-number">
-                01 / 04 </div>
+                  <div class="projects">
+                                        <article class="project" style="z-index: 5;">
+                <div class="project-top">
+                  <div class="project-number">
+                    01 / 04                  </div>
 
-              <div class="project-type">
-                Website Concept </div>
-            </div>
-
-            <!-- Visual Screenshot Showcase -->
-            <div class="project-visual">
-              <div class="browser">
-                <div class="browser-top">
-                  <div class="browser-dot"></div>
-                  <div class="browser-dot"></div>
-                  <div class="browser-dot"></div>
+                  <div class="project-type">
+                    Concept Prototype                  </div>
                 </div>
-                <div class="browser-viewport">
-                  <img src="./assets/images/projects/apex-logistics.jpg"
-                    alt="Apex Logistics website design for a business" class="project-screenshot" loading="lazy"
-                    width="800" height="500" />
+
+                                <div class="project-visual">
+                  <div class="browser">
+                    <div class="browser-top">
+                      <div class="browser-dot"></div>
+                      <div class="browser-dot"></div>
+                      <div class="browser-dot"></div>
+                    </div>
+                    <div class="browser-viewport">
+                      <img src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22800%22%20height%3D%22500%22%20viewBox%3D%220%200%20800%20500%22%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22%2312131A%22%2F%3E%3Crect%20x%3D%2240%22%20y%3D%2240%22%20width%3D%22720%22%20height%3D%22420%22%20rx%3D%2212%22%20fill%3D%22%231A1B24%22%20stroke%3D%22%232B2D3C%22%20stroke-width%3D%222%22%2F%3E%3Ccircle%20cx%3D%2280%22%20cy%3D%2275%22%20r%3D%227%22%20fill%3D%22%23FF5F56%22%2F%3E%3Ccircle%20cx%3D%22105%22%20cy%3D%2275%22%20r%3D%227%22%20fill%3D%22%23FFBD2E%22%2F%3E%3Ccircle%20cx%3D%22130%22%20cy%3D%2275%22%20r%3D%227%22%20fill%3D%22%2327C93F%22%2F%3E%3Crect%20x%3D%2280%22%20y%3D%22130%22%20width%3D%22140%22%20height%3D%2224%22%20rx%3D%224%22%20fill%3D%22%23B8FF3D%22%20opacity%3D%220.9%22%2F%3E%3Crect%20x%3D%2280%22%20y%3D%22175%22%20width%3D%22480%22%20height%3D%2240%22%20rx%3D%226%22%20fill%3D%22%23FFFFFF%22%20opacity%3D%220.9%22%2F%3E%3Crect%20x%3D%2280%22%20y%3D%22240%22%20width%3D%22640%22%20height%3D%2212%22%20rx%3D%224%22%20fill%3D%22%23525668%22%2F%3E%3Crect%20x%3D%2280%22%20y%3D%22265%22%20width%3D%22540%22%20height%3D%2212%22%20rx%3D%224%22%20fill%3D%22%23525668%22%2F%3E%3Crect%20x%3D%2280%22%20y%3D%22320%22%20width%3D%22180%22%20height%3D%2244%22%20rx%3D%228%22%20fill%3D%22%23B8FF3D%22%2F%3E%3C%2Fsvg%3E" alt="Apex Logistics Portal – Concept Prototype demonstration interface" class="project-screenshot" loading="lazy" width="800" height="500" />
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
 
-            <div class="project-bottom">
-              <div>
-                <h3 class="project-title">
-                  Apex Logistics </h3>
-                <p style="color: var(--muted); font-size: 14px; margin-top: 8px; max-width: 540px;">
-                  A real-time dispatch and logistics management interface concept built for high performance and clean
-                  operations. </p>
-              </div>
+                <div class="project-bottom">
+                  <div>
+                    <h3 class="project-title">
+                      Apex Logistics Portal                    </h3>
+                    <p style="color: var(--muted); font-size: 14px; margin-top: 8px; max-width: 540px;">
+                      A real-time dispatch and logistics management interface concept built to demonstrate responsive layouts, sub-second interactions, and zero framework bloat.                    </p>
+                  </div>
 
-              <a href="#contact" class="project-link magnetic" aria-label="Inquire about Apex Logistics">
-                ↗
-              </a>
-            </div>
-          </article>
-          <article class="project" style="z-index: 6;">
-            <div class="project-top">
-              <div class="project-number">
-                02 / 04 </div>
-
-              <div class="project-type">
-                Redesign Concept </div>
-            </div>
-
-            <!-- Visual Screenshot Showcase -->
-            <div class="project-visual">
-              <div class="browser">
-                <div class="browser-top">
-                  <div class="browser-dot"></div>
-                  <div class="browser-dot"></div>
-                  <div class="browser-dot"></div>
+                  <a href="#contact" class="project-link magnetic" aria-label="Inquire about Apex Logistics Portal">
+                    ↗
+                  </a>
                 </div>
-                <div class="browser-viewport">
-                  <img src="./assets/images/projects/kroma-studio.jpg" alt="Kroma Studio website design for a business"
-                    class="project-screenshot" loading="lazy" width="800" height="500" />
+              </article>
+                                        <article class="project" style="z-index: 6;">
+                <div class="project-top">
+                  <div class="project-number">
+                    02 / 04                  </div>
+
+                  <div class="project-type">
+                    Design Concept                  </div>
                 </div>
-              </div>
-            </div>
 
-            <div class="project-bottom">
-              <div>
-                <h3 class="project-title">
-                  Kroma Studio </h3>
-                <p style="color: var(--muted); font-size: 14px; margin-top: 8px; max-width: 540px;">
-                  An agency portfolio showcase built with dynamic dark-mode interactions, typography emphasis, and
-                  responsive layouts. </p>
-              </div>
-
-              <a href="#contact" class="project-link magnetic" aria-label="Inquire about Kroma Studio">
-                ↗
-              </a>
-            </div>
-          </article>
-          <article class="project" style="z-index: 7;">
-            <div class="project-top">
-              <div class="project-number">
-                03 / 04 </div>
-
-              <div class="project-type">
-                Demo Project </div>
-            </div>
-
-            <!-- Visual Screenshot Showcase -->
-            <div class="project-visual">
-              <div class="browser">
-                <div class="browser-top">
-                  <div class="browser-dot"></div>
-                  <div class="browser-dot"></div>
-                  <div class="browser-dot"></div>
+                                <div class="project-visual">
+                  <div class="browser">
+                    <div class="browser-top">
+                      <div class="browser-dot"></div>
+                      <div class="browser-dot"></div>
+                      <div class="browser-dot"></div>
+                    </div>
+                    <div class="browser-viewport">
+                      <img src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22800%22%20height%3D%22500%22%20viewBox%3D%220%200%20800%20500%22%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22%2312131A%22%2F%3E%3Crect%20x%3D%2240%22%20y%3D%2240%22%20width%3D%22720%22%20height%3D%22420%22%20rx%3D%2212%22%20fill%3D%22%231A1B24%22%20stroke%3D%22%232B2D3C%22%20stroke-width%3D%222%22%2F%3E%3Ccircle%20cx%3D%2280%22%20cy%3D%2275%22%20r%3D%227%22%20fill%3D%22%23FF5F56%22%2F%3E%3Ccircle%20cx%3D%22105%22%20cy%3D%2275%22%20r%3D%227%22%20fill%3D%22%23FFBD2E%22%2F%3E%3Ccircle%20cx%3D%22130%22%20cy%3D%2275%22%20r%3D%227%22%20fill%3D%22%2327C93F%22%2F%3E%3Crect%20x%3D%2280%22%20y%3D%22130%22%20width%3D%22140%22%20height%3D%2224%22%20rx%3D%224%22%20fill%3D%22%23B8FF3D%22%20opacity%3D%220.9%22%2F%3E%3Crect%20x%3D%2280%22%20y%3D%22175%22%20width%3D%22480%22%20height%3D%2240%22%20rx%3D%226%22%20fill%3D%22%23FFFFFF%22%20opacity%3D%220.9%22%2F%3E%3Crect%20x%3D%2280%22%20y%3D%22240%22%20width%3D%22640%22%20height%3D%2212%22%20rx%3D%224%22%20fill%3D%22%23525668%22%2F%3E%3Crect%20x%3D%2280%22%20y%3D%22265%22%20width%3D%22540%22%20height%3D%2212%22%20rx%3D%224%22%20fill%3D%22%23525668%22%2F%3E%3Crect%20x%3D%2280%22%20y%3D%22320%22%20width%3D%22180%22%20height%3D%2244%22%20rx%3D%228%22%20fill%3D%22%23B8FF3D%22%2F%3E%3C%2Fsvg%3E" alt="Kroma Design Studio – Design Concept demonstration interface" class="project-screenshot" loading="lazy" width="800" height="500" />
+                    </div>
+                  </div>
                 </div>
-                <div class="browser-viewport">
-                  <img src="./assets/images/projects/veloce-ecommerce.jpg"
-                    alt="Veloce E-Commerce website design for a business" class="project-screenshot" loading="lazy"
-                    width="800" height="500" />
+
+                <div class="project-bottom">
+                  <div>
+                    <h3 class="project-title">
+                      Kroma Design Studio                    </h3>
+                    <p style="color: var(--muted); font-size: 14px; margin-top: 8px; max-width: 540px;">
+                      A design agency showcase concept built to demonstrate typography hierarchy, dark-mode styling, and smooth CSS micro-interactions.                    </p>
+                  </div>
+
+                  <a href="#contact" class="project-link magnetic" aria-label="Inquire about Kroma Design Studio">
+                    ↗
+                  </a>
                 </div>
-              </div>
-            </div>
+              </article>
+                                        <article class="project" style="z-index: 7;">
+                <div class="project-top">
+                  <div class="project-number">
+                    03 / 04                  </div>
 
-            <div class="project-bottom">
-              <div>
-                <h3 class="project-title">
-                  Veloce E-Commerce </h3>
-                <p style="color: var(--muted); font-size: 14px; margin-top: 8px; max-width: 540px;">
-                  A lightweight storefront concept with instant product filtering, clean visual structure, and
-                  mobile-first checkout. </p>
-              </div>
-
-              <a href="#contact" class="project-link magnetic" aria-label="Inquire about Veloce E-Commerce">
-                ↗
-              </a>
-            </div>
-          </article>
-          <article class="project" style="z-index: 8;">
-            <div class="project-top">
-              <div class="project-number">
-                04 / 04 </div>
-
-              <div class="project-type">
-                Digital System Concept </div>
-            </div>
-
-            <!-- Visual Screenshot Showcase -->
-            <div class="project-visual">
-              <div class="browser">
-                <div class="browser-top">
-                  <div class="browser-dot"></div>
-                  <div class="browser-dot"></div>
-                  <div class="browser-dot"></div>
+                  <div class="project-type">
+                    Storefront Demo                  </div>
                 </div>
-                <div class="browser-viewport">
-                  <img src="./assets/images/projects/omniflow-automation.jpg"
-                    alt="OmniFlow Automation website design for a business" class="project-screenshot" loading="lazy"
-                    width="800" height="500" />
+
+                                <div class="project-visual">
+                  <div class="browser">
+                    <div class="browser-top">
+                      <div class="browser-dot"></div>
+                      <div class="browser-dot"></div>
+                      <div class="browser-dot"></div>
+                    </div>
+                    <div class="browser-viewport">
+                      <img src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22800%22%20height%3D%22500%22%20viewBox%3D%220%200%20800%20500%22%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22%2312131A%22%2F%3E%3Crect%20x%3D%2240%22%20y%3D%2240%22%20width%3D%22720%22%20height%3D%22420%22%20rx%3D%2212%22%20fill%3D%22%231A1B24%22%20stroke%3D%22%232B2D3C%22%20stroke-width%3D%222%22%2F%3E%3Ccircle%20cx%3D%2280%22%20cy%3D%2275%22%20r%3D%227%22%20fill%3D%22%23FF5F56%22%2F%3E%3Ccircle%20cx%3D%22105%22%20cy%3D%2275%22%20r%3D%227%22%20fill%3D%22%23FFBD2E%22%2F%3E%3Ccircle%20cx%3D%22130%22%20cy%3D%2275%22%20r%3D%227%22%20fill%3D%22%2327C93F%22%2F%3E%3Crect%20x%3D%2280%22%20y%3D%22130%22%20width%3D%22140%22%20height%3D%2224%22%20rx%3D%224%22%20fill%3D%22%23B8FF3D%22%20opacity%3D%220.9%22%2F%3E%3Crect%20x%3D%2280%22%20y%3D%22175%22%20width%3D%22480%22%20height%3D%2240%22%20rx%3D%226%22%20fill%3D%22%23FFFFFF%22%20opacity%3D%220.9%22%2F%3E%3Crect%20x%3D%2280%22%20y%3D%22240%22%20width%3D%22640%22%20height%3D%2212%22%20rx%3D%224%22%20fill%3D%22%23525668%22%2F%3E%3Crect%20x%3D%2280%22%20y%3D%22265%22%20width%3D%22540%22%20height%3D%2212%22%20rx%3D%224%22%20fill%3D%22%23525668%22%2F%3E%3Crect%20x%3D%2280%22%20y%3D%22320%22%20width%3D%22180%22%20height%3D%2244%22%20rx%3D%228%22%20fill%3D%22%23B8FF3D%22%2F%3E%3C%2Fsvg%3E" alt="Veloce E-Commerce Engine – Storefront Demo demonstration interface" class="project-screenshot" loading="lazy" width="800" height="500" />
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
 
-            <div class="project-bottom">
-              <div>
-                <h3 class="project-title">
-                  OmniFlow Automation </h3>
-                <p style="color: var(--muted); font-size: 14px; margin-top: 8px; max-width: 540px;">
-                  An operational workflow interface prototype for client CRM management, automated invoicing, and task
-                  approvals. </p>
-              </div>
+                <div class="project-bottom">
+                  <div>
+                    <h3 class="project-title">
+                      Veloce E-Commerce Engine                    </h3>
+                    <p style="color: var(--muted); font-size: 14px; margin-top: 8px; max-width: 540px;">
+                      A lightweight online catalog demonstration featuring instant client-side product filtering, clean visual structure, and a frictionless mobile flow.                    </p>
+                  </div>
 
-              <a href="#contact" class="project-link magnetic" aria-label="Inquire about OmniFlow Automation">
-                ↗
-              </a>
-            </div>
-          </article>
-        </div>
-      </div>
+                  <a href="#contact" class="project-link magnetic" aria-label="Inquire about Veloce E-Commerce Engine">
+                    ↗
+                  </a>
+                </div>
+              </article>
+                                        <article class="project" style="z-index: 8;">
+                <div class="project-top">
+                  <div class="project-number">
+                    04 / 04                  </div>
+
+                  <div class="project-type">
+                    Operations Prototype                  </div>
+                </div>
+
+                                <div class="project-visual">
+                  <div class="browser">
+                    <div class="browser-top">
+                      <div class="browser-dot"></div>
+                      <div class="browser-dot"></div>
+                      <div class="browser-dot"></div>
+                    </div>
+                    <div class="browser-viewport">
+                      <img src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22800%22%20height%3D%22500%22%20viewBox%3D%220%200%20800%20500%22%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22%2312131A%22%2F%3E%3Crect%20x%3D%2240%22%20y%3D%2240%22%20width%3D%22720%22%20height%3D%22420%22%20rx%3D%2212%22%20fill%3D%22%231A1B24%22%20stroke%3D%22%232B2D3C%22%20stroke-width%3D%222%22%2F%3E%3Ccircle%20cx%3D%2280%22%20cy%3D%2275%22%20r%3D%227%22%20fill%3D%22%23FF5F56%22%2F%3E%3Ccircle%20cx%3D%22105%22%20cy%3D%2275%22%20r%3D%227%22%20fill%3D%22%23FFBD2E%22%2F%3E%3Ccircle%20cx%3D%22130%22%20cy%3D%2275%22%20r%3D%227%22%20fill%3D%22%2327C93F%22%2F%3E%3Crect%20x%3D%2280%22%20y%3D%22130%22%20width%3D%22140%22%20height%3D%2224%22%20rx%3D%224%22%20fill%3D%22%23B8FF3D%22%20opacity%3D%220.9%22%2F%3E%3Crect%20x%3D%2280%22%20y%3D%22175%22%20width%3D%22480%22%20height%3D%2240%22%20rx%3D%226%22%20fill%3D%22%23FFFFFF%22%20opacity%3D%220.9%22%2F%3E%3Crect%20x%3D%2280%22%20y%3D%22240%22%20width%3D%22640%22%20height%3D%2212%22%20rx%3D%224%22%20fill%3D%22%23525668%22%2F%3E%3Crect%20x%3D%2280%22%20y%3D%22265%22%20width%3D%22540%22%20height%3D%2212%22%20rx%3D%224%22%20fill%3D%22%23525668%22%2F%3E%3Crect%20x%3D%2280%22%20y%3D%22320%22%20width%3D%22180%22%20height%3D%2244%22%20rx%3D%228%22%20fill%3D%22%23B8FF3D%22%2F%3E%3C%2Fsvg%3E" alt="OmniFlow Operations Interface – Operations Prototype demonstration interface" class="project-screenshot" loading="lazy" width="800" height="500" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="project-bottom">
+                  <div>
+                    <h3 class="project-title">
+                      OmniFlow Operations Interface                    </h3>
+                    <p style="color: var(--muted); font-size: 14px; margin-top: 8px; max-width: 540px;">
+                      An operational CRM interface prototype illustrating structured customer tracking, automated quote calculation, and multi-tier approval states.                    </p>
+                  </div>
+
+                  <a href="#contact" class="project-link magnetic" aria-label="Inquire about OmniFlow Operations Interface">
+                    ↗
+                  </a>
+                </div>
+              </article>
+            
+                      </div>
+              </div>
     </section>
+    -->
 
     <!-- =======================================================
          PROCESS (PHASE 8)
@@ -773,86 +1651,180 @@
       <div class="container">
         <div class="process-header reveal">
           <div class="process-header-left">
-            <div class="eyebrow">Our Process</div>
+            <div class="eyebrow">OUR PROCESS</div>
             <h2 class="section-title process-title" style="margin-top: 25px;">
-              How We Build Your Website in 4 Steps
+              From First Conversation to Website Launch
             </h2>
           </div>
 
           <p class="process-copy">
-            A clear, practical process designed for fast delivery and zero hassle.
+            A simple four-step process, with no surprises along the way.
           </p>
         </div>
 
-        <div class="process-track">
-          <div class="process-line" aria-hidden="true"></div>
-          <div class="process-progress" id="processProgress" aria-hidden="true"></div>
+                  <div class="process-track">
+            <div class="process-line" aria-hidden="true"></div>
+            <div class="process-progress" id="processProgress" aria-hidden="true"></div>
 
-          <div class="process-step reveal">
-            <div class="process-dot">
-              01 </div>
-            <h3>
-              Tell us </h3>
-            <p>
-              Tell us about your business and what you need. </p>
-          </div>
-          <div class="process-step reveal">
-            <div class="process-dot">
-              02 </div>
-            <h3>
-              We plan </h3>
-            <p>
-              We plan the pages, design and price, and you approve it. </p>
-          </div>
-          <div class="process-step reveal">
-            <div class="process-dot">
-              03 </div>
-            <h3>
-              We build </h3>
-            <p>
-              We build it and you review it. </p>
-          </div>
-          <div class="process-step reveal">
-            <div class="process-dot">
-              04 </div>
-            <h3>
-              You launch </h3>
-            <p>
-              Your website goes live, and we stay available for support. </p>
-          </div>
-        </div>
-      </div>
+                          <div class="process-step reveal">
+                <div class="process-dot">
+                  01                </div>
+                <h3>
+                  Understand your business                </h3>
+                <p>
+                  Tell us about your customers, services, goals and what you need from your website.                </p>
+              </div>
+                          <div class="process-step reveal">
+                <div class="process-dot">
+                  02                </div>
+                <h3>
+                  Agree on the plan                </h3>
+                <p>
+                  Review the proposed scope, cost, deliverables and timeline before any work begins.                </p>
+              </div>
+                          <div class="process-step reveal">
+                <div class="process-dot">
+                  03                </div>
+                <h3>
+                  Design, build and review                </h3>
+                <p>
+                  We build the agreed website, take your feedback and test every included feature before handover.                </p>
+              </div>
+                          <div class="process-step reveal">
+                <div class="process-dot">
+                  04                </div>
+                <h3>
+                  Launch and handover                </h3>
+                <p>
+                  Your website goes live on your domain, and we hand over all files and logins.                </p>
+              </div>
+                      </div>
+              </div>
     </section>
 
     <!-- =======================================================
-         TRUST / TESTIMONIALS (PHASE 14)
+         WHY CHOOSE WEBSITE TAILORS (HONEST DIFFERENTIATORS)
     ======================================================== -->
-    <section class="testimonials" id="testimonials">
+    <section class="why-choose-section" id="why-choose" data-section="why-choose">
+      <span id="testimonials" class="section-anchor" aria-hidden="true"></span>
       <div class="container">
-        <div class="testimonials-header reveal">
-          <div>
-            <div class="eyebrow">Trust &amp; Reliability</div>
-            <h2 class="section-title" style="margin-top: 25px;">
-              Built on Trust
-            </h2>
-          </div>
-
-          <p style="color: var(--muted); max-width: 480px; font-size: 15px; line-height: 1.6;">
-            We believe in honest, practical website development with clear communication and fast turnaround.
+        <div class="principles-heading reveal">
+          <div class="eyebrow">HONEST PARTNERSHIP</div>
+          <h2 class="section-title" style="margin-top: 25px;">
+            Why Bangalore Businesses Choose Website Tailors
+          </h2>
+          <p style="color: var(--muted); font-size: 16px; line-height: 1.7; max-width: 680px; margin-top: 16px;">
+            Website projects should be simple. We offer clear pricing, realistic timelines, direct communication and an agreed scope before work begins.
           </p>
         </div>
 
-        <div class="empty-state-public reveal" style="margin-top: 40px;">
-          <div class="empty-state-icon">✦</div>
-          <h3>Client Testimonials Coming Soon</h3>
-          <p>We are gathering verified client reviews. In the meantime, we offer free consultations so you can evaluate
-            our work before committing.</p>
-          <div class="trust-points-grid"
-            style="margin-top: 24px; display: flex; flex-wrap: wrap; gap: 16px; justify-content: center;">
-            <span class="trust-pill">✓ Fast turnarounds</span>
-            <span class="trust-pill">✓ Clean code</span>
-            <span class="trust-pill">✓ Mobile-friendly</span>
-            <span class="trust-pill">✓ Responsive support</span>
+        <div class="why-grid">
+          <!-- 01: Fixed, Upfront Pricing -->
+          <div class="why-card reveal" tabindex="0">
+            <div class="why-card-meta">
+              <span class="why-card-num">01</span>
+              <span class="why-card-tag">PRICING</span>
+            </div>
+            <div class="why-card-body">
+              <h3 class="why-card-title">Fixed, Upfront Pricing</h3>
+              <p class="why-card-desc">You know the full project cost before work begins. Domain, hosting and any third-party charges are listed separately.</p>
+            </div>
+            <div class="why-card-arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </div>
+          </div>
+
+          <!-- 02: A Clear Launch Timeline -->
+          <div class="why-card reveal" tabindex="0">
+            <div class="why-card-meta">
+              <span class="why-card-num">02</span>
+              <span class="why-card-tag">TIMELINE</span>
+            </div>
+            <div class="why-card-body">
+              <h3 class="why-card-title">A Clear Launch Timeline</h3>
+              <p class="why-card-desc">Starter websites can go live within seven business days, as long as content and approvals are ready on time.</p>
+            </div>
+            <div class="why-card-arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </div>
+          </div>
+
+          <!-- 03: You Own Your Website -->
+          <div class="why-card reveal" tabindex="0">
+            <div class="why-card-meta">
+              <span class="why-card-num">03</span>
+              <span class="why-card-tag">OWNERSHIP</span>
+            </div>
+            <div class="why-card-body">
+              <h3 class="why-card-title">You Own Your Website</h3>
+              <p class="why-card-desc">Your domain, hosting access and project files are handed over according to the ownership terms we agree at the start.</p>
+            </div>
+            <div class="why-card-arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </div>
+          </div>
+
+          <!-- 04: Designed for Mobile First -->
+          <div class="why-card reveal" tabindex="0">
+            <div class="why-card-meta">
+              <span class="why-card-num">04</span>
+              <span class="why-card-tag">MOBILE-FIRST</span>
+            </div>
+            <div class="why-card-body">
+              <h3 class="why-card-title">Designed for Mobile First</h3>
+              <p class="why-card-desc">Most local customers will find you on their phones, so we design for mobile first, with readable content, responsive layouts and fast loading.</p>
+            </div>
+            <div class="why-card-arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </div>
+          </div>
+
+          <!-- 05: Talk to the Person Building Your Site -->
+          <div class="why-card reveal" tabindex="0">
+            <div class="why-card-meta">
+              <span class="why-card-num">05</span>
+              <span class="why-card-tag">DIRECT ACCESS</span>
+            </div>
+            <div class="why-card-body">
+              <h3 class="why-card-title">Talk to the Person Building Your Site</h3>
+              <p class="why-card-desc">You deal directly with the person designing and developing your website. Nothing gets lost passing between departments.</p>
+            </div>
+            <div class="why-card-arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </div>
+          </div>
+
+          <!-- 06: Clear Payment Milestones -->
+          <div class="why-card reveal" tabindex="0">
+            <div class="why-card-meta">
+              <span class="why-card-num">06</span>
+              <span class="why-card-tag">PAYMENT TERMS</span>
+            </div>
+            <div class="why-card-body">
+              <h3 class="why-card-title">Clear Payment Milestones</h3>
+              <p class="why-card-desc">We agree on the scope and payment schedule together, so you always know what each payment covers and when it is due.</p>
+            </div>
+            <div class="why-card-arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </div>
           </div>
         </div>
       </div>
@@ -866,64 +1838,120 @@
         <div class="principles-heading reveal">
           <div class="eyebrow">FAQ</div>
           <h2 class="section-title" style="margin-top: 25px;">
-            Frequently Asked Questions
+            Website Design in Bangalore: Frequently Asked Questions
           </h2>
+          <p style="color: var(--muted); font-size: 16px; line-height: 1.7; max-width: 680px; margin-top: 16px;">
+            Answers about cost, timelines, ownership and what to expect when you work with Website Tailors.
+          </p>
         </div>
 
         <div class="faq-accordion reveal">
-          <div class="faq-item">
-            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-ans-0">
-              <span>How much does a website cost in Bangalore?</span>
-              <span class="faq-icon" aria-hidden="true">+</span>
-            </button>
-            <div id="faq-ans-0" class="faq-answer" hidden>
-              <p>Pricing depends on your specific requirements such as page count and features. We offer clear upfront
-                quotes with no hidden charges starting at ₹[STARTING PRICE].</p>
+                      <div class="faq-item">
+              <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-ans-0">
+                <span>How much does a small business website cost in Bangalore?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div id="faq-ans-0" class="faq-answer" hidden>
+                <p>It depends on the number of pages, the features you need and the content involved. After a free consultation, we send a fixed quote. Domain and hosting costs are shown separately so there are no hidden charges.</p>
+              </div>
+            </div>
+                      <div class="faq-item">
+              <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-ans-1">
+                <span>How long does it take from the first call to website launch?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div id="faq-ans-1" class="faq-answer" hidden>
+                <p>Starter websites can launch within seven business days once the content and approvals are ready. Larger projects get a timeline agreed during planning.</p>
+              </div>
+            </div>
+                      <div class="faq-item">
+              <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-ans-2">
+                <span>What information or materials do I need to provide?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div id="faq-ans-2" class="faq-answer" hidden>
+                <p>Usually your logo, business details, a list of services, photos and contact information. If you don&apos;t have everything ready, we&apos;ll tell you exactly what&apos;s needed.</p>
+              </div>
+            </div>
+                      <div class="faq-item">
+              <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-ans-3">
+                <span>Can you redesign my existing website without losing our Google ranking?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div id="faq-ans-3" class="faq-answer" hidden>
+                <p>We take care to protect your existing search visibility by keeping important pages, setting up proper redirects and maintaining search-friendly structure during the redesign. No one can guarantee rankings, but a careful migration reduces the risk.</p>
+              </div>
+            </div>
+                  </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         ABOUT / FOUNDER SECTION
+    ======================================================== -->
+    <section class="founder-section" id="about">
+      <div class="container">
+        <div class="principles-heading reveal">
+          <div class="eyebrow">LOCAL &amp; ACCOUNTABLE</div>
+          <h2 class="section-title" style="margin-top: 25px;">
+            Meet the Team Behind Website Tailors
+          </h2>
+          <p style="color: var(--muted); font-size: 16px; line-height: 1.7; max-width: 680px; margin-top: 16px;">
+            When you hire Website Tailors, you work directly with the people who design and code your website — no account managers, no jargon.
+          </p>
+        </div>
+
+        <div class="founder-cards-list">
+
+          <!-- Founder 1 -->
+          <div class="founder-row reveal">
+            <div class="founder-portrait">
+              <img src="assets/images/NACHIKETA%20NR.jpg" alt="NACHIKETA NR — Founder &amp; Lead Developer" class="founder-portrait-img" width="220" height="293" loading="lazy">
+            </div>
+            <div class="founder-bio">
+              <h3 class="founder-name">NACHIKETA NR</h3>
+              <hr class="founder-divider">
+              <div class="founder-role">Lead Software Developer · Bangalore</div>
+              <p class="founder-story">
+                I started Website Tailors because I saw too many Bangalore businesses stuck between two bad options — agencies that overcharged for slow websites, or freelancers who disappeared after taking an advance.
+              </p>
+              <p class="founder-story">
+                With a background in full-stack web development, I personally design, build and fine-tune every project. I work directly with clients over WhatsApp, so changes happen fast and sites launch on schedule.
+              </p>
+              <a href="https://www.linkedin.com/in/nachiketa12/" class="founder-linkedin" target="_blank" rel="noopener noreferrer" aria-label="Nachiketa NR on LinkedIn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#0A66C2" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
             </div>
           </div>
-          <div class="faq-item">
-            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-ans-1">
-              <span>I already run a business. Do I really need a website?</span>
-              <span class="faq-icon" aria-hidden="true">+</span>
-            </button>
-            <div id="faq-ans-1" class="faq-answer" hidden>
-              <p>Yes. Most customers look for local businesses on Google before calling or visiting. A website gives
-                your business credibility and makes it easy for customers to contact you.</p>
+
+          <!-- Founder 2 -->
+          <div class="founder-row reveal">
+            <div class="founder-portrait">
+              <img src="assets/images/Vinay%20Kumar%20.jpeg" alt="VINAY KUMAR — Co-Founder &amp; Design Lead" class="founder-portrait-img" width="220" height="293" loading="lazy">
+            </div>
+            <div class="founder-bio">
+              <h3 class="founder-name">VINAY KUMAR</h3>
+              <hr class="founder-divider">
+              <div class="founder-role">Co-Founder &amp; Design Lead · Bangalore</div>
+              
+<p class="founder-story">
+  I lead marketing and client relationships at Website Tailors — connecting with potential clients, understanding their business goals, and turning conversations into valuable opportunities.
+</p>
+<p class="founder-story">
+  From generating qualified leads to building lasting client relationships, I focus on clear communication, tailored solutions, and helping businesses take the next step toward their digital growth.
+</p>
+
+              <a href="https://linkedin.com" class="founder-linkedin" target="_blank" rel="noopener noreferrer" aria-label="VINAY KUMAR on LinkedIn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#0A66C2" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
             </div>
           </div>
-          <div class="faq-item">
-            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-ans-2">
-              <span>Can you redesign my existing website?</span>
-              <span class="faq-icon" aria-hidden="true">+</span>
-            </button>
-            <div id="faq-ans-2" class="faq-answer" hidden>
-              <p>Yes, we specialize in redesigning outdated websites to improve loading speed, mobile usability, visual
-                design and search visibility.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-ans-3">
-              <span>How long does it take?</span>
-              <span class="faq-icon" aria-hidden="true">+</span>
-            </button>
-            <div id="faq-ans-3" class="faq-answer" hidden>
-              <p>Most business websites are planned, designed and launched within [X] days depending on scope and
-                feedback cycles.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-ans-4">
-              <span>Will my website show up on Google?</span>
-              <span class="faq-icon" aria-hidden="true">+</span>
-            </button>
-            <div id="faq-ans-4" class="faq-answer" hidden>
-              <p>Yes, every website we build includes clean HTML structure, essential meta tags, sitemap submission and
-                basic local SEO setup so search engines can index your pages.</p>
-            </div>
-          </div>
+
         </div>
       </div>
     </section>
+
+
 
     <!-- =======================================================
          CONTACT / QUOTE FORM (PHASE 15 & 16)
@@ -933,22 +1961,24 @@
         <div class="cta-inner reveal">
           <div class="cta-eyebrow">GET IN TOUCH</div>
           <h2 class="cta-title">
-            Get a Free Quote<br>
-            for Your Website
+            Let's Plan Your Website
           </h2>
 
           <p class="cta-subtitle">
-            Tell us what you need. We'll review your requirements and get back to you with a plan and price.
+            Tell us what your business does and what you need. We'll suggest the right scope and the next steps, with no obligation.
+          </p>
+          <p style="font-size: 13.5px; color: #c8ff00; font-family: 'DM Mono', monospace; margin-top: 14px;">
+            ⚡ We reply within 24 hours. No spam, no obligation.
           </p>
 
           <div class="cta-contact-info">
-            <a href="mailto:websietailorss@gmail.com">
-              <span>Email:</span> websietailorss@gmail.com ↗
+            <a href="mailto:websitetailorss@gmail.com">
+              <span>Email:</span> websitetailorss@gmail.com ↗
             </a>
             <a href="tel:+919380552034">
-              <span>Call:</span> +91 9380552034 ↗
+              <span>Call:</span> +91 93805 52034 ↗
             </a>
-            <span>Location: Bangalore, Karnataka, India</span>
+            <span>Location: Bengaluru, Karnataka 560010, India</span>
           </div>
         </div>
 
@@ -959,8 +1989,7 @@
             <div class="qn-header">
               <div class="qn-header-top">
                 <div class="qn-step-badge" id="qnStepBadge">STEP 1 OF 3</div>
-                <button type="button" class="qn-back-btn" id="qnBackBtn" aria-label="Go to previous step"
-                  style="display: none;">
+                <button type="button" class="qn-back-btn" id="qnBackBtn" aria-label="Go to previous step" style="display: none;">
                   ← BACK
                 </button>
               </div>
@@ -970,12 +1999,11 @@
             </div>
 
             <form id="contactForm" method="POST" action="#contact" data-netlify="true" name="contact" novalidate>
-              <input type="hidden" name="form_type" value="contact_submission"> <input type="hidden" name="action"
-                value="contact">
+              <input type="hidden" name="form_type" value="contact_submission">              <input type="hidden" name="action" value="contact">
               <input type="hidden" name="source" value="Website Quote Form">
 
               <!-- Anti-Bot Spam Honeypot Field -->
-              <div class="hp-field" aria-hidden="true">
+              <div class="hp-field" aria-hidden="true" style="display: none !important;">
                 <label for="website_url">Leave this field blank</label>
                 <input type="text" id="website_url" name="website_url" autocomplete="off" tabindex="-1">
               </div>
@@ -987,20 +2015,18 @@
               <div class="qn-steps-container">
                 <!-- STEP 1: NAME & BUSINESS -->
                 <div class="qn-step active" data-step="1">
-                  <h3 class="qn-question-title">TELL US ABOUT<br><span class="lime-text">YOUR BUSINESS.</span></h3>
-                  <p class="qn-question-sub">What is your name and business name?</p>
+                  <h3 class="qn-question-title">TELL US ABOUT<br><span class="lime-text">YOUR BUSINESS</span></h3>
+                  <p class="qn-question-sub">What's your name and business name?</p>
 
                   <div class="qn-contact-form-grid" style="grid-template-columns: 1fr;">
                     <div class="qn-input-group">
                       <label for="qnNameInput" class="qn-field-label">Your Name *</label>
-                      <input type="text" id="qnNameInput" name="name" class="qn-text-input"
-                        placeholder="e.g. Rahul Sharma" required minlength="2" maxlength="100" autocomplete="name">
+                      <input type="text" id="qnNameInput" name="name" class="qn-text-input" placeholder="e.g. Rahul Sharma" required minlength="2" maxlength="100" autocomplete="name">
                     </div>
 
                     <div class="qn-input-group">
                       <label for="qnBusinessInput" class="qn-field-label">Business / Brand Name (Optional)</label>
-                      <input type="text" id="qnBusinessInput" class="qn-text-input"
-                        placeholder="e.g. Sharma Dental Clinic" maxlength="100" autocomplete="organization">
+                      <input type="text" id="qnBusinessInput" class="qn-text-input" placeholder="e.g. Sharma Dental Clinic" maxlength="100" autocomplete="organization">
                     </div>
                   </div>
 
@@ -1059,28 +2085,30 @@
                   <div class="qn-contact-form-grid">
                     <div class="qn-input-group">
                       <label for="qnPhoneInput" class="qn-field-label">Phone / WhatsApp *</label>
-                      <input type="tel" id="qnPhoneInput" name="phone" class="qn-text-input" placeholder="9380552034"
-                        required maxlength="50" autocomplete="tel">
+                      <input type="tel" id="qnPhoneInput" name="phone" class="qn-text-input" placeholder="9380552034" required maxlength="50" autocomplete="tel">
                     </div>
 
                     <div class="qn-input-group">
                       <label for="qnEmailInput" class="qn-field-label">Email Address (Optional)</label>
-                      <input type="email" id="qnEmailInput" name="email" class="qn-text-input"
-                        placeholder="rahul@company.com" maxlength="150" autocomplete="email">
+                      <input type="email" id="qnEmailInput" name="email" class="qn-text-input" placeholder="rahul@company.com" maxlength="150" autocomplete="email">
                     </div>
 
                     <div class="qn-input-group full">
                       <label for="qnDetailsInput" class="qn-field-label">Project Details (Optional)</label>
-                      <textarea id="qnDetailsInput" name="project_details" class="qn-textarea" rows="3"
-                        placeholder="Tell us about your requirements or timeline..." maxlength="5000"></textarea>
+                      <textarea id="qnDetailsInput" name="project_details" class="qn-textarea" rows="3" placeholder="Tell us about your requirements or timeline..." maxlength="5000"></textarea>
                     </div>
                   </div>
 
                   <div id="qnFeedback" class="qn-feedback-msg" style="display: none;"></div>
 
+                  <div class="qn-reassurance-line" style="font-size: 13px; color: var(--muted); margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    <span>We reply within 24 hours. No spam, no obligation.</span>
+                  </div>
+
                   <div class="qn-actions">
                     <button type="submit" class="qn-submit-btn magnetic" id="qnSubmitBtn">
-                      <span>GET YOUR FREE QUOTE ↗</span>
+                      <span>Get a Free Quote ↗</span>
                     </button>
                   </div>
                 </div>
@@ -1090,8 +2118,8 @@
             <!-- SUCCESS SCREEN (DYNAMICALLY REVEALED AFTER SUBMISSION) -->
             <div class="qn-success-screen" id="qnSuccessScreen" style="display: none;">
               <div class="qn-success-badge">✓ QUOTE REQUEST RECEIVED</div>
-              <h2 class="qn-success-title">THANK YOU.<br><span class="lime-text">WE HAVE YOUR DETAILS.</span></h2>
-              <p class="qn-success-desc">We will review your requirements and reply with a plan and price.</p>
+              <h2 class="qn-success-title">WHOOOO HOOOO!<br><span class="lime-text">You Made First Move.</span></h2>
+              <p class="qn-success-desc">We will review your requirements and reply within 24hrs.</p>
               <button type="button" class="button button-primary magnetic qn-reset-btn" id="qnResetBtn">
                 Back to Website ↗
               </button>
@@ -1102,8 +2130,7 @@
     </section>
 
     <!-- Modal Wrapper for Interactive Project Questionnaire -->
-    <div class="questionnaire-modal" id="questionnaireModal" aria-hidden="true" role="dialog" aria-modal="true"
-      aria-label="Website Tailors Free Quote Form">
+    <div class="questionnaire-modal" id="questionnaireModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Website Tailors Free Quote Form">
       <div class="qn-modal-backdrop" id="qnModalBackdrop"></div>
       <div class="qn-modal-content">
         <button type="button" class="qn-modal-close" id="qnModalClose" aria-label="Close Form">✕</button>
@@ -1115,64 +2142,67 @@
   <!-- =======================================================
        FOOTER
   ======================================================== -->
-  <footer>
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-logo">
-          Website Tailors </div>
+  <footer class="site-footer">
+    <div class="site-footer__inner container">
+      <!-- Giant Brand Wordmark -->
+      <h2 class="footer-brand-title">
+        Website Tailors      </h2>
+      <!-- Middle Content Grid: Tagline Left, Direct Contact Right -->
+      <div class="footer-content-grid">
+        <div class="footer-brand-col">
+          <p class="footer-tagline">
+            Website Tailors: Website design, redesign and WhatsApp automation for small businesses in Bangalore.
+          </p>
+        </div>
 
-        <div class="footer-links">
-          <div class="footer-col">
-            <div class="footer-col-title">Navigate</div>
-            <a href="#home">Home</a>
-            <a href="#services">Services</a>
-            <a href="#work">Work</a>
-            <a href="#process">Process</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-          </div>
-
-          <div class="footer-col">
-            <div class="footer-col-title">Connect</div>
-            <a href="mailto:websietailorss@gmail.com">websietailorss@gmail.com</a>
-            <a href="tel:+919380552034">+91 9380552034</a>
-            <a href="https://linkedin.com/company/websitetailors" target="_blank" rel="noopener noreferrer">LinkedIn
-              ↗</a>
-            <a href="https://github.com/websitetailors" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-            <a href="https://x.com/websitetailors" target="_blank" rel="noopener noreferrer">Twitter / X ↗</a>
-            <a href="https://instagram.com/websitetailors" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
-            <a href="https://facebook.com/websitetailors" target="_blank" rel="noopener noreferrer">Facebook ↗</a>
-          </div>
-
-          <div class="footer-col">
-            <div class="footer-col-title">Office</div>
-            <p style="font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 12px;">
-              Bangalore, Karnataka, India </p>
+        <div class="footer-contact-col">
+          <div class="footer-direct-label">DIRECT CONTACT</div>
+          <div class="footer-contact-row">
+            <a href="mailto:websitetailorss@gmail.com" class="footer-contact-link">
+              websitetailorss@gmail.com            </a>
+            <a href="tel:+919380552034" class="footer-contact-link">
+              +91 93805 52034
+            </a>
+            <a href="https://wa.me/919380552034?text=Hi%2C%20I%27d%20like%20a%20quote%20for%20a%20website" class="footer-contact-link footer-contact-wa" target="_blank" rel="noopener noreferrer">
+              WhatsApp Us ↗
+            </a>
           </div>
         </div>
       </div>
 
-      <div class="footer-bottom">
-        <span>
-          &copy; 2026 WEBSITE TAILORS. ALL RIGHTS RESERVED.
+
+      <!-- Legal & Copyright Bar -->
+      <div class="footer-bottom-bar">
+        <span class="footer-copy">
+          &copy; 2026 Website Tailors. All rights reserved.
         </span>
-        <span>
-          AFFORDABLE BUSINESS WEBSITES &amp; WHATSAPP AUTOMATION IN BANGALORE </span>
+        <div class="footer-legal">
+          <a href="./privacy-policy">Privacy Policy</a>
+          <span class="legal-dot">·</span>
+          <a href="./terms">Terms of Service</a>
+        </div>
       </div>
     </div>
   </footer>
 
+  <!-- Sticky Mobile Action Bar (Requirement 7) -->
+  <nav class="mobile-sticky-bar" aria-label="Mobile Quick Action Bar">
+    <a href="tel:+919380552034" class="mobile-sticky-btn mobile-call-btn" aria-label="Call Website Tailors">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+      <span>Call</span>
+    </a>
+    <a href="https://wa.me/919380552034?text=Hi%2C%20I%27d%20like%20a%20quote%20for%20a%20website" class="mobile-sticky-btn mobile-wa-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662a11.87 11.87 0 005.705 1.454h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <span>WhatsApp</span>
+    </a>
+  </nav>
+
   <!-- Floating WhatsApp CTA (Phase 17) -->
-  <a href="https://wa.me/919380552034?text=Hi%20Website%20Tailors%2C%20I%20would%20like%20a%20free%20quote"
-    class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true">
-      <path
-        d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.6-68.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.9-186.6 184.9zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
-    </svg>
+  <a href="https://wa.me/919380552034?text=Hi%2C%20I%27d%20like%20a%20quote%20for%20a%20website" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.6-68.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.9-186.6 184.9zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
   </a>
 
   <!-- Vanilla JavaScript -->
-  <script src="./assets/js/main.js" defer></script>
+  <script src="./assets/js/main.js?v=1.0.1" defer></script>
 </body>
-
 </html>

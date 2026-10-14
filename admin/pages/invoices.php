@@ -142,6 +142,14 @@ function parse_line_items_input(array $post): ?string {
 // -----------------------------------------------------------------------------
 // 2. POST ACTIONS: Create Invoice, Edit Invoice, Delete Invoice
 // -----------------------------------------------------------------------------
+$defaultOfficeAddress = 'Building no 203 Grihalakshmi layout Rajajinagara,Bangalore';
+try {
+    $setAddr = $pdo->query("SELECT setting_value FROM site_settings WHERE setting_key = 'address' LIMIT 1")->fetchColumn();
+    if (!empty($setAddr)) {
+        $defaultOfficeAddress = (string)$setAddr;
+    }
+} catch (\Throwable $e) {}
+
 if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
     if (!verify_csrf()) {
         $error = 'Security session expired. Please refresh the page and try again.';
@@ -174,6 +182,11 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
             $paymentDateInput  = trim($_POST['payment_date'] ?? '');
             $statusInput       = strtolower(trim(sanitize_text($_POST['status'] ?? 'pending')));
             $notesInput        = sanitize_text($_POST['notes'] ?? '');
+            $billingAddressInput = trim(sanitize_text($_POST['client_billing_address'] ?? ''));
+            $officeAddressInput = trim(sanitize_text($_POST['office_address'] ?? ''));
+            if (empty($officeAddressInput)) {
+                $officeAddressInput = $defaultOfficeAddress;
+            }
 
             // 1. Client Validation
             $finalClientId = null;
@@ -331,14 +344,14 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
                             project_total, advance_amount, amount_received, balance_amount,
                             status, due_date, paid_at, payment_mode, transaction_reference,
                             bank_name, payment_method_desc, payment_date, line_items,
-                            notes, created_at, updated_at
+                            notes, client_billing_address, office_address, created_at, updated_at
                         ) VALUES (
                             ?, ?, ?, ?,
                             ?, ?, ?, ?, ?,
                             ?, ?, ?, ?,
                             ?, ?, ?, ?, ?,
                             ?, ?, ?, ?,
-                            ?, ?, ?
+                            ?, ?, ?, ?, ?
                         )
                     ");
                     $insertStmt->execute([
@@ -365,6 +378,8 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
                         $finalPaymentDate,
                         $lineItemsJson,
                         $notesInput,
+                        !empty($billingAddressInput) ? $billingAddressInput : null,
+                        $officeAddressInput,
                         $createdDateStr,
                         $nowStr
                     ]);
@@ -436,6 +451,11 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
             $paymentDateInput  = trim($_POST['payment_date'] ?? '');
             $statusInput       = strtolower(trim(sanitize_text($_POST['status'] ?? 'pending')));
             $notesInput        = sanitize_text($_POST['notes'] ?? '');
+            $billingAddressInput = trim(sanitize_text($_POST['client_billing_address'] ?? ''));
+            $officeAddressInput = trim(sanitize_text($_POST['office_address'] ?? ''));
+            if (empty($officeAddressInput)) {
+                $officeAddressInput = $defaultOfficeAddress;
+            }
 
             // Fetch current invoice record
             $curInvStmt = $pdo->prepare("SELECT * FROM invoices WHERE id = :id LIMIT 1");
@@ -576,6 +596,8 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
                             payment_date = :payment_date,
                             line_items = :line_items,
                             notes = :notes,
+                            client_billing_address = :client_billing_address,
+                            office_address = :office_address,
                             updated_at = :updated_at
                         WHERE id = :id
                     ");
@@ -602,6 +624,8 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
                         ':payment_date'          => $finalPaymentDate,
                         ':line_items'            => $lineItemsJson,
                         ':notes'                 => $notesInput,
+                        ':client_billing_address' => !empty($billingAddressInput) ? $billingAddressInput : null,
+                        ':office_address'        => $officeAddressInput,
                         ':updated_at'            => $nowStr,
                         ':id'                    => $invoiceId
                     ]);
@@ -1626,6 +1650,24 @@ require_once dirname(__DIR__) . '/includes/admin_header.php';
             </div>
           </div>
 
+          <!-- Client Billing Address -->
+          <div class="form-group" style="margin-bottom: 14px;">
+            <label class="form-label" style="font-weight: 600; font-size: 12px; color: var(--text-dark); margin-bottom: 4px; display: block;">
+              Client Billing Address
+              <span style="font-weight: 400; color: var(--text-muted); font-size: 11px;"> — appears on the PDF invoice under Bill To</span>
+            </label>
+            <input type="text" name="client_billing_address" id="genBillingAddress" placeholder="e.g. 42, MG Road, Bangalore - 560001, Karnataka" class="form-control" style="width: 100%; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border-light); font-size: 13px;">
+          </div>
+
+          <!-- Website Tailors Office Address -->
+          <div class="form-group" style="margin-bottom: 14px;">
+            <label class="form-label" style="font-weight: 600; font-size: 12px; color: var(--text-dark); margin-bottom: 4px; display: block;">
+              Website Tailors Office Address
+              <span style="font-weight: 400; color: var(--text-muted); font-size: 11px;"> — our office address printed on the invoice</span>
+            </label>
+            <input type="text" name="office_address" id="genOfficeAddress" value="<?= htmlspecialchars($defaultOfficeAddress, ENT_QUOTES, 'UTF-8') ?>" class="form-control" style="width: 100%; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border-light); font-size: 13px;">
+          </div>
+
           <!-- Project Phase Selection -->
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px;">
             <div class="form-group">
@@ -1945,6 +1987,11 @@ require_once dirname(__DIR__) . '/includes/admin_header.php';
           <div>
             <span style="color: var(--text-muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;">Billed To</span>
             <div id="viewInvClient" style="font-weight: 700; color: var(--text-dark); font-size: 14px; margin-top: 2px;"></div>
+            <div id="viewInvAddress" style="font-size: 12px; color: var(--text-muted); margin-top: 2px; line-height: 1.4;"></div>
+          </div>
+          <div>
+            <span style="color: var(--text-muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;">Website Tailors Office</span>
+            <div id="viewInvOfficeAddress" style="font-size: 12px; color: var(--text-dark); margin-top: 2px; line-height: 1.4; font-weight: 500;"></div>
           </div>
           <div>
             <span style="color: var(--text-muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;">Project &amp; Phase</span>
@@ -2085,6 +2132,24 @@ require_once dirname(__DIR__) . '/includes/admin_header.php';
               </label>
               <input type="text" name="custom_phase" id="editCustomPhase" class="form-control" style="width: 100%; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border-light); font-size: 13px;">
             </div>
+          </div>
+
+          <!-- Client Billing Address (Edit) -->
+          <div class="form-group" style="margin-bottom: 14px;">
+            <label class="form-label" style="font-weight: 600; font-size: 12px; color: var(--text-dark); margin-bottom: 4px; display: block;">
+              Client Billing Address
+              <span style="font-weight: 400; color: var(--text-muted); font-size: 11px;"> — appears on the PDF invoice under Bill To</span>
+            </label>
+            <input type="text" name="client_billing_address" id="editBillingAddress" placeholder="e.g. 42, MG Road, Bangalore - 560001, Karnataka" class="form-control" style="width: 100%; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border-light); font-size: 13px;">
+          </div>
+
+          <!-- Website Tailors Office Address (Edit) -->
+          <div class="form-group" style="margin-bottom: 14px;">
+            <label class="form-label" style="font-weight: 600; font-size: 12px; color: var(--text-dark); margin-bottom: 4px; display: block;">
+              Website Tailors Office Address
+              <span style="font-weight: 400; color: var(--text-muted); font-size: 11px;"> — our office address printed on the invoice</span>
+            </label>
+            <input type="text" name="office_address" id="editOfficeAddress" class="form-control" style="width: 100%; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border-light); font-size: 13px;">
           </div>
 
           <!-- SECTION 2: INVOICE & FINANCIALS -->
@@ -2743,6 +2808,15 @@ require_once dirname(__DIR__) . '/includes/admin_header.php';
       document.getElementById('viewInvTitle').textContent = 'Invoice ' + (inv.invoice_number || '');
       document.getElementById('viewInvSubtitle').textContent = 'Issued to ' + (inv.client_name || '');
       document.getElementById('viewInvClient').textContent = inv.client_name || 'Not specified';
+      const addrEl = document.getElementById('viewInvAddress');
+      if (addrEl) {
+        addrEl.textContent = inv.client_billing_address ? ('📍 ' + inv.client_billing_address) : '';
+        addrEl.style.display = inv.client_billing_address ? 'block' : 'none';
+      }
+      const officeAddrEl = document.getElementById('viewInvOfficeAddress');
+      if (officeAddrEl) {
+        officeAddrEl.textContent = '📍 ' + (inv.office_address || <?= json_encode($defaultOfficeAddress) ?>);
+      }
 
       const projName = inv.project_name || 'Not specified';
       const projPhase = inv.project_phase || 'Not specified';
@@ -2981,6 +3055,12 @@ require_once dirname(__DIR__) . '/includes/admin_header.php';
 
       // Notes
       document.getElementById('editNotes').value = inv.notes || '';
+      // Billing Address
+      const editBillingAddr = document.getElementById('editBillingAddress');
+      if (editBillingAddr) editBillingAddr.value = inv.client_billing_address || '';
+      // Office Address
+      const editOfficeAddr = document.getElementById('editOfficeAddress');
+      if (editOfficeAddr) editOfficeAddr.value = inv.office_address || <?= json_encode($defaultOfficeAddress) ?>;
 
       // Line items
       const editTbody = document.getElementById('editLineItemsBody');

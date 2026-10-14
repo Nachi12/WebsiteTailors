@@ -6,7 +6,7 @@ A production-ready, high-performance web platform and CMS architecture built str
 
 Zero external frameworks, zero Node/npm runtime dependencies, zero composer vendor bloat. Perfectly suited for deployment on standard Apache/LiteSpeed shared hosting (such as **Hostinger**, cPanel, SiteGround, etc.).
 
-php -S 127.0.0.1:8000
+php -S 127.0.0.1:8080
 to run this project
 
 

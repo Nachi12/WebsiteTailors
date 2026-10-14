@@ -26,8 +26,8 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
     }
 }
 
-$pageTitle = 'Get a Free Website Quote | Website Tailors Bangalore';
-$pageDescription = 'Get a free quote for website design, website redesign, or WhatsApp automation in Bangalore. Contact Website Tailors today.';
+$pageTitle = 'Get a Website Quote in Bangalore | Website Tailors';
+$pageDescription = 'Tell Website Tailors about your business website or redesign project. Contact us to discuss requirements, scope, pricing and next steps.';
 $activePage = 'contact';
 
 require_once __DIR__ . '/includes/header.php';
@@ -39,20 +39,18 @@ require_once __DIR__ . '/includes/header.php';
         <div class="cta-inner reveal">
           <div class="cta-eyebrow">GET IN TOUCH</div>
           <h1 class="cta-title">
-            LET'S<br>
-            Website Tailors.
+            LET'S DISCUSS<br>
+            YOUR WEBSITE.
           </h1>
 
           <p class="cta-subtitle">
-            Tell us about your next project, challenge, or digital vision. We'll examine the technical architecture and get back to you with actionable recommendations.
+            Tell us about your business, website requirements, or redesign goals. We'll review your details and respond with a clear proposal covering scope, timeline, and pricing.
           </p>
 
           <div class="cta-contact-info" style="margin-top: 50px;">
-            <?php if (!empty($settings['email'])): ?>
-              <a href="mailto:<?= e($settings['email']) ?>">
-                <span>Email:</span> <?= e($settings['email']) ?> ↗
-              </a>
-            <?php endif; ?>
+            <a href="mailto:<?= e($settings['email'] ?? 'websitetailorss@gmail.com') ?>">
+              <span>Email:</span> <?= e($settings['email'] ?? 'websitetailorss@gmail.com') ?> ↗
+            </a>
             <?php if (!empty($settings['phone'])): ?>
               <a href="tel:<?= e(preg_replace('/[^0-9+]/', '', $settings['phone'])) ?>">
                 <span>Call:</span> <?= e($settings['phone']) ?> ↗
@@ -62,7 +60,10 @@ require_once __DIR__ . '/includes/header.php';
                 <span>Call:</span> 9380552034 ↗
               </a>
             <?php endif; ?>
-            <span>Location: <?= e($settings['address'] ?? 'Bangalore-560010, karnataka. India') ?></span>
+            <a href="https://wa.me/919380552034?text=Hi%20Website%20Tailors%2C%20I%20would%20like%20to%20discuss%20a%20website" target="_blank" rel="noopener noreferrer">
+              <span>WhatsApp:</span> +91 9380552034 ↗
+            </a>
+            <span>Location: <?= e($settings['address'] ?? 'Bangalore, Karnataka, India') ?></span>
           </div>
         </div>
 
@@ -140,10 +141,10 @@ require_once __DIR__ . '/includes/header.php';
               <div class="form-group">
                 <label for="budget" class="form-label">Estimated Budget</label>
                 <select id="budget" name="budget" class="form-control">
-                  <option value="< ₹1,00,000" <?= (($_POST['budget'] ?? '') === '< ₹1,00,000') ? 'selected' : '' ?>>&lt; ₹1,00,000</option>
-                  <option value="₹1,00,000 - ₹3,00,000" <?= (($_POST['budget'] ?? '') === '₹1,00,000 - ₹3,00,000' || empty($_POST['budget'])) ? 'selected' : '' ?>>₹1,00,000 – ₹3,00,000</option>
-                  <option value="₹3,00,000 - ₹5,00,000" <?= (($_POST['budget'] ?? '') === '₹3,00,000 - ₹5,00,000') ? 'selected' : '' ?>>₹3,00,000 – ₹5,00,000</option>
-                  <option value="₹5,00,000+" <?= (($_POST['budget'] ?? '') === '₹5,00,000+') ? 'selected' : '' ?>>₹5,00,000+</option>
+                  <option value="< ₹15,000" <?= (($_POST['budget'] ?? '') === '< ₹15,000') ? 'selected' : '' ?>>&lt; ₹15,000 (Starter Website)</option>
+                  <option value="₹15,000 - ₹30,000" <?= (($_POST['budget'] ?? '') === '₹15,000 - ₹30,000' || empty($_POST['budget'])) ? 'selected' : '' ?>>₹15,000 – ₹30,000 (Standard Business Website)</option>
+                  <option value="₹30,000 - ₹60,000" <?= (($_POST['budget'] ?? '') === '₹30,000 - ₹60,000') ? 'selected' : '' ?>>₹30,000 – ₹60,000 (Custom Redesign / Integration)</option>
+                  <option value="₹60,000+" <?= (($_POST['budget'] ?? '') === '₹60,000+') ? 'selected' : '' ?>>₹60,000+ (Comprehensive Project)</option>
                 </select>
               </div>
 

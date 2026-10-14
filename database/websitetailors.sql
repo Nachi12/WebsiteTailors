@@ -249,7 +249,7 @@ INSERT INTO `process_steps` (`step_number`, `title`, `description`, `display_ord
 ('01', 'Tell us.', 'Tell us what you\'re trying to build, fix or improve.', 1, 'published'),
 ('02', 'We plan.', 'We define the experience, technology and scope.', 2, 'published'),
 ('03', 'We build.', 'Design, development and testing happen together.', 3, 'published'),
-('04', 'You launch.', 'Your product goes live and starts doing its job.', 4, 'published');
+('04', 'You launch.', 'Your website goes live and starts doing its job.', 4, 'published');
 
 -- Seed Testimonials
 INSERT INTO `testimonials` (`client_name`, `company`, `position`, `content`, `rating`, `image`, `display_order`, `status`) VALUES
@@ -260,7 +260,7 @@ INSERT INTO `testimonials` (`client_name`, `company`, `position`, `content`, `ra
 -- Seed Superadmin Users
 INSERT INTO `admins` (`id`, `username`, `email`, `password_hash`, `full_name`, `role`, `is_active`, `created_at`) VALUES
 (1, 'admin', 'websietailorss@gmail.com', '$2y$12$ht.4P0FXjJ7ev7MsltCeSeQpBGGj/is8I.XzZ/WMTbz2NTau8dX4y', 'Website Tailors Administrator', 'superadmin', 1, NOW()),
-(2, 'superadmin', 'superadmin@rithamaya.com', '$2y$12$ht.4P0FXjJ7ev7MsltCeSeQpBGGj/is8I.XzZ/WMTbz2NTau8dX4y', 'Rithamaya Administrator', 'superadmin', 1, NOW());
+(2, 'superadmin', 'superadmin@websitetailors.com', '$2y$12$ht.4P0FXjJ7ev7MsltCeSeQpBGGj/is8I.XzZ/WMTbz2NTau8dX4y', 'WebsiteTailors Administrator', 'superadmin', 1, NOW());
 
 -- --------------------------------------------------------
 -- Table structure for table `clients`

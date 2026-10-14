@@ -18,8 +18,8 @@ declare(strict_types=1);
 if (!defined('WebsiteTailors_INIT')) { define('WebsiteTailors_INIT', true); }
 require_once dirname(__DIR__) . '/includes/init.php';
 
-// If already authenticated, redirect to admin dashboard
-if (is_admin_logged_in()) {
+// If already authenticated with a valid DB admin, redirect to admin dashboard
+if (is_admin_logged_in() && current_admin() !== null) {
     redirect(ADMIN_URL . '/index.php');
 }
 

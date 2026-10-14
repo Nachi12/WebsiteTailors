@@ -785,13 +785,84 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("[Website Tailors Motion] initialized");
 
   /* =========================================================
-     6. SCROLL REVEAL (INTERSECTION OBSERVER - PHASE 5 & 6)
+     6. SCROLL REVEAL (INTERSECTION OBSERVER - COMPREHENSIVE ENGINE)
   ========================================================= */
-  const revealElements = document.querySelectorAll(
-    ".reveal, .reveal-stagger, .statement, .cta, footer"
-  );
+  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  if ("IntersectionObserver" in window && revealElements.length > 0) {
+  // Step A: Setup coordinated stagger delays on grid and list containers
+  const staggerContainers = [
+    ".industries-grid",
+    ".principles-grid",
+    ".services-list",
+    ".process-track",
+    ".why-grid",
+    ".testimonials-grid",
+    ".features-two-col",
+    ".faq-accordion",
+    ".steps-list",
+    ".check-list"
+  ];
+
+  staggerContainers.forEach((selector) => {
+    document.querySelectorAll(selector).forEach((container) => {
+      const items = Array.from(container.children).filter(
+        (child) => !child.classList.contains("process-line") && !child.classList.contains("process-progress")
+      );
+      items.forEach((item, index) => {
+        item.classList.add("reveal");
+        // Stagger index cycling up to 6 columns/rows so deep lists don't delay excessively
+        const delay = (index % 6) * 75;
+        item.style.setProperty("--reveal-delay", `${delay}ms`);
+      });
+    });
+  });
+
+  // Step B: Target all major headings, editorial blocks, and standalone cards across the entire site
+  const contentSelectors = [
+    ".reveal",
+    ".reveal-stagger",
+    ".reveal-scale",
+    ".reveal-fade",
+    "section:not(.hero):not(#home) .principles-heading",
+    "section:not(.hero):not(#home) .services-heading",
+    "section:not(.hero):not(#home) .process-header",
+    "section:not(.hero):not(#home) .work-header",
+    ".page-hero",
+    ".service-hero",
+    ".statement",
+    ".founder-card",
+    ".contact-form-card",
+    ".questionnaire-card",
+    ".cta-inner",
+    ".cta",
+    ".content-block",
+    ".service-content-section h2",
+    ".comparison-table",
+    ".contact-card",
+    ".marquee-section",
+    "footer"
+  ];
+
+  // Exclude hero internals from being hidden by the observer to maintain immediate interactive state
+  const revealElements = Array.from(
+    new Set(document.querySelectorAll(contentSelectors.join(", ")))
+  ).filter((el) => !el.closest(".hero") && !el.closest("#home"));
+
+  // Ensure every targeted element (except footer/statement which have their own inner targets) has the reveal class
+  revealElements.forEach((el) => {
+    if (
+      !el.classList.contains("reveal") &&
+      !el.classList.contains("reveal-stagger") &&
+      !el.classList.contains("reveal-scale") &&
+      !el.classList.contains("reveal-fade") &&
+      el.tagName.toLowerCase() !== "footer" &&
+      !el.classList.contains("statement")
+    ) {
+      el.classList.add("reveal");
+    }
+  });
+
+  if (!prefersReduced && "IntersectionObserver" in window && revealElements.length > 0) {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -802,13 +873,23 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       },
       {
-        threshold: 0.12,
+        threshold: 0.1,
         rootMargin: "0px 0px -40px 0px"
       }
     );
 
-    revealElements.forEach((el) => observer.observe(el));
+    // Initial check: if an element is already in the viewport upon script init, reveal without lag
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+    revealElements.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < viewportHeight - 40 && rect.bottom > 0) {
+        el.classList.add("visible");
+      } else {
+        observer.observe(el);
+      }
+    });
   } else {
+    // Reduced motion or fallback
     revealElements.forEach((el) => el.classList.add("visible"));
   }
 

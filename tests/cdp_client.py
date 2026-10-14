@@ -39,7 +39,7 @@ class SimpleCDP:
         )
         self.sock.sendall(handshake.encode())
         resp = self.sock.recv(4096)
-        if b"101 Switching Protocols" not in resp:
+        if b"101" not in resp:
             raise Exception("WS handshake failed")
 
     def send_cmd(self, method, params=None):

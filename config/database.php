@@ -56,25 +56,78 @@ final class Database
         try {
             $this->pdo = new PDO($dsn, DB_USER, DB_PASS, $options);
             $this->pdo->exec("SET NAMES " . DB_CHARSET . " COLLATE utf8mb4_unicode_ci");
-            $this->ensureSchema();
+            $this->checkAndApplySchema();
         } catch (PDOException $e) {
             $this->connectionError = $e->getMessage();
-            // Fallback to SQLite for local development / testing if MySQL daemon is not active
-            $sqlitePath = dirname(__DIR__) . '/database/WebsiteTailors.sqlite';
-            $initScript = dirname(__DIR__) . '/database/init_sqlite.php';
-            if (file_exists($initScript)) {
-                require_once $initScript;
-                try {
-                    $this->pdo = init_sqlite_database($sqlitePath);
-                    $this->ensureSchema();
-                } catch (\Throwable $sqliteEx) {
-                    $this->pdo = null;
-                    error_log("SQLite Fallback Notice: " . $sqliteEx->getMessage());
+
+            // Check alternate MySQL ports (e.g. 3307 for macOS XAMPP) or socket if primary port fails
+            if ($this->pdo === null) {
+                $altPorts = [3307, 3306];
+                foreach ($altPorts as $altPort) {
+                    if ($altPort === DB_PORT) continue;
+                    try {
+                        $altDsn = sprintf('mysql:host=%s;port=%d;dbname=%s;charset=%s', DB_HOST, $altPort, DB_NAME, DB_CHARSET);
+                        $this->pdo = new PDO($altDsn, DB_USER, DB_PASS, $options);
+                        $this->pdo->exec("SET NAMES " . DB_CHARSET . " COLLATE utf8mb4_unicode_ci");
+                        $this->checkAndApplySchema();
+                        $this->connectionError = null;
+                        break;
+                    } catch (\Throwable $altEx) {
+                        // ignore and try next
+                    }
                 }
-            } else {
-                $this->pdo = null;
             }
-            error_log("MySQL Connection Notice: " . $e->getMessage());
+
+            // Check XAMPP Unix socket if still not connected
+            if ($this->pdo === null) {
+                $socketPath = '/Applications/XAMPP/xamppfiles/var/mysql/mysql.sock';
+                if (file_exists($socketPath)) {
+                    try {
+                        $sockDsn = sprintf('mysql:unix_socket=%s;dbname=%s;charset=%s', $socketPath, DB_NAME, DB_CHARSET);
+                        $this->pdo = new PDO($sockDsn, DB_USER, DB_PASS, $options);
+                        $this->pdo->exec("SET NAMES " . DB_CHARSET . " COLLATE utf8mb4_unicode_ci");
+                        $this->checkAndApplySchema();
+                        $this->connectionError = null;
+                    } catch (\Throwable $sockEx) {
+                        // ignore
+                    }
+                }
+            }
+
+            // Fallback to SQLite for local development / testing if MySQL daemon is not active
+            if ($this->pdo === null) {
+                $sqlitePath = dirname(__DIR__) . '/database/WebsiteTailors.sqlite';
+                $initScript = dirname(__DIR__) . '/database/init_sqlite.php';
+                if (file_exists($initScript)) {
+                    require_once $initScript;
+                    try {
+                        $this->pdo = init_sqlite_database($sqlitePath);
+                        $this->checkAndApplySchema();
+                    } catch (\Throwable $sqliteEx) {
+                        $this->pdo = null;
+                        error_log("SQLite Fallback Notice: " . $sqliteEx->getMessage());
+                    }
+                } else {
+                    $this->pdo = null;
+                }
+                error_log("MySQL Connection Notice: " . $e->getMessage());
+            }
+        }
+    }
+
+    /**
+     * Check if schema requires migration and apply safely if needed
+     */
+    private function checkAndApplySchema(): void
+    {
+        if ($this->pdo === null) return;
+        $targetVersion = defined('APP_SCHEMA_VERSION') ? (int)APP_SCHEMA_VERSION : 1;
+        $versionLockFile = dirname(__DIR__) . '/database/schema_version.lock';
+        $currentApplied = file_exists($versionLockFile) ? (int)trim((string)@file_get_contents($versionLockFile)) : 0;
+
+        if ($currentApplied < $targetVersion) {
+            $this->ensureSchema();
+            @file_put_contents($versionLockFile, (string)$targetVersion);
         }
     }
 
@@ -139,6 +192,12 @@ final class Database
                 }
                 if (!in_array('notes', $invCols, true)) {
                     $this->pdo->exec("ALTER TABLE invoices ADD COLUMN notes TEXT NULL AFTER line_items");
+                }
+                if (!in_array('client_billing_address', $invCols, true)) {
+                    $this->pdo->exec("ALTER TABLE invoices ADD COLUMN client_billing_address TEXT NULL DEFAULT NULL AFTER notes");
+                }
+                if (!in_array('office_address', $invCols, true)) {
+                    $this->pdo->exec("ALTER TABLE invoices ADD COLUMN office_address TEXT NULL DEFAULT NULL AFTER client_billing_address");
                 }
                 if (!in_array('updated_at', $invCols, true)) {
                     $this->pdo->exec("ALTER TABLE invoices ADD COLUMN updated_at DATETIME NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP AFTER created_at");

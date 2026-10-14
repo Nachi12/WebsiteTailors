@@ -108,7 +108,11 @@ final class WebsiteTailors_Invoice_PDF
         $companyName = trim((string)($client['company_name'] ?? ($inv['company_name'] ?? '')));
         $clientEmail = trim((string)($client['email'] ?? ($inv['client_email'] ?? 'Not specified')));
         $clientPhone = trim((string)($client['phone'] ?? ($inv['client_phone'] ?? 'Not specified')));
-        $clientAddress = trim((string)($client['address'] ?? ($inv['client_address'] ?? '')));
+        $clientAddress = trim((string)($client['address'] ?? ($inv['client_address'] ?? ($inv['client_billing_address'] ?? ''))));
+        $officeAddress = trim((string)($inv['office_address'] ?? ''));
+        if (empty($officeAddress)) {
+            $officeAddress = 'Building no 203 Grihalakshmi layout Rajajinagara,Bangalore';
+        }
 
         $projectName = trim((string)($inv['project_name'] ?? ''));
         $projectPhase = trim((string)($inv['project_phase'] ?? ''));
@@ -250,8 +254,15 @@ final class WebsiteTailors_Invoice_PDF
                 // Brand Left
                 $s[] = "BT /F2 20 Tf 0.078 0.086 0.102 rg 45 802 Td (WEBSITE TAILORS) Tj ET";
                 $s[] = "BT /F2 8.5 Tf 0.357 0.376 0.408 rg 45 788 Td (Website & Software Development Services) Tj ET";
-                $s[] = "BT /F1 7.5 Tf 0.357 0.376 0.408 rg 45 774 Td (Studio: Bangalore-560010, Karnataka, India) Tj ET";
-                $s[] = "BT /F1 7.5 Tf 0.357 0.376 0.408 rg 45 762 Td (Email: websietailorss@gmail.com  |  Tel: +91 9380552034) Tj ET";
+                $addrLines = explode("\n", wordwrap($officeAddress, 50, "\n", false));
+                if (count($addrLines) > 1) {
+                    $s[] = "BT /F1 7 Tf 0.357 0.376 0.408 rg 45 776 Td (Office: " . $this->escapePdf($addrLines[0]) . ") Tj ET";
+                    $s[] = "BT /F1 7 Tf 0.357 0.376 0.408 rg 45 766 Td (" . $this->escapePdf($addrLines[1]) . ") Tj ET";
+                    $s[] = "BT /F1 7.5 Tf 0.357 0.376 0.408 rg 45 755 Td (Email: websitetailorss@gmail.com  |  Tel: +91 9380552034) Tj ET";
+                } else {
+                    $s[] = "BT /F1 7 Tf 0.357 0.376 0.408 rg 45 774 Td (Office: " . $this->escapePdf($addrLines[0]) . ") Tj ET";
+                    $s[] = "BT /F1 7.5 Tf 0.357 0.376 0.408 rg 45 762 Td (Email: websitetailorss@gmail.com  |  Tel: +91 9380552034) Tj ET";
+                }
 
                 // Invoice Right
                 $s[] = "BT /F2 18 Tf 0.078 0.086 0.102 rg 390 802 Td (INVOICE) Tj ET";
@@ -274,31 +285,66 @@ final class WebsiteTailors_Invoice_PDF
                 // -----------------------------------------------------
                 // LEFT: BILL TO
                 $s[] = "BT /F2 8 Tf 0.357 0.376 0.408 rg 45 730 Td (BILL TO) Tj ET";
-                $s[] = "BT /F2 11 Tf 0.078 0.086 0.102 rg 45 716 Td (" . $this->escapePdf($clientName) . ") Tj ET";
+                $s[] = "BT /F2 10.5 Tf 0.078 0.086 0.102 rg 45 718 Td (" . $this->escapePdf($clientName) . ") Tj ET";
 
-                $currY = 704;
+                $currY = 707;
                 if (!empty($companyName) && strcasecmp($companyName, $clientName) !== 0) {
                     $s[] = "BT /F2 8.5 Tf 0.20 0.22 0.25 rg 45 {$currY} Td (" . $this->escapePdf($companyName) . ") Tj ET";
-                    $currY -= 11;
+                    $currY -= 9.5;
                 }
                 $s[] = "BT /F1 7.5 Tf 0.357 0.376 0.408 rg 45 {$currY} Td (Email: " . $this->escapePdf($clientEmail) . ") Tj ET";
-                $currY -= 10;
+                $currY -= 9;
                 $s[] = "BT /F1 7.5 Tf 0.357 0.376 0.408 rg 45 {$currY} Td (Phone: " . $this->escapePdf($clientPhone) . ") Tj ET";
                 if (!empty($clientAddress)) {
-                    $currY -= 10;
-                    $s[] = "BT /F1 7.5 Tf 0.357 0.376 0.408 rg 45 {$currY} Td (Address: " . $this->escapePdf($clientAddress) . ") Tj ET";
+                    $addrLines = explode("\n", wordwrap($clientAddress, 38, "\n", false));
+                    if (count($addrLines) > 2) {
+                        $addrLines = array_slice($addrLines, 0, 2);
+                        $addrLines[1] = rtrim($addrLines[1], ' .') . '...';
+                    }
+                    $currY -= 9;
+                    $s[] = "BT /F1 7.5 Tf 0.357 0.376 0.408 rg 45 {$currY} Td (Address: " . $this->escapePdf($addrLines[0]) . ") Tj ET";
+                    if (isset($addrLines[1]) && trim($addrLines[1]) !== '') {
+                        $currY -= 8.5;
+                        $s[] = "BT /F1 7.5 Tf 0.357 0.376 0.408 rg 82 {$currY} Td (" . $this->escapePdf($addrLines[1]) . ") Tj ET";
+                    }
                 }
 
                 // RIGHT: PROJECT DETAILS
                 $projX = 330;
                 $s[] = "BT /F2 8 Tf 0.357 0.376 0.408 rg {$projX} 730 Td (PROJECT DETAILS) Tj ET";
                 $dispProj = !empty($projectName) ? $projectName : 'Not specified';
-                $s[] = "BT /F2 10 Tf 0.078 0.086 0.102 rg {$projX} 716 Td (Project: " . $this->escapePdf($dispProj) . ") Tj ET";
+
+                // Wrap project name so it doesn't overflow right page boundary (x=550)
+                $projLines = explode("\n", wordwrap($dispProj, 30, "\n", false));
+                if (count($projLines) > 2) {
+                    $projLines = array_slice($projLines, 0, 2);
+                    $projLines[1] = rtrim($projLines[1], ' .') . '...';
+                }
+
+                $pY = 718;
+                $s[] = "BT /F2 9 Tf 0.078 0.086 0.102 rg {$projX} {$pY} Td (Project: " . $this->escapePdf($projLines[0]) . ") Tj ET";
+                $pY -= 10;
+                if (isset($projLines[1]) && trim($projLines[1]) !== '') {
+                    $s[] = "BT /F2 9 Tf 0.078 0.086 0.102 rg " . ($projX + 38) . " {$pY} Td (" . $this->escapePdf($projLines[1]) . ") Tj ET";
+                    $pY -= 10;
+                }
 
                 $dispPhase = !empty($projectPhase) ? $projectPhase : 'Not specified';
-                $s[] = "BT /F1 8 Tf 0.20 0.22 0.25 rg {$projX} 704 Td (Phase: " . $this->escapePdf($dispPhase) . ") Tj ET";
-                $s[] = "BT /F1 8 Tf 0.20 0.22 0.25 rg {$projX} 693 Td (Service: " . $this->escapePdf($service) . ") Tj ET";
-                $s[] = "BT /F1 7.5 Tf 0.357 0.376 0.408 rg {$projX} 682 Td (Type: " . ($isAdvance ? "Advance Payment Billing" : "Full Payment Settlement") . ") Tj ET";
+                if (mb_strlen($dispPhase) > 30) {
+                    $dispPhase = mb_substr($dispPhase, 0, 28) . '...';
+                }
+                $s[] = "BT /F1 8 Tf 0.20 0.22 0.25 rg {$projX} {$pY} Td (Phase: " . $this->escapePdf($dispPhase) . ") Tj ET";
+                $pY -= 9.5;
+
+                $dispService = !empty($service) ? $service : 'Websites';
+                if (mb_strlen($dispService) > 30) {
+                    $dispService = mb_substr($dispService, 0, 28) . '...';
+                }
+                $s[] = "BT /F1 8 Tf 0.20 0.22 0.25 rg {$projX} {$pY} Td (Service: " . $this->escapePdf($dispService) . ") Tj ET";
+                $pY -= 9.5;
+
+                $typeText = $isAdvance ? "Advance Payment Billing" : "Full Payment Settlement";
+                $s[] = "BT /F1 7.5 Tf 0.357 0.376 0.408 rg {$projX} {$pY} Td (Type: " . $typeText . ") Tj ET";
 
                 // Divider line
                 $s[] = "q 0.894 0.882 0.851 RG 0.7 w 45 668 m 550.28 668 l S Q";
@@ -445,10 +491,9 @@ final class WebsiteTailors_Invoice_PDF
                     $s[] = "BT /F1 7.5 Tf 0.122 0.361 0.290 rg 55 {$pTextY} Td (" . $pDateLabel . ": " . $this->escapePdf($paymentDate) . ") Tj ET";
                 }
 
-                // Studio Payment Options
+                // Studio UPI ID only (no bank account details)
                 $s[] = "q 0.894 0.882 0.851 RG 0.5 w 55 " . ($payY + 36) . " m 290 " . ($payY + 36) . " l S Q";
-                $s[] = "BT /F2 7 Tf 0.078 0.086 0.102 rg 55 " . ($payY + 24) . " Td (Instant UPI ID: 9380552034@upi) Tj ET";
-                $s[] = "BT /F1 6.5 Tf 0.357 0.376 0.408 rg 55 " . ($payY + 12) . " Td (Bank: HDFC Bank | A/C: 50200084920194 | IFSC: HDFC0001234) Tj ET";
+                $s[] = "BT /F2 7 Tf 0.078 0.086 0.102 rg 55 " . ($payY + 22) . " Td (Instant UPI ID: 9380552034@upi) Tj ET";
 
                 // RIGHT: TOTALS CARD ($x=315 to 550)
                 $totW = 235;
@@ -496,7 +541,7 @@ final class WebsiteTailors_Invoice_PDF
                     $s[] = "BT /F1 7.5 Tf 0.078 0.086 0.102 rg 45 {$nLineY} Td (" . $this->escapePdf($wrappedNotes[$n]) . ") Tj ET";
                     $nLineY -= 10;
                 }
-                $s[] = "BT /F1 7 Tf 0.50 0.52 0.55 rg 45 {$nLineY} Td (Payment due by date specified. Licenses transfer upon settlement. Contact: websietailorss@gmail.com) Tj ET";
+                $s[] = "BT /F1 7 Tf 0.50 0.52 0.55 rg 45 {$nLineY} Td (Payment due by date specified. Licenses transfer upon settlement. Contact: websitetailorss@gmail.com) Tj ET";
             }
 
             // ---------------------------------------------------------
@@ -504,7 +549,8 @@ final class WebsiteTailors_Invoice_PDF
             // ---------------------------------------------------------
             $s[] = "q 0.894 0.882 0.851 RG 0.5 w 45 68 m 550.28 68 l S Q";
             $s[] = "BT /F2 7.5 Tf 0.078 0.086 0.102 rg 45 54 Td (Website Tailors — Engineering Digital Precision.) Tj ET";
-            $s[] = "BT /F1 7 Tf 0.357 0.376 0.408 rg 45 42 Td (Studio: Bangalore-560010, Karnataka, India | Phone: +91 9380552034 | Email: websietailorss@gmail.com) Tj ET";
+            $dispFootOff = mb_strlen($officeAddress) > 55 ? mb_substr($officeAddress, 0, 52) . '...' : $officeAddress;
+            $s[] = "BT /F1 6.5 Tf 0.357 0.376 0.408 rg 45 42 Td (Office: " . $this->escapePdf($dispFootOff) . " | Tel: +91 9380552034) Tj ET";
             $s[] = "BT /F1 6.5 Tf 0.50 0.52 0.55 rg 400 42 Td (Computer-generated invoice valid without ink signature.) Tj ET";
 
             $pageStreams[] = implode("\n", $s);

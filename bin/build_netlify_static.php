@@ -93,6 +93,10 @@ $processedHtml = preg_replace(
 // D. Replace CSRF meta tag with static placeholder
 $processedHtml = preg_replace('/<meta name="csrf-token" content="[^"]*" \/>/i', '<meta name="csrf-token" content="static-build" />', $processedHtml);
 
+// E. Strip .php extensions in href/action attributes for static Netlify distribution
+$processedHtml = preg_replace('/href="([^"]*)\.php(#?[^"]*)"/i', 'href="$1$2"', $processedHtml);
+$processedHtml = preg_replace('/href=\'([^\']*)\.php(#?[^\']*)\'/i', 'href=\'$1$2\'', $processedHtml);
+
 // 5. Write to /netlify/index.html
 $outputHtmlFile = $netlifyDir . '/index.html';
 file_put_contents($outputHtmlFile, $processedHtml);

@@ -32,3 +32,15 @@ error.log
 .agents/
 skills-lock.json
 *Hostinger*.pdf
+
+# SQLite temporary files
+*.sqlite-wal
+*.sqlite-shm
+*.sqlite.bak
+schema_version.lock
+
+# Cache and scratch
+scratch/
+brag-output/
+__pycache__/
+*.pyc

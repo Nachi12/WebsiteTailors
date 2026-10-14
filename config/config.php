@@ -79,11 +79,31 @@ define('ALLOWED_UPLOAD_MIMES', [
 ]);
 
 // -----------------------------------------------------------------------------
-// BRANDING & DEFAULTS
+// BRANDING, CONTACT & REGIONAL SETTINGS
 // -----------------------------------------------------------------------------
 define('APP_NAME', 'Website Tailors');
-define('APP_TAGLINE', 'Engineering Digital Precision.');
-define('APP_VERSION', '1.0.0');
+define('APP_TAGLINE', 'Websites tailored for Bangalore businesses.');
+define('APP_VERSION', '1.0.1');
+define('APP_SCHEMA_VERSION', 1);
+
+// Primary Business Contact Configuration
+// Easily update these variables as your business scales:
+define('BUSINESS_EMAIL', getenv('BUSINESS_EMAIL') ?: 'websitetailorss@gmail.com'); // TODO: Update to your custom domain email (e.g. hello@websitetailors.com)
+define('BUSINESS_PHONE_RAW', '9380552034');
+define('BUSINESS_PHONE_E164', '+919380552034');
+define('BUSINESS_PHONE_DISPLAY', '+91 93805 52034');
+define('BUSINESS_WHATSAPP_NUMBER', '919380552034');
+define('BUSINESS_WHATSAPP_MESSAGE', "Hi, I'd like a quote for a website");
+define('BUSINESS_WHATSAPP_URL', 'https://wa.me/919380552034?text=' . rawurlencode("Hi, I'd like a quote for a website"));
+
+// Regional & Physical Address Settings
+define('BUSINESS_ADDRESS_DISPLAY', 'Bengaluru, Karnataka 560010, India');
+define('BUSINESS_LOCALITY', 'Bengaluru');
+define('BUSINESS_REGION', 'Karnataka');
+define('BUSINESS_POSTAL_CODE', '560010');
+define('BUSINESS_COUNTRY', 'IN');
+define('BUSINESS_GEO_LAT', '12.9716');
+define('BUSINESS_GEO_LNG', '77.5946');
 
 // -----------------------------------------------------------------------------
 // TELEPHONY / EXOTEL CLICK-TO-CALL CONFIGURATION

@@ -11,8 +11,8 @@ require_once __DIR__ . '/includes/init.php';
 $settings = get_all_settings();
 $projects = get_projects();
 
-$pageTitle = 'Our Work — Business Website Portfolio | Website Tailors';
-$pageDescription = 'Explore Website Tailors portfolio of business website designs, website redesigns, and WhatsApp automation concepts in Bangalore.';
+$pageTitle = 'Website Design Portfolio & Projects | Website Tailors';
+$pageDescription = 'Explore website design concepts and projects from Website Tailors. See our approach to business websites, redesigns and digital experiences.';
 $activePage = 'work';
 
 require_once __DIR__ . '/includes/header.php';
@@ -21,13 +21,13 @@ require_once __DIR__ . '/includes/header.php';
   <main id="main-content" style="padding-top: 140px;">
     <section class="work" style="padding-top: 40px; padding-bottom: 120px;">
       <div class="container">
-        <div class="eyebrow" style="margin-bottom: 20px;">Portfolio</div>
+        <div class="eyebrow" style="margin-bottom: 20px;">Portfolio & Concepts</div>
         <h1 class="section-title" style="margin-bottom: 30px;">
           SELECTED<br>
-          <span class="outline">PROJECTS.</span>
+          <span class="outline">PROJECTS & CONCEPTS.</span>
         </h1>
-        <p class="work-note" style="max-width: 580px; width: 100%; font-size: 16px; margin-bottom: 60px;">
-          A collection of digital solutions built around the exact operational needs of our clients. Designed for speed, conversion, and effortless user flow.
+        <p class="work-note" style="max-width: 680px; width: 100%; font-size: 16px; margin-bottom: 60px; line-height: 1.7; color: var(--muted);">
+          A transparent showcase of our design standards, website redesign prototypes, and functional interface demonstrations. Each project highlights our approach to mobile-friendly layouts, clean code, and fast performance.
         </p>
 
         <?php if (empty($projects)): ?>
@@ -52,7 +52,7 @@ require_once __DIR__ . '/includes/header.php';
                     <span class="project-number"><?= e($projNum) ?> / <?= e($totalCount) ?></span>
                     <?php if (!empty($project['client_name'])): ?>
                       <span style="margin-left: 14px; font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted);">
-                        Client: <?= e($project['client_name']) ?>
+                        Format: <?= e($project['client_name']) ?>
                       </span>
                     <?php endif; ?>
                   </div>

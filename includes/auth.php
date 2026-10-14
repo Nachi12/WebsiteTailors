@@ -69,26 +69,34 @@ function current_admin(): ?array
         return null;
     }
 
-    // Cached in session for performance, or fetched fresh from DB
-    if (!empty($_SESSION['admin_data']) && is_array($_SESSION['admin_data'])) {
-        return $_SESSION['admin_data'];
-    }
-
     try {
         $db = Database::getInstance();
-        $admin = $db->fetch(
-            "SELECT id, username, email, full_name, role, is_active, last_login_at 
-             FROM admins 
-             WHERE id = :id AND is_active = 1",
-            [':id' => $_SESSION['admin_user_id']]
-        );
+        if ($db->isConnected()) {
+            $admin = $db->fetch(
+                "SELECT id, username, email, full_name, role, is_active, last_login_at 
+                 FROM admins 
+                 WHERE id = :id AND is_active = 1",
+                [':id' => $_SESSION['admin_user_id']]
+            );
 
-        if ($admin) {
-            $_SESSION['admin_data'] = $admin;
-            return $admin;
+            if ($admin) {
+                $_SESSION['admin_data'] = $admin;
+                $_SESSION['admin_username'] = $admin['username'];
+                $_SESSION['admin_role'] = $admin['role'];
+                return $admin;
+            } else {
+                // Inactive, changed, or deleted user in database: force logout
+                admin_logout();
+                return null;
+            }
         }
     } catch (\Throwable $e) {
         error_log("current_admin error: " . $e->getMessage());
+    }
+
+    // Fallback if DB is unreachable but session is active
+    if (!empty($_SESSION['admin_data']) && is_array($_SESSION['admin_data'])) {
+        return $_SESSION['admin_data'];
     }
 
     // Inactive or deleted user
@@ -152,11 +160,12 @@ function attempt_admin_login(string $usernameOrEmail, string $password): array
             return ['success' => false, 'error' => 'Database connection unavailable. Please try again later.'];
         }
 
+        $lookupEmail = strtolower($usernameOrEmail) === 'websietailorss@gmail.com' ? 'websitetailorss@gmail.com' : $usernameOrEmail;
         $admin = $db->fetch(
             "SELECT id, username, email, password_hash, full_name, role, is_active 
              FROM admins 
-             WHERE (username = :u1 OR email = :u2)",
-            [':u1' => $usernameOrEmail, ':u2' => $usernameOrEmail]
+             WHERE (username = :u1 OR email = :u2 OR email = :u3)",
+            [':u1' => $usernameOrEmail, ':u2' => $usernameOrEmail, ':u3' => $lookupEmail]
         );
 
         // Timing-attack safe dummy check if user not found

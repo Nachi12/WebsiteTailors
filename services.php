@@ -11,8 +11,8 @@ require_once __DIR__ . '/includes/init.php';
 $settings = get_all_settings();
 $services = get_services();
 
-$pageTitle = 'Website Design & Redesign Services in Bangalore | Website Tailors';
-$pageDescription = 'Website Tailors offers Website Design for New Businesses, Website Redesign, WhatsApp Automation, and Website + WhatsApp packages in Bangalore.';
+$pageTitle = 'Website Design & Development Services | Website Tailors';
+$pageDescription = 'Explore website design, website redesign and business web development services from Website Tailors in Bangalore. Discuss your goals and project requirements.';
 $activePage = 'services';
 
 require_once __DIR__ . '/includes/header.php';
@@ -21,13 +21,13 @@ require_once __DIR__ . '/includes/header.php';
   <main id="main-content" style="padding-top: 140px;">
     <section class="services" style="padding-top: 40px; padding-bottom: 120px;">
       <div class="container">
-        <div class="eyebrow" style="margin-bottom: 20px;">Core Capabilities</div>
+        <div class="eyebrow" style="margin-bottom: 20px;">What We Do in Bangalore</div>
         <h1 class="section-title" style="margin-bottom: 30px;">
-          ENGINEERED<br>
-          <span class="outline">SERVICES.</span>
+          WEBSITE DESIGN &<br>
+          <span class="outline">ENGINEERED SERVICES.</span>
         </h1>
-        <p class="services-description" style="max-width: 580px; width: 100%; font-size: 16px; margin-bottom: 60px;">
-          We build reliable digital systems designed to drive measurable business impact. Every service is delivered with clean vanilla technologies, high performance, and long-term scalability.
+        <p class="services-description" style="max-width: 680px; width: 100%; font-size: 16px; margin-bottom: 60px; line-height: 1.7; color: var(--muted);">
+          Practical, mobile-friendly websites and communication channels built for Bangalore businesses. Whether you are launching a new company website, modernizing an outdated presence, or connecting customers via WhatsApp, we deliver clear scopes, fixed quotes, and complete ownership.
         </p>
 
         <?php if (empty($services)): ?>

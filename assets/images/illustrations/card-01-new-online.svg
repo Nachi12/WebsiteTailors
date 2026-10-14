@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" class="principle-svg principle-svg-01" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <style>
+      .p-stroke { stroke: var(--ill-stroke, #14161A); stroke-width: 1.75; }
+      .p-stroke-thin { stroke: var(--ill-stroke, #14161A); stroke-width: 1.2; }
+      .p-muted { stroke: var(--ill-muted, #5B6068); stroke-width: 1.2; }
+      .p-paper { fill: var(--ill-paper, #FFFFFF); }
+      .p-lime { fill: var(--ill-lime, #C8F03C); }
+      .p-lime-stroke { stroke: var(--ill-lime, #C8F03C); stroke-width: 1.75; }
+      .p-glow { fill: var(--ill-lime, #C8F03C); opacity: 0.18; }
+    </style>
+  </defs>
+
+  <!-- Ambient Glow Behind Browser -->
+  <rect x="52" y="16" width="176" height="142" rx="14" class="p-glow" />
+
+  <!-- Digital Browser Window -->
+  <g class="ill-browser">
+    <!-- Window Base Frame -->
+    <rect x="50" y="14" width="178" height="146" rx="12" class="p-paper p-stroke" />
+    
+    <!-- Browser Titlebar -->
+    <line x1="50" y1="36" x2="228" y2="36" class="p-stroke" />
+    
+    <!-- Traffic Light Dots -->
+    <circle cx="62" cy="25" r="2.75" class="p-stroke" />
+    <circle cx="71" cy="25" r="2.75" class="p-stroke" />
+    <circle cx="80" cy="25" r="2.75" class="p-lime p-stroke" />
+
+    <!-- Google-friendly Search / URL Pill -->
+    <rect x="94" y="19" width="102" height="12" rx="6" class="p-paper p-stroke-thin" />
+    <!-- Lock Icon -->
+    <path d="M 101 26 L 101 24 C 101 22.8 102 22 103.2 22 C 104.4 22 105.4 22.8 105.4 24 L 105.4 26" class="p-stroke-thin" />
+    <rect x="100" y="25" width="6.4" height="4.5" rx="1" class="p-stroke-thin" />
+    <!-- URL Text Line -->
+    <line x1="110" y1="25" x2="168" y2="25" class="p-muted" stroke-dasharray="2 1.5" />
+    <!-- Google 'G' / Search Lens -->
+    <circle cx="186" cy="25" r="2.5" class="p-stroke-thin" />
+    <line x1="188" y1="27" x2="191" y2="30" class="p-stroke-thin" />
+
+    <!-- Webpage Content Grid Inside Browser -->
+    <!-- Brand Header Bar -->
+    <rect x="98" y="44" width="120" height="24" rx="5" class="p-paper p-stroke-thin" />
+    <line x1="106" y1="52" x2="142" y2="52" class="p-stroke" stroke-width="2" />
+    <line x1="106" y1="60" x2="128" y2="60" class="p-muted" />
+
+    <!-- 'LIVE' Status Badge -->
+    <g class="ill-live-badge">
+      <rect x="156" y="48" width="54" height="16" rx="8" class="p-lime p-stroke" />
+      <circle cx="165" cy="56" r="2.2" fill="#14161A" />
+      <!-- 'LIVE' Letters hand-sketched -->
+      <path d="M 172 53.5 L 172 58.5 L 176 58.5" stroke="#14161A" stroke-width="1.3" />
+      <line x1="179" y1="53.5" x2="179" y2="58.5" stroke="#14161A" stroke-width="1.3" />
+      <path d="M 182.5 53.5 L 185 58.5 L 187.5 53.5" stroke="#14161A" stroke-width="1.3" />
+      <path d="M 191 58.5 L 191 53.5 L 195 53.5 M 191 56 L 194 56 M 191 58.5 L 195 58.5" stroke="#14161A" stroke-width="1.3" />
+    </g>
+
+    <!-- Mini Web Content Cards -->
+    <rect x="98" y="74" width="58" height="42" rx="5" class="p-paper p-stroke-thin" />
+    <rect x="104" y="80" width="46" height="18" rx="3" fill="#C8F03C" opacity="0.35" class="p-stroke-thin" />
+    <line x1="104" y1="104" x2="142" y2="104" class="p-stroke-thin" />
+    <line x1="104" y1="109" x2="130" y2="109" class="p-muted" />
+
+    <rect x="162" y="74" width="56" height="42" rx="5" class="p-paper p-stroke-thin" />
+    <rect x="168" y="80" width="44" height="18" rx="3" class="p-paper p-stroke-thin" />
+    <circle cx="190" cy="89" r="4" class="p-muted" />
+    <line x1="168" y1="104" x2="204" y2="104" class="p-stroke-thin" />
+    <line x1="168" y1="109" x2="194" y2="109" class="p-muted" />
+
+    <!-- Website WhatsApp Button Feature -->
+    <rect x="98" y="122" width="78" height="16" rx="8" class="p-lime p-stroke" />
+    <!-- WhatsApp Icon Mini Bubble -->
+    <circle cx="108" cy="130" r="3.5" fill="#14161A" />
+    <path d="M 106 132 L 107.5 130.5" stroke="#C8F03C" stroke-width="1.1" />
+    <line x1="117" y1="130" x2="166" y2="130" stroke="#14161A" stroke-width="1.5" />
+
+    <line x1="182" y1="130" x2="218" y2="130" class="p-muted" stroke-dasharray="3 2" />
+  </g>
+
+  <!-- Physical Storefront Stepping Into the Digital Realm -->
+  <g class="ill-storefront">
+    <!-- Storefront Building Box -->
+    <rect x="12" y="66" width="76" height="88" rx="4" class="p-paper p-stroke" />
+
+    <!-- Awning / Canopy (Charming Hand-Drawn Scallops) -->
+    <path d="M 10 66 L 90 66 L 86 52 L 14 52 Z" class="p-paper p-stroke" />
+    <!-- Awning Stripes -->
+    <path d="M 14 52 L 10 66" class="p-stroke" />
+    <path d="M 28 52 L 25 66" class="p-stroke" />
+    <path d="M 42 52 L 40 66" class="p-stroke" />
+    <path d="M 58 52 L 56 66" class="p-stroke" />
+    <path d="M 72 52 L 72 66" class="p-stroke" />
+    <path d="M 86 52 L 90 66" class="p-stroke" />
+    
+    <!-- Alternating Lime Canopy Panels -->
+    <polygon points="28,52 42,52 40,66 25,66" class="p-lime" stroke="none" />
+    <polygon points="58,52 72,52 72,66 56,66" class="p-lime" stroke="none" />
+    <!-- Re-outline canopy stripes over fill -->
+    <path d="M 28 52 L 25 66 M 42 52 L 40 66 M 58 52 L 56 66 M 72 52 L 72 66" class="p-stroke" />
+
+    <!-- Canopy Scallop Bottom Trim -->
+    <path d="M 10 66 Q 17.5 72 25 66 Q 32.5 72 40 66 Q 48 72 56 66 Q 64 72 72 66 Q 81 72 90 66" class="p-stroke" fill="none" />
+
+    <!-- Large Display Window -->
+    <rect x="18" y="78" width="34" height="42" rx="2" class="p-paper p-stroke-thin" />
+    <!-- Window Panes & Product Shelves -->
+    <line x1="35" y1="78" x2="35" y2="120" class="p-stroke-thin" />
+    <line x1="18" y1="99" x2="52" y2="99" class="p-stroke-thin" />
+    <!-- Display Items / Goods -->
+    <rect x="22" y="87" width="9" height="10" rx="1.5" class="p-lime p-stroke-thin" />
+    <circle cx="43" cy="92" r="4" class="p-stroke-thin" />
+    <rect x="22" y="106" width="10" height="9" rx="1.5" class="p-stroke-thin" />
+    <polygon points="40,115 44,106 48,115" class="p-stroke-thin" />
+
+    <!-- Store Entrance Door -->
+    <rect x="56" y="78" width="26" height="74" rx="2" class="p-paper p-stroke-thin" />
+    <!-- Door Top Window -->
+    <rect x="61" y="84" width="16" height="24" rx="1.5" class="p-stroke-thin" />
+    <!-- Hanging 'OPEN' Sign in Lime -->
+    <g class="ill-open-sign">
+      <line x1="65" y1="91" x2="69" y2="95" class="p-stroke-thin" />
+      <line x1="73" y1="91" x2="69" y2="95" class="p-stroke-thin" />
+      <rect x="62.5" y="95" width="13" height="7.5" rx="2" class="p-lime p-stroke-thin" />
+      <circle cx="69" cy="98.7" r="1.2" fill="#14161A" />
+    </g>
+    <!-- Door Handle -->
+    <line x1="60" y1="116" x2="60" y2="124" class="p-stroke" stroke-width="2" />
+    <!-- Step / Ground threshold -->
+    <line x1="8" y1="154" x2="92" y2="154" class="p-stroke" />
+
+    <!-- Cute Planter Box Beside Shop -->
+    <rect x="85" y="140" width="12" height="14" rx="2" class="p-paper p-stroke-thin" />
+    <path d="M 87 140 Q 89 133 91 131 Q 93 133 95 140" class="p-stroke-thin" fill="none" />
+    <circle cx="91" cy="130" r="2.5" class="p-lime" stroke="none" />
+  </g>
+
+  <!-- Interactive Hand-Drawn Cursor Pointer -->
+  <g class="ill-cursor">
+    <!-- Click Wave Rings -->
+    <circle cx="152" cy="56" r="9" class="p-lime-stroke" stroke-dasharray="2 2" opacity="0.75" />
+    
+    <!-- Organic Hand Pointer Arrow -->
+    <path d="M 134 76 L 149 59 L 146 54 L 157 53 L 157 64 L 152 61 L 138 79 Z" class="p-paper p-stroke" />
+  </g>
+
+  <!-- Celebratory Launch Sparkles (Website Tailors ✦ Motif) -->
+  <g class="ill-sparkles">
+    <!-- Star 1 Top Right -->
+    <path d="M 226 8 Q 226 14 232 14 Q 226 14 226 20 Q 226 14 220 14 Q 226 14 226 8 Z" class="p-lime" stroke="#14161A" stroke-width="1" />
+    <!-- Star 2 Center Bridge -->
+    <path d="M 94 4 Q 94 8 98 8 Q 94 8 94 12 Q 94 8 90 8 Q 94 8 94 4 Z" fill="#14161A" />
+    <!-- Star 3 Bottom Right -->
+    <path d="M 218 160 Q 218 164 222 164 Q 218 164 218 168 Q 218 164 214 164 Q 218 164 218 160 Z" class="p-lime" stroke="#14161A" stroke-width="0.8" />
+  </g>
+</svg>

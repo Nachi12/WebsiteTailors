@@ -136,7 +136,7 @@ function get_all_settings(bool $refresh = false): array
     $defaults = [
         'company_name'       => 'Website Tailors',
         'tagline'            => 'Affordable Business Websites & WhatsApp Automation in Bangalore',
-        'email'              => 'websietailorss@gmail.com',
+        'email'              => 'websitetailorss@gmail.com',
         'phone'              => '+91 9380552034',
         'address'            => 'Bangalore, Karnataka, India',
         'linkedin'           => 'https://linkedin.com/company/websitetailors',
@@ -147,7 +147,7 @@ function get_all_settings(bool $refresh = false): array
         'logo'               => '/assets/images/logo.svg',
         'favicon'            => '/assets/images/favicon.svg',
         'meta_title'         => 'Affordable Website Design in Bangalore | Website Tailors',
-        'meta_description'   => 'Don\'t have a website yet? Or is your current one outdated? Website Tailors builds and redesigns fast, affordable business websites in Bangalore. Get a free quote.',
+        'meta_description'   => 'Need a website for your business? Website Tailors designs and redesigns business websites in Bangalore, with mobile-friendly layouts and clear ways to enquire.',
         'primary_color'      => '#b8ff3d',
         'announcement_text'  => 'Now booking website projects in Bangalore'
     ];
@@ -225,15 +225,15 @@ function get_hero_content(): array
     }
 
     $defaults = [
-        'badge_text'            => 'Website Design & Redesign Studio / Bangalore',
+        'badge_text'            => 'Website Design · Redesign · WhatsApp Automation — Bangalore',
         'headline'              => "AFFORDABLE WEBSITES\nFOR BUSINESSES IN\nBANGALORE.",
-        'subheadline'           => 'Running a business without a website? Or stuck with one that looks outdated? We build new websites and redesign old ones, fast, clean and at prices small businesses can afford.',
-        'description'           => 'Running a business without a website? Or stuck with one that looks outdated? We build new websites and redesign old ones, fast, clean and at prices small businesses can afford.',
+        'subheadline'           => 'Need a website for your business, or is your current one outdated? Website Tailors designs and builds business websites that explain what you offer, work across mobile and desktop, and make it easier for customers to contact you.',
+        'description'           => 'Need a website for your business, or is your current one outdated? Website Tailors designs and builds business websites that explain what you offer, work across mobile and desktop, and make it easier for customers to contact you.',
         'primary_button_text'   => 'Get a Free Quote',
         'primary_button_link'   => '#contact',
         'secondary_button_text' => 'See Our Work',
         'secondary_button_link' => '#work',
-        'stats_json'            => '[{"label":"Starting Price","value":"₹[STARTING PRICE]"},{"label":"Delivery","value":"[X] days"},{"label":"Consultation","value":"Free"}]'
+        'stats_json'            => '[{"label":"Starting Price","value":"₹9,999"},{"label":"Delivery","value":"7 days"},{"label":"Consultation","value":"Free"}]'
     ];
 
     try {
@@ -273,8 +273,8 @@ function get_services(): array
             'id' => 1,
             'title' => 'Website Design for New Businesses',
             'slug' => 'website-design-new-businesses',
-            'short_description' => 'A complete business website for shops, clinics, studios, restaurants, coaches and service providers. Mobile-friendly, fast, with SEO basics built in.',
-            'long_description' => 'A complete business website for shops, clinics, studios, restaurants, coaches and service providers. Mobile-friendly, fast, with SEO basics built in.',
+            'short_description' => 'Establish your business online with a professional, mobile-friendly website that explains your services and gives customers clear ways to contact you.',
+            'long_description' => 'Establish your business online with a professional, mobile-friendly website that explains your services and gives customers clear ways to contact you. Includes clean layouts, fast loading, essential on-page SEO structure, and full ownership handover.',
             'icon' => 'code',
             'display_order' => 1,
             'status' => 'published'
@@ -283,28 +283,28 @@ function get_services(): array
             'id' => 2,
             'title' => 'Website Redesign',
             'slug' => 'website-redesign',
-            'short_description' => 'Better design, faster loading and a layout that makes it easier for visitors to contact your business, without starting from scratch.',
-            'long_description' => 'Better design, faster loading and a layout that makes it easier for visitors to contact your business, without starting from scratch.',
+            'short_description' => 'Improve your website design, content structure and mobile experience, with performance and search-friendly foundations.',
+            'long_description' => 'Improve your website design, content structure and mobile experience, with performance and search-friendly foundations. We preserve your existing URLs and domain authority while upgrading visual appeal and user experience.',
             'icon' => 'layout',
             'display_order' => 2,
             'status' => 'published'
         ],
         [
             'id' => 3,
-            'title' => 'WhatsApp Automation',
-            'slug' => 'whatsapp-automation',
-            'short_description' => 'Auto-replies, enquiry capture, booking reminders and follow-ups on WhatsApp.',
-            'long_description' => 'Auto-replies, enquiry capture, booking reminders and follow-ups on WhatsApp.',
+            'title' => 'WhatsApp Integration & Enquiry Routing',
+            'slug' => 'whatsapp-integration',
+            'short_description' => 'Connect visitors to your business through clear enquiry forms and WhatsApp links. Additional follow-up automation can be scoped to your needs.',
+            'long_description' => 'Connect visitors to your business through clear enquiry forms and WhatsApp links. Additional follow-up automation and lead notification workflows can be scoped to your specific operational needs.',
             'icon' => 'message-square',
             'display_order' => 3,
             'status' => 'published'
         ],
         [
             'id' => 4,
-            'title' => 'Website + WhatsApp Package',
+            'title' => 'Website + WhatsApp Business Package',
             'slug' => 'website-whatsapp-package',
-            'short_description' => 'A website and WhatsApp automation set up together for businesses that want to turn more website visitors into enquiries.',
-            'long_description' => 'A website and WhatsApp automation set up together for businesses that want to turn more website visitors into enquiries.',
+            'short_description' => 'A complete business website combined with WhatsApp enquiry links and automated alerts for faster customer responses.',
+            'long_description' => 'A complete business website combined with WhatsApp enquiry links and automated alerts for faster customer responses. Tailored for small businesses that want immediate communication channels.',
             'icon' => 'layers',
             'display_order' => 4,
             'status' => 'published'
@@ -346,56 +346,56 @@ function get_projects(?string $category = null, ?int $limit = null): array
     $defaults = [
         [
             'id' => 1,
-            'title' => 'Apex Logistics',
+            'title' => 'Apex Logistics Portal',
             'slug' => 'apex-logistics',
-            'category' => 'Website Concept',
-            'client_name' => 'Apex Freight Concept',
-            'description' => 'A real-time dispatch and logistics management interface concept built for high performance and clean operations.',
+            'category' => 'Concept Prototype',
+            'client_name' => 'Logistics Concept Prototype',
+            'description' => 'A real-time dispatch and logistics management interface concept built to demonstrate responsive layouts, sub-second interactions, and zero framework bloat.',
             'image' => '/assets/images/projects/apex-logistics.jpg',
             'project_url' => '#contact',
-            'tags' => 'PHP 8, SQLite, Custom Dashboard, Vanilla JS',
+            'tags' => 'Concept Prototype, Responsive Grid, Vanilla JS',
             'display_order' => 1,
             'is_featured' => 1,
             'status' => 'published'
         ],
         [
             'id' => 2,
-            'title' => 'Kroma Studio',
+            'title' => 'Kroma Design Studio',
             'slug' => 'kroma-studio',
-            'category' => 'Redesign Concept',
-            'client_name' => 'Kroma Design Concept',
-            'description' => 'An agency portfolio showcase built with dynamic dark-mode interactions, typography emphasis, and responsive layouts.',
+            'category' => 'Design Concept',
+            'client_name' => 'Agency Portfolio Concept',
+            'description' => 'A design agency showcase concept built to demonstrate typography hierarchy, dark-mode styling, and smooth CSS micro-interactions.',
             'image' => '/assets/images/projects/kroma-studio.jpg',
             'project_url' => '#contact',
-            'tags' => 'Vanilla CSS, Animation, Semantic HTML5',
+            'tags' => 'Design Concept, Semantic HTML5, CSS Grid',
             'display_order' => 2,
             'is_featured' => 1,
             'status' => 'published'
         ],
         [
             'id' => 3,
-            'title' => 'Veloce E-Commerce',
+            'title' => 'Veloce E-Commerce Engine',
             'slug' => 'veloce-ecommerce',
-            'category' => 'Demo Project',
-            'client_name' => 'Veloce Storefront Demo',
-            'description' => 'A lightweight storefront concept with instant product filtering, clean visual structure, and mobile-first checkout.',
+            'category' => 'Storefront Demo',
+            'client_name' => 'E-Commerce Storefront Demo',
+            'description' => 'A lightweight online catalog demonstration featuring instant client-side product filtering, clean visual structure, and a frictionless mobile flow.',
             'image' => '/assets/images/projects/veloce-ecommerce.jpg',
             'project_url' => '#contact',
-            'tags' => 'Custom Cart, Responsive UI, SEO Optimized',
+            'tags' => 'Storefront Demo, Instant Filter, Mobile-First',
             'display_order' => 3,
             'is_featured' => 1,
             'status' => 'published'
         ],
         [
             'id' => 4,
-            'title' => 'OmniFlow Automation',
+            'title' => 'OmniFlow Operations Interface',
             'slug' => 'omniflow-automation',
-            'category' => 'Digital System Concept',
-            'client_name' => 'OmniFlow Prototype',
-            'description' => 'An operational workflow interface prototype for client CRM management, automated invoicing, and task approvals.',
+            'category' => 'Operations Prototype',
+            'client_name' => 'Workflow Operations Prototype',
+            'description' => 'An operational CRM interface prototype illustrating structured customer tracking, automated quote calculation, and multi-tier approval states.',
             'image' => '/assets/images/projects/omniflow-automation.jpg',
             'project_url' => '#contact',
-            'tags' => 'REST APIs, Background Workers, Role Security',
+            'tags' => 'Operations Prototype, Modular UI, Role Security',
             'display_order' => 4,
             'is_featured' => 0,
             'status' => 'published'
@@ -444,32 +444,32 @@ function get_process_steps(): array
         [
             'id' => 1,
             'step_number' => '01',
-            'title' => 'Tell us.',
-            'description' => "Tell us what you're trying to build, fix or improve.",
+            'title' => 'Understand your business',
+            'description' => 'Tell us about your customers, services, goals and what you need from your website.',
             'display_order' => 1,
             'status' => 'published'
         ],
         [
             'id' => 2,
             'step_number' => '02',
-            'title' => 'We plan.',
-            'description' => 'We define the experience, technology and scope.',
+            'title' => 'Agree on the plan',
+            'description' => 'Review the proposed scope, cost, deliverables and timeline before any work begins.',
             'display_order' => 2,
             'status' => 'published'
         ],
         [
             'id' => 3,
             'step_number' => '03',
-            'title' => 'We build.',
-            'description' => 'Design, development and testing happen together.',
+            'title' => 'Design, build and review',
+            'description' => 'We build the agreed website, take your feedback and test every included feature before handover.',
             'display_order' => 3,
             'status' => 'published'
         ],
         [
             'id' => 4,
             'step_number' => '04',
-            'title' => 'You launch.',
-            'description' => 'Your product goes live and starts doing its job.',
+            'title' => 'Launch and handover',
+            'description' => 'Your website goes live on your domain, and we hand over all files and logins.',
             'display_order' => 4,
             'status' => 'published'
         ]
@@ -579,27 +579,55 @@ function get_image_url(?string $path, string $type = 'project'): string
 /**
  * Get core problem & positioning principles (Phase 5)
  *
- * @return array<int, array{number: string, title: string, description: string}>
+ * @return array<int, array{number: string, title: string, description: string, illustration: string}>
  */
 function get_principles(): array
 {
     return [
         [
-            'number'      => '01 / NEW ONLINE',
-            'title'       => 'No website yet?',
-            'description' => 'Your customers are already searching on Google. We put your business online with a professional site, WhatsApp button and Google-friendly setup.'
+            'number'       => '01 / NEW WEBSITE',
+            'title'        => 'Need your first website?',
+            'description'  => 'Get your business online with a professional, mobile-friendly website that explains your services and makes contacting you easy.',
+            'illustration' => 'card-01-new-online'
         ],
         [
-            'number'      => '02 / REDESIGN',
-            'title'       => 'Website looks outdated?',
-            'description' => 'We redesign it so it looks modern, loads fast, works on phones and is structured for better search visibility.'
+            'number'       => '02 / WEBSITE REDESIGN',
+            'title'        => 'Is your website outdated?',
+            'description'  => "We redesign your site's layout, content and mobile experience, with a focus on loading speed and search-friendly structure.",
+            'illustration' => 'card-02-redesign'
         ],
         [
-            'number'      => '03 / AUTOMATION',
-            'title'       => 'Want to save time on enquiries?',
-            'description' => 'We connect your site to WhatsApp so enquiries and follow-ups can be handled more efficiently.'
+            'number'       => '03 / WHATSAPP & ENQUIRIES',
+            'title'        => 'Want more enquiries with less effort?',
+            'description'  => 'We connect your website to WhatsApp and enquiry forms so customers can reach you instantly. Further automation can be scoped to fit your business.',
+            'illustration' => 'card-03-whatsapp-automation'
         ]
     ];
+}
+
+/**
+ * Render editorial SVG illustration for principle cards
+ *
+ * @param string $illustration
+ * @return string Inline SVG markup
+ */
+function get_principle_illustration_svg(string $illustration): string
+{
+    static $svgCache = [];
+    if (isset($svgCache[$illustration])) {
+        return $svgCache[$illustration];
+    }
+
+    $sanitized = preg_replace('/[^a-zA-Z0-9_-]/', '', $illustration);
+    $svgPath = dirname(__DIR__) . '/assets/images/illustrations/' . $sanitized . '.svg';
+    if (file_exists($svgPath)) {
+        $content = file_get_contents($svgPath);
+        if ($content !== false) {
+            $svgCache[$illustration] = $content;
+            return $content;
+        }
+    }
+    return '';
 }
 
 /**
@@ -612,38 +640,42 @@ function get_pricing_packages(): array
     return [
         [
             'name'     => 'Starter Website',
-            'best_for' => 'Businesses going online for the first time',
-            'price'    => 'Starting at ₹[STARTING PRICE]',
+            'best_for' => 'Small businesses going online for the first time',
+            'price'    => 'Websites from ₹9,999',
             'features' => [
-                'Complete business website',
-                'Mobile-friendly & fast loading',
-                'Google-friendly SEO basics',
-                'WhatsApp click-to-chat button',
-                'Enquiry form setup'
+                'Complete [1 page] business website (Home, About, Services, Contact, FAQ)',
+                'Live in 7 business days',
+                'Domain & hosting setup assistance (you own accounts directly; ~₹2,500/yr hosting)',
+                'Mobile-first responsive layout & fast 4G/5G loading',
+                'SEO-ready structure & Google search indexing submission',
+                'Direct WhatsApp click-to-chat button & enquiry form',
+                'Payment in two parts: 50% upfront, 50% upon launch'
             ]
         ],
         [
-            'name'     => 'Redesign',
-            'best_for' => 'Businesses with an old website',
-            'price'    => 'Starting at ₹[STARTING PRICE]',
+            'name'     => 'Website Redesign',
+            'best_for' => 'Businesses with an outdated, slow, or broken website',
+            'price'    => 'Redesign from ₹[7,499]',
             'features' => [
-                'Modern visual redesign',
-                'Faster page loading speed',
-                'Mobile usability optimization',
-                'Re-structured contact flow',
-                'SEO metadata preservation'
+                'Modern visual redesign & mobile UX overhaul',
+                'Page speed & Core Web Vitals optimization',
+                'Preserves existing Google rankings with 301 redirects',
+                'Streamlined contact workflow (Call + WhatsApp integration)',
+                '100% full ownership handover of code & assets',
+                'Fast turnaround: 7–10 business days'
             ]
         ],
         [
-            'name'     => 'Website + WhatsApp',
-            'best_for' => 'Businesses wanting more enquiries',
-            'price'    => 'Starting at ₹[STARTING PRICE]',
+            'name'     => 'Website + WhatsApp Package',
+            'best_for' => 'Businesses wanting faster enquiry responses & bookings',
+            'price'    => 'From ₹[12,999]',
             'features' => [
-                'Complete business website',
-                'WhatsApp auto-replies & workflows',
-                'Automated enquiry capture',
-                'Instant lead alerts',
-                'Full setup & launch support'
+                'Complete [5–8 pages] custom business website',
+                'WhatsApp integration with pre-filled enquiry messages',
+                'Instant lead notification alerts directly to your phone',
+                'Google Maps & local business profile integration',
+                'Direct WhatsApp support with the founder',
+                '14-day post-launch warranty & minor tweaks included'
             ]
         ]
     ];
@@ -651,6 +683,7 @@ function get_pricing_packages(): array
 
 /**
  * Fetch Frequently Asked Questions (Phase 9)
+ * Plain language, India-specific, 60–120 words per answer.
  *
  * @return array<int, array{question: string, answer: string}>
  */
@@ -658,24 +691,20 @@ function get_faqs(): array
 {
     return [
         [
-            'question' => 'How much does a website cost in Bangalore?',
-            'answer'   => 'Pricing depends on your specific requirements such as page count and features. We offer clear upfront quotes with no hidden charges starting at ₹[STARTING PRICE].'
+            'question' => 'How much does a small business website cost in Bangalore?',
+            'answer'   => 'It depends on the number of pages, the features you need and the content involved. After a free consultation, we send a fixed quote. Domain and hosting costs are shown separately so there are no hidden charges.'
         ],
         [
-            'question' => 'I already run a business. Do I really need a website?',
-            'answer'   => 'Yes. Most customers look for local businesses on Google before calling or visiting. A website gives your business credibility and makes it easy for customers to contact you.'
+            'question' => 'How long does it take from the first call to website launch?',
+            'answer'   => 'Starter websites can launch within seven business days once the content and approvals are ready. Larger projects get a timeline agreed during planning.'
         ],
         [
-            'question' => 'Can you redesign my existing website?',
-            'answer'   => 'Yes, we specialize in redesigning outdated websites to improve loading speed, mobile usability, visual design and search visibility.'
+            'question' => 'What information or materials do I need to provide?',
+            'answer'   => "Usually your logo, business details, a list of services, photos and contact information. If you don't have everything ready, we'll tell you exactly what's needed."
         ],
         [
-            'question' => 'How long does it take?',
-            'answer'   => 'Most business websites are planned, designed and launched within [X] days depending on scope and feedback cycles.'
-        ],
-        [
-            'question' => 'Will my website show up on Google?',
-            'answer'   => 'Yes, every website we build includes clean HTML structure, essential meta tags, sitemap submission and basic local SEO setup so search engines can index your pages.'
+            'question' => 'Can you redesign my existing website without losing our Google ranking?',
+            'answer'   => 'We take care to protect your existing search visibility by keeping important pages, setting up proper redirects and maintaining search-friendly structure during the redesign. No one can guarantee rankings, but a careful migration reduces the risk.'
         ]
     ];
 }
@@ -762,8 +791,8 @@ function process_lead_inquiry(array $input): array
         try {
             $cutoffRapid = date('Y-m-d H:i:s', $nowTime - 60);
             $duplicateCount = (int)$db->fetchColumn(
-                "SELECT COUNT(*) FROM leads WHERE LOWER(email) = :email AND message = :msg AND created_at >= :cutoff",
-                [':email' => strtolower((string)$email), ':msg' => $message, ':cutoff' => $cutoffRapid]
+                "SELECT COUNT(*) FROM leads WHERE email = :email AND message = :msg AND created_at >= :cutoff",
+                [':email' => (string)$email, ':msg' => $message, ':cutoff' => $cutoffRapid]
             );
             if ($duplicateCount > 0) {
                 // Return success to visitor without creating duplicate DB entry

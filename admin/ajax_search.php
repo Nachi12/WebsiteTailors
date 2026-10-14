@@ -44,28 +44,38 @@ if ($pdo !== null) {
         $clientStmt = $pdo->prepare("
             SELECT id, client_name, company_name, phone, email, service, status
             FROM clients
-            WHERE client_name LIKE :q 
-               OR company_name LIKE :q 
-               OR phone LIKE :q 
-               OR email LIKE :q
+            WHERE client_name LIKE :q1 
+               OR company_name LIKE :q2 
+               OR phone LIKE :q3 
+               OR email LIKE :q4
             ORDER BY id DESC
             LIMIT 5
         ");
-        $clientStmt->execute([':q' => $searchTerm]);
+        $clientStmt->execute([
+            ':q1' => $searchTerm,
+            ':q2' => $searchTerm,
+            ':q3' => $searchTerm,
+            ':q4' => $searchTerm
+        ]);
         $clients = $clientStmt->fetchAll(PDO::FETCH_ASSOC);
 
         // 2. Search Leads
         $leadStmt = $pdo->prepare("
             SELECT id, name, company, phone, email, service, status, call_status
             FROM leads
-            WHERE name LIKE :q 
-               OR company LIKE :q 
-               OR phone LIKE :q 
-               OR email LIKE :q
+            WHERE name LIKE :q1 
+               OR company LIKE :q2 
+               OR phone LIKE :q3 
+               OR email LIKE :q4
             ORDER BY id DESC
             LIMIT 5
         ");
-        $leadStmt->execute([':q' => $searchTerm]);
+        $leadStmt->execute([
+            ':q1' => $searchTerm,
+            ':q2' => $searchTerm,
+            ':q3' => $searchTerm,
+            ':q4' => $searchTerm
+        ]);
         $leads = $leadStmt->fetchAll(PDO::FETCH_ASSOC);
     } catch (\Throwable $e) {
         error_log("Global Search Error: " . $e->getMessage());

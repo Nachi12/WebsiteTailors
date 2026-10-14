@@ -13,8 +13,8 @@ $principles   = get_principles();
 $processSteps = get_process_steps();
 $testimonials = get_testimonials();
 
-$pageTitle = 'About Website Tailors | Website Design Studio in Bangalore';
-$pageDescription = 'Website Tailors designs and builds fast, practical, affordable business websites and WhatsApp automation for businesses in Bangalore.';
+$pageTitle = 'About Website Tailors | Our Process & Approach';
+$pageDescription = 'Learn about Website Tailors, our approach to website design and development, and how we plan, build, review and hand over each project.';
 $activePage = 'about';
 
 require_once __DIR__ . '/includes/header.php';
@@ -24,11 +24,11 @@ require_once __DIR__ . '/includes/header.php';
     <!-- Statement Section -->
     <section class="statement" style="padding: 120px 0;">
       <div class="container">
-        <div class="eyebrow">Our Philosophy</div>
+        <div class="eyebrow">Our Approach</div>
 
         <h1 class="statement-title" style="margin-top: 40px;">
           <div>
-            <span>YOUR BUISINESS</span>
+            <span>YOUR BUSINESS</span>
           </div>
           <div>
             <span>SHOULDN'T</span>
@@ -39,7 +39,7 @@ require_once __DIR__ . '/includes/header.php';
         </h1>
 
         <p class="statement-copy">
-          Most digital projects fail due to unnecessary complexity, bloated dependencies, or lack of architectural discipline. Website Tailors was founded to provide a refreshing alternative: lean, blisteringly fast, beautifully designed systems that do their job flawlessly.
+          We believe business websites should be simple, fast, and transparent. Too many small businesses in Bangalore get locked into bloated website builders or overcomplicated monthly subscriptions. Website Tailors builds clean, custom websites that you own completely—with no ongoing lock-ins, clear upfront scopes, and direct communication.
         </p>
       </div>
     </section>
@@ -56,17 +56,26 @@ require_once __DIR__ . '/includes/header.php';
         </div>
 
         <div class="principles-grid">
-          <?php foreach ($principles as $principle): ?>
+          <?php foreach ($principles as $index => $principle): ?>
             <div class="principle reveal">
-              <div class="principle-number">
-                <?= e($principle['number']) ?>
+              <div class="principle-body">
+                <div class="principle-content">
+                  <div class="principle-number">
+                    <?= e($principle['number']) ?>
+                  </div>
+                  <h3>
+                    <?= e($principle['title']) ?>
+                  </h3>
+                  <p>
+                    <?= e($principle['description']) ?>
+                  </p>
+                </div>
+                <?php if (!empty($principle['illustration'])): ?>
+                  <div class="principle-illustration" aria-hidden="true">
+                    <?= get_principle_illustration_svg($principle['illustration']) ?>
+                  </div>
+                <?php endif; ?>
               </div>
-              <h3>
-                <?= e($principle['title']) ?>
-              </h3>
-              <p>
-                <?= e($principle['description']) ?>
-              </p>
             </div>
           <?php endforeach; ?>
         </div>
@@ -80,13 +89,13 @@ require_once __DIR__ . '/includes/header.php';
           <div class="process-header-left">
             <div class="eyebrow">How we work</div>
             <h2 class="section-title process-title">
-              FROM IDEA<br>
-              <span class="outline">TO LIVE.</span>
+              FROM FIRST CONVERSATION<br>
+              <span class="outline">TO WEBSITE LAUNCH.</span>
             </h2>
           </div>
 
           <p class="process-copy">
-            A battle-tested 4-step delivery pipeline with zero friction and clear communication.
+            A clear, collaborative 4-step delivery process with agreed deliverables and direct communication.
           </p>
         </div>
 
@@ -94,7 +103,7 @@ require_once __DIR__ . '/includes/header.php';
           <div class="empty-state-public">
             <div class="empty-state-icon">✦</div>
             <h3>Custom Tailored Process</h3>
-            <p>Every digital engagement is architected around your specific engineering milestones and delivery requirements.</p>
+            <p>Every website project is planned around your specific business milestones and timeline requirements.</p>
             <a href="contact.php" class="button button-primary magnetic">Discuss Engagement ↗</a>
           </div>
         <?php else: ?>
@@ -120,50 +129,57 @@ require_once __DIR__ . '/includes/header.php';
       </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <?php if (!empty($testimonials)): ?>
-      <section class="testimonials" style="padding: 120px 0;">
-        <div class="container">
-          <div class="testimonials-header reveal">
-            <div>
-              <div class="eyebrow">Client Feedback</div>
-              <h2 class="section-title" style="margin-top: 30px;">
-                WHAT FOUNDERS<br>
-                <span class="outline">SAY ABOUT US.</span>
-              </h2>
-            </div>
-            <p style="color: var(--muted); max-width: 440px; font-size: 15px; line-height: 1.6;">
-              Direct feedback from leaders who have partnered with Website Tailors.
+    <!-- Working Standards & Ownership Guarantees -->
+    <section class="testimonials" style="padding: 120px 0;">
+      <div class="container">
+        <div class="testimonials-header reveal">
+          <div>
+            <div class="eyebrow">Client Working Standards</div>
+            <h2 class="section-title" style="margin-top: 30px;">
+              TRANSPARENT PROCESS.<br>
+              <span class="outline">ZERO LOCK-IN.</span>
+            </h2>
+          </div>
+          <p style="color: var(--muted); max-width: 480px; font-size: 15px; line-height: 1.6;">
+            We operate with clear communication, documented milestones, and full asset handover on every project.
+          </p>
+        </div>
+
+        <div class="testimonials-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 48px;">
+          <div class="testimonial-card reveal" style="padding: 36px 32px;">
+            <div style="font-family: 'DM Mono', monospace; font-size: 12px; color: var(--accent); margin-bottom: 12px;">01 / DISCOVERY</div>
+            <h3 style="font-size: 18px; margin-bottom: 12px; color: var(--white, #fff);">Free Consultation</h3>
+            <p style="color: var(--muted); font-size: 14px; line-height: 1.7;">
+              We discuss your target audience, services, and requirements before any financial commitment is required.
             </p>
           </div>
 
-          <div class="testimonials-grid">
-            <?php foreach ($testimonials as $t): ?>
-              <div class="testimonial-card reveal">
-                <div>
-                  <div class="testimonial-rating" aria-label="Rating: <?= (int)($t['rating'] ?? 5) ?> of 5 stars">
-                    <?= str_repeat('★', max(1, min(5, (int)($t['rating'] ?? 5)))) ?>
-                  </div>
-                  <p class="testimonial-quote">
-                    <?= e($t['content']) ?>
-                  </p>
-                </div>
+          <div class="testimonial-card reveal" style="padding: 36px 32px;">
+            <div style="font-family: 'DM Mono', monospace; font-size: 12px; color: var(--accent); margin-bottom: 12px;">02 / CERTAINTY</div>
+            <h3 style="font-size: 18px; margin-bottom: 12px; color: var(--white, #fff);">Fixed Scope &amp; Quote</h3>
+            <p style="color: var(--muted); font-size: 14px; line-height: 1.7;">
+              You receive a written scope, itemized deliverables, and an agreed timeline before work commences.
+            </p>
+          </div>
 
-                <div class="testimonial-meta">
-                  <img src="<?= e(get_image_url($t['image'] ?? null, 'avatar')) ?>" alt="<?= e($t['client_name']) ?>" class="testimonial-avatar" loading="lazy" />
-                  <div>
-                    <div class="testimonial-author-name"><?= e($t['client_name']) ?></div>
-                    <div class="testimonial-author-sub">
-                      <?= e($t['position'] ?? '') ?><?= (!empty($t['position']) && !empty($t['company'])) ? ', ' : '' ?><?= e($t['company'] ?? '') ?>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            <?php endforeach; ?>
+          <div class="testimonial-card reveal" style="padding: 36px 32px;">
+            <div style="font-family: 'DM Mono', monospace; font-size: 12px; color: var(--accent); margin-bottom: 12px;">03 / FEEDBACK</div>
+            <h3 style="font-size: 18px; margin-bottom: 12px; color: var(--white, #fff);">Review &amp; Revisions</h3>
+            <p style="color: var(--muted); font-size: 14px; line-height: 1.7;">
+              Review staging previews on mobile and desktop, provide feedback, and verify all functionality before launch.
+            </p>
+          </div>
+
+          <div class="testimonial-card reveal" style="padding: 36px 32px;">
+            <div style="font-family: 'DM Mono', monospace; font-size: 12px; color: var(--accent); margin-bottom: 12px;">04 / OWNERSHIP</div>
+            <h3 style="font-size: 18px; margin-bottom: 12px; color: var(--white, #fff);">100% Asset Handover</h3>
+            <p style="color: var(--muted); font-size: 14px; line-height: 1.7;">
+              All source code, media assets, domain records, and hosting credentials belong entirely to you with zero proprietary lock-in.
+            </p>
           </div>
         </div>
-      </section>
-    <?php endif; ?>
+      </div>
+    </section>
 
     <!-- Call to action -->
     <section class="cta" style="padding: 100px 0;">

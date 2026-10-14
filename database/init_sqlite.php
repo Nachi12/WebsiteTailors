@@ -150,7 +150,7 @@ function init_sqlite_database(string $sqliteFile): PDO
         $now = date('Y-m-d H:i:s');
         $stmt = $pdo->prepare("INSERT INTO admins (username, email, password_hash, full_name, role, is_active, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
         $stmt->execute(['admin', 'websietailorss@gmail.com', '$2y$12$ht.4P0FXjJ7ev7MsltCeSeQpBGGj/is8I.XzZ/WMTbz2NTau8dX4y', 'Website Tailors Administrator', 'superadmin', 1, $now, $now]);
-        $stmt->execute(['superadmin', 'superadmin@rithamaya.com', '$2y$12$ht.4P0FXjJ7ev7MsltCeSeQpBGGj/is8I.XzZ/WMTbz2NTau8dX4y', 'Rithamaya Administrator', 'superadmin', 1, $now, $now]);
+        $stmt->execute(['superadmin', 'superadmin@websitetailors.com', '$2y$12$ht.4P0FXjJ7ev7MsltCeSeQpBGGj/is8I.XzZ/WMTbz2NTau8dX4y', 'WebsiteTailors Administrator', 'superadmin', 1, $now, $now]);
 
         // Seed Hero
         $stmt = $pdo->prepare("INSERT INTO hero_content (id, badge_text, headline, subheadline, description, primary_button_text, primary_button_link, secondary_button_text, secondary_button_link, stats_json, updated_at) VALUES (1, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
@@ -214,9 +214,9 @@ function init_sqlite_database(string $sqliteFile): PDO
         $settings = [
             ['company_name', 'Website Tailors', 'general'],
             ['tagline', 'Affordable Business Websites & WhatsApp Automation in Bangalore', 'general'],
-            ['email', 'websietailorss@gmail.com', 'contact'],
+            ['email', 'websitetailorss@gmail.com', 'contact'],
             ['phone', '+91 9380552034', 'contact'],
-            ['address', 'Bangalore, Karnataka, India', 'contact'],
+            ['address', 'Building no 203 Grihalakshmi layout Rajajinagara,Bangalore', 'contact'],
             ['linkedin', 'https://linkedin.com/company/websitetailors', 'social'],
             ['instagram', 'https://instagram.com/websitetailors', 'social'],
             ['facebook', 'https://facebook.com/websitetailors', 'social'],
@@ -310,6 +310,8 @@ function init_sqlite_database(string $sqliteFile): PDO
             payment_date TEXT NULL,
             line_items TEXT NULL,
             notes TEXT NULL,
+            client_billing_address TEXT NULL,
+            office_address TEXT NULL,
             created_at TEXT NOT NULL,
             updated_at TEXT NULL
         );
@@ -388,6 +390,12 @@ function init_sqlite_database(string $sqliteFile): PDO
         }
         if (!in_array('notes', $invColNames, true)) {
             $pdo->exec("ALTER TABLE invoices ADD COLUMN notes TEXT NULL");
+        }
+        if (!in_array('client_billing_address', $invColNames, true)) {
+            $pdo->exec("ALTER TABLE invoices ADD COLUMN client_billing_address TEXT NULL");
+        }
+        if (!in_array('office_address', $invColNames, true)) {
+            $pdo->exec("ALTER TABLE invoices ADD COLUMN office_address TEXT NULL");
         }
         if (!in_array('updated_at', $invColNames, true)) {
             $pdo->exec("ALTER TABLE invoices ADD COLUMN updated_at TEXT NULL");

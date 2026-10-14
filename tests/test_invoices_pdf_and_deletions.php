@@ -105,7 +105,7 @@ $pdf = generate_invoice_pdf($invRow, [
 assert(str_starts_with($pdf, "%PDF-1.4"), "PDF must start with %PDF-1.4 header");
 assert(str_contains($pdf, "%%EOF"), "PDF must end with %%EOF");
 assert(str_contains($pdf, "INV-2026-TEST"), "PDF must contain invoice reference");
-assert(str_contains($pdf, "Bangalore-560010"), "PDF must contain studio address Bangalore-560010");
+assert(str_contains($pdf, "Rajajinagara") || str_contains($pdf, "Building no 203"), "PDF must contain office address");
 assert(str_contains($pdf, "9380552034"), "PDF must contain studio phone 9380552034");
 assert(str_contains($pdf, "Acme Innovations"), "PDF must contain client name");
 assert(str_contains($pdf, "145,000.00"), "PDF must contain formatted amount INR 145,000.00");

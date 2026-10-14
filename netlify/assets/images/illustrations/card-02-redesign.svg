@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" class="principle-svg principle-svg-02" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <style>
+      .p-stroke { stroke: var(--ill-stroke, #14161A); stroke-width: 1.75; }
+      .p-stroke-thin { stroke: var(--ill-stroke, #14161A); stroke-width: 1.2; }
+      .p-muted { stroke: var(--ill-muted, #5B6068); stroke-width: 1.2; }
+      .p-paper { fill: var(--ill-paper, #FFFFFF); }
+      .p-lime { fill: var(--ill-lime, #C8F03C); }
+      .p-lime-stroke { stroke: var(--ill-lime, #C8F03C); stroke-width: 1.75; }
+      .p-glow { fill: var(--ill-lime, #C8F03C); opacity: 0.18; }
+    </style>
+  </defs>
+
+  <!-- Ambient Glow Behind Modern Redesign -->
+  <rect x="110" y="14" width="120" height="146" rx="14" class="p-glow" />
+
+  <!-- 1. OLD, OUTDATED WEBSITE (Left / Background) -->
+  <g class="ill-old-site">
+    <!-- Retro Boxy Monitor / Window Frame with drop offset shadow -->
+    <rect x="10" y="32" width="98" height="110" rx="2" class="p-paper p-stroke" />
+    
+    <!-- Clunky 90s/2000s Titlebar -->
+    <rect x="10" y="32" width="98" height="16" rx="1" fill="#E4E1D9" opacity="0.6" class="p-stroke" />
+    <!-- Retro Title text lines -->
+    <line x1="16" y1="40" x2="42" y2="40" class="p-stroke-thin" />
+    <!-- Clunky Windows-style buttons: [-] [口] [X] -->
+    <rect x="80" y="35" width="7" height="9" rx="0.5" class="p-stroke-thin" />
+    <line x1="82" y1="41" x2="85" y2="41" class="p-stroke-thin" />
+    <rect x="89" y="35" width="7" height="9" rx="0.5" class="p-stroke-thin" />
+    <line x1="91" y1="37" x2="94" y2="42" class="p-stroke-thin" />
+    <line x1="94" y1="37" x2="91" y2="42" class="p-stroke-thin" />
+
+    <!-- Outdated Chaotic Web Layout -->
+    <!-- Broken image placeholder -->
+    <rect x="18" y="55" width="34" height="26" class="p-stroke-thin" stroke-dasharray="3 2" />
+    <path d="M 23 75 L 30 65 L 37 72 L 43 67 L 48 75 Z" class="p-muted" />
+    <circle cx="26" cy="62" r="2.5" class="p-muted" />
+    <line x1="28" y1="62" x2="38" y2="72" class="p-stroke-thin" stroke="#D14343" />
+
+    <!-- Crowded tiny text lines -->
+    <line x1="58" y1="58" x2="98" y2="58" class="p-muted" />
+    <line x1="58" y1="64" x2="94" y2="64" class="p-muted" />
+    <line x1="58" y1="70" x2="98" y2="70" class="p-muted" />
+    <line x1="58" y1="76" x2="88" y2="76" class="p-muted" />
+
+    <!-- Outdated Table Grid Lines -->
+    <line x1="18" y1="88" x2="98" y2="88" class="p-stroke-thin" />
+    <line x1="18" y1="98" x2="98" y2="98" class="p-stroke-thin" />
+    <line x1="45" y1="88" x2="45" y2="108" class="p-stroke-thin" />
+    <line x1="72" y1="88" x2="72" y2="108" class="p-stroke-thin" />
+    
+    <line x1="22" y1="93" x2="40" y2="93" class="p-muted" stroke-dasharray="2 1" />
+    <line x1="49" y1="93" x2="68" y2="93" class="p-muted" stroke-dasharray="2 1" />
+    <line x1="76" y1="93" x2="94" y2="93" class="p-muted" stroke-dasharray="2 1" />
+
+    <!-- Sluggish Stalled Loading Bar -->
+    <rect x="18" y="118" width="82" height="13" rx="2" class="p-paper p-stroke-thin" />
+    <rect x="20" y="120" width="26" height="9" rx="1" fill="#5B6068" opacity="0.3" />
+    <!-- Diagonal hatch progress -->
+    <line x1="23" y1="129" x2="27" y2="120" class="p-stroke-thin" />
+    <line x1="28" y1="129" x2="32" y2="120" class="p-stroke-thin" />
+    <line x1="33" y1="129" x2="37" y2="120" class="p-stroke-thin" />
+    <line x1="38" y1="129" x2="42" y2="120" class="p-stroke-thin" />
+    <!-- Spiral hourglass / buffer dot -->
+    <circle cx="89" cy="124.5" r="3.2" class="p-muted" stroke-dasharray="2 2" />
+  </g>
+
+  <!-- 2. TRANSFORMATION BRIDGE / DYNAMIC EVOLUTION SWOOSH -->
+  <g class="ill-transform-bridge">
+    <!-- Smooth Dynamic Transformation Curve -->
+    <path d="M 86 52 C 104 32, 116 34, 126 44" class="p-lime-stroke" stroke-width="2.2" />
+    <path d="M 122 36 L 129 44 L 118 47" class="p-lime" stroke="#14161A" stroke-width="1.4" />
+
+    <!-- Energetic Sparkle Stars on Bridge -->
+    <path d="M 112 26 Q 112 32 118 32 Q 112 32 112 38 Q 112 32 106 32 Q 112 32 112 26 Z" class="p-lime" stroke="#14161A" stroke-width="1.2" />
+    <circle cx="102" cy="48" r="1.5" fill="#14161A" />
+    <circle cx="124" cy="22" r="1.5" class="p-lime" stroke="#14161A" stroke-width="0.8" />
+  </g>
+
+  <!-- 3. MODERN, FAST-LOADING REDESIGNED SITE (Right / Foreground) -->
+  <g class="ill-modern-site">
+    <!-- Modern Minimal Browser Window -->
+    <rect x="108" y="16" width="122" height="136" rx="11" class="p-paper p-stroke" />
+    
+    <!-- Modern Window Header -->
+    <line x1="108" y1="36" x2="230" y2="36" class="p-stroke" />
+    <!-- Minimal Clean Dots -->
+    <circle cx="118" cy="26" r="2.5" class="p-stroke" />
+    <circle cx="126" cy="26" r="2.5" class="p-stroke" />
+    <circle cx="134" cy="26" r="2.5" class="p-lime p-stroke" />
+
+    <!-- Lightning Speed ⚡ 100 Badge -->
+    <g class="ill-speed-badge">
+      <rect x="164" y="20" width="58" height="12" rx="6" class="p-lime p-stroke-thin" />
+      <!-- Lightning Bolt -->
+      <path d="M 172 23 L 169 27 L 172.5 27 L 170.5 30 L 175 25.5 L 172 25.5 Z" fill="#14161A" stroke="#14161A" stroke-width="0.5" />
+      <!-- '100 FAST' Line / Label -->
+      <line x1="178" y1="26" x2="214" y2="26" stroke="#14161A" stroke-width="1.6" />
+    </g>
+
+    <!-- Modern Hero Section -->
+    <rect x="116" y="44" width="76" height="28" rx="5" class="p-paper p-stroke-thin" />
+    <!-- Vibrant Lime Hero Accent Tag -->
+    <rect x="122" y="48" width="22" height="6" rx="3" class="p-lime" stroke="#14161A" stroke-width="1" />
+    <!-- Bold Typography lines with generous whitespace -->
+    <line x1="122" y1="60" x2="174" y2="60" class="p-stroke" stroke-width="2.2" />
+    <line x1="122" y1="65" x2="152" y2="65" class="p-muted" />
+
+    <!-- Clean Modern Grid Blocks -->
+    <rect x="116" y="78" width="46" height="36" rx="4" class="p-paper p-stroke-thin" />
+    <circle cx="127" cy="88" r="5" class="p-lime p-stroke-thin" />
+    <line x1="122" y1="100" x2="154" y2="100" class="p-stroke-thin" />
+    <line x1="122" y1="106" x2="144" y2="106" class="p-muted" />
+
+    <line x1="116" y1="124" x2="154" y2="124" class="p-stroke" stroke-width="2" />
+    <line x1="116" y1="130" x2="148" y2="130" class="p-muted" stroke-dasharray="3 2" />
+  </g>
+
+  <!-- 4. RESPONSIVE MOBILE DEVICE (Works Seamlessly on Phones) -->
+  <g class="ill-mobile-phone">
+    <!-- Smartphone Chassis with shadow offset -->
+    <rect x="166" y="68" width="62" height="98" rx="11" class="p-paper p-stroke" stroke-width="2" />
+    
+    <!-- Phone Screen Bezel -->
+    <rect x="170" y="76" width="54" height="82" rx="6" fill="#F6F4EF" class="p-stroke-thin" />
+    
+    <!-- Top Speaker Notch -->
+    <line x1="190" y1="72" x2="204" y2="72" class="p-stroke" stroke-width="1.8" />
+    <circle cx="208" cy="72" r="1.2" fill="#14161A" />
+
+    <!-- Mobile UI Content -->
+    <!-- Mobile Hero Header in Lime -->
+    <rect x="174" y="81" width="46" height="20" rx="3.5" class="p-lime p-stroke-thin" />
+    <line x1="179" y1="88" x2="208" y2="88" stroke="#14161A" stroke-width="1.8" />
+    <line x1="179" y1="94" x2="198" y2="94" stroke="#14161A" stroke-width="1.2" />
+
+    <!-- Mobile Content Cards -->
+    <rect x="174" y="105" width="46" height="15" rx="3" class="p-paper p-stroke-thin" />
+    <circle cx="180" cy="112.5" r="3" class="p-lime p-stroke-thin" />
+    <line x1="187" y1="112.5" x2="212" y2="112.5" class="p-stroke-thin" />
+
+    <rect x="174" y="124" width="46" height="15" rx="3" class="p-paper p-stroke-thin" />
+    <circle cx="180" cy="131.5" r="3" class="p-stroke-thin" />
+    <line x1="187" y1="131.5" x2="212" y2="131.5" class="p-stroke-thin" />
+
+    <!-- Bottom Home Indicator -->
+    <line x1="188" y1="162" x2="206" y2="162" class="p-stroke" stroke-width="2" />
+  </g>
+
+  <!-- Transformative Polish Sparkles (Website Tailors ✦ Motif) -->
+  <g class="ill-sparkles">
+    <path d="M 230 8 Q 230 14 236 14 Q 230 14 230 20 Q 230 14 224 14 Q 230 14 230 8 Z" class="p-lime" stroke="#14161A" stroke-width="1" />
+    <path d="M 154 62 Q 154 66 158 66 Q 154 66 154 70 Q 154 66 150 66 Q 154 66 154 62 Z" class="p-lime" stroke="#14161A" stroke-width="0.8" />
+  </g>
+</svg>

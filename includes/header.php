@@ -11,7 +11,7 @@ if (!defined('WebsiteTailors_INIT')) {
 
 $siteSettings = $settings ?? get_all_settings();
 $pageTitle = $pageTitle ?? ($siteSettings['meta_title'] ?? 'Affordable Website Design in Bangalore | Website Tailors');
-$pageDescription = $pageDescription ?? ($siteSettings['meta_description'] ?? 'Don\'t have a website yet? Or is your current one outdated? Website Tailors builds and redesigns fast, affordable business websites in Bangalore. Get a free quote.');
+$pageDescription = $pageDescription ?? ($siteSettings['meta_description'] ?? 'Need a website for your business? Website Tailors designs and redesigns business websites in Bangalore, with mobile-friendly layouts and clear ways to enquire.');
 $activePage = $activePage ?? 'home';
 
 // Normalized canonical URL calculation
@@ -23,7 +23,7 @@ $canonicalUrl = 'https://websitetailors.com' . $cleanPath;
 $ogImageUrl = 'https://websitetailors.com/assets/images/website-tailors-og.jpg';
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
 <head>
   <script>document.documentElement.classList.add('js');</script>
   <meta charset="UTF-8" />
@@ -51,20 +51,27 @@ $ogImageUrl = 'https://websitetailors.com/assets/images/website-tailors-og.jpg';
   <meta name="twitter:description" content="<?= e($pageDescription) ?>" />
   <meta name="twitter:image" content="<?= e($ogImageUrl) ?>" />
 
-  <!-- Favicon -->
+  <!-- Favicon & Touch Icons -->
   <link rel="icon" type="image/svg+xml" href="<?= e(get_image_url($siteSettings['favicon_path'] ?? null, 'favicon')) ?>" />
+  <link rel="apple-touch-icon" href="<?= e(BASE_URL) ?>/assets/images/favicon.svg" />
 
-  <!-- Google Fonts Preload & Swap -->
+  <!-- HackerRank Local Font Preloads (0ms latency, self-hosted) -->
+  <link rel="preload" href="<?= e(ASSETS_URL) ?>/fonts/satoshi-bold.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="<?= e(ASSETS_URL) ?>/fonts/satoshi-regular.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="<?= e(ASSETS_URL) ?>/fonts/satoshi-medium.woff2" as="font" type="font/woff2" crossorigin />
+
+  <!-- Google Fonts & Fontshare Fallback Preload & Swap -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@700;800&family=Space+Grotesk:wght@500;600;700&display=swap" />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700,900&display=swap" rel="stylesheet" />
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   />
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="<?= e(ASSETS_URL . '/css/style.css') ?>" />
+  <link rel="stylesheet" href="<?= e(ASSETS_URL . '/css/style.css?v=' . APP_VERSION) ?>" />
 
   <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
@@ -72,22 +79,49 @@ $ogImageUrl = 'https://websitetailors.com/assets/images/website-tailors-og.jpg';
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": ["Organization", "LocalBusiness"],
+        "@type": ["ProfessionalService", "LocalBusiness"],
         "@id": "https://websitetailors.com/#organization",
         "name": "Website Tailors",
         "url": "https://websitetailors.com/",
         "logo": "https://websitetailors.com/assets/images/favicon.svg",
         "image": "https://websitetailors.com/assets/images/website-tailors-og.jpg",
-        "description": "Website Tailors builds and redesigns fast, affordable business websites and WhatsApp automation for businesses in Bangalore.",
+        "description": "Website Tailors designs and builds fast, affordable business websites and WhatsApp automation for small businesses in Bangalore / Bengaluru.",
         "telephone": "+919380552034",
-        "email": "websietailorss@gmail.com",
+        "email": "<?= e(defined('BUSINESS_EMAIL') ? BUSINESS_EMAIL : 'websitetailorss@gmail.com') ?>",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Bangalore",
+          "streetAddress": "[OFFICE ADDRESS / LOCALITY, e.g. Rajajinagar, Bengaluru]",
+          "addressLocality": "Bengaluru",
           "addressRegion": "Karnataka",
+          "postalCode": "560010",
           "addressCountry": "IN"
         },
-        "priceRange": "$$"
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Bangalore"
+          },
+          {
+            "@type": "City",
+            "name": "Bengaluru"
+          }
+        ],
+        "priceRange": "₹₹",
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "09:00",
+          "closes": "19:00"
+        },
+        "sameAs": [
+          "https://www.instagram.com/websitetailors",
+          "https://www.linkedin.com/company/websitetailors"
+        ]
       },
       {
         "@type": "WebSite",
@@ -97,38 +131,68 @@ $ogImageUrl = 'https://websitetailors.com/assets/images/website-tailors-og.jpg';
         "publisher": {
           "@id": "https://websitetailors.com/#organization"
         },
-        "inLanguage": "en"
+        "inLanguage": "en-IN"
       },
       {
         "@type": "Service",
         "@id": "https://websitetailors.com/#service-website-design",
-        "name": "Website Design for New Businesses",
+        "name": "Website Design for Small Businesses",
         "provider": {
           "@id": "https://websitetailors.com/#organization"
         },
         "serviceType": "Website Design",
-        "description": "A complete business website for shops, clinics, studios, restaurants, coaches and service providers."
+        "description": "Complete 5-page mobile-first business website with WhatsApp integration, on-page SEO setup, and fast 7-day delivery.",
+        "offers": {
+          "@type": "Offer",
+          "price": "9999",
+          "priceCurrency": "INR",
+          "url": "https://websitetailors.com/#services",
+          "availability": "https://schema.org/InStock"
+        }
       },
       {
         "@type": "Service",
         "@id": "https://websitetailors.com/#service-website-redesign",
-        "name": "Website Redesign",
+        "name": "Website Redesign Services",
         "provider": {
           "@id": "https://websitetailors.com/#organization"
         },
         "serviceType": "Website Redesign",
-        "description": "Better design, faster loading and a layout that makes it easier for visitors to contact your business."
+        "description": "Modern redesign, faster loading speeds, and clearer enquiry forms to turn visitors into enquiries."
       },
       {
         "@type": "Service",
         "@id": "https://websitetailors.com/#service-whatsapp-automation",
-        "name": "WhatsApp Automation",
+        "name": "WhatsApp Automation for Business",
         "provider": {
           "@id": "https://websitetailors.com/#organization"
         },
         "serviceType": "WhatsApp Automation",
-        "description": "Auto-replies, enquiry capture, booking reminders and follow-ups on WhatsApp."
+        "description": "Auto-replies, lead capture, appointment booking reminders and instant customer follow-ups on WhatsApp."
       }
+<?php if (!empty($faqs)): ?>
+      ,
+      {
+        "@type": "FAQPage",
+        "@id": "https://websitetailors.com/#faq",
+        "mainEntity": [
+          <?php 
+          $faqItems = [];
+          foreach ($faqs as $faqItem) {
+              $faqItems[] = json_encode([
+                  '@type' => 'Question',
+                  'name' => $faqItem['question'],
+                  'acceptedAnswer' => [
+                      '@type' => 'Answer',
+                      'text' => $faqItem['answer']
+                  ]
+              ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+          }
+          echo implode(",\n          ", $faqItems);
+          ?>
+        ]
+      }
+<?php endif; ?>
     ]
   }
   </script>
@@ -169,8 +233,8 @@ $ogImageUrl = 'https://websitetailors.com/assets/images/website-tailors-og.jpg';
       </a>
 
       <nav class="nav-links" aria-label="Primary Navigation">
-        <a href="<?= e(BASE_URL) ?>/#services" class="nav-link magnetic <?= $activePage === 'services' ? 'active' : '' ?>">Services</a>
-        <a href="<?= e(BASE_URL) ?>/#work" class="nav-link magnetic <?= $activePage === 'work' ? 'active' : '' ?>">Work</a>
+        <a href="<?= e(BASE_URL) ?>/services.php" class="nav-link magnetic <?= $activePage === 'services' ? 'active' : '' ?>">Services</a>
+
         <a href="<?= e(BASE_URL) ?>/#process" class="nav-link magnetic <?= $activePage === 'process' ? 'active' : '' ?>">Process</a>
         <a href="<?= e(BASE_URL) ?>/#about" class="nav-link magnetic <?= $activePage === 'about' ? 'active' : '' ?>">About</a>
       </nav>
@@ -190,8 +254,7 @@ $ogImageUrl = 'https://websitetailors.com/assets/images/website-tailors-og.jpg';
        ANIMATED FULL-SCREEN MOBILE MENU
   ======================================================== -->
   <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-    <a href="<?= e(BASE_URL) ?>/#services">Services</a>
-    <a href="<?= e(BASE_URL) ?>/#work">Work</a>
+    <a href="<?= e(BASE_URL) ?>/services.php">Services</a>
     <a href="<?= e(BASE_URL) ?>/#process">Process</a>
     <a href="<?= e(BASE_URL) ?>/#about">About</a>
     <a href="<?= e(BASE_URL) ?>/#contact" class="accent">Let's Talk ↗</a>

@@ -319,10 +319,15 @@ assertCondition(strpos($searchRaw, 'FROM clients') !== false && strpos($searchRa
 $searchLeadStmt = $pdo->prepare("
     SELECT id, name, company, phone, email, service, status, call_status
     FROM leads
-    WHERE name LIKE :q OR company LIKE :q OR phone LIKE :q OR email LIKE :q
+    WHERE name LIKE :q1 OR company LIKE :q2 OR phone LIKE :q3 OR email LIKE :q4
     ORDER BY id DESC LIMIT 5
 ");
-$searchLeadStmt->execute([':q' => '%Fintech%']);
+$searchLeadStmt->execute([
+    ':q1' => '%Fintech%',
+    ':q2' => '%Fintech%',
+    ':q3' => '%Fintech%',
+    ':q4' => '%Fintech%'
+]);
 $matchedLeads = $searchLeadStmt->fetchAll(PDO::FETCH_ASSOC);
 assertCondition(!empty($matchedLeads), "Global search matches lead 'Fintech Growth Labs'");
 
