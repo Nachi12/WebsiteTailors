@@ -7,7 +7,9 @@
 
 declare(strict_types=1);
 
-define('WebsiteTailors_INIT', true);
+if (!defined('WebsiteTailors_INIT')) {
+    define('WebsiteTailors_INIT', true);
+}
 require_once __DIR__ . '/includes/init.php';
 
 http_response_code(404);
@@ -15,6 +17,7 @@ http_response_code(404);
 $pageTitle = '404 — Page Not Found | WebsiteTailors';
 $pageDescription = 'The digital experience or page you requested could not be found. Return to WebsiteTailors home.';
 $activePage = '404';
+$robotsDirective = 'noindex, follow';
 
 require_once __DIR__ . '/includes/header.php';
 ?>

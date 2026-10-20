@@ -14,12 +14,59 @@ $pageTitle = $pageTitle ?? ($siteSettings['meta_title'] ?? 'Affordable Website D
 $pageDescription = $pageDescription ?? ($siteSettings['meta_description'] ?? 'Need a website for your business? Website Tailors designs and redesigns business websites in Bangalore, with mobile-friendly layouts and clear ways to enquire.');
 $activePage = $activePage ?? 'home';
 
-// Normalized canonical URL calculation
-$cleanPath = strtok($_SERVER['REQUEST_URI'] ?? '/', '?');
-if ($cleanPath === '/index.php') {
-    $cleanPath = '/';
+// Controlled Canonical & Robots Directive Resolution
+$isErrorPage = (http_response_code() >= 400) || ($activePage === '404');
+$robotsDirective = $isErrorPage ? 'noindex, follow' : ($robotsDirective ?? 'index, follow');
+
+// Controlled map of known indexable public scripts to clean canonical paths
+$knownPublicRoutes = [
+    '/index.php' => '/',
+    '/services.php' => '/services',
+    '/work.php' => '/work',
+    '/about.php' => '/about',
+    '/contact.php' => '/contact',
+    '/website-design-bangalore.php' => '/website-design-bangalore',
+    '/website-redesign-bangalore.php' => '/website-redesign-bangalore',
+    '/whatsapp-automation-bangalore.php' => '/whatsapp-automation-bangalore',
+    '/website-for-clinics-bangalore.php' => '/website-for-clinics-bangalore',
+    '/website-for-restaurants-bangalore.php' => '/website-for-restaurants-bangalore',
+    '/privacy-policy.php' => '/privacy-policy',
+    '/terms.php' => '/terms',
+    '/blog/index.php' => '/blog/',
+    '/blog/how-much-does-a-website-cost-in-bangalore-2026.php' => '/blog/how-much-does-a-website-cost-in-bangalore-2026',
+    '/blog/website-vs-google-business-profile.php' => '/blog/website-vs-google-business-profile',
+    '/blog/how-whatsapp-automation-helps-small-businesses.php' => '/blog/how-whatsapp-automation-helps-small-businesses',
+];
+
+$canonicalPath = null;
+if (isset($customCanonical)) {
+    $canonicalPath = $customCanonical;
+} else {
+    $scriptName = '/' . ltrim(str_replace('\\', '/', $_SERVER['SCRIPT_NAME'] ?? ''), '/');
+    if (isset($knownPublicRoutes[$scriptName])) {
+        $canonicalPath = $knownPublicRoutes[$scriptName];
+    } else {
+        $rawPath = strtok($_SERVER['REQUEST_URI'] ?? '/', '?');
+        $trimmedPath = rtrim($rawPath, '/');
+        if ($trimmedPath === '' || $rawPath === '/') {
+            $canonicalPath = '/';
+        } elseif ($rawPath === '/blog/' || $rawPath === '/blog') {
+            $canonicalPath = '/blog/';
+        } else {
+            foreach ($knownPublicRoutes as $script => $clean) {
+                if ($trimmedPath === rtrim($clean, '/')) {
+                    $canonicalPath = $clean;
+                    break;
+                }
+            }
+        }
+    }
 }
-$canonicalUrl = 'https://websitetailors.com' . $cleanPath;
+
+// Canonical host is strictly production domain https://websitetailors.com (never arbitrary host)
+$canonicalUrl = ($canonicalPath !== null && !$isErrorPage)
+    ? 'https://websitetailors.com' . ($canonicalPath === '/' ? '/' : $canonicalPath)
+    : null;
 $ogImageUrl = 'https://websitetailors.com/assets/images/website-tailors-og.jpg';
 ?>
 <!DOCTYPE html>
@@ -30,18 +77,22 @@ $ogImageUrl = 'https://websitetailors.com/assets/images/website-tailors-og.jpg';
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title><?= e($pageTitle) ?></title>
   <meta name="description" content="<?= e($pageDescription) ?>" />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="<?= e($robotsDirective) ?>" />
   <meta name="csrf-token" content="<?= e(csrf_token()) ?>" />
 
+<?php if (!empty($canonicalUrl)): ?>
   <!-- Canonical URL -->
   <link rel="canonical" href="<?= e($canonicalUrl) ?>" />
+<?php endif; ?>
 
   <!-- Dynamic SEO & Open Graph / Twitter Cards -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="<?= e($siteSettings['company_name'] ?? 'Website Tailors') ?>" />
   <meta property="og:title" content="<?= e($pageTitle) ?>" />
   <meta property="og:description" content="<?= e($pageDescription) ?>" />
+<?php if (!empty($canonicalUrl)): ?>
   <meta property="og:url" content="<?= e($canonicalUrl) ?>" />
+<?php endif; ?>
   <meta property="og:image" content="<?= e($ogImageUrl) ?>" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -79,7 +130,7 @@ $ogImageUrl = 'https://websitetailors.com/assets/images/website-tailors-og.jpg';
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": ["ProfessionalService", "LocalBusiness"],
+        "@type": ["ProfessionalService", "Organization"],
         "@id": "https://websitetailors.com/#organization",
         "name": "Website Tailors",
         "url": "https://websitetailors.com/",
@@ -88,19 +139,6 @@ $ogImageUrl = 'https://websitetailors.com/assets/images/website-tailors-og.jpg';
         "description": "Website Tailors designs and builds fast, affordable business websites and WhatsApp automation for small businesses in Bangalore / Bengaluru.",
         "telephone": "+919380552034",
         "email": "<?= e(defined('BUSINESS_EMAIL') ? BUSINESS_EMAIL : 'websitetailorss@gmail.com') ?>",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "[OFFICE ADDRESS / LOCALITY, e.g. Rajajinagar, Bengaluru]",
-          "addressLocality": "Bengaluru",
-          "addressRegion": "Karnataka",
-          "postalCode": "560010",
-          "addressCountry": "IN"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 12.9716,
-          "longitude": 77.5946
-        },
         "areaServed": [
           {
             "@type": "City",
@@ -117,11 +155,7 @@ $ogImageUrl = 'https://websitetailors.com/assets/images/website-tailors-og.jpg';
           "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
           "opens": "09:00",
           "closes": "19:00"
-        },
-        "sameAs": [
-          "https://www.instagram.com/websitetailors",
-          "https://www.linkedin.com/company/websitetailors"
-        ]
+        }
       },
       {
         "@type": "WebSite",
@@ -233,7 +267,7 @@ $ogImageUrl = 'https://websitetailors.com/assets/images/website-tailors-og.jpg';
       </a>
 
       <nav class="nav-links" aria-label="Primary Navigation">
-        <a href="<?= e(BASE_URL) ?>/services.php" class="nav-link magnetic <?= $activePage === 'services' ? 'active' : '' ?>">Services</a>
+        <a href="<?= e(BASE_URL) ?>/services" class="nav-link magnetic <?= $activePage === 'services' ? 'active' : '' ?>">Services</a>
 
         <a href="<?= e(BASE_URL) ?>/#process" class="nav-link magnetic <?= $activePage === 'process' ? 'active' : '' ?>">Process</a>
         <a href="<?= e(BASE_URL) ?>/#about" class="nav-link magnetic <?= $activePage === 'about' ? 'active' : '' ?>">About</a>
@@ -254,7 +288,7 @@ $ogImageUrl = 'https://websitetailors.com/assets/images/website-tailors-og.jpg';
        ANIMATED FULL-SCREEN MOBILE MENU
   ======================================================== -->
   <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-    <a href="<?= e(BASE_URL) ?>/services.php">Services</a>
+    <a href="<?= e(BASE_URL) ?>/services">Services</a>
     <a href="<?= e(BASE_URL) ?>/#process">Process</a>
     <a href="<?= e(BASE_URL) ?>/#about">About</a>
     <a href="<?= e(BASE_URL) ?>/#contact" class="accent">Let's Talk ↗</a>

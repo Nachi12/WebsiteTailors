@@ -34,7 +34,41 @@ AddDefaultCharset UTF-8
     RewriteRule ^database/ - [F,L]
     RewriteRule ^bin/ - [F,L]
 
-    # Clean extensionless URLs (e.g. /website-design-bangalore -> website-design-bangalore.php)
+    # ----------------------------------------------------------------------
+    # 1. CANONICAL HOST: 301 Redirect www.websitetailors.com to websitetailors.com
+    # ----------------------------------------------------------------------
+    RewriteCond %{HTTP_HOST} ^www\.websitetailors\.com$ [NC]
+    RewriteRule ^(.*)$ https://websitetailors.com/$1 [R=301,L]
+
+    # ----------------------------------------------------------------------
+    # 2. CANONICAL HOMEPAGE: 301 Redirect /index.php to /
+    # ----------------------------------------------------------------------
+    RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+index\.php[\s?] [NC]
+    RewriteRule ^index\.php$ https://websitetailors.com/ [R=301,L]
+
+    # ----------------------------------------------------------------------
+    # 3. CANONICAL BLOG INDEX: 301 Redirect /blog/index.php to /blog/
+    # ----------------------------------------------------------------------
+    RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+blog/index\.php[\s?] [NC]
+    RewriteRule ^blog/index\.php$ https://websitetailors.com/blog/ [R=301,L]
+
+    # ----------------------------------------------------------------------
+    # 4. CANONICAL PUBLIC ROUTES: 301 Redirect public .php to clean URLs
+    #    - Applies only to safe GET and HEAD requests (preserves POST forms)
+    #    - Excludes admin, api, database, bin, config, includes, tests, uploads
+    #    - Excludes error documents (404.php, 500.php)
+    #    - Checks THE_REQUEST to guarantee no redirect loops with internal rewrite
+    # ----------------------------------------------------------------------
+    RewriteCond %{REQUEST_METHOD} ^(GET|HEAD)$ [NC]
+    RewriteCond %{REQUEST_URI} !^/(admin|api|database|bin|config|includes|tests|uploads)/ [NC]
+    RewriteCond %{REQUEST_URI} !^/(404|500)\.php$ [NC]
+    RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+(.+?)\.php[\s?] [NC]
+    RewriteCond %{DOCUMENT_ROOT}/%1.php -f
+    RewriteRule ^(.+?)\.php$ https://websitetailors.com/$1 [R=301,L]
+
+    # ----------------------------------------------------------------------
+    # 5. INTERNAL REWRITE: Map clean extensionless URLs to their .php files
+    # ----------------------------------------------------------------------
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME}\.php -f
     RewriteRule ^(.*)$ $1.php [L]
