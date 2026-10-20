@@ -72,21 +72,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
       <div class="container hero-content">
         <div class="hero-layout">
-          <!-- LEFT COLUMN: Eyebrow, Headline, Subtitle, CTAs & Trust Strip -->
+          <!-- LEFT COLUMN: Eyebrow, Headline, Subtitle, CTAs & Reassurance Labels -->
           <div class="hero-copy hero-left">
             <div class="hero-eyebrow-pill">
               <span class="eyebrow-dot" aria-hidden="true"></span>
-              <span>WEBSITE DESIGN · REDESIGN · WHATSAPP AUTOMATION · BANGALORE</span>
+              <span>WEB DESIGN · DEVELOPMENT · WHATSAPP AUTOMATION</span>
             </div>
 
             <h1 class="hero-heading">
-              <span class="hero-line">Bangalore Website Design</span>
-              <span class="hero-line">That Brings</span>
-              <span class="hero-line"><span class="hero-highlight mark">More&nbsp;Enquiries</span></span>
+              <span class="hero-line">Your website should</span>
+              <span class="hero-line"><span class="hero-highlight mark">bring you business.</span></span>
             </h1>
 
             <p class="hero-subheading">
-              Website Tailors offers website design in Bangalore for clinics, restaurants, salons, retail stores and local businesses. We build fast, mobile-friendly sites with one-tap call, WhatsApp and enquiry buttons, so visitors become customers.
+              Thoughtfully designed websites for Bengaluru businesses that need to earn trust, explain their value, and turn more visits into enquiries.
             </p>
 
             <div class="hero-ctas">
@@ -95,24 +94,24 @@ document.addEventListener('DOMContentLoaded', function() {
                 <svg class="btn-arrow arrow-up-right" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
               </a>
 
-              <a href="#work" class="btn btn-secondary" aria-label="View Our Work">
-                <span>View Our Work</span>
+              <a href="#work" class="btn btn-secondary" aria-label="Explore Our Work">
+                <span>Explore Our Work</span>
                 <svg class="btn-arrow arrow-down" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
               </a>
             </div>
 
-            <div class="hero-trust-row" aria-label="Trust Signals">
+            <div class="hero-trust-row" aria-label="Reassurance Points">
               <div class="trust-item">
-                <svg class="trust-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Free consultation</span>
+                <svg class="trust-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Clear project scope</span>
               </div>
               <div class="trust-item">
-                <svg class="trust-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Fixed, upfront quote</span>
+                <svg class="trust-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Mobile-first design</span>
               </div>
               <div class="trust-item">
-                <svg class="trust-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Fast launch for starter websites</span>
+                <svg class="trust-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Built around enquiries</span>
               </div>
             </div>
           </div>

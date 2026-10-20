@@ -55,7 +55,7 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": ["ProfessionalService", "LocalBusiness"],
+        "@type": ["ProfessionalService", "Organization"],
         "@id": "https://websitetailors.com/#organization",
         "name": "Website Tailors",
         "url": "https://websitetailors.com/",
@@ -64,19 +64,6 @@
         "description": "Website Tailors designs and builds fast, affordable business websites and WhatsApp automation for small businesses in Bangalore / Bengaluru.",
         "telephone": "+919380552034",
         "email": "websitetailorss@gmail.com",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "[OFFICE ADDRESS / LOCALITY, e.g. Rajajinagar, Bengaluru]",
-          "addressLocality": "Bengaluru",
-          "addressRegion": "Karnataka",
-          "postalCode": "560010",
-          "addressCountry": "IN"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 12.9716,
-          "longitude": 77.5946
-        },
         "areaServed": [
           {
             "@type": "City",
@@ -93,11 +80,7 @@
           "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
           "opens": "09:00",
           "closes": "19:00"
-        },
-        "sameAs": [
-          "https://www.instagram.com/websitetailors",
-          "https://www.linkedin.com/company/websitetailors"
-        ]
+        }
       },
       {
         "@type": "WebSite",
@@ -207,8 +190,9 @@
         <svg class="icon-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
       </a>
 
-      <button class="menu" id="menuButton" aria-label="Toggle navigation menu" aria-expanded="false">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg>
+      <button class="menu" id="menuButton" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="menu-icon-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg>
+        <svg class="menu-icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
       </button>
     </div>
   </header>
@@ -216,7 +200,10 @@
   <!-- =======================================================
        ANIMATED FULL-SCREEN MOBILE MENU
   ======================================================== -->
-  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close navigation menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
     <a href="./services">Services</a>
     <a href="#process">Process</a>
     <a href="#about">About</a>
@@ -268,11 +255,6 @@ document.addEventListener('DOMContentLoaded', function() {
               <a href="#contact" class="btn btn-primary" aria-label="Get a Free Website Consultation">
                 <span>Get a Free Website Consultation</span>
                 <svg class="btn-arrow arrow-up-right" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-              </a>
-
-              <a href="#work" class="btn btn-secondary" aria-label="View Our Work">
-                <span>View Our Work</span>
-                <svg class="btn-arrow arrow-down" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
               </a>
             </div>
 

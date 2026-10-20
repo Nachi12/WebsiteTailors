@@ -17,8 +17,11 @@ if (!defined('WebsiteTailors_INIT') && php_sapi_name() !== 'cli') {
 // ENVIRONMENT & ERROR HANDLING
 // -----------------------------------------------------------------------------
 // Options: 'development' | 'production'
-// Set to 'production' on live shared hosting
-define('APP_ENV', getenv('APP_ENV') ?: 'development');
+// Automatically resolves to 'production' on live websitetailors.com domain or via APP_ENV env variable
+$isProductionHost = isset($_SERVER['HTTP_HOST']) && (
+    strpos($_SERVER['HTTP_HOST'], 'websitetailors.com') !== false
+);
+define('APP_ENV', getenv('APP_ENV') ?: ($isProductionHost ? 'production' : 'development'));
 
 if (APP_ENV === 'development') {
     ini_set('display_errors', '1');

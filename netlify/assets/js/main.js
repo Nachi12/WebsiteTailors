@@ -899,13 +899,34 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuButton = document.getElementById("menuButton");
   const mobileMenu = document.getElementById("mobileMenu");
 
+  const mobileMenuClose = document.getElementById("mobileMenuClose");
+
   if (menuButton && mobileMenu) {
+    const closeMobileMenu = () => {
+      mobileMenu.classList.remove("active");
+      mobileMenu.setAttribute("aria-hidden", "true");
+      menuButton.classList.remove("is-active");
+      menuButton.setAttribute("aria-expanded", "false");
+      menuButton.setAttribute("aria-label", "Toggle navigation menu");
+      if (navbar) navbar.classList.remove("menu-open");
+      document.body.classList.remove("menu-open");
+      document.body.style.overflow = "";
+    };
+
+    const openMobileMenu = () => {
+      mobileMenu.classList.add("active");
+      mobileMenu.setAttribute("aria-hidden", "false");
+      menuButton.classList.add("is-active");
+      menuButton.setAttribute("aria-expanded", "true");
+      menuButton.setAttribute("aria-label", "Close navigation menu");
+      if (navbar) navbar.classList.add("menu-open");
+      document.body.classList.add("menu-open");
+      document.body.style.overflow = "hidden";
+    };
+
     const syncMenuState = () => {
       if (window.innerWidth > 900) {
-        mobileMenu.classList.remove("active");
-        menuButton.textContent = "☰";
-        menuButton.setAttribute("aria-expanded", "false");
-        document.body.style.overflow = "";
+        closeMobileMenu();
       }
     };
 
@@ -914,22 +935,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
     menuButton.addEventListener("click", () => {
       if (window.innerWidth <= 900) {
-        const isOpen = mobileMenu.classList.toggle("active");
-        menuButton.textContent = isOpen ? "✕" : "☰";
-        menuButton.setAttribute("aria-expanded", isOpen ? "true" : "false");
-        document.body.style.overflow = isOpen ? "hidden" : "";
+        const isCurrentlyOpen = mobileMenu.classList.contains("active");
+        if (isCurrentlyOpen) {
+          closeMobileMenu();
+        } else {
+          openMobileMenu();
+        }
       } else {
         syncMenuState();
       }
     });
 
+    if (mobileMenuClose) {
+      mobileMenuClose.addEventListener("click", () => {
+        closeMobileMenu();
+      });
+    }
+
     mobileMenu.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
-        mobileMenu.classList.remove("active");
-        menuButton.textContent = "☰";
-        menuButton.setAttribute("aria-expanded", "false");
-        document.body.style.overflow = "";
+        closeMobileMenu();
       });
+    });
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && mobileMenu.classList.contains("active")) {
+        closeMobileMenu();
+      }
     });
 
     window.addEventListener("resize", syncMenuState);

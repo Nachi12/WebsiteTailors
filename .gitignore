@@ -44,3 +44,6 @@ scratch/
 brag-output/
 __pycache__/
 *.pyc
+
+# Distribution builds
+dist/*.zip
