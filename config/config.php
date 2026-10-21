@@ -86,7 +86,7 @@ define('ALLOWED_UPLOAD_MIMES', [
 // -----------------------------------------------------------------------------
 define('APP_NAME', 'Website Tailors');
 define('APP_TAGLINE', 'Websites tailored for Bangalore businesses.');
-define('APP_VERSION', '1.0.1');
+define('APP_VERSION', '1.0.2');
 define('APP_SCHEMA_VERSION', 1);
 
 // Primary Business Contact Configuration

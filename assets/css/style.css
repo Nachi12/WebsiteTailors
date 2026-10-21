@@ -626,6 +626,7 @@ body::before {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  pointer-events: none;
   transition: opacity 0.2s ease, visibility 0.2s ease;
 }
 
@@ -639,12 +640,14 @@ body::before {
   visibility: hidden;
 }
 
-.menu.is-active .menu-icon-open {
+.menu.is-active .menu-icon-open,
+.menu[aria-expanded="true"] .menu-icon-open {
   opacity: 0;
   visibility: hidden;
 }
 
-.menu.is-active .menu-icon-close {
+.menu.is-active .menu-icon-close,
+.menu[aria-expanded="true"] .menu-icon-close {
   opacity: 1;
   visibility: visible;
 }
