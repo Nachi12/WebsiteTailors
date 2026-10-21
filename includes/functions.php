@@ -553,6 +553,31 @@ function get_image_url(?string $path, string $type = 'project'): string
         if (file_exists($fullPath) && is_file($fullPath)) {
             return BASE_URL . '/' . $clean;
         }
+
+        // Check alternate image extensions and aliases if path is local
+        $baseName = pathinfo($clean, PATHINFO_FILENAME);
+        $dirName = pathinfo($clean, PATHINFO_DIRNAME);
+        $candidateBases = [$baseName];
+        $aliasMap = [
+            'apex-portal' => 'apex-logistics',
+            'veloce-engine' => 'veloce-ecommerce',
+            'omniflow' => 'omniflow-automation',
+        ];
+        foreach ($aliasMap as $k => $v) {
+            if (str_contains($baseName, $k)) {
+                $candidateBases[] = str_replace($k, $v, $baseName);
+            }
+        }
+
+        foreach ($candidateBases as $b) {
+            foreach (['jpg', 'jpeg', 'png', 'webp'] as $ext) {
+                $candidateRel = $dirName . '/' . $b . '.' . $ext;
+                if (file_exists(ROOT_PATH . '/' . $candidateRel)) {
+                    return BASE_URL . '/' . $candidateRel;
+                }
+            }
+        }
+
         // If it starts with http, return as-is
         if (str_starts_with($path, 'http://') || str_starts_with($path, 'https://')) {
             return $path;

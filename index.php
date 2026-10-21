@@ -93,11 +93,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 <span>Get a Free Website Consultation</span>
                 <svg class="btn-arrow arrow-up-right" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
               </a>
-
-              <a href="#work" class="btn btn-secondary" aria-label="Explore Our Work">
-                <span>Explore Our Work</span>
-                <svg class="btn-arrow arrow-down" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
-              </a>
             </div>
 
             <div class="hero-trust-row" aria-label="Reassurance Points">
@@ -821,93 +816,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-    <!-- =======================================================
-         WORK / PORTFOLIO (PHASE 13) - TEMPORARILY COMMENTED OUT
-    ======================================================== -->
-    <!--
-    <section class="work" id="work">
-      <div class="container">
-        <div class="work-header reveal">
-          <div>
-            <div class="eyebrow">Portfolio</div>
-            <h2 class="section-title" style="margin-top: 25px;">
-              Our Work
-            </h2>
-          </div>
-
-          <p class="work-note">
-            A selection of website design concepts, redesign prototypes, and automation systems.
-          </p>
-        </div>
-
-        <?php if (empty($projects)): ?>
-          <div class="empty-state-public">
-            <div class="empty-state-icon">✦</div>
-            <h3>Work Showcase Updating</h3>
-            <p>Our recent website projects are being updated. Contact us to view recent design previews.</p>
-            <a href="#contact" class="button button-primary magnetic">Get a Free Quote ↗</a>
-          </div>
-        <?php else: ?>
-          <div class="projects">
-            <?php foreach ($projects as $index => $project): ?>
-              <?php 
-                $projNum = str_pad((string)($index + 1), 2, '0', STR_PAD_LEFT); 
-                $totalCount = str_pad((string)count($projects), 2, '0', STR_PAD_LEFT);
-                $projectImg = get_image_url($project['image'] ?? null, 'project');
-              ?>
-              <article class="project" style="z-index: <?= (int)($index + 5) ?>;">
-                <div class="project-top">
-                  <div class="project-number">
-                    <?= e($projNum) ?> / <?= e($totalCount) ?>
-                  </div>
-
-                  <div class="project-type">
-                    <?= e($project['category']) ?>
-                  </div>
-                </div>
-
-                <?php // Visual Screenshot Showcase ?>
-                <div class="project-visual">
-                  <div class="browser">
-                    <div class="browser-top">
-                      <div class="browser-dot"></div>
-                      <div class="browser-dot"></div>
-                      <div class="browser-dot"></div>
-                    </div>
-                    <div class="browser-viewport">
-                      <img src="<?= e($projectImg) ?>" alt="<?= e($project['title']) ?> – <?= e($project['category']) ?> demonstration interface" class="project-screenshot" loading="lazy" width="800" height="500" />
-                    </div>
-                  </div>
-                </div>
-
-                <div class="project-bottom">
-                  <div>
-                    <h3 class="project-title">
-                      <?= e($project['title']) ?>
-                    </h3>
-                    <p style="color: var(--muted); font-size: 14px; margin-top: 8px; max-width: 540px;">
-                      <?= e($project['description']) ?>
-                    </p>
-                  </div>
-
-                  <a href="#contact" class="project-link magnetic" aria-label="Inquire about <?= e($project['title']) ?>">
-                    ↗
-                  </a>
-                </div>
-              </article>
-            <?php endforeach; ?>
-
-            <?php /*
-            TODO: Add 2-3 local Bangalore business design concepts to replace logistics dashboards
-            CONCEPT 1 (Dental Clinic): Title: "Indiranagar Dental Care", Category: "Clinic Concept Design", Description: "Clean patient portal concept with appointment booking, OPD hours, and WhatsApp inquiry."
-            CONCEPT 2 (Restaurant / Cafe): Title: "The Roasted Bean Cafe & Bistro", Category: "Restaurant Concept Design", Description: "Warm, visual cafe menu concept with table reservation CTA and Google Maps integration."
-            CONCEPT 3 (Salon & Spa): Title: "Aura Unisex Salon & Spa", Category: "Salon Concept Design", Description: "Modern salon service rate card concept with package selection and WhatsApp booking."
-            */ ?>
-          </div>
-        <?php endif; ?>
-      </div>
-    </section>
-    -->
 
     <!-- =======================================================
          PROCESS (PHASE 8)
@@ -1197,7 +1105,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <p class="cta-subtitle">
             Tell us what your business does and what you need. We'll suggest the right scope and the next steps, with no obligation.
           </p>
-          <p style="font-size: 13.5px; color: #c8ff00; font-family: 'DM Mono', monospace; margin-top: 14px;">
+          <p style="font-size: 13.5px; color: #C9C2FF; font-family: var(--font-mono); margin-top: 14px;">
             ⚡ We reply within 24 hours. No spam, no obligation.
           </p>
 
