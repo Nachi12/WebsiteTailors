@@ -602,6 +602,7 @@ body::before {
 
 .menu {
   display: none;
+  position: relative;
   width: 42px;
   height: 42px;
   border-radius: 50%;
@@ -619,16 +620,33 @@ body::before {
   transform: scale(0.92);
 }
 
+.menu .menu-icon-open,
 .menu .menu-icon-close {
-  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.menu .menu-icon-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu .menu-icon-close {
+  opacity: 0;
+  visibility: hidden;
 }
 
 .menu.is-active .menu-icon-open {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .menu.is-active .menu-icon-close {
-  display: block;
+  opacity: 1;
+  visibility: visible;
 }
 
 /* =========================================================
